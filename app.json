@@ -1,6 +1,0 @@
-{
-    "appDescrip": "Brill CMS",
-    "loginPage": "/login",
-    "homePage": "/home",
-    "notFoundPage": "/error" 
-}
