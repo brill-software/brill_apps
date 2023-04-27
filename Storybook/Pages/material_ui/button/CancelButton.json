@@ -1,0 +1,89 @@
+{
+    "pageDescrip": "Div Component",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/button/CancelButton"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>\nBased on the Material-UI Button component.\n<table cellpadding=\"7\">\n<tr><td>variant [optional] </td><td>Value of <b>text</b>, <b>outlined</b> or <b>filled.</b></td></tr>\n<tr><td>size [optional]</td><td>Value of <b>small</b>, <b>medium</b> or <b>large.</b></td></tr>\n<tr><td>startIcon [optional]</td><td>Icon to place before the title.</td></tr>\n<tr><td>title</td><td>Button label.</td></tr>\n<tr><td>endIcon [optional]</td><td>Icon to place after the title.</td></tr>\n<tr><td>publishToTopic [optional]</td><td>Topic to publish the <b>action</b> to when the user clicks on the button.</td></tr>\n<tr><td>action [optional]</td><td>A value to publish when the user clicks on the button.</td></tr>\n<tr><td>route [optional]</td><td>Route (e.g. <code>/brill_software/home</code>) or <code><b>back</b></code> to go back a page.</td></tr>\n<tr><td>theme</td><td><code>theme.overrides.CancelButton.root</code></td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "ThemeProvider",
+                        "module": "material_ui/theme/ThemeProvider",
+                        "attributes": {
+                            "themeTopic": "/Themes/storybook_demo_theme.json"
+                        },
+                        "children": [
+                            {
+                                "id": "Flex Row Layout",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "row"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "CancelButtonSmall",
+                                        "module": "material_ui/button/CancelButton",
+                                        "attributes": {
+                                            "variant": "outlined",
+                                            "size": "small",
+                                            "startIcon": "Cancel",
+                                            "title": "Cancel",
+                                            "route": "xxxx"
+                                        }
+                                    },
+                                    {
+                                        "id": "CancelButtonMedium",
+                                        "module": "material_ui/button/CancelButton",
+                                        "attributes": {
+                                            "size": "medium",
+                                            "startIcon": "Cancel",
+                                            "title": "Cancel",
+                                            "route": "xxxx"
+                                        }
+                                    },
+                                    {
+                                        "id": "CancelButtonLarge",
+                                        "module": "material_ui/button/CancelButton",
+                                        "attributes": {
+                                            "size": "large",
+                                            "startIcon": "Cancel",
+                                            "title": "Cancel",
+                                            "route": "xxxx"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

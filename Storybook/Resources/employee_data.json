@@ -1,0 +1,26 @@
+{
+    "$schema": "schema://brill.software/employee_schema.json",
+    "companyName": "Glass Bottles R Us",
+    "employees": [
+        {
+            "firstName": "Brenda",
+            "lastName": "Kent"
+        },
+        {
+            "firstName": "Jarrett",
+            "lastName": "Blanchard"
+        },
+        {
+            "firstName": "Jenna",
+            "lastName": "Yoder"
+        },
+        {
+            "firstName": "Kinley",
+            "lastName": "Mendez"
+        },
+        {
+            "firstName": "Kate",
+            "lastName": "Hubbard"
+        }
+    ]
+}

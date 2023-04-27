@@ -1,0 +1,66 @@
+{
+    "pageDescrip": "Confirm Dialog",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/dialog/SingleFieldDialog"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>title</td><td>Dialog title.</td></tr>\n<tr><td>prompt</td><td>Dialog prompt.</td></tr>\n<tr><td>fieldLabel</td><td>Field label.</td></tr>\n<tr><td>buttonLabel</td><td>Button label.</td></tr>\n<tr><td>subscribeToTopic</td><td>When a string is published to the topic the dialog will be opened. Publishing of true will result in display of the dialog with default prompt. A value of false with close the alert dialog.</td></tr>\n<tr><td>publishToTopic</td><td>The topic to publish the topic field value to.</td></tr>\n<tr><td>theme</td><td><code>theme.overrides.SingleFieldDialog .root, .closeButton</code></td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "^SingleFieldDialog",
+                        "module": "material_ui/dialog/SingleFieldDialog",
+                        "attributes": {
+                            "title": "Single Field Dialog",
+                            "prompt": "Single Field Dailog prompt",
+                            "fieldLabel": "Field Label",
+                            "buttonLabel": "Submit",
+                            "subscribeToTopic": "storybook.singleFieldDialog.open",
+                            "publishToTopic": "storybook.singleFieldDialog.answer"
+                        }
+                    },
+                    {
+                        "id": "^Open Single FIeld Dialog",
+                        "module": "material_ui/button/IconButton",
+                        "attributes": {
+                            "tooltip": "Open Confirm Dialog",
+                            "iconName": "PlayCircleFilledTwoTone",
+                            "publishToTopic": "storybook.singleFieldDialog.open"
+                        }
+                    },
+                    {
+                        "id": "Answer",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "body1",
+                            "subscribeToTopic": "storybook.singleFieldDialog.answer"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,66 @@
+{
+    "$schema": "schema://brill.software/page_schema.json",
+    "pageDescrip": "Div Component",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "html/Span"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>\nHTML Span component. Useful for displaying inline text.\n<table cellpadding=\"7\">\n<tr><td>text [optional]</td><td>Initial text.</td></tr>\n<tr><td>subscribeToTopic [optional]</td><td>Topic to subscribe to for the text.</td></tr>\n<tr><td>children [optional]</td><td>Can have child components.</td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "P",
+                        "module": "html/P",
+                        "attributes": {},
+                        "children": [
+                            {
+                                "id": "Span-1",
+                                "module": "html/Span",
+                                "attributes": {
+                                    "style": {
+                                        "padding": "10px",
+                                        "color": "green"
+                                    },
+                                    "text": "Username: "
+                                }
+                            },
+                            {
+                                "id": "Span-2",
+                                "module": "html/Span",
+                                "attributes": {
+                                    "style": {
+                                        "padding": "10px",
+                                        "color": "purple"
+                                    },
+                                    "subscribeToTopic": "username"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "pageDescrip": "Header",
+    "rootComponent": {
+        "id": "titleBox",
+        "module": "material_ui/layout/Box",
+        "attributes": {
+            "pt": 1,
+            "bgcolor": "primary.main"
+        },
+        "children": [
+            {
+                "id": "container",
+                "module": "material_ui/layout/Container",
+                "attributes": {
+                    "maxWidth": "md",
+                    "fixed": false,
+                    "disableGutters": false,
+                    "style": {
+                        "display": "flex",
+                        "flexWrap": "wrap"
+                    }
+                },
+                "children": [
+                    {
+                        "id": "panel1",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "body1",
+                            "align": "center",
+                            "style": {
+                                "color": "grey",
+                                "width": "100%",
+                                "paddingLeft": "12px"
+                            },
+                            "text": "&copy; 2023 Brill Software Limited"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

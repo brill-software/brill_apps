@@ -1,0 +1,68 @@
+{
+    "pageDescrip": "Div Component",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/button/MenuButton"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>title</td><td>Button label.</td></tr>\n<tr><td>route [optional]</td><td>Route for when a form is submitted.</td></tr>\n<tr><td>theme</td><td><code>theme.overrides.MenuButton.root, .button, .bar</code></td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "Flex Row Layout",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "background": "blue",
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "flexWrap": "wrap"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "HomeButton",
+                                "module": "material_ui/button/MenuButton",
+                                "attributes": {
+                                    "key": "_homeButton",
+                                    "title": "Home",
+                                    "route": "xxxx"
+                                }
+                            },
+                            {
+                                "id": "ContactButton",
+                                "module": "material_ui/button/MenuButton",
+                                "attributes": {
+                                    "title": "Contact",
+                                    "route": "xxxx"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

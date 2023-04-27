@@ -1,0 +1,114 @@
+{
+    "$schema": "schema://brill.software/page_schema.json",
+    "pageDescrip": "Resizable Panels - 3 panels",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider1",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "ResizablePanels",
+                        "module": "material_ui/layout/ResizablePanels",
+                        "attributes": {
+                            "p1Height": 42,
+                            "p2Width": 300
+                        },
+                        "children": [
+                            {
+                                "id": "HeaderBox",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "width": "100%",
+                                        "height": "42px",
+                                        "background": "#c1f4b8",
+                                        "border": "20px",
+                                        "display": "flex",
+                                        "flexDirection": "row"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "Title",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "h1",
+                                            "style": {
+                                                "color": "#909090",
+                                                "paddingLeft": "12px",
+                                                "paddingRight": "40px",
+                                                "whiteSpace": "nowrap"
+                                            },
+                                            "text": "Resizable Panels ( 3 panels )"
+                                        }
+                                    },
+                                    {
+                                        "id": "FileName",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "h3",
+                                            "style": {
+                                                "color": "#60a060",
+                                                "paddingTop": "10px",
+                                                "paddingLeft": "12px",
+                                                "paddingRight": "40px",
+                                                "whiteSpace": "nowrap"
+                                            },
+                                            "text": "Selected File: ",
+                                            "subscribeToTopic": "storybook.resizablePanels.treeItem"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "^TreeView",
+                                "module": "material_ui/view/TreeView",
+                                "attributes": {
+                                    "defaultExpanded": [
+                                        "file:/Storybook/Pages",
+                                        "file:/Storybook/Pages/html",
+                                        "file:/Storybook/Pages/material_ui"
+                                    ],
+                                    "subscribeToTopic": "/Pages/",
+                                    "publishToTopic": "storybook.resizablePanels.treeItem"
+                                }
+                            },
+                            {
+                                "id": "Text Editor",
+                                "module": "material_ui/editor/TextEditor",
+                                "attributes": {
+                                    "id": "textEditor1",
+                                    "options": {
+                                        "readOnly": true,
+                                        "lineNumbers": "off",
+                                        "glyphMargin": false,
+                                        "folding": false,
+                                        "lineDecorationsWidth": 0,
+                                        "lineNumbersMinChars": 0,
+                                        "roundedSelection": true,
+                                        "scrollBeyondLastLine": false,
+                                        "fontWeight": 600
+                                    },
+                                    "fileName": "employee_data.json",
+                                    "subscribeToTopic": "storybook.resizablePanels.treeItem",
+                                    "subscribeToActionTopic": "storybook.TextEditor.action",
+                                    "publishToTopic": "",
+                                    "schemasTopic": "json:/brill_cms/Resources/page_schemas.json"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

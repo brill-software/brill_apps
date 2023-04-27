@@ -1,0 +1,185 @@
+{
+    "$schema": "schema://brill.software/page_schema.json",
+    "pageDescrip": "Typography",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "text": "material_ui/Typography",
+                            "gutterBottom": true
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>The Typograph component is based on the <a href=\"https://v4.mui.com/components/typography/\" target=\"_blank\">Material UI Typography</a> component.\n<table cellpadding=\"7\">\n<tr><td>variant</td><td>h1, h2, h3, h4, h5, h6, body1, body2</td></tr>\n<tr><td>text</td><td>Initial text.</td></tr>\n<tr><td>subscribeToTopic</td><td>The topic to subscribe to for the text.</td></tr>\n<tr><td>gutterBottom</td><td>When true, places extra space below the text.</td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "h1",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h1",
+                            "text": "Heading 1"
+                        }
+                    },
+                    {
+                        "id": "h1 with gutter bottom",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h1",
+                            "text": "Heading 1",
+                            "gutterBottom": true
+                        }
+                    },
+                    {
+                        "id": "h2",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h2",
+                            "text": "Heading 2"
+                        }
+                    },
+                    {
+                        "id": "h3",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "text": "Heading 3"
+                        }
+                    },
+                    {
+                        "id": "h5",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h5",
+                            "text": "Heading 5"
+                        }
+                    },
+                    {
+                        "id": "h4",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h4",
+                            "text": "Heading 4"
+                        }
+                    },
+                    {
+                        "id": "h6",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h6",
+                            "text": "Heading 6"
+                        }
+                    },
+                    {
+                        "id": "body1",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "body1",
+                            "text": "Body 1"
+                        }
+                    },
+                    {
+                        "id": "body2",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "body2",
+                            "text": "Body 2"
+                        }
+                    },
+                    {
+                        "id": "h3 with styling",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "text": "Heading 3",
+                            "style": {
+                                "color": "green"
+                            }
+                        }
+                    },
+                    {
+                        "id": "body1 bold",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "body1",
+                            "gutterBottom": true,
+                            "text": "<b>Bold</b>"
+                        }
+                    },
+                    {
+                        "id": "body1 italic",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "body1",
+                            "gutterBottom": true,
+                            "text": "<i>Italic</i>"
+                        }
+                    },
+                    {
+                        "id": "body1 strike through",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "body1",
+                            "gutterBottom": true,
+                            "text": "<s>Strike through</s>"
+                        }
+                    },
+                    {
+                        "id": "body1 highlighted",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "body1",
+                            "gutterBottom": true,
+                            "text": "<mark>Highlighted</mark>"
+                        }
+                    },
+                    {
+                        "id": "body1 code",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "body1",
+                            "gutterBottom": true,
+                            "text": "<code>Code</code>"
+                        }
+                    },
+                    {
+                        "id": "body1 styled paragraph",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "body1",
+                            "gutterBottom": true,
+                            "text": "<p style='color:green'>Styled paragraph.</p>"
+                        }
+                    },
+                    {
+                        "id": "hr",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "body1",
+                            "gutterBottom": true,
+                            "text": "<hr style=\"height:1px;border-width:0px;background-color:#dddddd\"/>"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

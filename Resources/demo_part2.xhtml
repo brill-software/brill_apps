@@ -1,0 +1,35 @@
+<p>The Data Table component uses server side searching, sorting and filtering and can therefore be used with tables that have millions of rows. Only the data for the currently displayed page is transferred to the client. The component is based on the mui-datatables component.</p>
+<p>To insert a Data Table component within a page, the CMS would insert JSON similar to the following:</p>
+<pre>{
+    "id": "Table1",
+    "module": "material_ui/table/DataTable",
+    "attributes": {
+        "title": "Employees",
+        "subscribeToTopic": "/Database/employee/readPage.js",
+        "columns": [
+            {"name": "employee_id", "label": "Employee Id"},
+            {"name": "first_name", "label": "First Name"},
+            {"name": "last_name", "label": "Last Name"},
+            {"name": "department", "label": "Department"}],
+        "options": {                                        
+            "serverSide": true,
+            "rowsPerPage": 15,
+        },
+        "newRoute": "",
+        "editRoute": "",
+        "duplicateRoute": "",
+        "deleteRoute": ""
+}</pre>
+<p>When inserting the Data Table, the CMS prompts the user for the various attributes. The <code>module</code> is the React component name. The <code>subscribeToTopic</code> attribute specifies how the component gets its data. In this case the data is obtained by running JavaScript on the server The JavaScript formats and executes a query and returns the results to the component. The Data Table component also supports client side searching, filtering and sorting. In which case a simple query that retrieves the whole table is all that is required. The downside of using the client side is that performance will be impacted if the table contains tens of thousands or more rows.</p>
+<p>The Data Table component has support for adding an additional &ldquo;Actions&rdquo; column that has edited, duplicated or deleted buttons. A &ldquo;New&rdquo; button can be added to top bar to allow a new row to be added. The buttons can display a form either as a modal window or a pull out side bar or on a new page.</p>
+<p>A new column can be added to the database and made available in the application without having to do a code release. The JavaScript may need to be updated in the CMS if the new column is searchable but otherwise the JavaScript doesn&rsquo;t need to be updated. The CMS can be used to add the extra column to the Data Table component and the new page published. Users will then be able to see the new column, all without a code release.</p>
+<h2>Forms</h2>
+<p>Forms are very common on transactional web sites. Various components are provided for drop down lists, text entry fields etc. The data is shared between the components using the Message Broker. One common feature of forms is client side validation of data, as well as server side validation. The Brill CMS allows data entry components to specify JavaScript that performs client side validation and display of error messages, as well as supporting server side validation.</p>
+<h2>Drag and Drop (DND)</h2>
+<p>Many e-learning applications require custom DND components. For example, a student might drag and drop labels onto a diagram. A number of DND components are supplied that can be customised.</p>
+<p>The Brill CMS uses DND to allow a user to drag components from the component bar onto a page. The user can also move components around on a page using DND.</p>
+<p>At the bottom of this page is a link to a demo of the DND component used by the Brill CMS page editor.</p>
+<h2>Summary</h2>
+<p>Instead of developing pages using code, the pages are created as JSON and maintained using a CMS. This allows more rapid development and easier maintenance. Changes to text, layout and images can be made by business users, without the need for developer input and no need to wait for the next code release. Developers can still write their own custom components and include them into the CMS and are not in any way limited as to what&rsquo;s possible. Components can be developed quicker because the middleware and server infrastructure are already in place and there are lots of examples to copy.</p>
+<p>It&rsquo;s perfectly possible to migrate existing React applications a step at a time. An existing React application can embed a page that was created using the Brill CMS using a component called EmbedPage. Existing React applications can also make use of the Brill Message Broker, Brill Middleware and Brill Server.</p>
+<p>The end result is a better looking web site that&rsquo;s easier to maintain and didn&rsquo;t require lots of code to be developed. Overall a flexible &ldquo;low code&rdquo; solution.</p>

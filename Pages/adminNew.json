@@ -1,0 +1,309 @@
+{
+    "pageDescrip": "CMS Login page",
+    "rootComponent": {
+        "id": "errorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "outer_div",
+                "module": "html/Div",
+                "attributes": {
+                    "style": {
+                        "boxShadow": "5px 10px 18px",
+                        "width": "460px"
+                    }
+                },
+                "children": [
+                    {
+                        "id": "Form",
+                        "module": "material_ui/input/Form",
+                        "attributes": {
+                            "noValidate": true,
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "column",
+                                "flexWrap": "wrap"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "alertBox",
+                                "module": "material_ui/alert/Alert",
+                                "attributes": {
+                                    "subscribeToTopic": "app:errors:",
+                                    "clearOnChangeToTopic": "app:any:",
+                                    "elevation": 12,
+                                    "style": {
+                                        "cursor": "move"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "RelativeDiv",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "position": "relative"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "header",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "className": "handle",
+                                            "variant": "h3",
+                                            "style": {
+                                                "padding": "12px",
+                                                "background": "#f0f0f0",
+                                                "cursor": "move"
+                                            },
+                                            "text": "New User",
+                                            "gutterBottom": true
+                                        }
+                                    },
+                                    {
+                                        "id": "close",
+                                        "module": "material_ui/button/IconButton",
+                                        "attributes": {
+                                            "iconName": "Close",
+                                            "tooltip": "Close",
+                                            "publishToTopic": "userTable.notification",
+                                            "action": "closeNewPopover",
+                                            "style": {
+                                                "position": "absolute",
+                                                "top": "10px",
+                                                "right": "10px",
+                                                "color": "grey"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "padding",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "padding": "10px"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "usernameField",
+                                        "module": "material_ui/input/TextField",
+                                        "attributes": {
+                                            "label": "Username",
+                                            "variant": "outlined",
+                                            "publishToTopic": "users.newForm#username",
+                                            "inputProps": {
+                                                "style": {
+                                                    "textTransform": "lowercase"
+                                                }
+                                            },
+                                            "style": {
+                                                "margin": "10px"
+                                            },
+                                            "validationRules": [
+                                                {
+                                                    "code": "return value.length === 0",
+                                                    "errorMsg": "Please enter the new username."
+                                                },
+                                                {
+                                                    "code": "return value.length > 40",
+                                                    "errorMsg": "Username is too long."
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "id": "name",
+                                        "module": "material_ui/input/TextField",
+                                        "attributes": {
+                                            "label": "Name",
+                                            "variant": "outlined",
+                                            "autoComplete": "nope",
+                                            "publishToTopic": "users.newForm#name",
+                                            "style": {
+                                                "margin": "10px"
+                                            },
+                                            "validationRules": [
+                                                {
+                                                    "code": "return value.length === 0",
+                                                    "errorMsg": "Please enter the name of the new user. "
+                                                },
+                                                {
+                                                    "code": "return value.length > 40",
+                                                    "errorMsg": "Name is too long."
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "id": "email",
+                                        "module": "material_ui/input/TextField",
+                                        "attributes": {
+                                            "label": "Email",
+                                            "variant": "outlined",
+                                            "autoComplete": "nope",
+                                            "publishToTopic": "users.newForm#email",
+                                            "style": {
+                                                "margin": "10px"
+                                            },
+                                            "validationRules": [
+                                                {
+                                                    "code": "return value.length === 0",
+                                                    "errorMsg": "Please enter the email address of the new user. "
+                                                },
+                                                {
+                                                    "code": "return value.length > 45",
+                                                    "errorMsg": "Email address is too long."
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "id": "descrip",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "body1",
+                                            "style": {
+                                                "margin": "10px",
+                                                "fontSize": "14px"
+                                            },
+                                            "text": "Please use a strong password that's at least 8 characters long and difficult to guess."
+                                        }
+                                    },
+                                    {
+                                        "id": "newPasswordField",
+                                        "module": "material_ui/input/PasswordField",
+                                        "attributes": {
+                                            "label": "Password",
+                                            "variant": "outlined",
+                                            "autoComplete": "new-password",
+                                            "publishToTopic": "users.newForm#password",
+                                            "style": {
+                                                "margin": "10px"
+                                            },
+                                            "validationRules": [
+                                                {
+                                                    "code": "return value.length === 0",
+                                                    "errorMsg": "Please enter a strong password for the user. "
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "id": "passwordConfirm",
+                                        "module": "material_ui/input/PasswordField",
+                                        "attributes": {
+                                            "label": "Repeat Password",
+                                            "variant": "outlined",
+                                            "publishToTopic": "users.newForm#passwordConfirm",
+                                            "style": {
+                                                "margin": "10px"
+                                            },
+                                            "validationRules": [
+                                                {
+                                                    "code": "return value.length === 0",
+                                                    "errorMsg": "Please enter the new password a second time. "
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "id": "changePassword",
+                                        "module": "material_ui/input/Select",
+                                        "attributes": {
+                                            "id": "ChangePasswordField",
+                                            "label": "Force Change Password",
+                                            "variant": "outlined",
+                                            "menuItemsTopic": "/Resources/yesNoMenuItems.json",
+                                            "publishToTopic": "users.newForm#changePassword",
+                                            "style": {
+                                                "margin": "10px",
+                                                "width": "250px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "permissionsField",
+                                        "module": "material_ui/input/CheckboxGroup",
+                                        "attributes": {
+                                            "color": "primary",
+                                            "multiple": true,
+                                            "label": "Permissions",
+                                            "variant": "outlined",
+                                            "checkboxesTopic": "/Database/getPermissions.sql",
+                                            "publishToTopic": "users.newForm#permissions",
+                                            "validationRules": [],
+                                            "style": {
+                                                "margin": "10px",
+                                                "width": "420px"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "hr",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "body1",
+                                    "gutterBottom": true,
+                                    "text": "<hr style=\"height:1px;border-width:0px;background-color:#dddddd\"/>"
+                                }
+                            },
+                            {
+                                "id": "Flex Row Layout",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "row",
+                                        "flexWrap": "wrap",
+                                        "justifyContent": "flex-end"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "cancelButton",
+                                        "module": "material_ui/button/CancelButton",
+                                        "attributes": {
+                                            "color": "secondary",
+                                            "variant": "outlined",
+                                            "style": {
+                                                "margin": "5px 5px 15px 5px"
+                                            },
+                                            "title": "Cancel",
+                                            "publishToTopic": "userTable.notification",
+                                            "action": "closeNewPopover"
+                                        }
+                                    },
+                                    {
+                                        "id": "createButton",
+                                        "module": "material_ui/button/SubmitButton",
+                                        "attributes": {
+                                            "subscribeToTopic": "users.newForm",
+                                            "requestTopic": "/Database/admin/newUser.js",
+                                            "title": "Create User",
+                                            "variant": "contained",
+                                            "color": "primary",
+                                            "style": {
+                                                "width": "160px",
+                                                "margin": "5px 5px 15px 5px"
+                                            },
+                                            "publishToTopic": "userTable.notification",
+                                            "action": "closeNewPopover"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

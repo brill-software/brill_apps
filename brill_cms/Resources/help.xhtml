@@ -1,0 +1,115 @@
+<h1>Brill CMS Help</h1>
+<h2>Overview</h2>
+<p>The Brill CMS is designed to allow developers to create and maintain applications. An application resides in a top level folder. A top level application folder contains a number of sub-folders such as Pages, Resources, Icons, Database and Themes. The Pages folder contains the pages of the application. Each page is stored as a JSON file. The CMS displays a tree view of the application folders and files and supports editing of various types of files.</p>
+<p>The Brill CMS is similar to an IDE, such as Microsoft VS Code. In fact, the Text Editor is the same editor as is used by VS Code. So, if you're familiar with VS Code, you should feel at home with the Brill CMS.</p>
+<p>Files can be edited in a number of different modes, depending on the file type. When editing a page, it can be edited using a WYSIWYG editor or as JSON using a text editor. It can also be viewed as it will appear to the user using Preview. The developer can quickly switch between the different edit and preview modes.</p>
+<h2>Split panes</h2>
+<p>The CMS allows the main edit area to be split into several panes, so that files can be viewed side by side either vertically or horizontally. You can view a page in the Page Editor, in another pane the JSON and in a third pane the Preview. You can make changes using the Page Editor and when you click Save, the other two panes are automatically updated with the changes. You can also open a second browser window and login to the CMS a second time. Changes saved in one browser window are automatically updated in the other browser window.</p>
+<h2>Version Control</h2>
+<p>All files and changes are held in a <em>git</em> repository. The repository holds a complete history of all the files that make up the applications. Once a file is committed to the repository, its safe and won't be lost or deleted.</p>
+<p>To view and make changes, the files need to be checked out to a workspace directory. The workspace directories reside on the server. When a file is edited, the file name changes to orange in the Editor tab. When the file is saved, the copy of the file in the server workspace directory is updated. The Pending Changes tree view shows the files that have been changed or that are new, compared to the repository. The changes can be committed and pushed to the repository by clicking on the green tick button.</p>
+<p>If there are a number of changes and you only want to commit a subset of the files, you can "stage'' just the files you want to commit. Click the green plus next to each of the files you want to stage. Once you've staged the files, click on the green tick to commit and push them to the repository.</p>
+<h3>Workspaces</h3>
+<p>You will normally work in you own private workspace. This is like having your own pond to fish in. You won't to get your line tangled with others when fishing in your own private pond.</p>
+<p>There are other shared workspaces. The <strong>production</strong> workspace is used by the Production system, the <strong>development</strong> workspace is for developers and the <strong>test</strong> workspace is for the test team.</p>
+<h3>Workflow</h3>
+<p>The workflow for making a change might at first appear complex, but after you've done it a couple of times, it becomes second nature.</p>
+<ul>
+  <li>Set the workspace to your own private workspace.</li>
+  <li>Checkout the <strong>develop</strong> branch to your workspace.</li>
+  <li>Create a new branch off of <strong>develop</strong> for your changes.</li>
+  <li>Make the changes and commit them to your branch.</li>
+  <li>Test the changes in your workspace.</li>
+  <li>Switch to the <strong>develop</strong> branch and merge in your branch.</li>
+  <li>Delete your branch, if it's no longer required.</li>
+  <li>Get someone else to test changes on the <strong>develop</strong> branch.</li>
+  <li>To release, checkout the <strong>master</strong> branch and merge in the <strong>develop</strong> branch.</li>
+  <li>On the Production system, pull the changes from the repository <strong>master</strong> branch into the <strong>production</strong> workspace.</li>
+</ul>
+<p>The basic rules are fish in your own private pond and implement changes on your own branch, not on the <strong>master</strong> or <strong>develop</strong> branch<strong>.</strong></p>
+<p>Test your changes before merging them into <strong>develop</strong>. You can delete your branch once you've merged it in.</p>
+<p>When new software components are developed, they need to be released to production before the pages that make use of the new components.</p>
+<p>Emergency fixes can be made by creating a fix branch off of <strong>master </strong>and merging the fix branch into <strong>master</strong> and also <strong>develop</strong>.</p>
+<h3>Merge Conflicts</h3>
+<p>If someone else has made changes that clash with your changes, you will get a "Merge Conflict" message. The affected files will be listed and highlight yellow in the Pending Changes section.</p>
+<p>You need to go through each conflicted file and select either your change or the other persons change. In some cases you might need to combine the changes. You will need to resolve the conflicts using the JSON editor or a text editor, rather than the Page editor.</p>
+<p>Once you've resolved the conflicts, you can commit the changes and the merge will be marked as resolved.</p>
+<h2>Page Editor</h2>
+<p>Pages can be edited using the WYSIWYG Page Editor. A component can be edited by double clicking on it, or by right clicking and selecting Edit. Components can be dragged and dropped within the page and also dragged and dropped from other pages. Most of the time, components are added to a page by dragging and dropping them from a Storybook page. The Storybook contains a complete set of example components, covering components for layout, buttons, alerts, text etc.</p>
+<p>A component has an Id, Module, Attributes and Child components. You can view these by double clicking on a component or by right clicking on the component and selecting <code>Edit</code>. You can also view a components attributes by switching to the JSON Text Editor.</p>
+<h3>Id</h3>
+<p>The Id is purely for use by the CMS and is separate from a React component id. Id's must be unique at a child level. The CMS will add a dash and a number if required to make them unique. The Id can include spaces and special characters.</p>
+<h3>Module</h3>
+<p>The Module is the React Component module name. e.g. <code>material_ui/SubmitButton</code>. The React component source code resides under the directory <code>src/lib/ComponentLibraries</code> in the Brill Client project.</p>
+<h3>Attributes</h3>
+<p>The attributes are values that are passed into the React component. The attributes of the various components are documented on the Storybook page for each component. As well as the attributes listed, additional attributes can be specified such as a <code>style</code> attribute and attributes listed in the Material UI description of the underlying component.</p>
+<h3>Children</h3>
+<p>A component can have a number of child components. The layout components typically have child components. To paste a component into a component as a child component, select the component, right click and select <code>Paste Into</code>.</p>
+<h3>Topic names</h3>
+<p>Most components have a <code>subscribeToTopic</code> and <code>publishToTopic</code> attribute. The <code>subscribeToTopic</code> attribute specifies where the component gets it's initial data from. The <code>publishToTopic</code> specifies where to publish the result, when the user clicks on a button for example.</p>
+<p>All topics that contain a slash ("/") character are sent by the Message Broker to the server. Topics that don't contain a slash, are by convention local to the client application and don't get sent to the server.</p>
+<p>Resolved topic names are ones that specify a schema and the application name. e.g. <code>file:/brill_cms/Resources/help.xhtml</code> contains the text you are currently viewing. Rather than specifying the resolved topic name, a partial topic name can be specified. e.g. /Resources/help.xhtml. The Message Broker knows to add the schema, based on the file extension, and the application name. The advantage of using partial topic names is that components can be copied from the Storybook into a page and will automatically use the application name of the page.</p>
+<h3>Shortcuts</h3>
+<p>Ctrl/Cmd B - Display or hide the component outline boxes.</p>
+<p>Ctrl/Cmd Z - Undo.</p>
+<p>Ctrl/Cmd Shift Z - Redo.</p>
+<p>Ctrl/Cmd X - Cut selected component.</p>
+<p>Ctrl/Cmd C - Copy selected component.</p>
+<p>Ctrl/Cmd V - Paste After selected component.</p>
+<p>Del - Delete selected component.</p>
+<p>Ctrl/Cmd S - Save the page.</p>
+<p>With the outline boxes active, the currently selected component has a thin blue box around it. A component can be selected or de-selected by clicking on it.</p>
+<p>When the Edit Component dialog is displayed, Ctrl/Cmd S saves the changes and closes the dialog. To save the page, key Ctrl/Cmd S a second time.</p>
+<h2>XHTML Editor</h2>
+<p>The XHTML Editor provides WYSIWYG editing of XHTML. It's based on the Facebook Rich Text editor. All the key sequences you would expect are supported and there's a Preview mode. A XHTML file can be included into a page using the <code>material_ui/text/Xhtml </code>component.</p>
+<p>You can view the XHTML source by switching to the Text Editor. The XHTML doesn't include the &lt;html&gt; and &lt;body&gt; tags, just the tags that would be found inside the &lt;body&gt; tag.</p>
+<h2>Text Editor</h2>
+<p>The Text Editor is used for editing text, JSON, XHTML, Sql and JavaScript files. The Text Editor makes use of the same text editor as is used by Microsoft VS Code and therefore supports most of the key sequences and features you're probably already familiar with. Pressing <strong>F1</strong> will display a list of the commands and corresponding key sequences. You can search the list of commands and also execute a command by clicking on it.</p>
+<p>Depending on the file type, the editor does syntax highlighting and validation. You can specify a schema to validate JSON files. To validate pages, add the following:</p>
+<pre>{
+    "$schema": "schema://brill.software/page_schema.json",
+...</pre>
+<p>This will highlight any JSON that doesn't conform to the schema. Pressing Ctrl Space will activate IntelliSense to make suggestions as to the valid values that can be entered at the current cursor position. The Text Editor supports auto complete, suggesting values based on the schema.</p>
+<h2>Tips</h2>
+<h3>CMS</h3>
+<h4>Unsaved changes</h4>
+<p>Unsaved changes are transferred between different editors when you switch edit modes. You can make a change in the Page Editor and without saving the changes, switch to Preview mode. If the changes preview correctly, you can click the Save button on the Preview to save the changes.</p>
+<h4>Save changes frequently</h4>
+<p>Unsaved changes only reside within the browser. If you close the Brill CMS or navigate to another web page, the unsaved changes are lost. The changes are only updated on the server when you click Save. Then they reside in the git workspace on the server. To save them to the git repository, the changes must be committed and pushed. Changes that are pushed to the git repository are secure and won't be lost or deleted.</p>
+<h4>Reordering tabs</h4>
+<p>You can drag and drop tabs to reorder them and also drag and drop tabs from one pane to another. When a file is modified, the file name is set to orange.</p>
+<h3>Page Editor</h3>
+<h4>Use Copy/Paste, as well as Drag and Drop</h4>
+<p>Drag and drop within a page effectively does a cut and paste, with the paste occuring <u>after</u> the drop zone target component. There can be multiple components under the drop zone, in which case the Page Editor does it's best to determine what it thinks is the target, but it's not always correct. In which case, do a Ctrl Z or Cmd Z on a Mac, to undo the move. Select the component and do a Ctrl C or Cmd C to copy. Select the target and do a Ctrl V or Cmd V to paste the item. For more options, instead of doing a Ctrl/Cmd V, right click on the target component and select one of <code>Paste Before</code>, <code>Paste Over</code>, <code>Paste Into</code> or <code>Paste After</code>.</p>
+<p>Drag and drop between pages is a copy and paste, rather than cut and paste. The component isn't removed from the initial page. Again it can be useful to use one of right click paste options, rather than drag and drop.</p>
+<h4>Enabling components to be active</h4>
+<p>By default, components displayed in the Page Editor have a mask applied that prevents mouse clicks getting through to the component. This is so that if you clicked on a button, it doesn't activate the button and take you to a new page. You can enable mouse clicks by adding a caret ("^") character to the start of the component Id. There are several examples in the Storybook, such as for alerts, that allow the alert boxes to be viewed in the Page Editor.</p>
+<h3>Text Editor</h3>
+<h4>The Text Editor can be used to edit pages</h4>
+<p>The Page Editor is very useful for editing pages, but sometimes it can also be useful to switch to the JSON Text Editor for editing attributes or making major structural changes.</p>
+<h4>Viewing the JSON for a component</h4>
+<p>When switching between the Page Editor and JSON Text Editor, the cursor position and selection are preserved. To see the JSON for a component, select the component in the Page Editor and then switch to the JSON Text Editor. The JSON for the component will be shown selected in blue. The cursor position is also preserved when switching between the WYSIWYG Html Editor and the XHTML Text Editor.</p>
+<h3>Pages</h3>
+<h4>Layout using the Div component</h4>
+<p>Although there are various layout components such as for grids, the HTML Div component is extremely useful. You can achieve most layouts and spacing using Div's. Take a look at the <code>html/Div</code> Storybook page for examples. The layout components are required when you want a responsive layout, where the number of columns depends on the screen width.</p>
+<h4>Error boundary component</h4>
+<p>The top level (root) component of a page should always be an Error Boundary component. If an error occurs in Preview mode on a Development system, a stack trace page is displayed. Click on the x to close the page and return to CMS. On a Production system, the stack trace is not shown to the user. An Error Boundary isn't required for pages that are embedded into other pages, such as headers and footers.</p>
+<h4>Use Themes</h4>
+<p>Use themes to style an application, rather than putting a <code>style</code> attribute on every component. Then changes can be applied across the entire application just by changing the theme, rather than updating every component.</p>
+<h4>Develop your own Storybook</h4>
+<p>If you have your own style guidelines and set of recommended components, create your own set of storybook pages and themes. Then when creating new pages, you can just drag and drop components from your storybook into pages and you know that the components conform to the style guidelines.</p>
+<h4>Add a "key" attribute to headers</h4>
+<p>React uses the "key" attribute to allow it to determine when components haven't changed and therefore don't need to be re-drawn. A "key" attribute can be added to the components in a header that's used across all the pages of an applications. React will then not re-draw the header components when switching between pages and the application will look like a single application, rather than a set of pages. Only use the same key for components that are identical, otherwise you'll have issues with components not getting re-drawn when they should be.</p>
+<h3>Topics</h3>
+<h4>SubscribeToTopic and PublishToTopic</h4>
+<p>Most components get their data from the <code>subscribeToTopic </code>for initial display. The clicks on the component or does something and then the component publishes the result to the <code>publishToTopic</code>.</p>
+<h4>Stubs</h4>
+<p>When developing a page that displays data returned by a database query, you might not initially have the database table or query setup. What you can do is create a JSON file with test data and set the component <code>subscribeToTopic</code> to point to the test data initially. When the query is available, you can update the <code>subscribeToTopic</code>.</p>
+<h4>Keep applications self contained</h4>
+<p>All the resources and files for an application should be contained within the applications folders. Topics should use partial topic names, rather than resolved topic names. Then the application can be renamed without having to change any of the topics. Also components can be copied to other applications, without them linking back to the application they were copied from. It means though that when you copy a component that makes use of a resource file, you also need to copy over the resource file to your application.</p>
+<h3>Version Control</h3>
+<h4>Committing empty folders</h4>
+<p>Git has a limitation in that it doesn't allow empty folders to be committed and pushed to the repository. The solution is to put a file in the folder, so that it's no longer empty!</p>
+<h3>XHTML Editor</h3>
+<h4>Use the Browser Spell Checker</h4>
+<p>To enable the Spell Checker in Google Chrome, right click on some text in the XHTML WYSIWYG Editor, select Language Settings and Enable Spell Check.</p>

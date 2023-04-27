@@ -1,0 +1,86 @@
+{
+    "pageDescrip": "Image in Xhtml",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "html/Img"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>\nDisplays an image using the HTML &lt;img&gt; tag. The image is obtained from the server using a Topic, rather than a URL.\n<table cellpadding=\"7\">\n<tr><td>subscribeToTopic</td><td>Topic to subscribe to for the image. Can be a png, gif, apng, jpg, jpeg, or bmp.</td></tr>\n<tr><td>style</td><td>Used to set the width and height. e.g. {\"width\": \"400px\"}</td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "Image - png",
+                        "module": "html/Img",
+                        "attributes": {
+                            "style": {
+                                "width": "400px"
+                            },
+                            "subscribeToTopic": "/Images/boat.png"
+                        }
+                    },
+                    {
+                        "id": "Image - gif",
+                        "module": "html/Img",
+                        "attributes": {
+                            "subscribeToTopic": "/Images/sample.gif",
+                            "style": {
+                                "width": "400px"
+                            }
+                        }
+                    },
+                    {
+                        "id": "Image - apng",
+                        "module": "html/Img",
+                        "attributes": {
+                            "subscribeToTopic": "/Images/elephant.apng",
+                            "style": {
+                                "width": "400px"
+                            }
+                        }
+                    },
+                    {
+                        "id": "Image - bmp",
+                        "module": "html/Img",
+                        "attributes": {
+                            "subscribeToTopic": "/Images/fieldAtNight.bmp",
+                            "style": {
+                                "width": "400px"
+                            }
+                        }
+                    },
+                    {
+                        "id": "Image - jpg",
+                        "module": "html/Img",
+                        "attributes": {
+                            "subscribeToTopic": "/Images/kayaking.jpg",
+                            "style": {
+                                "width": "400px"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

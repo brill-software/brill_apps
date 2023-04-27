@@ -1,0 +1,58 @@
+{
+    "validate": true,
+    "schemaValidation": "error",
+    "schemas": [
+        {
+            "uri": "schema://brill.software/page_schema.json",
+            "schema": {
+                "type": "object",
+                "required": ["pageDescrip", "rootComponent"],
+                "additionalProperties": false,
+                "properties": {
+                    "$schema": {
+                        "type": "string",
+                        "description": "The schema id."
+                    },
+                    "pageDescrip": {
+                        "type": "string",
+                        "description": "Page description."
+                    },
+                    "permission": {
+                        "type": "string",
+                        "description": "The permission the user must have to access the page."
+                    },
+                    "rootComponent": {
+                        "$ref": "schema://brill.software/component_schema.json",
+                        "description": "Page components."
+                    }
+                }
+            }
+        },
+        {
+            "uri": "schema://brill.software/component_schema.json",
+            "schema": {
+                "type": "object",
+                "required": ["module"],
+                "additionalProperties": false,
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Component ID."
+                    },
+                    "module": {
+                        "type": "string",
+                        "description": "Component module name."
+                    },
+                    "attributes": {
+                        "type": "object",
+                        "description": "Component attributes."
+                    },
+                    "children": {
+                        "type": "array",
+                        "description": "Child components.",
+                        "items": { "$ref": "component_schema.json" }
+                    }
+                }
+            }
+    }]
+}

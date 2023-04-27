@@ -1,0 +1,220 @@
+{
+    "pageDescrip": "Layout",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "themeProvider-layout",
+        "module": "material_ui/theme/ThemeProvider",
+        "attributes": {
+            "themeTopic": "/Themes/storybook_theme_light.json"
+        },
+        "children": [
+            {
+                "id": "container0",
+                "module": "material_ui/layout/Container",
+                "attributes": {
+                    "maxWidth": "lg",
+                    "fixed": false,
+                    "disableGutters": false,
+                    "style": {
+                        "background": "#fffff1"
+                    }
+                },
+                "children": [
+                    {
+                        "id": "subtitle1-l",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "subtitle1",
+                            "gutterBottom": true,
+                            "text": "Container"
+                        }
+                    },
+                    {
+                        "id": "grid1-l",
+                        "module": "material_ui/layout/Grid",
+                        "attributes": {
+                            "container": true,
+                            "spacing": 3,
+                            "style": {
+                                "background": "#f5f5ff"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "gridHeader",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 12
+                                },
+                                "children": [
+                                    {
+                                        "id": "subtitle1",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "subtitle1",
+                                            "gutterBottom": true,
+                                            "text": "Grid"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "gridCard1",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 6
+                                },
+                                "children": [
+                                    {
+                                        "id": "gridCard",
+                                        "module": "material_ui/layout/Card",
+                                        "attributes": {
+                                            "title": "Card One Title"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "cardContent",
+                                                "module": "material_ui/text/Typography",
+                                                "attributes": {
+                                                    "variant": "subtitle1",
+                                                    "gutterBottom": true,
+                                                    "text": "This is the Card body"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "gridCard2",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 6
+                                },
+                                "children": [
+                                    {
+                                        "id": "card2",
+                                        "module": "material_ui/layout/Card",
+                                        "attributes": {
+                                            "title": "Card Two Title"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "cardContent",
+                                                "module": "material_ui/text/Typography",
+                                                "attributes": {
+                                                    "variant": "subtitle1",
+                                                    "gutterBottom": true,
+                                                    "text": "This is the Card body. The root, title and body styles were modified by adding styles to the Theme."
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "gridItem1",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 4
+                                },
+                                "children": [
+                                    {
+                                        "id": "paper",
+                                        "module": "material_ui/layout/Paper",
+                                        "attributes": {
+                                            "elevation": 3,
+                                            "style": {
+                                                "height": "300px",
+                                                "background": "#f0e6f0"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "subtitle1",
+                                                "module": "material_ui/text/Typography",
+                                                "attributes": {
+                                                    "variant": "subtitle1",
+                                                    "gutterBottom": true,
+                                                    "text": "Paper with elavation of 3"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "gridItem2",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 4
+                                },
+                                "children": [
+                                    {
+                                        "id": "paper2",
+                                        "module": "material_ui/layout/Paper",
+                                        "attributes": {
+                                            "elevation": 3,
+                                            "style": {
+                                                "height": "300px",
+                                                "background": "#f0e6f0"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "subtitle2",
+                                                "module": "material_ui/text/Typography",
+                                                "attributes": {
+                                                    "variant": "subtitle1",
+                                                    "gutterBottom": true,
+                                                    "text": "Paper with elavation of 3"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "gridItem3",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 4
+                                },
+                                "children": [
+                                    {
+                                        "id": "paper2",
+                                        "module": "material_ui/layout/Paper",
+                                        "attributes": {
+                                            "elevation": 3,
+                                            "style": {
+                                                "height": "300px",
+                                                "background": "#f0e6f0"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "subtitle2",
+                                                "module": "material_ui/text/Typography",
+                                                "attributes": {
+                                                    "variant": "subtitle1",
+                                                    "gutterBottom": true,
+                                                    "text": "Paper with elavation of 3"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

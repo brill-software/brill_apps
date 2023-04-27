@@ -1,0 +1,141 @@
+{
+    "pageDescrip": "Alert Component",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/alert/Alert"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>\nAlert Component. Based on the <a href=\"https://v4.mui.com/components/alert/\" target=\"_blank\">Material-UI Alert</a> component.\n<table cellpadding=\"7\">\n<tr><td>subscribeToTopic</td><td>Topic to subscribe to for an ErrorMsg (object containing fields of \"severity\", \"title\" and \"detail\".)</td></tr>\n<tr><td>clearOnChangeToTopic</td><td>Used to clear the alert. Can be set to <code>app:any:</code> so that the alert is cleared when the user performs an action that results in a publish.</td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "^Alert",
+                        "module": "material_ui/alert/Alert",
+                        "attributes": {
+                            "title": "Alert Dialog",
+                            "prompt": "Alert dialog prompt",
+                            "subscribeToTopic": "storybook.alert.open",
+                            "clearOnChangeToTopic": "storybook.alert.close"
+                        }
+                    },
+                    {
+                        "id": "Flex Row Layout",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "marginTop": "55px",
+                                "display": "flex",
+                                "flexDirection": "row"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "^Open Error Alert",
+                                "module": "material_ui/button/IconButton",
+                                "attributes": {
+                                    "style": {
+                                        "color": "red"
+                                    },
+                                    "tooltip": "Open Alert Dialog",
+                                    "iconName": "ErrorTwoTone",
+                                    "publishToTopic": "storybook.alert.open",
+                                    "action": {
+                                        "severity": "error",
+                                        "title": "Error Severity",
+                                        "detail": "This is an <b><font color=\"red\">error</font></b> alert message."
+                                    }
+                                }
+                            },
+                            {
+                                "id": "^Open Warning Alert",
+                                "module": "material_ui/button/IconButton",
+                                "attributes": {
+                                    "style": {
+                                        "color": "#dddd00"
+                                    },
+                                    "tooltip": "Open Warning Alert",
+                                    "iconName": "WarningTwoTone",
+                                    "publishToTopic": "storybook.alert.open",
+                                    "action": {
+                                        "severity": "warning",
+                                        "title": "Warning Severity",
+                                        "detail": "This is a <b>warning</b> alert message."
+                                    }
+                                }
+                            },
+                            {
+                                "id": "^Open Info Alert",
+                                "module": "material_ui/button/IconButton",
+                                "attributes": {
+                                    "style": {
+                                        "color": "#a0a0ff"
+                                    },
+                                    "tooltip": "Open Info Alert",
+                                    "iconName": "InfoTwoTone",
+                                    "publishToTopic": "storybook.alert.open",
+                                    "action": {
+                                        "severity": "info",
+                                        "title": "Info Severity",
+                                        "detail": "This is an <b>info</b> alert message."
+                                    }
+                                }
+                            },
+                            {
+                                "id": "^Open Success Alert",
+                                "module": "material_ui/button/IconButton",
+                                "attributes": {
+                                    "style": {
+                                        "color": "green"
+                                    },
+                                    "tooltip": "Open Success Alert",
+                                    "iconName": "CheckCircleTwoTone",
+                                    "publishToTopic": "storybook.alert.open",
+                                    "action": {
+                                        "severity": "success",
+                                        "title": "Success Severity",
+                                        "detail": "This is a <b>success</b> alert message."
+                                    }
+                                }
+                            },
+                            {
+                                "id": "^Close Alert",
+                                "module": "material_ui/button/IconButton",
+                                "attributes": {
+                                    "style": {
+                                        "color": "grey"
+                                    },
+                                    "tooltip": "Close Alert",
+                                    "iconName": "CancelTwoTone",
+                                    "publishToTopic": "storybook.alert.close",
+                                    "action": "Close"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

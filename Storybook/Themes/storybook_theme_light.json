@@ -1,0 +1,565 @@
+{
+    "palette": {
+        "type": "light",
+        "primary": {
+            "main": "#3f51b5",
+            "contrastText": "#b0b0b0"
+        },
+        "secondary": {
+            "main": "#ef4fa6"
+        },
+        "contrastThreshold": 3,
+        "tonalOffset": 0.2
+    },
+    "typography": {
+        "body": {
+            "style": {
+                "margin": "0px",
+                "overflowX": "hidden",
+                "minWidth": "320px",
+                "minHeight": "100vh",
+                "fontSize": "14px",
+                "lineHeight": "1.4285em"
+            }
+        },
+        "h1": {
+            "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "1.4rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.5rem"
+            },
+            "fontWeight": 700
+        },
+        "h2": {
+            "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "1.3rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.4rem"
+            },
+            "fontWeight": 600
+        },
+        "h3": {
+            "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "1.0rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.2rem"
+            },
+            "fontWeight": 600
+        },
+        "h4": {
+            "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "0.9rem",
+            "textDecoration": "underline",
+            "@media (min-width:700px)": {
+                "fontSize": "1.15rem"
+            },
+            "fontWeight": 500
+        },
+        "h5": {
+            "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "0.9rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.15rem"
+            },
+            "fontWeight": 400
+        },
+        "h6": {
+            "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "0.8rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.05rem"
+            },
+            "fontWeight": 600,
+            "marginTop": "0.6rem",
+            "marginBottom": "0.4rem"
+        },
+        "body1": {
+            "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "0.9rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.10rem"
+            }
+        },
+        "body2": {
+            "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "0.9rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.05rem"
+            }
+        },
+        "pre": {
+            "background": "#f4f4f4",
+            "border": "1px solid #ddd",
+            "color": "#303030",
+            "pageBreakInside": "avoid",
+            "font": "normal normal 14px/16px \"Courier New\",Courier,Monospace",
+            "fontSize": "0.9rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.15rem"
+            },
+            "lineHeight": "1.0",
+            "marginBottom": "1.6em",
+            "maxWidth": "100%",
+            "padding": ".5em 1em",
+            "display": "block",
+            "wordWrap": "break-word",
+            "overflow": "auto",
+            "overflowX": "auto",
+            "whiteSpace": "pre-wrap",
+            "counterReset": "line"
+        },
+        "blockquote": {
+            "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "0.9rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.15rem"
+            }
+        },
+        "code": {
+            "background": "#f4f4f4",
+            "border": "0px",
+            "color": "#303030",
+            "pageBreakInside": "avoid",
+            "font": "normal normal 14px/16px \"Courier New\",Courier,Monospace",
+            "fontSize": "0.9rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.15rem"
+            },
+            "lineHeight": "1.0",
+            "marginBottom": "0.6em",
+            "maxWidth": "100%",
+            "wordWrap": "break-word",
+            "overflow": "auto",
+            "overflowX": "auto",
+            "whiteSpace": "pre-wrap",
+            "counterReset": "line"
+        },
+        "ul": {
+            "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "0.9rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.15rem",
+                "lineHeight": "1.8rem"
+            }
+        },
+        "ol": {
+            "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "0.9rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.15rem",
+                "lineHeight": "1.8rem"
+            }
+        },
+        "img": {
+            "maxWidth": "100%",
+            "height": "auto",
+            "width": "auto"
+        }
+    },
+    "mixins": {
+        "TreeView": {
+            "icons": [
+                {
+                    "type": "leaf",
+                    "matches": "(.txt)$",
+                    "iconName": "SubjectTwoTone",
+                    "style": {
+                        "color": "#df4454"
+                    }
+                },
+                {
+                    "type": "branch",
+                    "matches": "git:status:/Staged",
+                    "iconName": "FolderOpenTwoTone",
+                    "style": {
+                        "color": "#8bbc51"
+                    }
+                },
+                {
+                    "type": "branch",
+                    "matches": "git:status:/Changed",
+                    "iconName": "FolderOpenTwoTone",
+                    "style": {
+                        "color": "#feb743"
+                    }
+                },
+                {
+                    "type": "branch",
+                    "matches": "git:status:/",
+                    "iconName": "FolderOpenTwoTone",
+                    "style": {
+                        "color": "#aab2bf"
+                    }
+                },
+                {
+                    "type": "branch",
+                    "matches": "Database",
+                    "iconName": "FolderOpenTwoTone",
+                    "style": {
+                        "color": "#3eb0d4"
+                    }
+                },
+                {
+                    "type": "leaf",
+                    "matches": ".*Database.*(.sql|.js)$",
+                    "iconName": "/Icons/fixed/database-search.json",
+                    "style": {
+                        "color": "#3eb0d4"
+                    }
+                },
+                {
+                    "type": "branch",
+                    "matches": "Icons",
+                    "iconName": "FolderOpenTwoTone",
+                    "style": {
+                        "color": "#9878e3"
+                    }
+                },
+                {
+                    "type": "leaf",
+                    "matches": "(.svg)$",
+                    "iconName": "InsertPhotoTwoTone",
+                    "style": {
+                        "color": "#9878e3"
+                    }
+                },
+                {
+                    "type": "leaf",
+                    "matches": ".*Icons.*(.json)$",
+                    "iconName": "Wallpaper",
+                    "style": {
+                        "color": "#9878e3"
+                    }
+                },
+                {
+                    "type": "branch",
+                    "matches": "Images",
+                    "iconName": "FolderOpenTwoTone",
+                    "style": {
+                        "color": "#feb743"
+                    }
+                },
+                {
+                    "type": "leaf",
+                    "matches": ".*Images.*(.png|.jpg)$",
+                    "iconName": "ImageTwoTone",
+                    "style": {
+                        "color": "#feb743"
+                    }
+                },
+                {
+                    "type": "branch",
+                    "matches": "Pages",
+                    "iconName": "FolderOpenTwoTone",
+                    "style": {
+                        "color": "#498ada"
+                    }
+                },
+                {
+                    "type": "leaf",
+                    "matches": ".*Pages.*(.json)$",
+                    "iconName": "PagesTwoTone",
+                    "style": {
+                        "color": "#498ada"
+                    }
+                },
+                {
+                    "type": "branch",
+                    "matches": "Resources",
+                    "iconName": "FolderOpenTwoTone",
+                    "style": {
+                        "color": "#d472ab"
+                    }
+                },
+                {
+                    "type": "leaf",
+                    "matches": ".*Resources.*(.json|.xml|.xhtml)$",
+                    "iconName": "DescriptionTwoTone",
+                    "style": {
+                        "color": "#d472ab"
+                    }
+                },
+                {
+                    "type": "branch",
+                    "matches": "Themes",
+                    "iconName": "FolderOpenTwoTone",
+                    "style": {
+                        "color": "#8bbc51"
+                    }
+                },
+                {
+                    "type": "leaf",
+                    "matches": ".*Themes.*(.json)$",
+                    "iconName": "StyleTwoTone",
+                    "style": {
+                        "color": "#8bbc51"
+                    }
+                },
+                {
+                    "type": "branch",
+                    "matches": ".*/[a-z0-9_]+$",
+                    "iconName": "FolderOpenTwoTone",
+                    "style": {
+                        "color": "#df4454"
+                    }
+                },
+                {
+                    "type": "branch",
+                    "matches": ".*/MediaLibrary",
+                    "iconName": "FolderOpenTwoTone",
+                    "style": {
+                        "color": "#e699fe"
+                    }
+                },
+                {
+                    "type": "branch",
+                    "matches": ".*/Templates",
+                    "iconName": "FolderOpenTwoTone",
+                    "style": {
+                        "color": "#434a54"
+                    }
+                }
+            ],
+            "buttons" : [
+                {
+                    "subType": "changes",
+                    "buttonList" : [
+                        {
+                            "iconName": "CheckCircleTwoTone",
+                            "publishToTopic": "commit.dialog.open",
+                            "toolTip": "Commit Changes",
+                            "style": {
+                                "height": "24px",
+                                "color": "#8bbc51",
+                                "marginRight": "10px"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "subType": "gitChanged",
+                    "buttonList" : [
+                        {
+                            "iconName": "AddTwoTone",
+                            "publishToTopic": "git:add:/{path}",
+                            "toolTip": "Stage Change",
+                            "style": {
+                                "height": "24px",
+                                "color": "#8bbc51",
+                                "marginRight": "10px"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "subType": "gitChangedDeleted",
+                    "buttonList" : [
+                        {
+                            "iconName": "AddTwoTone",
+                            "publishToTopic": "git:rm:/{path}",
+                            "toolTip": "Stage Deletion",
+                            "style": {
+                                "height": "24px",
+                                "color": "#991010",
+                                "marginRight": "10px"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "subType": "gitStaged",
+                    "buttonList" : [
+                        {
+                            "iconName": "RemoveTwoTone",
+                            "publishToTopic": "git:unstage:/{path}",
+                            "toolTip": "Unstage Change",
+                            "style": {
+                                "height": "24px",
+                                "color": "#feb743",
+                                "marginRight": "10px"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "subType": "gitStagedDeleted",
+                    "buttonList" : [
+                        {
+                            "iconName": "RemoveTwoTone",
+                            "publishToTopic": "git:unstage:/{path}",
+                            "toolTip": "Unstage Deletion",
+                            "style": {
+                                "height": "24px",
+                                "color": "#feb743",
+                                "marginRight": "10px"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "TabBarPane": {
+            "modeBar": [
+                {
+                    "matches": ".*Pages.*(.json)$",
+                    "mode": [
+                        {
+                            "name": "EDIT",
+                            "editor": "PageEditor"
+                        },
+                        {
+                            "name": "JSON",
+                            "editor": "TextEditor"
+                        },
+                        {
+                            "name": "PREVIEW",
+                            "editor": "PagePreview"
+                        },
+                        {
+                            "name": "DIFF",
+                            "editor": "DiffEditor"
+                        }
+                    ]
+                },
+                {
+                    "matches": ".*Themes.*(.json)$",
+                    "mode": [
+                        {
+                            "name": "THEME",
+                            "editor": "TextEditor"
+                        },
+                        {
+                            "name": "JSON",
+                            "editor": "TextEditor"
+                        },
+                        {
+                            "name": "DIFF",
+                            "editor": "DiffEditor"
+                        }
+                    ]
+                },
+                {
+                    "matches": "(.svg)$",
+                    "mode": [
+                        {
+                            "name": "GRAPHIC",
+                            "editor": "material_ui/icon/CustomIcon"
+                        },
+                        {
+                            "name": "SVG",
+                            "editor": "TextEditor"
+                        }
+                    ]
+                },
+                {
+                    "matches": "(.png|jpg|jpeg)$",
+                    "mode": [
+                        {
+                            "name": "IMAGE",
+                            "editor": "TextEditor"
+                        }
+                    ]
+                },
+                {
+                    "matches": "(.txt)$",
+                    "mode": [
+                        {
+                            "name": "TEXT",
+                            "editor": "TextEditor"
+                        }
+                    ]
+                },
+                {
+                    "matches": "(.js)$",
+                    "mode": [
+                        {
+                            "name": "JS",
+                            "editor": "TextEditor"
+                        }
+                    ]
+                },
+                {
+                    "matches": "(.sql)$",
+                    "mode": [
+                        {
+                            "name": "SQL",
+                            "editor": "TextEditor"
+                        }
+                    ]
+                },
+                {
+                    "matches": "(.json)$",
+                    "mode": [
+                        {
+                            "name": "JSON",
+                            "editor": "TextEditor"
+                        }
+                    ]
+                },
+                {
+                    "matches": "(.xhtml)$",
+                    "mode": [
+                        {
+                            "name": "EDIT",
+                            "editor": "XhtmlEditor"
+                        },
+                        {
+                            "name": "XHTML",
+                            "editor": "TextEditor"
+                        },
+                        {
+                            "name": "PREVIEW",
+                            "editor": "XhtmlPreview"
+                        },
+                        {
+                            "name": "DIFF",
+                            "editor": "DiffEditor"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "overrides": {
+        "MenuButton": {
+            "root": {
+                "color": "white"
+            },
+            "button": {
+                "padding": "8px 8px 4px 8px"
+            },
+            "bar": {
+                "width": "100%",
+                "height": "5px",
+                "background": "red"
+            }
+        },
+        "Xhtml": {
+            "root": {
+                "paddingLeft": "5px",
+                "paddingRight": "5px",
+                "@media (min-width:700px)": {
+                    "paddingLeft": "12px",
+                    "paddingRight": "5px"
+                }
+            },
+            "parserError": {
+                "background": "#FFDAE9",
+                "padding": "20px"
+            }
+        },
+        "MUIDataTableHeadCell": {
+            "fixedHeader": {
+                "backgroundColor": "#1e692e",
+                "color": "#ddd",
+                "fontWeight": 800
+            }
+        },
+        "MUIDataTableSelectCell": {
+            "headerCell": {
+                "backgroundColor": "#1e692e",
+                "paddingLeft": "16px"
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+[
+    {"value": "standard", "label": "Standard"},
+    {"value": "express", "label": "Express"},
+    {"value": "premiun", "label": "Premium"},
+    {"value": "collect", "label": "Collect"}
+]

@@ -1,0 +1,51 @@
+{
+    "pageDescrip": "Typography",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "text": "material_ui/text/Xhtml",
+                            "gutterBottom": true
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>Displays XHTML content.\n<table cellpadding=\"7\">\n<tr><td>subscribeToTopic</td><td>The topic to obtain the xhtml from. Normally a file in <code>/Resources</code> with extension <code>.xhtml</code>.</td></tr>\n<tr><td>text</td><td>The xhtml, if not subscribing to a topic.</td></tr>\n<tr><td>subscribeToIndexTopic [optional]</td><td>Used to get the current user selection from a  <code>material_ui/text/XhtmlIndex</code> component.</td></tr>\n<tr><td>scrolling [optional]</td><td>Either <code>auto</code> or <code>smooth</code>. Controls the scroll behavior when the user selects a section using a <code>XhtmlIndex</code> component.</td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "Xhtml - subscribe",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "subscribeToTopic": "/Resources/content.xhtml"
+                        }
+                    },
+                    {
+                        "id": "Xhtml - text",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<h3>Content loaded from the text attribute</h3>\n<p>For large sections of XHTML, it's easier to subscribe to a resource file containing the content and edit it using the WYSIWYG editor. For small sections of XHTML or when using markup that's not supported by the WYSIWYG editor, using the text attribute might be more convenient. The text attribute supports all the WYSIWYG editor tags plus &lt;table&gt;, &lt;font&gt; and &lt;hr&gt;. </p>\n<p><table border=\"1\" cellpadding=\"5\" bgcolor=\"pink\">\n<tr><td>Example Table</td><td>Note that tables must be within a paragraph or other set of tags. Tables can't be placed at the top level.</td></tr>\n<tr><td>Row 2 Col 1</td><td>Row 2 Col 2</td></tr>\n</table></p>\n<p><font style=\"color: green\">Example of text styled using an inline &lt;font&gt; tag.</font></p>\n<p>\nHorizontal Rule tags must be within a paragraph or other set of tags. Just like tables, &lt;hr&gt; tags can't be placed at the top level.\n<hr />\n</p>\n<p>\nExample of an image. The <b>src</b> attribute contains the image topic (not a URL).\n</p>\n<img src=\"/Images/elephant.apng\" width=\"180px\" />\n"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,334 @@
+<h1>Brill Middleware</h1>
+<p>Brill Middleware is the Web Sockets equivalent of REST but uses a &ldquo;low code&rdquo; approach. Unlike REST, out of the box with Brill Middleware, the server can "push" content to the clients. Brill Middleware supports two way communication of JSON messages between client UI components and the server. The Middleware uses Web Sockets, rather than HTTP. A Message Broker runs on the Client and supports a &ldquo;publish-subscribe&rdquo; messaging model, as well as "request-response" messaging.</p>
+<p>UI components can subscribe to a topic and wait for someone else to publish content to the topic. This de-couples consumers of content from the publishers of content. On initial subscription or when a topic is updated, the component is notified of the content. Topics can be local to the client or span between the client and server. When content is published to a server topic, all clients that have a subscription are notified and each client Message Broker will notify each component that has a subscription.</p>
+<p>Unlike REST, with Brill Middleware there&rsquo;s software running on both the client and the server. A component can make Subscribe and Publish requests to the Message Broker running on the client. A component provides a callback that is called when new content arrives. This is a much higher level interface, compared to a HTTP client library such as Axios.</p>
+<p>Other differences from REST are that the TCP/IP socket connection is held open for the duration of the session rather than opened and closed for each request. This reduces latency, as a socket connection doesn&rsquo;t need to be re-established for each message. Both the client and server know immediately when a connection is lost and can take appropriate action. The message content is pure JSON and there are no HTTP headers and no HTTP concepts like GET, PUT or POST. It&rsquo;s just &ldquo;publish&rdquo; and &ldquo;subscribe&rdquo; or "request and response".</p>
+<p>The sending of messages is decoupled from the receiving of messages. A subscribe request could result in a publish half a second later. Five minutes later another publish could occur with updated content. To support dynamic updating using REST requires some form of polling, which could potentially drain the battery on a mobile device. With Brill Middleware, there&rsquo;s no polling but the server is still able to push new content to the clients.</p>
+<p>Brill Middleware supports passing of data between components as well as between components and the server. Brill Middleware can be used instead of libraries like Redux. A &ldquo;publish-subscribe&rdquo; model is much simpler than using Redux and doesn&rsquo;t require code to be written for Actions and Reducers. Brill Middleware provides a &ldquo;low code&rdquo; solution. An extra field can be added to a database table and the data made available to a UI component without requiring any code to be modified.</p>
+<p>Brill Middleware supports request/response messaging, as well as publish/subscribe. Request/response messaging is used for authentication and use cases where a message needs to go to a specific endpoint and a single definite response is required.</p>
+<h2>Components</h2>
+<p>A component is a React or other component that uses the Message Broker to communicate with other components and the server. A component will often subscribe to one topic and publish to another.</p>
+<h3>Example Component</h3>
+<p>In this example we are going to cover a component that displays the live results of a football match. At the start of the match the results will be displayed as a text string. For example:</p>
+<blockquote>Manchester United 0 : Chelsea 0</blockquote>
+<p>When a goal is scored, the new results will be published and the display updated as:</p>
+<blockquote>Manchester United 1 : Chelsea 0</blockquote>
+<p>Or if your a Chelsea fan:</p>
+<blockquote>Manchester United 1 : Chelsea 2</blockquote>
+<p>This is the component for displaying the results using React and Typescript :</p>
+<pre>import React, {component} from "react"
+import { MB, Token } from "lib/MessageBroker/MB"
+import { ErrorMsg } from "lib/MessageBroker/ErrorMsg"
+
+interface Props {
+    subscribeTotopic: string
+}
+
+interface State {
+    text: string
+}
+
+export class Text extends Component&lt;Props, State&gt; {
+    token: Token
+
+    constructor(props: Props) {
+        super(props)
+        this.state = {text: ""}  
+    }
+
+    componentDidMount() {
+        this.token = MB.subscribe(
+            this.props.subscribeTotopic, 
+            this.dataLoadedCallback.bind(this), 
+            this.errorCallback.bind(this))
+    } 
+   
+    dataLoadedCallback(topic: string, text: string) {
+        this.setState({text: text})
+    }
+
+    errorCallback(topic: string, error: ErrorMsg) {
+        throw new Error(error.detail)
+    }
+
+    componentWillUnmount() {
+       MB.unsubscribe(this.token)
+    }  
+
+    render() {
+        return &lt;p&gt;{this.state.text}&lt;/p&gt;
+    } 
+}</pre>
+<p>The topic is passed into the component as a prop. When the component mounts, it subscribes to the topic and provides a callback method. The Message Broker sends a subscribe event message to the server. The server gets the content for the topic and sends it back to the Message Broker using a publish event message. The Message Broker calls the callback method and the text in State is updated and in turn React calls the render method to display the new content.</p>
+<p>If someone publishes a new score to the topic, the callback method gets called a second time and the display gets updated with the new score.</p>
+<p>This is how the component might be used in the render method of another component:</p>
+<pre>render() {
+        return &lt;Text subscribeTotopic="json:/football_scores/matchScore.json" /&gt;
+    }</pre>
+<p>The topic specifies the URI on the server of JSON containing the score.</p>
+<p>How do we update the score? We could have someone watching the live match and provide a web page for them to enter the new score. The score could be updated by calling the publish method of the Message Broker:</p>
+<pre>publishNewScore(topic: string, newScore: string) {
+        MB.publish(topic, newScore)
+    }</pre>
+<p>This will result in the server updating the score text &nbsp;in <code>/football_scores/matchScore.json</code> and publishing the new content to every client that has a subscription.</p>
+<p>Alternatively the server could publish a new score as a result of receiving data via an external feed. From the point of view of our Text component, it is totally unaware of who the publisher is and where the content comes from.</p>
+<p>The good thing with our Text component is that it's fairly generic. We could use it for displaying a share price, the latest news or the temperature say.</p>
+<h2>Messages</h2>
+<p>Messages are sent between the client Message Broker and the server using JSON.</p>
+<p>This is an example of a message the client might send the server to subscribe to a topic:</p>
+<pre>{
+  "event": "subscribe",
+  "topic": "json:/news/latestStory.json"
+}</pre>
+<p>Should the topic be available, the server might send the client a message of:</p>
+<pre>{
+  "event": "publish",
+  "topic": "json:/news/latestStory.json",
+  "content": {
+    "subject": "Latest News Story",
+    "story": "Bitcoin has reached a new record high.",
+  }
+}</pre>
+<p>When the Latest Story is updated, the server will send all the subscribed clients a message with the new content. When the client no longer needs to display the latest news story it can unsubscribe:</p>
+<pre>{
+  "event": "unsubscribe",
+  "topic": "json:/news/latestStory.json"
+}</pre>
+<p>The messages are simple and can be sent from the client to the server or server to client. There are only four field values that are specified in a message. These are event, topic, content and filter.</p>
+<h3>Event</h3>
+<p>The Event field specifies one of the actions of &ldquo;subscribe&rdquo;, &ldquo;publish&rdquo;, &ldquo;unsubscribe&rdquo; or &ldquo;error&rdquo;.</p>
+<blockquote>subscribe - Sent by the client to the server to subscribe to a topic.</blockquote>
+<blockquote>publish - The client can publish content to the server or the server can publish content to the client.</blockquote>
+<blockquote>unsubscribe - Sent by the client to the server to unsubscribe from a topic.</blockquote>
+<blockquote>error - Sent by the server or client to notify the other party of an error.</blockquote>
+<p>For Request / Response messaging there's also:</p>
+<blockquote>request - Sent by the client along with any content.</blockquote>
+<blockquote>response - A response from the server.</blockquote>
+<h3>Topic</h3>
+<p>The Topic field is effectively the resource or subject that the message is about. The topic is a URI. The following are examples of topics:</p>
+<blockquote>json:/my_app/Pages/home.json</blockquote>
+<blockquote>file:/my_app/Resources/title.txt</blockquote>
+<blockquote>query:/my_app/Database/employeeQuery.sql</blockquote>
+<p>Topics can also be local to the client app. For example:</p>
+<blockquote>app:/user.first_name</blockquote>
+<blockquote>app:/user.dob</blockquote>
+<blockquote><br/></blockquote>
+<h3>Content</h3>
+<p>The Content field holds the topic content as JSON and is used when publishing. Content can be an Object, String, Number, Boolean, Array or Base64 encoded data.</p>
+<p>This example shows publishing the results of a database query:</p>
+<pre>{
+  "event": "publish",
+  "topic": "query:/brill_cms/database/employee/readPage.sql",
+  "content": [
+    {
+      "employee_id": 2,
+      "first_name": "Albert",
+      "last_name": "Williams",
+      "department": "Pens"
+    },
+    {
+      "employee_id": 6,
+      "first_name": "Ali",
+      "last_name": "Trotter",
+      "department": "Food"
+    }
+  ]
+}</pre>
+<p>This example shows publishing of binary data using Base64 encoding:</p>
+<pre>{
+  "event": "publish",
+  "topic": "file:/hr_app/database/employee/readPage.sql",
+  "content": {
+    "base64": "LyoqCiogQ29tbWVudAoqLwpzZWxlY3QgKiBmcm9tIGVtcGxveWVlIG9yZGVyIGJ5IDo6c29ydENvbCA6OnNvcnREaXJlY3Rpb24gbGltaXQgOm9mZnNldCwgOnJvd19jb3VudA=="
+  }
+}</pre>
+<h3>Filter</h3>
+<p>For a topic that contains a large amount of data, a filter can be used to specify a sub-set of data that the subscriber is interested in. A filter can also be used to supply SQL query string parameters. For example:</p>
+<pre>{
+  "event": "subscribe",
+  "app": "brill_cms",
+  "topic": "query:/brill_cms/database/employee/readPage.sql",
+  "filter": {
+    "sortCol": "first_name",
+    "sortDirection": "asc",
+    "offset": 0,
+    "row_count": 2
+  }
+}</pre>
+<h2>Topic names</h2>
+<p>The server uses topic names that are fully qualified URIs. For example:</p>
+<blockquote><code>json:/football_app/football_scores.json</code></blockquote>
+<p>With fully qualified URIs, the first part of the path is normally the application name. In this case <code>football_app</code>.</p>
+<p>On the client, the same file can be referred to using the partial URI of:</p>
+<blockquote><code>/football_scores.json</code></blockquote>
+<p>Before the topic name is sent to the server, the Message Broker on the client will add <code>json:/</code> and the application name. So the partial URI of <code>/football_scores.json</code> would get mapped to <code>json:/football_app/football_scores.json</code>, assuming that the current default app is <code>football_app</code>.</p>
+<p>When dealing with partial URIs, the Message Broker recognises various file extensions such as json, jsonc, js, sql, png and uses the appropriate schema. The default schema is <code>file:</code>.</p>
+<p>The advantage of using partial URIs is that components can be copied from one application to another, without always having to update the app name.</p>
+<p>Note that with partial URIs, if the URI starts with a slash ('/') character, its sent to the server. If it doesn't start with a slash, it's an application local topic and doesn't go to the server. There's a significant difference between "/<code>football_scores.json</code>" and "<code>football_scores.json". </code>In the second instance, it will get resolved to "<code>app:football_scores.json"</code>, which is probably not what you want. So, please don't forget the leading slash on partial URIs, unless of course you want the topic to be local to the app.</p>
+<h2>URI Schema</h2>
+<p>This section provides details on each of the supported URI scheme:</p>
+<h3>file:</h3>
+<p>On receiving a file subscription, the server will get the file and publish it to the client. When a client publishes a new version of a file, all the other clients with a subscription are notified. Files can exist just as normal file system files or they can be held in a Git repository. Git provides a source control system and audit history. Git can be used to share files across multiple servers. Files are returned as Base 64 encoded content.</p>
+<p>Example: <code>file:/brill_cms/Pages/home.json</code></p>
+<h3>file: (Path listing)</h3>
+<p>A path or directory can be specified. This will result in the publishing of the path tree. This is useful for the application to find out what file exist. An object is published containing the directory tree. A subscribe request for the topic &nbsp;<code>file:/storybook/Pages/components/</code> would result in something like:</p>
+<pre>{
+    "event": "publish",
+    "topic": "file:/brill_storybook/Pages/components/",
+    "content": {
+      "id": "file:/brill_storybook/Pages/components",
+      "name": "components",
+      "type": "branch",
+      "children": [
+        {
+          "id": "json:/brill_storybook/Pages/components/custom_icon.json",
+          "name": "custom_icon.json",
+          "type": "leaf"
+        },
+        {
+          "id": "json:/brill_storybook/Pages/components/editor_json.json",
+          "name": "editor_json.json",
+          "type": "leaf"
+        }
+        ... 
+    ]
+  }
+}</pre>
+<h3><br/></h3>
+<h3>json:</h3>
+<p>This is the same as <strong>file:</strong> but the content is returned as JSON. The file extension must be <code>.json </code>or<code> .jsonc</code> for json with comments. Using <strong>json:</strong> is more convenient for an application than <strong>file:</strong> when the content is JSON. The JSON content is immediately usable and doesn't have to be Base 64 decoded. With <code>.jsonc</code> files, the comments are stripped.</p>
+<p>Example: <code>json:/translation_app/Resources/dictionary.json</code></p>
+<h3>image:</h3>
+<p>Supports files extensions of <code>.png, .apng, .jpg, .jpeg, gif</code> and <code>.bmp</code>. The image content is returned in as a &nbsp;<a href="https://en.wikipedia.org/wiki/Data_URI_scheme" target="_blank">data URI scheme</a> string.</p>
+<p>Example: <code>image:/photo_app/photo1.png</code></p>
+<h3>query:</h3>
+<p>Executes a SQL query on the database. A filter can be used to provide query parameters and limit the number of rows returned. The content is returned as JSON. A SQL Query file must have an extension of <code>.sql</code></p>
+<p>Query parameters can be specified in the SQL using a filter field name preceded by a colon. e.g. &nbsp;<code>:row_count</code> This results in the insertion of the parameter using a Pre-Prepared Statement. This is safe and immune from SQL injection attacks.</p>
+<p>Pre-Prepared statements restrict the locations where query parameters can be placed. You can&rsquo;t specify a column name using a query parameter. To get around this, place a double colon in front of the filter field name. This will result in substitution before the Pre-Prepared Statement is created. To prevent SQL injection attacks, the query parameter value is checked to make sure it doesn&rsquo;t contain any spaces or special characters.</p>
+<p>A single colon query parameter should be used wherever possible and the double colon only used for column names and &ldquo;order by&rdquo; values.</p>
+<p>Example: <code>query:/hr/Database/employeeQuery.json</code></p>
+<p>employeeQuery.json</p>
+<pre>/* Gets a list of employees */
+select * from employee order by ::sortCol ::sortDirection limit :offset, :row_count</pre>
+<h3>javascript:</h3>
+<p>Executes JavaScript on the server in a sandbox. The result is published as JSON. The file extension must be <code>.js</code> . A component can specify parameters to be passed into the JavaScript using a filter. Normally a single subscribe request results in a single publish. However the component can change the filter, in which case the JavaScript is re-run and the callback called again.</p>
+<p>If the JavaScript is updated as a result of a publish, the JavaScript is re-run and the components callback called again. In some instances this might not be desirable, in which case the component needs to unsubscribe from the topic on the first call of the callback.</p>
+<p>The JavaScript runs in a tightly restricted sandbox on the server. The sandbox can be configured to allow the JavaScript to access Java methods. A Java method can be provided to allow access to the database or to do just about anything that can be done on the server.</p>
+<p>JavaScript is used mainly for handling complex database queries and as a means of accessing external systems via a Java method supplied to the sandbox.</p>
+<p>Example: <code>javascript:/trading_app/ExternalSystems/getTradeData.js</code></p>
+<h3>auth:</h3>
+<p>Used for authentication. The client can send a request to the server and specify the authentication credentials. The server will respond with a response saying whether the user is authenticated. Generally request/response messaging is preferred for authentication, rather than subscribe/publish messaging.</p>
+<p>The Brill Server comes with in-built authentication functionality to support logging in to the CMS. This includes hashing of passwords on the client, ECDH key exchange for creating a Shared Secret and re-connection functionality for if the WebSocket connection goes down temporarily. You can use this for your own applications or develop your own organization specific authentication functionality.</p>
+<p>Example: <code>auth:/trading_app/authenticate</code></p>
+<h3>http: / https:</h3>
+<p>The server makes a HTTP/HTTPS connection to the URI/URL. When there&rsquo;s a filter specified, a HTTP POST is performed, or a HTTP GET when there&rsquo;s no filter. With a POST, the content is supplied as &ldquo;application/json&rdquo; data. Ideally the REST endpoint will return &ldquo;application/json&rdquo; content. Content other than &ldquo;application/json&rdquo; will be returned to the application Base64 encoded.</p>
+<p>The server replies to each client subscribe request with a single publish response. If the response status code is not HTTP_OK, an error event will be sent to the client.</p>
+<p>Example: <code>http:/localhost:7000/products/food</code></p>
+<h3>app:</h3>
+<p>An <strong>app:</strong> topic is local to the client app and no messages are sent to the server. As a convention, slash ( &ldquo;/&rdquo; ) characters are not used in <strong>app</strong> topic names. Instead dot (&ldquo;.&rdquo;) characters are used. This makes <strong>app</strong> topics easily distinguishable from other server related topics. Also <strong>app</strong> topics are normally specified using a partial URI.</p>
+<p>Example: <code>claim.form#amount</code>.</p>
+<p><strong>App</strong> topics are used by components to pass data between themselves. In particular, forms make use of <strong>app</strong> topics to pass values to a Submit Button. In our example the submit button would subscribe to <code>claim.form</code>. Each field and input component publishes its content to <code>claim.form#&lt;field_name&gt;</code>. When the user clicks on the Submit button, local validation of each field is performed and the submit button receives an object containing all the fields. The Submit button can then send the field contents to the server.</p>
+<p>The use of a # in topic names is restricted to <strong>app: </strong>topics and is mainly used for form handling. In the example, <code>claim.form </code>is a topic in its own right, that contains an object. With <code>claim.form#amount</code>, it's also a topic in its own right but when you publish to <code>claim.form#amount,</code> the <code>amount</code> field in the <code>claim.form</code> object is also updated. A submit button can access the complete form data by using <code>claim.form.</code></p>
+<h3>git:</h3>
+<p>Various git repository operations are support. The user must have the <code>git_read</code> and <code>git_write</code> permissions.</p>
+<p>Examples:</p>
+<p><code>git:commit:/my_app/Pages/home.json</code></p>
+<p><code>git:delete:/my_app/Pages/home_old.json</code></p>
+<p><code>git:stash:/</code></p>
+<h3>Other scheme</h3>
+<p>Other scheme such as mailto:, ftp:, fax: or bitcoin:. can be used. Obviously some server code is required to support any new scheme. The developer can also use their own scheme names.</p>
+<h2>Subscribe / Unsubscribe</h2>
+<p>The client Message Broker maintains a list of subscriptions and component callback methods and the server also maintains a list of subscriptions. When a topic is updated, interested clients are sent publish event messages.</p>
+<p>It's very important that components unsubscribe from topics they are no longer interested. Otherwise unnecessary publish event messages are sent from the server to the client and the Message Broker will attempt to call callback methods that are no longer valid.</p>
+<p>In some instances a component might not want the display to be updated as a result of a second publish of the topic. To stop further updates, the data loaded callback should unsubscribe from the topic.</p>
+<h2>Request / Response Messaging</h2>
+<p>In some use cases, a request / response messaging model is more intuitive than publish / subscribe. For example, with authentication, the client wants to send the user credentials to the server and get a response back saying whether the user is authenticated or not. Unlike with publish / subscribe, there's a direct coupling between the request and response.</p>
+<p>This is an example of a login request:</p>
+<pre>{"event":"request","topic":"auth:/brill_cms/authenticate","content":{"username":"tony","password":"792b9122317e9f2b6e2e9da7e349f5b37a3fe4fba6cf28f3789e332468a15b45"}}</pre>
+<p>The server will respond with either an error or a successful login response. For example:</p>
+<pre>{"event":"response","topic":"auth:/brill_cms/authenticate","content":{"username":"tony","permissions":"git_read,git_write,file_read,file_write,cms_user","changePassword":"N","sessionId":"lnqt4e3j"}}</pre>
+<p>Instead of calling the MB.subscribe() method, the application calls MB.sendRequest() for request / response messaging. This is an example of a call to exchange public keys and establish a Shared Secret:</p>
+<pre>MB.sendRequest("auth:/brill_cms/server_public_key", this.publicKeyCallback.bind(this), this.errorCallback.bind(this),
+               {clientPublicKey: clientPublicKey})</pre>
+<p>The topic identifies the resource in a similar way to the URI when using REST.</p>
+<p>The request / response messaging is also useful for quickly migrating over existing REST interfaces.</p>
+<h2>Web Socket sessions and Clusters</h2>
+<p>With REST, best practice is for the server not to hold any session data. This means that requests can be directed to any node in a cluster. Not using session data does however make it more difficult to track authenticated users. A token such as a Java Web Token (JWT) needs to be issued on authentication and included with every request. The server has to trust the client not to modify the JWT or pass it on to someone else. But the server can&rsquo;t trust the client, so then a list of valid JWTs has to be maintained and replicated across the nodes in the cluster. All very complicated and possibly more complicated that just storing the username in the session and persisting the sessions for use in case of a failover.</p>
+<p>The Brill Middleware supports seamless failover from a failed node to one of the other nodes in the cluster, without using JWTs or client tokens. It does this by maintaining a minimal amount of session data. The session data consists of the username, the current subscriptions and a Shared Secret. The session data is persisted, so that if one node goes down, the session data can be restored by one of the other nodes in the cluster.</p>
+<p>With Web Sockets, there&rsquo;s a single connection that remains open between the client and server for the duration of the session. The load can be shared across a cluster but each client only talks to one node. Both the client and server are immediately aware of when the Web Sockets connection is closed, unlike with HTTP and REST. The client Message Broker attempts to re-connect immediately after a connection is closed and would re-connect to either the same node or another node in the cluster. On re-connection, the session data is restored and the user can continue as before.</p>
+<p>To implement a cluster, a load balancer such as HAProxy is required to front the cluster. The load balancer needs to be configured for sticky sessions, so that all requests from a particular client get directed to the same node.</p>
+<p>Some applications require access to topics that are shared across the nodes in the cluster. For example, a wipe board app or Instant Messaging. This can be achieved by using the database as the common area for exchange of data. When a database operation is performed by running JavaScript, the JavaScript can return a topic for which all the subscribes are to be notified of the update. A publish message is broadcast across the cluster. Other nodes in the cluster get the message, run the JavaScript and notify any subscribers of the update.</p>
+<p>Normally a single development server is used for editing content and the content is then merged into the Development branch, which is then merged into the Master branch. Each production server has its own workspace set to the Master branch and updates the workspace from the repository when instructed to do so. Should CMS editing be required on a cluster, the CMS user workspaces need to reside on a shared drive that's accessible to each of the nodes.</p>
+<h2>Security</h2>
+<p>The CMS authentication framework can be used to secure access to your applications or you can develop your own authentication event handlers. Access to particular pages can be controlled by specifying a permission that's required to access the page. For example:</p>
+<pre>{
+"pageDescrip": "Storybook page",
+"permission": "cms_user",
+...
+}</pre>
+<p>This restricts access to only users that have the <code>cms_user</code> permission. If you develop event methods for accessing external backend systems, you might want to create a new user permission and only give the permission to users that require access.</p>
+<p>Access to some of the server event handlers is restricted using permissions. For example, to perform a write operation to the git repository, the user must have the <code>git_write</code> permission.</p>
+<p>Particular care is required with access to database tables. You may need to include the username in SQL queries to restrict access and also check the users permissions. With server side executed JavaScript, the JavaScript needs to check the users permissions as it's first action.</p>
+<p>A production server should always use TLS/HTTPS and have a valid certificate. The CORS &lt;code&gt;allowedOrigins&lt;/code&gt; config parameter needs to be set so that connections can only be made from pages that originate from the server.</p>
+<p>Passwords should be hashed on the client and never passed to the server in the clear. Sensitive data can be encrypted using an ECDH key exchange, creation of a Shared Secret and encryption / decryption using AES and the Shared Secret.</p>
+<p>Although the communication between the client and server is encrypted using TLS, messages might be logged on the server. A rouge administrator might be able to access the server logs and view any WebSocket messages that are logged. Hence why passwords should be hashed and encrypted and why sensitive data should also be encrypted. Although the rouge administrator might have access to all the WebSocket messages, they won't have the client or server private keys used in the ECDH key exchange and therefore won't be able to decrypt the data.</p>
+<p>Care is required with the text of error messages not to give away too much information on the internal workings of the server or the technology. Stack traces shouldn't be included in error messages sent to the client.</p>
+<h2>Web Socket Controllers</h2>
+<p>Brill Middleware includes a set of custom Spring Boot annotations to support writing Web Socket Event Controllers. These are similar to REST Controllers but instead of using @RestController they use the annotation @WebSocketController. Endpoints for messages are annotated with @Event.</p>
+<p>This is an example of handling an authentication message:</p>
+<pre>@WebSocketController
+public class AuthenticationController {
+  @Event(value = "request", topicMatches = "auth:/.*/authenticate")
+  public void authenticateUser(@Session WebSocketSession session, 
+                               @Message JsonObject message) {
+     topic = message.getString("topic");
+     JsonObject credentials = message.getJsonObject("content");
+     if (!validCredntials(credentials)) {
+         wsService.sendErrorToClient(session, topic, 
+                     "Authentication failed.", "Invalid credentials.");
+        return;
+     }
+     ...
+     wsService.setUsername(session, username);
+     ...
+     wsService.sendMessageToClient(session, "response", topic, content);
+  }
+}</pre>
+<p>Note that unlike with a REST controller, the method doesn&rsquo;t return a response. It calls a method to send a message to the client and can send multiple messages or indeed none at all.</p>
+<h3>Annotations</h3>
+<h4>@WebSocketController</h4>
+<p>This annotates the class as a Web Socket Controller. This annotation is essential and without it none of the event methods will get called.</p>
+<h4>@Event</h4>
+<p>This annotates a method specifying the event and topics for which the method will be called. In the example above the event is <code>"request"</code> and the topic has to match the regular expression <code>"auth:/.*/authenticate"</code> for the method to be called.</p>
+<p>The underlying management code checks that a single event method is called for each message received. An error is logged if no event handler matches or more than one event handler matches.</p>
+<h4>@Session</h4>
+<p>This is a parameter annotation that provides access to the WebSocket session for sending messages and saving data to or reading data from the session data.</p>
+<h4>@Message</h4>
+<p>This is a parameter annotation that provides access to the JSON object containing the message.</p>
+<h2>Low Code Approach</h2>
+<p>Brill Middleware takes a &ldquo;low code&rdquo; approach and seeks to minimise the amount of code the application developer has to write.</p>
+<p>With REST, typically a separate endpoint is developed for each database operation. Hibernate or some other Object Relational Mapping library is used to persist Java objects. A fair amount code is required. When a new field is added to a database table, changes have to be made in a number of the places and a new release rolled out.</p>
+<p>With Brill Middleware, everything is handled as JSON. There&rsquo;s no conversion of database results to Java Objects. No persisting Java Objects to the database. All objects are held as JSON. This means we can write a database query that gets results and these are returned to the client as JSON with no Java Objects involved. We can add a new table to the database, add a new SQL query and make the new table available to the client application without any code changes, releases or restart of the servers.</p>
+<p>On the client side, the Message Broker provides an easy to use interface for UI components to subscribe, publish and unsubscribe. Objects are provided as JavaScript objects.</p>
+<h2>Reference Implementation</h2>
+<p>The reference implementation was developed using React and Typescript. The server is a Java Spring Boot application running on Tomcat. The specification of the Middleware is generic and the Message Broker can be used with React, Angular or any other JavaScript framework. The server could be implemented using NodeJS or any server that supports WebSockets.</p>
+<h2>WebSocket King</h2>
+<p>The server functionality can be tested independently of the client application using a Chrome extension called WebSocket King.</p>
+<figure><img src="/Images/webSocketKingScreenshot.png"/></figure>
+<p>WebSocket King only supports normal WebSockets, not SOCK.JS, so you need to connect to the <code>brill_ws</code> endpoint. Performing operations that require a logged in user can be challenging. This requires writing a standalone program that helps provide the correct values for a login.</p>
+<p>There are other Web Sockets test tools available such as Postwoman, the WebSocket equivalent of Postman. The advantage of WebSocket King is that it's fairly simple and easy to use.</p>
+<h2>WebSocket fallback mode</h2>
+<p>All modern web browsers support WebSockets. The first support was first added in 2011, so WebSockets has been around for a long time and is widely supported. There is however a fallback mode that uses HTTP and long polling, just in case. This is used when a web browser doesn&rsquo;t support WebSockets or where a firewall or network blocks WebSockets.</p>
+<p>The server provides two interface end points called <code>brill_ws</code> and <code>brill_socksjs</code>. By default, the client application will use <code>brill_socksjs </code>and the SOCKS protocol. The &nbsp;protocol automatically handles downgrading to<em> xhr-streaming</em> or <em>xhr-polling</em> when WebSockets is not available. The brill_ws endpoint is useful for testing, as WebSocket King doesn't support SOCKS.</p>
+<h2>Summary</h2>
+<ul>
+  <li>Publish Subscribe model, which de-copules content producers and consumers.</li>
+  <li>Request Response model supported for close coupling and migrating existing REST APIs.</li>
+  <li>Pushing of data by the server is supported as standard.</li>
+  <li>Higher performance and lower latency, compared to REST.</li>
+  <li>JSON throughout.</li>
+  <li>Topic specified as a URI.</li>
+  <li>Supports local communication between UI components.</li>
+  <li>Supports communication between UI components and the server.</li>
+  <li>&ldquo;Low code&rdquo; approach.</li>
+</ul>

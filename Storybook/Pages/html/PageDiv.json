@@ -1,0 +1,49 @@
+{
+    "pageDescrip": "Div Component",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "PageDiv",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "minHeight": "100vh",
+                                "background": "lightblue",
+                                "padding": "20px"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Module",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "h3",
+                                    "gutterBottom": true,
+                                    "text": "html/Div - Top Level Page Div"
+                                }
+                            },
+                            {
+                                "id": "Description",
+                                "module": "material_ui/text/Xhtml",
+                                "attributes": {
+                                    "text": "<p>\nIt's useful to have a top level div just below the theme provider. This can be used to set the minimum page height to the screen height (100vh), so that the page extends to the bottom of the screen when there's not enough content to reach the bottom. A background color can be set and some padding added.\n</p>\n<p>The PageDiv component of this page has the style attribute set to:\n<code>\n{\n \"minHeight\": \"100vh\",\n \"background\": \"lightblue\",\n \"padding\": \"20px\"\n}\n</code>\n</p>"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

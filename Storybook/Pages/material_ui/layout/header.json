@@ -1,0 +1,40 @@
+{
+    "pageDescrip": "Header",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "HeaderBox",
+                "module": "html/Div",
+                "attributes": {
+                    "style": {
+                        "width": "100%",
+                        "height": "41px",
+                        "background": "darkblue",
+                        "border": "20px",
+                        "display": "flex",
+                        "flexDirection": "row"
+                    }
+                },
+                "children": [
+                    {
+                        "id": "panel1",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h1",
+                            "style": {
+                                "color": "#909090",
+                                "paddingLeft": "12px",
+                                "paddingRight": "40px",
+                                "whiteSpace": "nowrap"
+                            },
+                            "text": "Embedded Header"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,411 @@
+<h2>Brill Developers Guide</h2>
+<p>This guide is designed to help Developers understand the architecture of the Brill Framework and infrastructure. In particular it&rsquo;s for Developers that need to write new UI Components and new Server Event Handlers.</p>
+<p>The client code running on a web browser uses React and is written in Typescript. Communication with the server is via WebSockets. With WebSockets, a TCP/IP connection remains open for the duration of the session. A Message Broker (MB) on the client handles all communication with the server. A &ldquo;publish subscribe&rdquo; model is used. All messages are JSON messages. See the Brill Middleware documentation for more details.</p>
+<p>The server is written in Java and is a Spring Boot application running on Tomcat. The server has Event Handlers that handle each of the different message types. The server uses WebSockets rather than REST. The server provides the client with access to git repository files, the database and the ability to run JavaScript on the server.</p>
+<p>The Content Management System ( CMS ) is used to create application pages and resources. Application pages are encoded using JSON. The client retrieves pages from the server and renders them.</p>
+<figure><img src="/Images/BrillFramework.png"/></figure>
+<h2>Development Environment</h2>
+<h3>Workstation</h3>
+<p>Any high spec'ed machine can be used for setting up a development environment. The OS can be MacOS, Microsoft Windows or Linux. It&rsquo;s recommended that the machine has a fast processor, SSD, at least 8GB of memory and a large monitor or several monitors.</p>
+<h3>Git</h3>
+<p>The source code is held in a git repository on BitBucket. To check if you have git installed, just <code>git</code> from the command line. If you don&rsquo;t already have git installed, follow the instructions at:</p>
+<p><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a></p>
+<h3>Node</h3>
+<p>To find out if Node is already installed, from the command line enter:</p>
+<p><code>node --version</code></p>
+<p>The latest version can be downloaded from:</p>
+<p><a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
+<p>Node is only used for development, it&rsquo;s not used in the Production environment.</p>
+<h3>Yarn</h3>
+<p>Yarn is used for package management and building the client app. Type <code>yarn --version</code> from the command line to see if it&rsquo;s already installed. Node is used for running the client Development server. Details on installing Yarn can be found at:</p>
+<p><a href="https://yarnpkg.com/">https://yarnpkg.com/</a></p>
+<h3>Java</h3>
+<p>To find out if Java is installed and if so which version, use the command:</p>
+<p><code>java -version</code></p>
+<p>The versions of Java supported are 11 to 15. If you have a version of less than 11, please upgrade to 11, 14 or 15. See the instructions below for your OS.</p>
+<h6>MacOS</h6>
+<p>Either install Open JDK 15 using the instructions at:</p>
+<p><a href="https://java.tutorials24x7.com/blog/how-to-install-openjdk-15-on-mac">https://java.tutorials24x7.com/blog/how-to-install-openjdk-15-on-mac</a></p>
+<p>or use Oracle JDK 15 available from:</p>
+<p><a href="https://www.oracle.com/java/technologies/javase/jdk15-archive-downloads.html">https://www.oracle.com/java/technologies/javase/jdk15-archive-downloads.html</a></p>
+<p>The advantage of the Oracle version is that it comes with an Installer.</p>
+<h6>Windows</h6>
+<p>Either install Open JDK 15 using the instructions at:</p>
+<p><a href="https://java.tutorials24x7.com/blog/how-to-install-openjdk-15-on-windows-10">https://java.tutorials24x7.com/blog/how-to-install-openjdk-15-on-windows-10</a></p>
+<p>or use Oracle JDK 15 available from:</p>
+<p><a href="https://www.oracle.com/java/technologies/javase/jdk15-archive-downloads.html">https://www.oracle.com/java/technologies/javase/jdk15-archive-downloads.html</a></p>
+<p>The advantage of the Oracle version is that it comes with an Installer.</p>
+<h6>Linux</h6>
+<p>Either install Open JDK 15 using the instructions at:</p>
+<p><a href="https://java.tutorials24x7.com/blog/how-to-install-openjdk-15-on-ubuntu-20-04-lts">https://java.tutorials24x7.com/blog/how-to-install-openjdk-15-on-ubuntu-20-04-lts</a></p>
+<p>or use Oracle JDK 15 available from:</p>
+<p><a href="https://www.oracle.com/java/technologies/javase/jdk15-archive-downloads.html">https://www.oracle.com/java/technologies/javase/jdk15-archive-downloads.html</a></p>
+<h3>Visual Studio Code</h3>
+<p>Visual Studio Code is a good lightweight IDE that&rsquo;s free. Other IDEs such as IntelliJ or Eclipse can also be used. The chosen IDE ideally needs to support editing of TypeScript and JSON.</p>
+<p>Instructions on installing Code can be found at:</p>
+<p><a href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a></p>
+<h4>Extensions</h4>
+<p>You might want to install the following Visual Studio Code extensions:</p>
+<blockquote>Java Extension Pack</blockquote>
+<blockquote>Debugger for Java</blockquote>
+<blockquote>Spring Boot Tools</blockquote>
+<blockquote>Spring Boot Dashboard</blockquote>
+<h2>Cloning the repositories</h2>
+<h3>Bitbucket access</h3>
+<p>To access the Bitbucket repository, a Public / Private key pair is required for authentication. The instructions for generating a key pair are at:</p>
+<p><a href="https://support.atlassian.com/bitbucket-cloud/docs/set-up-an-ssh-key/">https://support.atlassian.com/bitbucket-cloud/docs/set-up-an-ssh-key/</a></p>
+<p>The keys need to be placed in the directory <code>~/.ssh</code></p>
+<h6>MacOS</h6>
+<p>The keys need to be converted from OPENSSH to RSA format using the command:</p>
+<p><code>ssh-keygen -p -f id_rsa -m pem -P "" -N ""</code></p>
+<h3>Projects directory</h3>
+<p>Its suggested that all the projects are kept under a directory of <code>~/Projects</code></p>
+<p>Make the directory and issue the git clone commands from that directory.</p>
+<p><code>mkdir ~/Projects</code></p>
+<p><code>cd ~/Projects</code></p>
+<h3>Server</h3>
+<p>Clone the server code using:</p>
+<p><code>git clone git@bitbucket.org:brillsoftware/brill_server.git</code></p>
+<h3>Client</h3>
+<p>Clone the client code using:</p>
+<p><code>git clone git@bitbucket.org:brillsoftware/brill_client.git</code></p>
+<h2>Running the code</h2>
+<h3>Server</h3>
+<p><code>cd ~/Projects/brill_server</code></p>
+<p><code>code .</code></p>
+<p>Right click on BrillServerApplication.java and select Run</p>
+<p>or install the Spring Boot Dashboard extension and run brill_server.</p>
+<p>This will build and run the server process with a Spring Boot profile of <code>local</code>.</p>
+<p>The process will listen for Http and WebSocket requests on port 8080.</p>
+<h3>Client</h3>
+<p><code>cd ~/Projects/brill_client</code></p>
+<p><code>code .</code></p>
+<p>Get a new terminal window a install all the dependencies:</p>
+<p><code>yarn install</code></p>
+<p>Start the development Node server:</p>
+<p><code>yarn start</code></p>
+<p>This will compile the code and run a NodeJs server that&rsquo;s listening on port 3000.</p>
+<p>Use a web browser to access <a href="http://localhost:3000/">http://localhost:3000</a> and check the system is running.</p>
+<h2>Developing new custom components</h2>
+<h3>React and Typescript</h3>
+<p>The Brill components are developed using React and Typescript. Object Oriented Programming (OOP) is used rather than Functional Programming (FP). We&rsquo;ve found that using Typescript and OOP results in code that is easier to understand and debug, at least for those of us coming from a Java C++ OOP background.</p>
+<p>We use React Components rather than React Hooks, as that fits in with using OOP. But if you wish, you can use JavaScript, FP and Hooks to develop custom components.</p>
+<h3>Example - Card Component</h3>
+<p>This is an example Typescript component that displays a Card:</p>
+<pre>import React, {Component} from "react"
+import { withStyles } from "@material-ui/core"
+import { ExtendedTheme } from "lib/ComponentLibraries/material_ui/theme/ExtendedTheme"
+
+const defaultCardStyles: any = (theme: ExtendedTheme) =&gt; {
+    return  { 
+    root: {
+        borderRadius: theme.shape.borderRadius,
+        boxSizing: 'border-box',
+        border: '0.0625rem solid',
+        borderColor: theme.palette.grey.A100,
+        backgroundColor: theme.palette.background.paper,
+        boxShadow: '0 0.125rem 0.3125rem 0 rgba(0,0,0,0.05)'
+    },
+    title: {
+        backgroundColor: theme.palette.primary.main,
+        lineHeight: '1.5rem',
+        padding: '0.7rem 0.5625rem 0.7rem 0.825rem',
+        borderRadius: '0.1875rem 0.1875rem 0 0',
+        color: theme.palette.primary.contrastText,  
+        fontFamily: theme.typography.caption.fontFamily,
+        fontWeight: theme.typography.caption.fontWeight,
+        fontSize: theme.typography.caption.fontSize
+    },
+    body: {
+        padding: '1rem'
+      },
+  }}
+
+interface Props {
+    id: string
+    theme: ExtendedTheme
+    children: any
+    title: string
+    [propName: string]: any
+}
+
+interface State {
+}
+
+ class Card extends Component&lt;Props, State&gt; {
+
+    render() {
+        const {id, title, theme, classes, children, ...other} = this.props
+        
+        return (
+            
+&lt;div className={classes.root} {...other}&gt;
+                
+&lt;div className={classes.title}&gt;{title}&lt;/div&gt;
+                    
+&lt;div className={classes.body}&gt;
+                        {children}
+                    &lt;/div&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+
+export default withStyles(defaultCardStyles, { name: "Card", withTheme: true})(Card)</pre>
+<p>The first section sets up the styles. Colours are copied from the current Theme.</p>
+<p>The Props interface defines the Props that are passed in.</p>
+<p>The component doesn&rsquo;t have any state values.</p>
+<p>The render method simply uses <code>div</code> tags to create a Card with a title and child components.</p>
+<p>The last line defines the default export class as Card and ensures that the current theme is passed in as a prop.</p>
+<h3>Interaction with the Server</h3>
+<p>The Message Broker provides methods that allow a component to subscribe and publish to a topic and also unsubscribe and report errors. When the topic is a server related topic, a message is sent to the server with details of the event. The Middleware documentation contains an example component that interacts with the server using the Message Broker.</p>
+<h3>Requirements of a Component</h3>
+<p>All components must reside in a subdirectory under the <code>src/lib/ComponentLibraries</code> directory. This is for security reasons, to prevent pages from referencing code or components outside of the <code>ComponentLibraries</code> directory.</p>
+<p>The only other requirement is that the component must export a default class or function. This is required to allow the Router to dynamically load components. A component that&rsquo;s missing an <code>export default</code> line will result in an error. When re-using previously develop components, you may need to add an <code>export default</code> line.</p>
+<h3>Application structure</h3>
+<p>Applications are created using the CMS. The files for an application are held in a directory and subdirectories with the application name.</p>
+<p>Each page of the application has a separate JSON page file. The term page is used to refer to a page in the application. This not the same as a web browser page. As far as the web browser is concerned, a React application is just a single web page.</p>
+<h4>Example application</h4>
+<p>The page you are currently viewing is part of the <code>brill_software</code> application. These are some of the files that make up the application:</p>
+<pre>readEmployeesTable.js
+    Pages
+        home.json
+        demo.json
+        developers_guide.json
+    Resources
+        developers_guide.xml
+    Themes
+        brill_software_theme.json</pre>
+<p>The <code>readEmployeesTable.js</code> file contains JavaScript for retrieving data from the database for the table that&rsquo;s displayed on the Demo page. The <code>Pages</code> directory holds the pages of the application. The &nbsp;The <code>developers_guide.xml</code> file contains the text you&rsquo;re currently viewing. The styling is contained in <code>brill_software_theme.json</code>.</p>
+<h4>Example page</h4>
+<p>This is the <code>developers_guide.json</code> file:</p>
+<pre>{
+  "pageDescrip": "Developers Guide",
+  "rootComponent": {
+    "id": "ErrorBoundary",
+    "module": "react/ErrorBoundary",
+    "attributes": {},
+    "children": [
+      {
+        "id": "themeProvider",
+        "module": "material_ui/theme/ThemeProvider",
+        "attributes": {
+          "themeTopic": "/Themes/brill_software_theme.json"
+        },
+        "children": [
+          {
+            "id": "embedHeader",
+            "module": "material_ui/layout/EmbeddedPage",
+            "attributes": {
+              "subscribeToTopic": "/Pages/header.json"
+            }
+          },
+          {
+            "id": "container1",
+            "module": "material_ui/layout/Container",
+            "attributes": {
+              "maxWidth": "md",
+              "fixed": false,
+              "disableGutters": false
+            },
+            "children": [
+              {
+                "id": "conluencePage",
+                "module": "material_ui/text/ConfluencePage",
+                "attributes": {
+                  "subscribeToTopic": "/Resources/developers_guide.xml"
+                }
+              }
+            ]
+          },
+          {
+            "id": "embedFooter",
+            "module": "material_ui/layout/EmbeddedPage",
+            "attributes": {
+              "subscribeToTopic": "/Pages/footer.json"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}</pre>
+<p>The <code>ErrorBoundary</code> components catches and handles any errors in the child components.</p>
+<p>The <code>ThemeProvider</code> component provides styling to its child components.</p>
+<p>The <code>EmbeddedPage</code> component inserts the header and further down the page the footer.</p>
+<p>The <code>Container</code> component centres the text area and sets the width.</p>
+<p>The <code>ConfluencePage</code> component inserts in texts from the <code>developers_guide.xml</code> file.</p>
+<h4>IDs within an application</h4>
+<p>A React component has a <code>key</code> attribute. This is used by React to identify when components have changed and require re-rendering. This is a key feature of React and speeds up the rendering of pages.</p>
+<p>The ID on the components in the JSON page file is used as the <code>key</code>. What this means is that a unique ID must be allocated for each component within the application, unless the components really are identical. Should the same ID be used more than once, a component might not get rendered when it should be. The CMS checks the IDs and warns of any issues.</p>
+<h4>Mapping URL&rsquo;s and paths to pages</h4>
+<p>The Router handles mapping of URLs to page files and the loading and rendering of pages. URL&rsquo;s contain the application name in the path followed by the page. For example:</p>
+<p><a href="https://brill.software/brill_software/home">https://brill.software/brill_software/home</a> is mapped to the page file <code>brill_software/Pages/home.json</code></p>
+<p>The <code>Pages</code> directory can have subdirectories.</p>
+<h2>Developing new Server Event Controllers</h2>
+<p>The Brill Server is written in Java and uses Spring Boot. The web server is Apache Tomcat.</p>
+<p>With REST and Spring Boot, a REST Controller is used to handle requests and return responses. With the Brill Server it makes use of Web Sockets rather than REST. The Brill Server uses WebSocket Controllers that are similar to REST Controllers but matching is based on the Event type and topic. The response is &nbsp;published to the client using a call to a Web Socket service method called <code>sendMessageToClient</code>.</p>
+<h3>Example - Logged in Users</h3>
+<p>This example Event controller returns a list of currently logged in users. The code assumes there&rsquo;s a service available that returns a list of the currently logged in users.</p>
+<pre>package brill.server.controller;
+
+import brill.server.service.*;
+import brill.server.webSockets.annotations.*;
+
+@WebSocketController
+public class UsersController {
+    @Autowired
+    private WebSocketService wsService;
+    
+    @Event(value = "subscribe", topicMatches = "admin:/.*/loggedInUsers")
+    public void getLoggedInUsers(@Session WebSocketSession session) {
+        JsonObject content = ws.getLoggedInUsers();
+        wsService.sendMessageToClient(session, "publish", topic, content);
+        wsService.addSubscription(session, topic);
+     }        
+}</pre>
+<p>The <code>@WebSocketController</code> annotation marks the class as a Web Socket Controller, as opposed to a REST Controller. The @Event annotation marks the method as a method that is to be called for Web Socket messages that match the event type and topic specified. The Event method calls <code>sendMessageToClient</code> to publish the list to the client.</p>
+<p>As it stands, the code would only publish the list of users to the client on receipt of a subscribe event from the client. Additional code could be written that publishes an updated list to all the clients that have a subscription when a user logs in or logs out. Thus the client application could display a list that is dynamically updated.</p>
+<h2>Building a Production release</h2>
+<h3>Client</h3>
+<p>First build the client with:</p>
+<p><code>cd ~/Projects/brill_client</code></p>
+<p><code>yarn build</code></p>
+<p>A build of the client code will take a several minutes. The result will be placed in the <code>build</code> directory.</p>
+<h3>Server</h3>
+<p>Once the client has been built, the contents of the client <code>build</code> directory need to be copied to the server directory<code>src/main/resources/static</code>. This is so that the Spring Boot Server can serve the React static pages and resources. You can copy the files over manually or make use of the <code>copyWebApp</code> Gradle task as follows:</p>
+<p><code>cd ~/Projects/brill_server</code></p>
+<p><code>./gradlew copyWebApp</code></p>
+<p>Note that the <em>copyWebApp</em> task assumes that the brill_client build is in <code>../brill_client/build</code>. The location can be changed in the<code> build.gradle</code> file.</p>
+<p>Then build the jar file with:</p>
+<p><code>./gradlew clean build</code></p>
+<p>This will create the jar file in <code>build/libs/brill_server/brill_server-latest.jar</code></p>
+<p>The Jar file can be copied over to the Production environment.</p>
+<h2>Production Environment</h2>
+<p>The result of the build process is a Jar file. This can be run from the command line or deployed in any one of a number of ways. Below are suggestions as to best practice.</p>
+<h3>Application.yml configuration</h3>
+<p>For a Production server on the Internet, a domain name needs to be registered and a SSL certificate obtained. The certificate public and private keys need to be placed in a Java Keystore and made available to the server. The <code>application.yml</code> file contains the configuration details. This is an example of a Production profile:</p>
+<pre>---
+spring:
+   profiles: prod
+   application:
+      name: brillserver
+server:
+   port: 443
+   extraHttpPort: 80
+   redirectHttpToHttps: true
+   ssl: 
+      key-alias: tomcat
+      key-store-password: changeit
+      key-store: site_keystore.jks
+      key-store-provider: SUN
+      key-store-type: JKS
+brill.apps:
+    repo: git@bitbucket.org:brillsoftware/brill_apps.git
+    local.repo.dir: BrillAppsRepo</pre>
+<p>The Spring Boot profile is <code>prod</code>. The server will listen for <strong>https</strong> requests on port <code>443</code> and also listen for <strong>http</strong> requests on port <code>80</code>. Any <strong>http</strong> requests will be redirected onto <strong>https</strong>. &nbsp;A digital certificate and private key are held in a Java Keystore file called <code>site_keystore.jks</code>. The Keystore resides in the default directory the server runs from. The CMS Repo is held in a subdirectory of <code>BrillAppsRepo.</code></p>
+<h3>Initial setup of the Production server</h3>
+<p>It&rsquo;s probably easiest to initially set the Production server to use only <strong>http </strong>and leave configuration of <strong>https</strong> until after <strong>http</strong> working. In which case the initial configuration would be:</p>
+<pre>---
+spring:
+   profiles: prod
+   application:
+      name: brillserver
+server:
+   port: 80
+brill.apps:
+    repo: git@bitbucket.org:brillsoftware/brill_apps.git
+    local.repo.dir: BrillAppsRepo</pre>
+<h3>User account for running the server</h3>
+<p>It's recommended that a dedicated user account be setup for running the server. The suggested username is <code>brillserver</code>. The account must be a normal user account, not an administrator, privileged or root account. Take care to ensure that the users home directory, subdirectories and files are owned by the user and have the correct file permissions. Make sure that the group only has read access.</p>
+<p>It&rsquo;s suggested that all the server files are placed in a directory called <code>BrillServer</code>.The Jar file will be in <code>BrillServer/brill_server-latest.jar</code>. The logs will be placed in this directory and the Apps Repository will be in <code>BrillServer/BrillAppsRepo</code>.</p>
+<h3>Running the server</h3>
+<p>The server can be run as the <em>brillserver</em> user by logging in and running it from the command line:</p>
+<p><code>java brill_server-latest.jar -Dspring.profiles.active=prod</code></p>
+<p>This checks everything is working, but the server needs to be configured so that it will run up automatically when the machine is rebooted and not require any manual intervention. The configuration depends on the OS.</p>
+<h6>MacOS</h6>
+<p>Create the following file in the Launch Daemons directory:</p>
+<p><strong>sudo nano /Library/LaunchDaemons/brill.server.plist</strong></p>
+<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+    &lt;key&gt;Label&lt;/key&gt;             &lt;string&gt;brill.server&lt;/string&gt;
+    &lt;key&gt;ProcessType&lt;/key&gt;       &lt;string&gt;Interactive&lt;/string&gt;
+    &lt;key&gt;Disabled&lt;/key&gt;          &lt;false/&gt;
+    &lt;key&gt;RunAtLoad&lt;/key&gt;         &lt;true/&gt;
+    &lt;key&gt;KeepAlive&lt;/key&gt;
+        &lt;dict&gt;
+            &lt;key&gt;SuccessfulExit&lt;/key&gt;
+            &lt;true/&gt;
+            &lt;key&gt;AfterInitialDemand&lt;/key&gt;
+            &lt;true/&gt;
+        &lt;/dict&gt;
+    &lt;key&gt;SessionCreate&lt;/key&gt;     &lt;true/&gt;
+    &lt;key&gt;LaunchOnlyOnce&lt;/key&gt;    &lt;false/&gt;
+    &lt;key&gt;UserName&lt;/key&gt;          &lt;string&gt;brillserver&lt;/string&gt;
+    &lt;key&gt;GroupName&lt;/key&gt;         &lt;string&gt;staff&lt;/string&gt;
+    &lt;key&gt;ExitTimeOut&lt;/key&gt;       &lt;integer&gt;600&lt;/integer&gt;
+    &lt;key&gt;Program&lt;/key&gt;           &lt;string&gt;/usr/bin/java&lt;/string&gt;
+    &lt;key&gt;ProgramArguments&lt;/key&gt;
+        &lt;array&gt;
+            &lt;string&gt;/usr/bin/java&lt;/string&gt;
+            &lt;string&gt;-jar&lt;/string&gt;
+            &lt;string&gt;-Dspring.profiles.active=prod&lt;/string&gt;
+            &lt;string&gt;/Users/brillserver/BrillServer/brill_server-latest.jar&lt;/string&gt;
+        &lt;/array&gt;
+    &lt;key&gt;WorkingDirectory&lt;/key&gt;  &lt;string&gt;/Users/brillserver/BrillServer&lt;/string&gt;
+    &lt;key&gt;StandardErrorPath&lt;/key&gt; &lt;string&gt;/Users/brillserver/BrillServer/log.err&lt;/string&gt;
+    &lt;key&gt;StandardOutPath&lt;/key&gt; &lt;string&gt;/Users/brillserver/BrillServer/log.out&lt;/string&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;</pre>
+<p>The file must be owned by <code>root</code> have have the read/write/execute permissions set. Check the ownership and permissions with:</p>
+<p><code>ls -l /Library/LaunchDaemons/brill.server.plist</code></p>
+<p>Start the server with:</p>
+<p><code>sudo launchctl load /Library/LaunchDaemons/brill.server.plist</code></p>
+<p>To stop the server:</p>
+<p><code>sudo launchctl unload /Library/LaunchDaemons/brill.server.plist</code></p>
+<h6>Windows</h6>
+<p>Use a Windows Server version of Windows rather than Windows 10.</p>
+<p>Set up a system process to run the sever.</p>
+<h6>Linux</h6>
+<p>Setup a task to run the server on system startup.</p>
+<h3>Certificates</h3>
+<p>Any web site that involves user authentication or transactions needs to use <strong>https,</strong> so that the communications between the client and server are encrypted. This requires a digital certificate to be generated and installed on the server.</p>
+<h4>Self Signed Certificate</h4>
+<p>Initially you might want to start with a Keystore that contains a Self Signed Certificate. This can be placed in the same directory as the <code>application.yml</code> file and referenced as:</p>
+<p><code>key-store: classpath:self_signed_cert_keystore.jks</code></p>
+<p>A self signed certificate can be created using <code>keytool</code>. For example:</p>
+<p><code>keytool -genkey -alias selfsigned_localhost_sslserver -keyalg RSA -keysize 2048 -validity 700 -keypass changeit -storepass changeit -keystore ssl-server.jks</code></p>
+<p>The Web Browser will complain about the certificate and say that it&rsquo;s not trusted but for initially testing thats ok. For Intranet sites, the Self Signed Certificate can be added to the Web Browser's list of Trusted Certificates.</p>
+<h4>CA Signed Certificate</h4>
+<p>For an Internet site, the certificate must be signed by a trusted CA. A certificate can be purchased from any one a large number of CA&rsquo;s. The process depends on the CA but normally involves creating a Certificate Signing Request (CSR) on the Production server and some verification process that confirms that you own and have access to the server.</p>
+<p>This is the Namecheap help for creating a CSR using the Java <code>keytool</code> :</p>
+<p><a href="https://www.namecheap.com/support/knowledgebase/article.aspx/9422/14/generating-a-csr-on-tomcat-using-a-keytool/">https://www.namecheap.com/support/knowledgebase/article.aspx/9422/14/generating-a-csr-on-tomcat-using-a-keytool/</a></p>
+<p>Namecheap has very good documentation but there are of course other providers available!</p>
+<p>Use <code>keytool</code> to create the Keystore. For example:</p>
+<p><code>keytool -certreq -alias tomcat -file wwwmysite.csr -keystore my_keystore.jks</code></p>
+<p>For security reasons you might not want to keep the Production Keystore file in <code>git</code>. It needs to be placed in the location specified in the <code>application.yml </code>file.</p>
+<p>Once setup correctly, the web site should be accessible using <strong>https</strong>. Clicking on the lock symbol in the web browser address bar will display the certificate details.</p>
+<h2>Search Engine Optimisation ( SEO )</h2>
+<p>Web crawlers such as the Google bot understand JavaScript and will make an attempt to index a React web application. Unfortunately most bots block the JavaScript from making WebSockets connections to the Server. They also block the WebSockets fallback modes and other connections from the client to the server. &nbsp;Given that the pages and content are retrieved using WebSockets or a fallback mode, this presents a problem for getting the pages indexed correctly.</p>
+<p>Rather than attempt to put various work arounds into the React application, the Brill Framework allows a set of static pages to be set up and fed to the bots. The static pages match the URLs and structure of the React application. This allows metadata, titles, keywords and content to be optimised for the search engines, without having to modify the main application.</p>
+<h3>Bots website configuration</h3>
+<p>To enable a website of static pages for bots, set the <code>server.botsWebsite</code> configuration parameter<code>true</code> in the <code>application.yml</code> file. For example:</p>
+<pre>---
+spring:
+   profiles: prod
+   application:
+      name: brillserver
+server:
+   ...
+   botsWebsite: true
+...</pre>
+<p>The bot pages need to be created in the Brill Client project under the directory <code>/public/bots</code>. The directory needs to include all the files that are to be served to bots such as the <code>site_index.html</code>, <code>robots.txt</code> and <code>sitemaps.xml</code> files. Subdirectories need to mirror the React application URLs and have an <code>index.html</code> containing the static HTML for each page.</p>
+<p>The Brill Server checks the User-Agent string of http requests and if it&rsquo;s a bot, serves the bot website. It&rsquo;s worth copying the <code>robots.txt</code> and <code>sitemaps.xml</code> to the <code>/public</code> directory just in case not all bots are identified. Also copy the any <code>styles.css</code> file to <code>/public</code> in case the search engine caches the page and subsequently requests the <code>styles.css</code> , without identifying itself as a bot.</p>
+<h3>Google and Bing</h3>
+<p>Google has a 87% market share of the search engine market with Bing at &nbsp;7% and Yahoo at 3%. Getting Google and Bing to crawl your site is probably all you&rsquo;ll need. Yahoo uses Bing.</p>
+<p>The first task is to use the Google Search Console to prove to Google that you own and control the site. This can be done by adding a Google supplied identifier to your home page or adding a TX DNS entry with the Google identifier.</p>
+<p>The next step is to use the Bing Webmaster Tools to prove who you are. Bing will accept the Google identifier, which is very handy.</p>
+<p>Then you need to check the pages using both Bing Webmaster Tools and Google Search Console. There&rsquo;s a faster turnaround using the Bing Tools. It&rsquo;s therefore suggested that you use Bing first and then move onto Google.</p>
+<p>Your search results ratings will largely depend on the number of existing websites that have links to your website.</p>

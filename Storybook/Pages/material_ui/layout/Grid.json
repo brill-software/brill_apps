@@ -1,0 +1,411 @@
+{
+    "pageDescrip": "Text Editor",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/layout/Grid"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>The Grid component is useful for creating responsive layouts. The number of columns occupied by an item can be set, depending on the screen width. The component uses a 12 column grid. See the <a href=\"https://v4.mui.com/components/grid/\" target=\"_blank\">Material-UI Grid</a> for more details.\n<table cellpadding=\"7\">\n<tr><td>container [optional]</td><td>Must have a value of <b>true</b> if its a Grid Container.</td></tr>\n<tr><td>item [optional]</td><td>Must have a value of <b>true</b> if its a Grid Item.</td></tr>\n<tr><td>xs [optional]</td><td>The column width for an item when the screen width is 0px - 599px</td></tr>\n<tr><td>sm [optional]</td><td>The column width for an item when the screen width is 600px - 899px</td></tr>\n<tr><td>md [optional]</td><td>The column width for an item when the screen width is 900px - 1199px</td></tr>\n<tr><td>lg [optional]</td><td>The column width for an item when the screen width is 1200px - 1535px</td></tr>\n<tr><td>xl [optional]</td><td>The column width for an item when the screen width 1536px or greater.</td></tr>\n<tr><td>spacing [optional]</td><td>The spacing between cells.</td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "Grid Container",
+                        "module": "material_ui/layout/Grid",
+                        "attributes": {
+                            "container": true,
+                            "direction": "row",
+                            "spacing": 2,
+                            "style": {
+                                "background": "#fff9f9"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Grid Item",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 12
+                                },
+                                "children": [
+                                    {
+                                        "id": "Item",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "body1",
+                                            "text": "View in Preview Mode and change the browser width to see the different layouts.",
+                                            "component": "div",
+                                            "style": {
+                                                "textAlign": "center",
+                                                "padding": "10px",
+                                                "background": "#f0f0e0"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Grid Item-1",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 12,
+                                    "sm": 6,
+                                    "md": 4,
+                                    "lg": 3,
+                                    "xl": 1
+                                },
+                                "children": [
+                                    {
+                                        "id": "Item",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "h3",
+                                            "text": "A",
+                                            "component": "div",
+                                            "style": {
+                                                "textAlign": "center",
+                                                "padding": "10px",
+                                                "background": "#b0f0f0"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Grid Item-2",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 12,
+                                    "sm": 6,
+                                    "md": 4,
+                                    "lg": 3,
+                                    "xl": 1
+                                },
+                                "children": [
+                                    {
+                                        "id": "Item",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "h3",
+                                            "text": "B",
+                                            "component": "div",
+                                            "style": {
+                                                "textAlign": "center",
+                                                "padding": "10px",
+                                                "background": "#b0f0f0"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Grid Item-3",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 12,
+                                    "sm": 6,
+                                    "md": 4,
+                                    "lg": 3,
+                                    "xl": 1
+                                },
+                                "children": [
+                                    {
+                                        "id": "Item",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "h3",
+                                            "text": "C",
+                                            "component": "div",
+                                            "style": {
+                                                "textAlign": "center",
+                                                "padding": "10px",
+                                                "background": "#b0f0f0"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Grid Item-4",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 12,
+                                    "sm": 6,
+                                    "md": 4,
+                                    "lg": 3,
+                                    "xl": 1
+                                },
+                                "children": [
+                                    {
+                                        "id": "Item",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "h3",
+                                            "text": "D",
+                                            "component": "div",
+                                            "style": {
+                                                "textAlign": "center",
+                                                "padding": "10px",
+                                                "background": "#b0f0f0"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Grid Item-5",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 12,
+                                    "sm": 6,
+                                    "md": 4,
+                                    "lg": 3,
+                                    "xl": 1
+                                },
+                                "children": [
+                                    {
+                                        "id": "Item",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "h3",
+                                            "text": "E",
+                                            "component": "div",
+                                            "style": {
+                                                "textAlign": "center",
+                                                "padding": "10px",
+                                                "background": "#b0f0f0"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Grid Item-6",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 12,
+                                    "sm": 6,
+                                    "md": 4,
+                                    "lg": 3,
+                                    "xl": 1
+                                },
+                                "children": [
+                                    {
+                                        "id": "Item",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "h3",
+                                            "text": "F",
+                                            "component": "div",
+                                            "style": {
+                                                "textAlign": "center",
+                                                "padding": "10px",
+                                                "background": "#b0f0f0"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Grid Item-7",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 12,
+                                    "sm": 6,
+                                    "md": 4,
+                                    "lg": 3,
+                                    "xl": 1
+                                },
+                                "children": [
+                                    {
+                                        "id": "Item",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "h3",
+                                            "text": 1,
+                                            "component": "div",
+                                            "style": {
+                                                "textAlign": "center",
+                                                "padding": "10px",
+                                                "background": "#d0f6f0"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Grid Item-8",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 12,
+                                    "sm": 6,
+                                    "md": 4,
+                                    "lg": 3,
+                                    "xl": 1
+                                },
+                                "children": [
+                                    {
+                                        "id": "Item",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "h3",
+                                            "text": 2,
+                                            "component": "div",
+                                            "style": {
+                                                "textAlign": "center",
+                                                "padding": "10px",
+                                                "background": "#d0f6f0"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Grid Item-9",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 12,
+                                    "sm": 6,
+                                    "md": 4,
+                                    "lg": 3,
+                                    "xl": 1
+                                },
+                                "children": [
+                                    {
+                                        "id": "Item",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "h3",
+                                            "text": 3,
+                                            "component": "div",
+                                            "style": {
+                                                "textAlign": "center",
+                                                "padding": "10px",
+                                                "background": "#d0f6f0"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Grid Item-10",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 12,
+                                    "sm": 6,
+                                    "md": 4,
+                                    "lg": 3,
+                                    "xl": 1
+                                },
+                                "children": [
+                                    {
+                                        "id": "Item",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "h3",
+                                            "text": 4,
+                                            "component": "div",
+                                            "style": {
+                                                "textAlign": "center",
+                                                "padding": "10px",
+                                                "background": "#d0f6f0"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Grid Item-11",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 12,
+                                    "sm": 6,
+                                    "md": 4,
+                                    "lg": 3,
+                                    "xl": 1
+                                },
+                                "children": [
+                                    {
+                                        "id": "Item",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "h3",
+                                            "text": 5,
+                                            "component": "div",
+                                            "style": {
+                                                "textAlign": "center",
+                                                "padding": "10px",
+                                                "background": "#d0f6f0"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Grid Item-12",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 12,
+                                    "sm": 6,
+                                    "md": 4,
+                                    "lg": 3,
+                                    "xl": 1
+                                },
+                                "children": [
+                                    {
+                                        "id": "Item",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "h3",
+                                            "text": 6,
+                                            "component": "div",
+                                            "style": {
+                                                "textAlign": "center",
+                                                "padding": "10px",
+                                                "background": "#d0f6f0"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

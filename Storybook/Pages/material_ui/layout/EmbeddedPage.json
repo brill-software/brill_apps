@@ -1,0 +1,84 @@
+{
+    "pageDescrip": "Text Editor",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "PageDiv",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "minHeight": "100vh",
+                                "display": "flex",
+                                "flexDirection": "column",
+                                "background": "lightblue"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Module",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "h3",
+                                    "gutterBottom": true,
+                                    "text": "material_ui/layout/EmbededPage.json"
+                                }
+                            },
+                            {
+                                "id": "Attributes",
+                                "module": "material_ui/text/Xhtml",
+                                "attributes": {
+                                    "text": "<p>Embeds a page into the current page.\n<table cellpadding=\"7\">\n<tr><td>subscribeToTopic</td><td>The topic for the page to embed.</td></tr>\n<tr><td>delay [optional]</td><td>Delay in ms before subscribing to the topic. A value of 100 is recommended for footers, to make the page display smoothly.</td></tr>\n</table>\n</p>"
+                                }
+                            },
+                            {
+                                "id": "EmbeddedHeader",
+                                "module": "material_ui/layout/EmbeddedPage",
+                                "attributes": {
+                                    "subscribeToTopic": "/Pages/material_ui/layout/header.json"
+                                }
+                            },
+                            {
+                                "id": "Content",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "body1",
+                                    "gutterBottom": true,
+                                    "text": "The page content. The Spacer div expands to push the footer to the bottom of the page when there's not enough content to fill the page. The PageDiv sets the miniHeight to the screen height (100vh)."
+                                }
+                            },
+                            {
+                                "id": "Spacer",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "flexGrow": 1
+                                    }
+                                },
+                                "children": []
+                            },
+                            {
+                                "id": "EmbeddedFooter",
+                                "module": "material_ui/layout/EmbeddedPage",
+                                "attributes": {
+                                    "subscribeToTopic": "/Pages/material_ui/layout/footer.json"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

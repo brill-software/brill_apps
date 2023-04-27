@@ -1,0 +1,122 @@
+{
+    "pageDescrip": "Form",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/input/Checkbox"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<h3>Checkbox</h3>\n<p>A single checkbox, based on the \n<a href=\"https://v4.mui.com/components/checkboxes/\" target=\"_blank\">Material-UI Checkbox</a> component.\n<table cellpadding=\"7\">\n<tr><td>label</td><td>Checkbox label.</td></tr>\n<tr><td>labelPlacement [optional]</td><td><code>top</code>, <code>bottom</code>, <code>start</code> or <code>end</code>.</td></tr>\n<tr><td>checked [optional]</td><td>Set to <code>true</code> to set the checkbox initially checked.</td></tr>\n<tr><td>subscribeToTopic [optional]</td><td>The topic that provides the initial checkbox value.</td></tr>\n<tr><td>publishToTopic</td><td>The topic for where to publish the value. e.g. form#checkbox</td></tr>\n<tr><td>color [optional]</td><td><code>primary</code> or <code>secondary</code>.</td></tr>\n</table></p>\n"
+                        }
+                    },
+                    {
+                        "id": "Form",
+                        "module": "material_ui/input/Form",
+                        "attributes": {
+                            "style": {
+                                "width": "350px"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Flex Column Layout",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "padding": "10px",
+                                        "width": "700px",
+                                        "display": "flex",
+                                        "flexDirection": "column"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "Flex Row Layout-1",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "row",
+                                                "flexWrap": "wrap",
+                                                "padding": "10px"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Checkbox",
+                                                "module": "material_ui/input/Checkbox",
+                                                "attributes": {
+                                                    "publishToTopic": "storybook.singleCheckboxDemo",
+                                                    "label": "I agree",
+                                                    "color": "primary"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "Flex Row Layout-2",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "row",
+                                                "flexWrap": "wrap",
+                                                "padding": "10px"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Text",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "style": {
+                                                        "fontSize": "20px",
+                                                        "paddingRight": "10px"
+                                                    },
+                                                    "text": "Selected value: "
+                                                }
+                                            },
+                                            {
+                                                "id": "Value",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "subscribeToTopic": "storybook.singleCheckboxDemo",
+                                                    "style": {
+                                                        "fontSize": "20px",
+                                                        "fontWeight": 900,
+                                                        "color": "green"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

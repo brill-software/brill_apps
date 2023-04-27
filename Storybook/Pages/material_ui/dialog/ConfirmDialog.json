@@ -1,0 +1,65 @@
+{
+    "pageDescrip": "Confirm Dialog",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/dialog/ConfirmDialog"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>title</td><td>Dialog title.</td></tr>\n<tr><td>prompt</td><td>Default prompt.</td></tr>\n<tr><td>subscribeToTopic</td><td>When a string is published to the topic the alert dialog will be opened. Publishing of true will result in display of the alert dialog with default prompt. A value of false with close the alert dialog.</td></tr>\n<tr><td>publishToTopic</td><td>\"Yes\", \"No\" or \"Close\" will be published to the topic.</td></tr>\n<tr><td>theme</td><td><code>theme.overrides.ConfirmDialog .root, .closeButton</code></td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "^Confirm Dialog",
+                        "module": "material_ui/dialog/ConfirmDialog",
+                        "attributes": {
+                            "title": "Confirm Dialog",
+                            "prompt": "Confirm dialog prompt",
+                            "subscribeToTopic": "storybook.confirmDialog.open",
+                            "publishToTopic": "storybook.confirmDialog.answer"
+                        }
+                    },
+                    {
+                        "id": "^Open Confirm Dialog",
+                        "module": "material_ui/button/IconButton",
+                        "attributes": {
+                            "tooltip": "Open Confirm Dialog",
+                            "iconName": "PlayCircleFilledTwoTone",
+                            "publishToTopic": "storybook.confirmDialog.open",
+                            "action": "This is a Confirm Dialog. Please click Yes or No."
+                        }
+                    },
+                    {
+                        "id": "Answer",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "body1",
+                            "subscribeToTopic": "storybook.confirmDialog.answer"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,146 @@
+{
+    "pageDescrip": "Confirm Dialog",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/dialog/Dialog"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>Modal dialog component based on the MUI Dialog component. This component offers a lot more flexibility than the other dialog components.\n<table cellpadding=\"7\">\n<tr><td>subscribeToTopic</td><td>When a string is published to the topic the dialog will be opened. Publishing of true will result in display of the alert dialog with default prompt. A value of false with close the alert dialog.</td></tr>\n<tr><td>children</td><td>Children including DialogTitle, DialogContent, DialogContentText and DialogActions components.</td></tr>\n<tr><td>theme</td><td><code>theme.overrides.Dialog .root, .closeButton</code></td></tr>\n\n</table>\n<p>Editing Dialogs can be a little bit tricky. First create the Dialog on a Storybook page like this one, with an Open button and click the Open button to edit the dialog. When you have the Dialog as you want it, copy and paste it into the destination page. You can also use the JSON editor.</p>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "^ModalDialog",
+                        "module": "material_ui/dialog/Dialog",
+                        "attributes": {
+                            "subscribeToTopic": "storybook.dialog2.open"
+                        },
+                        "children": [
+                            {
+                                "id": "Dialog Title",
+                                "module": "material_ui/dialog/DialogTitle",
+                                "attributes": {
+                                    "children": "Switch Branch"
+                                }
+                            },
+                            {
+                                "id": "Dialog Content",
+                                "module": "material_ui/dialog/DialogContent",
+                                "attributes": {
+                                    "dividers": true
+                                },
+                                "children": [
+                                    {
+                                        "id": "Dialog Content Text",
+                                        "module": "material_ui/dialog/DialogContentText",
+                                        "attributes": {
+                                            "children": "The branches are:"
+                                        }
+                                    },
+                                    {
+                                        "id": "Form",
+                                        "module": "material_ui/input/Form",
+                                        "attributes": {
+                                            "style": {
+                                                "width": "350px",
+                                                "marginTop": "20px"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Flex Column Layout",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "style": {
+                                                        "display": "flex",
+                                                        "flexDirection": "column"
+                                                    }
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "Radio",
+                                                        "module": "material_ui/input/RadioGroup",
+                                                        "attributes": {
+                                                            "subscribeToTopic": "git:branch:/",
+                                                            "buttonsTopic": "git:branches:/",
+                                                            "publishToTopic": "home.form1#workspace",
+                                                            "style": {
+                                                                "width": "300px"
+                                                            },
+                                                            "validationRules": [
+                                                                {
+                                                                    "code": "return value.length === 0",
+                                                                    "errorMsg": "Please select a workspace. "
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Dialog Actions",
+                                "module": "material_ui/dialog/DialogActions",
+                                "attributes": {},
+                                "children": [
+                                    {
+                                        "id": "Submit",
+                                        "module": "material_ui/button/SubmitButton",
+                                        "attributes": {
+                                            "title": "Switch Branch",
+                                            "variant": "contained",
+                                            "route": "/brill_cms/editor",
+                                            "color": "primary",
+                                            "subscribeToTopic": "home.form1"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "^Open Form Dialog",
+                        "module": "material_ui/button/IconButton",
+                        "attributes": {
+                            "tooltip": "Open Confirm Dialog",
+                            "iconName": "PlayCircleFilledTwoTone",
+                            "publishToTopic": "storybook.dialog2.open"
+                        }
+                    },
+                    {
+                        "id": "Answer",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "body1",
+                            "subscribeToTopic": "storybook.singleFieldDialog.answer"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

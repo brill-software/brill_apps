@@ -1,0 +1,56 @@
+{
+    "pageDescrip": "Div Component",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/dialog/AlertDialog"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>title</td><td>Dialog title.</td></tr>\n<tr><td>prompt</td><td>Default dialog prompt.</td></tr>\n<tr><td>subscribeToTopic</td><td>When a string is published to the topic the alert will be opened. Publishing of anything other than a string will result in the display of the dialog with the default prompt.</td></tr>\n<tr><td>publishToTopic</td><td>When the user clicks on the Close button the string OK will be published to the topic.</td></tr>\n<tr><td>theme</td><td><code>theme.overrides.AlertDialog.root, .closeButton</code></td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "^Alert Dialog",
+                        "module": "material_ui/dialog/AlertDialog",
+                        "attributes": {
+                            "title": "Alert Dialog",
+                            "prompt": "Alert dialog prompt",
+                            "subscribeToTopic": "storybook.alertDialog.open"
+                        }
+                    },
+                    {
+                        "id": "^Open Alert Dialog",
+                        "module": "material_ui/button/IconButton",
+                        "attributes": {
+                            "tooltip": "Open Alert Dialog",
+                            "iconName": "PlayCircleFilledTwoTone",
+                            "publishToTopic": "storybook.alertDialog.open",
+                            "action": "This is an Alert Dialog. Please click the OK button to close."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "appDescrip": "Brill Software CMS",
+    "loginPage": "/brill_cms/login",
+    "homePage": "/brill_cms/login",
+    "notFoundPage": "/brill_cms/error"
+}

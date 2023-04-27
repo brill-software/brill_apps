@@ -1,0 +1,94 @@
+{
+    "pageDescrip": "CMS Help",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {
+            "key": "errorBoundary"
+        },
+        "children": [
+            {
+                "id": "themeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "key": "themeProvider",
+                    "themeTopic": "/Themes/brill_cms_theme_light.json",
+                    "themeTopicDark": "/Themes/brill_cms_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Outer Div",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "position": "relative"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "alertBox",
+                                "module": "material_ui/alert/Alert",
+                                "attributes": {
+                                    "subscribeToTopic": "app:errors:",
+                                    "clearOnChangeToTopic": "app:any:",
+                                    "elevation": 12,
+                                    "style": {
+                                        "cursor": "move",
+                                        "position": "absolute",
+                                        "top": "50px",
+                                        "left": "200px",
+                                        "width": "650px"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "ResizablePanels3",
+                                "module": "material_ui/layout/ResizablePanels3",
+                                "attributes": {
+                                    "p1Height": 41,
+                                    "p2Width": 800
+                                },
+                                "children": [
+                                    {
+                                        "id": "embedHeader",
+                                        "module": "material_ui/layout/EmbeddedPage",
+                                        "attributes": {
+                                            "key": "embedHeader",
+                                            "subscribeToTopic": "/Pages/header.json"
+                                        }
+                                    },
+                                    {
+                                        "id": "Index",
+                                        "module": "material_ui/text/XhtmlIndex",
+                                        "attributes": {
+                                            "subscribeToTopic": "/Resources/help.xhtml",
+                                            "publishToTopic": "cms.help.scrollToSection",
+                                            "expandLevel": 2,
+                                            "style": {
+                                                "marginTop": "20px"
+                                            }
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "homePage",
+                                        "module": "material_ui/text/Xhtml",
+                                        "attributes": {
+                                            "subscribeToTopic": "/Resources/help.xhtml",
+                                            "subscribeToIndexTopic": "cms.help.scrollToSection",
+                                            "style": {
+                                                "marginLeft": "100px",
+                                                "marginRight": "60px"
+                                            },
+                                            "scrolling": "smooth"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "pageDescrip": "Text Editor",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/layout/Card"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>Card component, based on the <a href=\"https://v4.mui.com/components/cards/\" target=\"_blank\">Material-UI Card</a> component.\n<table cellpadding=\"7\">\n<tr><td>title</td><td>The Card Title</td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "Card",
+                        "module": "material_ui/layout/Card",
+                        "attributes": {
+                            "title": "Card Title",
+                            "style": {
+                                "width": "400px"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "CardContent",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "subtitle1",
+                                    "gutterBottom": true,
+                                    "text": "This is the Card body."
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

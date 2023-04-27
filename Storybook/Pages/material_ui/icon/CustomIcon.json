@@ -1,0 +1,44 @@
+{
+    "pageDescrip": "Div Component",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/icon/CustomIcon"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>subscribeToTopic</td><td>The topic for the SVG file of the icon. e.g. /Icons/custom/people.svg</td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "Custom Icon",
+                        "module": "material_ui/icon/CustomIcon",
+                        "attributes": {
+                            "subscribeToTopic": "/Icons/custom/people.svg"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

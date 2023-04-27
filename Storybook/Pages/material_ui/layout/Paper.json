@@ -1,0 +1,91 @@
+{
+    "pageDescrip": "Text Editor",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/layout/Paper"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>Paper component, based on the <a href=\"https://v4.mui.com/components/paper/\" target=\"_blank\">Material-UI Paper</a> component.\n<table cellpadding=\"7\">\n<tr><td>variant</td><td>Either <b>outlined</b> or <b>elevation</b>.</td></tr>\n<tr><td>elevation</td><td>Shadow depth. A value between 0 and 24.</td></tr>\n<tr><td>square</td><td>If <b>true</b>, rounded corners are disabled.</td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "Paper Outlined",
+                        "module": "material_ui/layout/Paper",
+                        "attributes": {
+                            "variant": "outlined",
+                            "style": {
+                                "margin": "20px",
+                                "width": "320px",
+                                "height": "160px",
+                                "background": "#f9f9fa"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "PaperContent",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "subtitle1",
+                                    "gutterBottom": true,
+                                    "text": "This Paper component is outlined.",
+                                    "style": {
+                                        "padding": "20px"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Paper Elavated",
+                        "module": "material_ui/layout/Paper",
+                        "attributes": {
+                            "elevation": 10,
+                            "style": {
+                                "margin": "20px",
+                                "width": "320px",
+                                "height": "160px",
+                                "background": "#f9f9fa"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "PaperContent",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "subtitle1",
+                                    "gutterBottom": true,
+                                    "text": "This Paper component is elavated.",
+                                    "style": {
+                                        "padding": "20px"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

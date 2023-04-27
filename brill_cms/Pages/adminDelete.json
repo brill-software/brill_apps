@@ -1,0 +1,258 @@
+{
+    "pageDescrip": "CMS Login page",
+    "rootComponent": {
+        "id": "errorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "outer_div",
+                "module": "html/Div",
+                "attributes": {
+                    "style": {
+                        "boxShadow": "5px 10px 18px",
+                        "width": "430px"
+                    }
+                },
+                "children": [
+                    {
+                        "id": "Form",
+                        "module": "material_ui/input/Form",
+                        "attributes": {
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "column",
+                                "flexWrap": "wrap"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "alertBox",
+                                "module": "material_ui/alert/Alert",
+                                "attributes": {
+                                    "subscribeToTopic": "app:errors:",
+                                    "clearOnChangeToTopic": "app:any:",
+                                    "elevation": 12,
+                                    "style": {
+                                        "cursor": "move"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "RelativeDiv",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "position": "relative"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "header",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "className": "handle",
+                                            "variant": "h3",
+                                            "style": {
+                                                "padding": "12px",
+                                                "background": "#f0f0f0",
+                                                "cursor": "move"
+                                            },
+                                            "text": "Delete User",
+                                            "gutterBottom": true
+                                        }
+                                    },
+                                    {
+                                        "id": "close",
+                                        "module": "material_ui/button/IconButton",
+                                        "attributes": {
+                                            "iconName": "Close",
+                                            "tooltip": "Close",
+                                            "publishToTopic": "userTable.notification",
+                                            "action": "closeDeletePopover",
+                                            "style": {
+                                                "position": "absolute",
+                                                "top": "10px",
+                                                "right": "10px",
+                                                "color": "grey"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Flex Row Layout-1",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "row",
+                                        "flexWrap": "wrap"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "Text Static",
+                                        "module": "material_ui/text/Text",
+                                        "attributes": {
+                                            "text": "Are you sure you want to delete user ",
+                                            "style": {
+                                                "fontSize": "16px",
+                                                "paddingLeft": "20px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "Username",
+                                        "module": "material_ui/text/Text",
+                                        "attributes": {
+                                            "subscribeToTopic": "users.tableRow#username",
+                                            "style": {
+                                                "fontWeight": 900,
+                                                "paddingLeft": "4px",
+                                                "fontSize": "16px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "Q",
+                                        "module": "material_ui/text/Text",
+                                        "attributes": {
+                                            "text": "?",
+                                            "style": {
+                                                "paddingLeft": "1px",
+                                                "fontSize": "16px"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "padding",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "padding": "10px"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "userIdField",
+                                        "module": "material_ui/input/TextField",
+                                        "attributes": {
+                                            "disabled": true,
+                                            "label": "User Id",
+                                            "variant": "outlined",
+                                            "subscribeToTopic": "users.tableRow#user_id",
+                                            "publishToTopic": "users.editForm#user_id",
+                                            "style": {
+                                                "margin": "10px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "usernameField",
+                                        "module": "material_ui/input/TextField",
+                                        "attributes": {
+                                            "disabled": true,
+                                            "label": "Username",
+                                            "variant": "outlined",
+                                            "subscribeToTopic": "users.tableRow#username",
+                                            "publishToTopic": "users.editForm#username",
+                                            "style": {
+                                                "margin": "10px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "nameField",
+                                        "module": "material_ui/input/TextField",
+                                        "attributes": {
+                                            "disabled": true,
+                                            "label": "Name",
+                                            "variant": "outlined",
+                                            "subscribeToTopic": "users.tableRow#name",
+                                            "publishToTopic": "users.editForm#name",
+                                            "style": {
+                                                "margin": "10px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "emailField",
+                                        "module": "material_ui/input/TextField",
+                                        "attributes": {
+                                            "disabled": true,
+                                            "label": "Email",
+                                            "variant": "outlined",
+                                            "subscribeToTopic": "users.tableRow#email",
+                                            "publishToTopic": "users.editForm#email",
+                                            "style": {
+                                                "margin": "10px"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "hr",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "body1",
+                                    "gutterBottom": true,
+                                    "text": "<hr style=\"height:1px;border-width:0px;background-color:#dddddd\"/>"
+                                }
+                            },
+                            {
+                                "id": "Flex Row Layout",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "row",
+                                        "flexWrap": "wrap",
+                                        "justifyContent": "flex-end"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "cancelButton",
+                                        "module": "material_ui/button/CancelButton",
+                                        "attributes": {
+                                            "color": "secondary",
+                                            "variant": "outlined",
+                                            "style": {
+                                                "margin": "5px 5px 15px 5px"
+                                            },
+                                            "title": "Cancel",
+                                            "publishToTopic": "userTable.notification",
+                                            "action": "closeDeletePopover"
+                                        }
+                                    },
+                                    {
+                                        "id": "deleteButton",
+                                        "module": "material_ui/button/SubmitButton",
+                                        "attributes": {
+                                            "subscribeToTopic": "users.editForm",
+                                            "requestTopic": "/Database/admin/deleteUser.js",
+                                            "title": "Delete User",
+                                            "variant": "contained",
+                                            "startIcon": "Delete",
+                                            "color": "primary",
+                                            "style": {
+                                                "width": "160px",
+                                                "margin": "5px 5px 15px 5px"
+                                            },
+                                            "publishToTopic": "userTable.notification",
+                                            "action": "closeDeletePopover"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

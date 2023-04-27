@@ -1,0 +1,45 @@
+{
+    "pageDescrip": "Typography",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "text": "material_ui/text/XhtmlIndex",
+                            "gutterBottom": true
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>Displays a Tree Index built from the headers of a XHTML document. Normally used in conjunction with the <code>material_ui/text/Xhtml</code> component.\n<table cellpadding=\"7\">\n<tr><td>subscribeToTopic</td><td>The topic to obtain the xhtml from. Normally a file in <code>/Resources</code> with extension <code>.xhtml</code>.</td></tr>\n<tr><td>text</td><td>The xhtml, if not subscribing to a topic.</td></tr>\n<tr><td>publishToTopic</td><td>Used to publish the currently selected node for use by the Xhtml component.</td></tr>\n<tr><td>expandLevel [optional]</td><td>Set to 2 to show all h2 headers, 3 for all h3 headers etc.</td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "^XhtmlIndex",
+                        "module": "material_ui/text/XhtmlIndex",
+                        "attributes": {
+                            "text": "<h1>Title</h1>\n<h2>Introduction</h2>\n<p>This is the introduction</p>\n<h2>Main Body</h2>\n<h3>Section 3 heading</h3>\n<h4>Section 4 heading</h4>\n<h2>Conclusion</h2>\n<h3>End</h3>",
+                            "expandLevel": 3
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

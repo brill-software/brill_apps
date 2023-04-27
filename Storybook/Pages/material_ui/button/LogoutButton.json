@@ -1,0 +1,53 @@
+{
+    "pageDescrip": "Div Component",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/button/LogoutButton"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>Similar to a Link Button but prompts the user to confirm they wish to logout. Also clears the user details.\n</p>\n<p>\n<table cellpadding=\"7\">\n<tr><td>startIcon [optional]</td><td>Icon to place before the title.</td></tr>\n<tr><td>title</td><td>The button label</td></tr>\n<tr><td>endIcon [optional]</td><td>Icon to place after the title.</td></tr>\n<tr><td>variant</td><td>The button style. Either 'text', 'contained' or 'outlined'.</td></tr>\n<tr><td>color</td><td>The theme color to use. Either 'primary', 'secondary', 'success' or 'error'.</td></tr>\n<tr><td>publishToTopic</td><td>The logout topic. e.g. #logout</td></tr>\n<tr><td>route</td><td>The route for when the user is logged out.</td></tr>\n<tr><td>theme</td><td><code>theme.overrides.LogoutButton.root</code></td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "LogoutButton",
+                        "module": "material_ui/button/LogoutButton",
+                        "attributes": {
+                            "variant": "outlined",
+                            "color": "secondary",
+                            "startIcon": "ExitToApp",
+                            "title": "Logout",
+                            "route": "/brill_cms/login",
+                            "publishToTopic": "#logout",
+                            "style": {
+                                "margin": "10px",
+                                "textTransform": "none"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

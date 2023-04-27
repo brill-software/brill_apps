@@ -1,0 +1,359 @@
+{
+    "pageDescrip": "CMS Login page",
+    "rootComponent": {
+        "id": "errorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "outer_div",
+                "module": "html/Div",
+                "attributes": {
+                    "style": {
+                        "boxShadow": "5px 10px 18px",
+                        "width": "700px"
+                    }
+                },
+                "children": [
+                    {
+                        "id": "Form",
+                        "module": "material_ui/input/Form",
+                        "attributes": {
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "column",
+                                "flexWrap": "wrap"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "alertBox",
+                                "module": "material_ui/alert/Alert",
+                                "attributes": {
+                                    "subscribeToTopic": "app:errors:",
+                                    "clearOnChangeToTopic": "app:any:",
+                                    "elevation": 12,
+                                    "style": {
+                                        "cursor": "move"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "RelativeDiv",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "position": "relative"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "header",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "className": "handle",
+                                            "variant": "h3",
+                                            "style": {
+                                                "padding": "12px",
+                                                "background": "#f0f0f0",
+                                                "cursor": "move"
+                                            },
+                                            "text": "Edit User",
+                                            "gutterBottom": true
+                                        }
+                                    },
+                                    {
+                                        "id": "close",
+                                        "module": "material_ui/button/IconButton",
+                                        "attributes": {
+                                            "iconName": "Close",
+                                            "tooltip": "Close",
+                                            "publishToTopic": "userTable.notification",
+                                            "action": "closeEditPopover",
+                                            "style": {
+                                                "position": "absolute",
+                                                "top": "10px",
+                                                "right": "10px",
+                                                "color": "grey"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Flex Row Layout-1",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "row",
+                                        "flexWrap": "wrap"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "padding",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "padding": "10px",
+                                                "width": "320px"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "userIdField",
+                                                "module": "material_ui/input/TextField",
+                                                "attributes": {
+                                                    "disabled": true,
+                                                    "label": "User Id",
+                                                    "variant": "outlined",
+                                                    "subscribeToTopic": "users.tableRow#user_id",
+                                                    "publishToTopic": "users.editForm#user_id",
+                                                    "style": {
+                                                        "margin": "10px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "usernameField",
+                                                "module": "material_ui/input/TextField",
+                                                "attributes": {
+                                                    "disabled": true,
+                                                    "label": "Username",
+                                                    "variant": "outlined",
+                                                    "subscribeToTopic": "users.tableRow#username",
+                                                    "publishToTopic": "users.editForm#username",
+                                                    "style": {
+                                                        "margin": "10px"
+                                                    },
+                                                    "validationRules": [
+                                                        {
+                                                            "code": "return value.length === 0",
+                                                            "errorMsg": "Please enter a username."
+                                                        },
+                                                        {
+                                                            "code": "return value.length > 40",
+                                                            "errorMsg": "Username is too long."
+                                                        },
+                                                        {
+                                                            "code": "console.log('Calling notJustOneAt'); return hasMoreThanOneAt(value)",
+                                                            "errorMsg": "Email address must contain only one @ character."
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "id": "nameField",
+                                                "module": "material_ui/input/TextField",
+                                                "attributes": {
+                                                    "label": "Name",
+                                                    "variant": "outlined",
+                                                    "subscribeToTopic": "users.tableRow#name",
+                                                    "publishToTopic": "users.editForm#name",
+                                                    "style": {
+                                                        "margin": "10px"
+                                                    },
+                                                    "validationRules": [
+                                                        {
+                                                            "code": "return value.length === 0",
+                                                            "errorMsg": "Please enter a name."
+                                                        },
+                                                        {
+                                                            "code": "return value.length > 40",
+                                                            "errorMsg": "Name is too long."
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "id": "emailField",
+                                                "module": "material_ui/input/TextField",
+                                                "attributes": {
+                                                    "label": "Email",
+                                                    "variant": "outlined",
+                                                    "subscribeToTopic": "users.tableRow#email",
+                                                    "publishToTopic": "users.editForm#email",
+                                                    "style": {
+                                                        "margin": "10px",
+                                                        "width": "280px"
+                                                    },
+                                                    "validationRules": [
+                                                        {
+                                                            "code": "return value.length === 0",
+                                                            "errorMsg": "Please enter an email address."
+                                                        },
+                                                        {
+                                                            "code": "return value.length > 45",
+                                                            "errorMsg": "Email address is too long."
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "id": "ChangePasswordSelect",
+                                                "module": "material_ui/input/Select",
+                                                "attributes": {
+                                                    "menuItemsTopic": "/Resources/yesNoMenuItems.json",
+                                                    "subscribeToTopic": "users.tableRow#changePassword",
+                                                    "publishToTopic": "users.editForm#changePassword",
+                                                    "label": "Force Change Password",
+                                                    "variant": "outlined",
+                                                    "style": {
+                                                        "margin": "10px",
+                                                        "width": "220px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "permissionsField",
+                                                "module": "material_ui/input/CheckboxGroup",
+                                                "attributes": {
+                                                    "color": "primary",
+                                                    "multiple": true,
+                                                    "label": "Permissions",
+                                                    "variant": "outlined",
+                                                    "checkboxesTopic": "/Database/getPermissions.sql",
+                                                    "subscribeToTopic": "users.tableRow#permissions",
+                                                    "publishToTopic": "users.editForm#permissions",
+                                                    "validationRules": [],
+                                                    "style": {
+                                                        "margin": "10px",
+                                                        "width": "420px"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "padding-1",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "marginTop": "20px",
+                                                "width": "290px",
+                                                "height": "320px",
+                                                "paddingTop": "10px",
+                                                "borderStyle": "dotted",
+                                                "borderRadius": "10px",
+                                                "color": "grey"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "passwordChangeCheckbox",
+                                                "module": "material_ui/input/CheckboxGroup",
+                                                "attributes": {
+                                                    "label": "Tick to change password",
+                                                    "variant": "outlined",
+                                                    "checkboxesTopic": "/Resources/resetPwdCheckbox.json",
+                                                    "publishToTopic": "users.editForm#resetPassword",
+                                                    "validationRules": [],
+                                                    "style": {
+                                                        "margin": "10px",
+                                                        "width": "420px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "newPasswordField",
+                                                "module": "material_ui/input/PasswordField",
+                                                "attributes": {
+                                                    "label": "Password",
+                                                    "variant": "outlined",
+                                                    "autoComplete": "new-password",
+                                                    "publishToTopic": "users.editForm#password",
+                                                    "style": {
+                                                        "margin": "10px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "passwordConfirm",
+                                                "module": "material_ui/input/PasswordField",
+                                                "attributes": {
+                                                    "label": "Repeat Password",
+                                                    "variant": "outlined",
+                                                    "publishToTopic": "users.editForm#passwordConfirm",
+                                                    "style": {
+                                                        "margin": "10px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "descrip",
+                                                "module": "material_ui/text/Typography",
+                                                "attributes": {
+                                                    "variant": "body1",
+                                                    "style": {
+                                                        "margin": "10px",
+                                                        "fontSize": "14px"
+                                                    },
+                                                    "text": "Passwords must be 8 characters or more and difficult to guess."
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "hr",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "body1",
+                                    "gutterBottom": true,
+                                    "text": "<hr style=\"height:1px;border-width:0px;background-color:#dddddd\"/>"
+                                }
+                            },
+                            {
+                                "id": "Flex Row Layout",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "row",
+                                        "flexWrap": "wrap",
+                                        "justifyContent": "flex-end"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "cancelButton",
+                                        "module": "material_ui/button/CancelButton",
+                                        "attributes": {
+                                            "color": "secondary",
+                                            "variant": "outlined",
+                                            "style": {
+                                                "margin": "5px 5px 15px 5px"
+                                            },
+                                            "title": "Cancel",
+                                            "publishToTopic": "userTable.notification",
+                                            "action": "closeEditPopover"
+                                        }
+                                    },
+                                    {
+                                        "id": "saveButton",
+                                        "module": "material_ui/button/SubmitButton",
+                                        "attributes": {
+                                            "subscribeToTopic": "users.editForm",
+                                            "requestTopic": "/Database/admin/updateUser.js",
+                                            "title": "Save",
+                                            "variant": "contained",
+                                            "color": "primary",
+                                            "style": {
+                                                "width": "90px",
+                                                "margin": "5px 5px 15px 5px"
+                                            },
+                                            "publishToTopic": "userTable.notification",
+                                            "action": "closeEditPopover"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

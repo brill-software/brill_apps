@@ -1,0 +1,205 @@
+{
+    "palette": {
+        "primary": {
+            "main": "#1124b8",
+            "contrastText": "#b0b0b0"
+        },
+        "secondary": {
+            "main": "#ef4fa6"
+        },
+        "contrastThreshold": 3,
+        "tonalOffset": 0.2
+    },
+    "typography": {
+        "body": {
+            "style": {
+                "margin": "0px",
+                "overflowX": "hidden",
+                "minWidth": "320px",
+                "minHeight": "100vh",
+                "background": "#ffffff",
+                "fontSize": "14px",
+                "lineHeight": "1.4285em",
+                "color": "rgba(0,0,0,.87)"
+            }
+        },
+        "h1": {
+            "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "1.5rem",
+            "@media (min-width:700px)": {
+                "fontSize": "2rem"
+            },
+            "fontWeight": 700,
+            "color": "#172b40"
+        },
+        "h2": {
+            "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "1.3rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.63rem"
+            },
+            "fontWeight": 600,
+            "color": "#172b40"
+        },
+        "h3": {
+            "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "1.0rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.2rem"
+            },
+            "fontWeight": 600,
+            "color": "#172b40"
+        },
+        "h4": {
+            "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "0.9rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.15rem"
+            },
+            "fontWeight": 500,
+            "color": "#172bc0"
+        },
+        "h5": {
+            "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "0.9rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.15rem"
+            },
+            "fontWeight": 400,
+            "color": "#172b40"
+        },
+        "h6": {
+            "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "0.8rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.05rem"
+            },
+            "fontWeight": 600,
+            "color": "#308046",
+            "textDecoration": "underline",
+            "marginTop": "0.6rem" ,
+            "marginBottom": "0.4rem" 
+        },
+        "body1": {
+            "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "0.9rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.15rem"
+            },
+            "color": "#172b40"
+        },
+        "pre": {
+            "background": "#f4f4f4",
+            "border": "1px solid #ddd",
+            "color": "#303030",
+            "pageBreakInside": "avoid",
+            "font": "normal normal 14px/16px \"Courier New\",Courier,Monospace",
+            "fontSize": "0.9rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.15rem"
+            },
+            "lineHeight": "1.0",
+            "marginBottom": "1.6em",
+            "maxWidth": "100%",
+            "padding": ".5em 1em",
+            "display": "block",
+            "wordWrap": "break-word",
+            "overflow": "auto",
+            "overflowX": "auto",
+            "whiteSpace": "pre-wrap",
+            "counterReset": "line"
+        },
+        "blockquote": {
+            "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "0.9rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.15rem"
+            }
+        },
+        "code": {
+            "background": "#f4f4f4",
+            "border": "0px",
+            "color": "#303030",
+            "pageBreakInside": "avoid",
+            "font": "normal normal 14px/16px \"Courier New\",Courier,Monospace",
+            "fontSize": "0.9rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.15rem"
+            },
+            "lineHeight": "1.0",
+            "marginBottom": "0.6em",
+            "maxWidth": "100%",
+            "wordWrap": "break-word",
+            "overflow": "auto",
+            "overflowX": "auto",
+            "whiteSpace": "pre-wrap",
+            "counterReset": "line"
+        },
+        "ul": {
+            "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "0.9rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.15rem",
+                "lineHeight": "1.8rem"
+            }
+        },
+        "ol": {
+            "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
+            "fontSize": "0.9rem",
+            "@media (min-width:700px)": {
+                "fontSize": "1.15rem",
+                "lineHeight": "1.8rem"
+            }
+        },
+        "img": {
+            "maxWidth": "100%",
+            "height": "auto",
+            "width": "auto"
+        }
+    },
+    "overrides": {
+        "MenuButton": {
+            "root": {
+                "color": "white"
+            },
+            "button": {
+                "padding": "8px 8px 4px 8px"
+            },
+            "bar": {
+                "width": "100%",
+                "height": "5px", 
+                "background": "red"
+            }
+        },
+        "ConfluencePage": {
+            "root": {
+                "paddingTop": "20px",
+                "paddingLeft": "5px",
+                "paddingRight": "5px",
+                "@media (min-width:700px)": {
+                    "paddingLeft": "12px",
+                    "paddingRight": "0px"
+                },
+                "paddingBottom": "50px"
+            },
+            "parserError": {
+                "background": "#FFDAE9",
+                "padding": "20px"
+            }
+        },
+        "MUIDataTableHeadCell": {
+            "fixedHeader": {
+                "backgroundColor": "#1e692e",
+                "color": "#ddd",
+                "fontWeight": 800
+            }
+        },
+        "MUIDataTableSelectCell": {
+            "headerCell": {
+                "backgroundColor": "#1e692e",
+                "paddingLeft": "16px"
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,14 @@
+// JSON with Comments (JSONC) example
+// ----------------------------------
+//
+// Standard JSON doesn't support comments, but a file format called JSONC does. This is useful for 
+// configuration files, but unfortunately not all JSON parsers support comments and it's easy to loose
+// the comments.
+// 
+// Note that Pages must be JSON, not JSONC. This is because the Page Editor stores and manipulates 
+// pages as JavaScript objects and the comments would be lost.
+//
+{
+    "key1": "Value 1", // Comment 1
+    "key2": "Value 2"  // Comment 2
+}

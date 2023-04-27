@@ -1,0 +1,143 @@
+{
+    "pageDescrip": "New page.",
+    "permission": "",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "html/FlippableCard"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>children</td><td>The component must have two child components. The first for the face, the second for the back.</td></tr>\n<tr><td>theme</td><td><code>theme.overrides.FlippableCard.card, .cardInner, .cardFront, .cardBack, .isFlipped</code></td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "ThemeProvider",
+                        "module": "material_ui/theme/ThemeProvider",
+                        "attributes": {
+                            "themeTopic": "/Themes/flippable_card_theme.json"
+                        },
+                        "children": [
+                            {
+                                "id": "Flex Row Layout",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "row",
+                                        "flexWrap": "wrap"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "^Card1",
+                                        "module": "html/FlippableCard",
+                                        "attributes": {
+                                            "style": {
+                                                "margin": "20px"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Text",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "text": "Click to Flip"
+                                                }
+                                            },
+                                            {
+                                                "id": "PlayingCardPng",
+                                                "module": "html/Img",
+                                                "attributes": {
+                                                    "style": {
+                                                        "width": "400px"
+                                                    },
+                                                    "subscribeToTopic": "/Images/card1.png"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "^Card2",
+                                        "module": "html/FlippableCard",
+                                        "attributes": {
+                                            "style": {
+                                                "margin": "20px"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Text",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "text": "Click to Flip"
+                                                }
+                                            },
+                                            {
+                                                "id": "PlayingCardPng",
+                                                "module": "html/Img",
+                                                "attributes": {
+                                                    "style": {
+                                                        "width": "400px"
+                                                    },
+                                                    "subscribeToTopic": "/Images/card2.png"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "^Card3",
+                                        "module": "html/FlippableCard",
+                                        "attributes": {
+                                            "style": {
+                                                "margin": "20px"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Text",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "text": "Click to Flip"
+                                                }
+                                            },
+                                            {
+                                                "id": "PlayingCardPng",
+                                                "module": "html/Img",
+                                                "attributes": {
+                                                    "style": {
+                                                        "width": "400px"
+                                                    },
+                                                    "subscribeToTopic": "/Images/card3.png"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

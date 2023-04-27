@@ -1,0 +1,99 @@
+{
+    "pageDescrip": "Text Editor",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/text/Text"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>\nSubscribes to a topic and displays the result as text between a within a &lt;p&gt; tag.\n<table cellpadding=\"7\">\n<tr><td>text [optional]</td><td>Initial text.</td></tr>\n<tr><td>subscribeToTopic [optional]</td><td>Topic to subscribe to for the content.</td></tr>\n<tr><td>filter [optional]</td><td>JSON object with any filter parameters.</td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "Text Static",
+                        "module": "material_ui/text/Text",
+                        "attributes": {
+                            "text": "Hello World!",
+                            "style": {
+                                "fontSize": "20px",
+                                "color": "purple"
+                            }
+                        }
+                    },
+                    {
+                        "id": "Text Base64 Topic",
+                        "module": "material_ui/text/Text",
+                        "attributes": {
+                            "subscribeToTopic": "/Resources/content.xhtml"
+                        }
+                    },
+                    {
+                        "id": "Text Local App Topic",
+                        "module": "material_ui/text/Text",
+                        "attributes": {
+                            "subscribeToTopic": "username",
+                            "style": {
+                                "fontSize": "20px",
+                                "color": "green"
+                            }
+                        }
+                    },
+                    {
+                        "id": "Text JSON Topic",
+                        "module": "material_ui/text/Text",
+                        "attributes": {
+                            "subscribeToTopic": "/Resources/employee_data.json"
+                        }
+                    },
+                    {
+                        "id": "Text JavaScript Topic",
+                        "module": "material_ui/text/Text",
+                        "attributes": {
+                            "subscribeToTopic": "/Database/employee/readPage.js",
+                            "filter": {
+                                "offset": 0,
+                                "row_count": 2,
+                                "sort_col": "",
+                                "sort_direction": "",
+                                "search_text": "",
+                                "columns": [],
+                                "filter_list": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "Text Error",
+                        "module": "material_ui/text/Text",
+                        "attributes": {
+                            "subscribeToTopic": "generate_error:/xxx",
+                            "style": {
+                                "color": "red"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

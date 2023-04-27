@@ -1,0 +1,65 @@
+{
+    "pageDescrip": "Div Component",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "react/ErrorBoundary"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>The root component of a page should always be an ErrrorBoundary component. It's purpose is to capture and report any errors that are thrown. In Development, a page is displayed and a stack trace logged to the console, whereas in Production the error is just logged.\n</p>"
+                        }
+                    },
+                    {
+                        "id": "Flex Row Layout",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "flexWrap": "wrap"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "^ThrowErrorButton",
+                                "module": "react/TestThrowErrorButton",
+                                "attributes": {
+                                    "startIcon": "ReportProblemTwoTone",
+                                    "title": "Click to Throw  an Error",
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "260px",
+                                        "height": "40px",
+                                        "background": "#f04040",
+                                        "color": "white"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

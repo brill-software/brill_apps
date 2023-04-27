@@ -1,0 +1,56 @@
+{
+    "pageDescrip": "Tomcat SSL Setup",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {
+            "key": "errorBoundary"
+        },
+        "children": [
+            {
+                "id": "themeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "key": "themeProvider",
+                    "themeTopic": "/Themes/brill_software_theme.json"
+                },
+                "children": [
+                    {
+                        "id": "embedHeader",
+                        "module": "material_ui/layout/EmbeddedPage",
+                        "attributes": {
+                            "key": "embedHeader",
+                            "subscribeToTopic": "/Pages/header.json"
+                        }
+                    },
+                    {
+                        "id": "cmsContainer",
+                        "module": "material_ui/layout/Container",
+                        "attributes": {
+                            "maxWidth": "md",
+                            "fixed": false,
+                            "disableGutters": false
+                        },
+                        "children": [
+                            {
+                                "id": "mainContent",
+                                "module": "material_ui/text/Xhtml",
+                                "attributes": {
+                                    "subscribeToTopic": "/Resources/tomcatSslSetup.xhtml"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "embedFooter",
+                        "module": "material_ui/layout/EmbeddedPage",
+                        "attributes": {
+                            "subscribeToTopic": "/Pages/footer.json",
+                            "delay": 100
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

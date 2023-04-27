@@ -1,0 +1,121 @@
+{
+    "pageDescrip": "Resizable panels - 4 panels",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "ResizablePanels",
+                        "module": "material_ui/layout/ResizablePanels",
+                        "attributes": {
+                            "p1Height": 42,
+                            "p2Width": 300,
+                            "p4Height": 700
+                        },
+                        "children": [
+                            {
+                                "id": "HeaderPanel",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "width": "100%",
+                                        "height": "42px",
+                                        "background": "#c1f4b8",
+                                        "border": "20px",
+                                        "display": "flex",
+                                        "flexDirection": "row"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "Title",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "h1",
+                                            "style": {
+                                                "color": "#909090",
+                                                "paddingLeft": "12px",
+                                                "paddingRight": "40px",
+                                                "whiteSpace": "nowrap"
+                                            },
+                                            "text": "Resizable Panels "
+                                        }
+                                    },
+                                    {
+                                        "id": "FileName",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "h3",
+                                            "style": {
+                                                "color": "#60a060",
+                                                "paddingTop": "10px",
+                                                "paddingLeft": "12px",
+                                                "paddingRight": "40px",
+                                                "whiteSpace": "nowrap"
+                                            },
+                                            "text": "Selected File: ",
+                                            "subscribeToTopic": "storybook.resizablePanels.treeItem"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "^TreeView",
+                                "module": "material_ui/view/TreeView",
+                                "attributes": {
+                                    "defaultExpanded": [
+                                        "file:/Storybook/Pages",
+                                        "file:/Storybook/Pages/html"
+                                    ],
+                                    "subscribeToTopic": "/Pages/",
+                                    "publishToTopic": "storybook.resizablePanels.treeItem",
+                                    "selectedNodeId": "file:/Storybook/Pages/html/Div.json"
+                                }
+                            },
+                            {
+                                "id": "Text Editor",
+                                "module": "material_ui/editor/TextEditor",
+                                "attributes": {
+                                    "id": "textEditor1",
+                                    "options": {
+                                        "readOnly": true,
+                                        "lineNumbers": "off",
+                                        "glyphMargin": false,
+                                        "folding": false,
+                                        "lineDecorationsWidth": 0,
+                                        "lineNumbersMinChars": 0,
+                                        "roundedSelection": true,
+                                        "scrollBeyondLastLine": false,
+                                        "fontWeight": 600
+                                    },
+                                    "fileName": "employee_data.json",
+                                    "subscribeToTopic": "storybook.resizablePanels.treeItem",
+                                    "subscribeToActionTopic": "storybook.TextEditor.action",
+                                    "publishToTopic": "",
+                                    "schemasTopic": "json:/brill_cms/Resources/page_schemas.json"
+                                }
+                            },
+                            {
+                                "id": "Description",
+                                "module": "material_ui/text/Xhtml",
+                                "attributes": {
+                                    "text": "<h3>Module</h3>\n<p>material_ui/ResizablePanels</p>\n<h3>Resizable Panels</h3>\n<p>The ResizablePanels component supports layouts with either three or four panels. The user can adjust the size of the panels by dragging the the resizer bar(s). The panels are the header panel (p1), left panel (p2), upper right panel (p3) and lower right panel (p4). When there are only three panels, p3 and p4 are combined into a single p3 panel.</p>\n<p>\n<h3>Attributes</h3>\n<table cellpadding=\"7\">\n<tr><td>p1Height [optional]</td><td>Height of the header panel.</td></tr>\n<tr><td>p2Width  [optional]</td><td>Initial width of the left panel.</td></tr>\n<tr><td>p4Height [optional]</td><td>Initial height of the lower right panel, when there are four panels. </td></tr>\n<tr><td>children</td><td>Child components for p1, p2, p3 and p4 (when there are four panels).</td></tr>\n</table>\n</p>\n\n\n\n\n\n\n"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

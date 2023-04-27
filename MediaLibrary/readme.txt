@@ -1,0 +1,1 @@
+The Media Library folder is for all the media assets, such as images, photos, audio and video clips.

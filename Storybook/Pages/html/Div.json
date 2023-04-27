@@ -1,0 +1,409 @@
+{
+    "$schema": "schema://brill.software/page_schema.json",
+    "pageDescrip": "Div Component",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "html/Div"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>text [optional]</td><td>Initial text.</td></tr>\n<tr><td>subscribeToTopic [optional]</td><td>Topic to subscribe to for the text.</td></tr>\n<tr><td>bgImageTopic [optional]</td><td>Specifies the topic for an image to be used for the background.</td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "Padding",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "padding": "10px"
+                            }
+                        }
+                    },
+                    {
+                        "id": "Div with HR styling",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "display": "block",
+                                "marginTop": "0.5em",
+                                "marginBottom": "0.5em",
+                                "borderStyle": "inset",
+                                "borderWidth": "1px"
+                            }
+                        }
+                    },
+                    {
+                        "id": "Flex Row Layout",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "flexWrap": "wrap"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Item-1",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "background": "red"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "Item-2",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "background": "green"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "Item-3",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "background": "blue"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Flex Row Right Aligned",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "flexWrap": "wrap",
+                                "justifyContent": "flex-end"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Item-1",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "background": "red"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "Item-2",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "background": "green"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "Item-3",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "background": "blue"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Flex Column Layout",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "column"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Item-1",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "background": "red"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "Item-2",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "background": "green"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "Item-3",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "background": "blue"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Grid Layout",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "column"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Row-1",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "row"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "Item-1",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "margin": "10px",
+                                                "width": "40px",
+                                                "height": "40px",
+                                                "background": "red"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "Item-2",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "margin": "10px",
+                                                "width": "40px",
+                                                "height": "40px",
+                                                "background": "green"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "Item-3",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "text": "C",
+                                            "style": {
+                                                "margin": "10px",
+                                                "width": "40px",
+                                                "height": "40px",
+                                                "background": "blue"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Row-2",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "row"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "Item-1",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "margin": "10px",
+                                                "width": "40px",
+                                                "height": "40px",
+                                                "background": "red"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "Item-2",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "margin": "10px",
+                                                "width": "40px",
+                                                "height": "40px",
+                                                "background": "green"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "Item-3",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "text": "C",
+                                            "style": {
+                                                "margin": "10px",
+                                                "width": "40px",
+                                                "height": "40px",
+                                                "background": "blue"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Background Image",
+                        "module": "html/Div",
+                        "attributes": {
+                            "bgImageTopic": "/Images/background.jpg",
+                            "style": {
+                                "position": "relative",
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "backgroundSize": "cover",
+                                "height": "80px"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Shadow",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "background": "red",
+                                        "boxShadow": "5px 10px 18px"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "Rounded",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "background": "yellow",
+                                        "borderRadius": "10px"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "Opacity",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "background": "blue",
+                                        "opacity": "0.3"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "Topic",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "subscribeToTopic": "username",
+                                    "style": {
+                                        "font": "sans-serif"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "RelativeWithAbsoluteDiv",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "position": "relative"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Absolute",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "position": "absolute",
+                                        "top": "-5px",
+                                        "left": "100px",
+                                        "margin": "10px",
+                                        "width": "400px",
+                                        "height": "40px",
+                                        "background": "lightblue",
+                                        "padding": "3px"
+                                    },
+                                    "text": "With absolute positioning, the parent div must have \"position\": \"relative\" and the child \"position\": \"absolute\"."
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "validate": true,
+    "schemaValidation": "error",
+    "schemas": [
+        {
+            "uri": "page_schema.json",
+            "schema": {
+                "type": "object",
+                "required": ["pageDescrip", "rootComponent"],
+                "properties": {
+                    "pageDescrip": {
+                        "type": "string",
+                        "description": "Page description."
+                    },
+                    "rootComponent": {
+                        "$ref": "component_schema.json",
+                        "description": "Page components."
+                    }
+                }
+            }
+        },
+        {
+            "uri": "component_schema.json",
+            "schema": {
+                "type": "object",
+                "required": ["module"],
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "module": {
+                        "type": "string",
+                        "description": "Component module name."
+                    },
+                    "attributes": {
+                        "type": "object",
+                        "description": "Component attributes."
+                    },
+                    "children": {
+                        "type": "array",
+                        "description": "Child components.",
+                        "items": { "$ref": "component_schema.json" }
+                    }
+                }
+            }
+    }]
+}

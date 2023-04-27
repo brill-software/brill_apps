@@ -1,0 +1,12 @@
+{
+    "overrides": {
+        "FlippableCard": {
+            "cardFront": {
+                "color": "yellow"
+            },
+            "isFlipped": {
+                "transform": "rotateX(-180deg)"
+            }
+        }
+    }
+}

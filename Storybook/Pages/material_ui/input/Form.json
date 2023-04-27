@@ -1,0 +1,99 @@
+{
+    "pageDescrip": "Form",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/input/Form"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<h3>Form</h3>\n<p>A form component wraps and groups together a set of text input fields and a submit button. The field data is held in a local app topic. The field topic names need to be composed of a form name followed by a hash and each of the field names. </p>\n"
+                        }
+                    },
+                    {
+                        "id": "Form",
+                        "module": "material_ui/input/Form",
+                        "attributes": {
+                            "style": {
+                                "width": "350px"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Flex Column Layout",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "column"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "Text Field One",
+                                        "module": "material_ui/input/TextField",
+                                        "attributes": {
+                                            "publishToTopic": "storybook.form#field1",
+                                            "label": "Text Field One",
+                                            "variant": "outlined",
+                                            "style": {
+                                                "margin": "10px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "Text Field Two",
+                                        "module": "material_ui/input/TextField",
+                                        "attributes": {
+                                            "publishToTopic": "storybook.form#field2",
+                                            "label": "Text Field Two",
+                                            "variant": "outlined",
+                                            "style": {
+                                                "margin": "10px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "Submit",
+                                        "module": "material_ui/button/SubmitButton",
+                                        "attributes": {
+                                            "startIcon": "SaveAlt",
+                                            "title": "Submit",
+                                            "variant": "contained",
+                                            "color": "primary",
+                                            "subscribeToTopic": "storybook.form",
+                                            "requestTopic": "storybook.formSubmitData",
+                                            "style": {
+                                                "margin": "10px 10px 10px 10px"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

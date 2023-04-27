@@ -1,0 +1,46 @@
+{
+    "validate": true,
+    "schemaValidation": "error",
+    "schemas": [
+        {
+            "uri": "schema://brill.software/employee_schema.json",
+            "schema": {
+                "type": "object",
+                "required": [
+                    "companyName",
+                    "employees"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                    "$schema": {
+                        "type": "string",
+                        "description": "The schema id."
+                    },
+                    "companyName": {
+                        "type": "string",
+                        "description": "Page description."
+                    },
+                    "employees": {
+                        "type": "array",
+                        "description": "Array of employees.",
+                        "minItems": 1,
+                        "uniqueItems": true,
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "firstName": {
+                                    "type": "string",
+                                    "description": "First Name."
+                                },
+                                "lastName": {
+                                    "type": "string",
+                                    "description": "Last Name."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

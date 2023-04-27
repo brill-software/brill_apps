@@ -1,0 +1,14 @@
+{
+    "pageDescrip": "Footer",
+    "rootComponent": {
+        "id": "footer",
+        "module": "material_ui/text/Typography",
+        "attributes": {
+            "text": "... the embedded footer.",
+            "style": {
+                "color": "#909090",
+                "background": "darkblue"
+            }
+        }
+    }
+}

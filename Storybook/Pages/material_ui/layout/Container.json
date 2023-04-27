@@ -1,0 +1,53 @@
+{
+    "pageDescrip": "Text Editor",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/layout/Container"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>A Material-UI Container. Centers the conent and expands are contracts based on the screen width. Based on the <a href=\"https://v4.mui.com/components/container/\" target=\"_blank\">Material-UI Container</a> component</p>"
+                        }
+                    },
+                    {
+                        "id": "Container",
+                        "module": "material_ui/layout/Container",
+                        "attributes": {},
+                        "children": [
+                            {
+                                "id": "ContainerContent",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "subtitle1",
+                                    "gutterBottom": true,
+                                    "text": "This is the Container Content."
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

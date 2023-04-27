@@ -1,0 +1,62 @@
+{
+    "pageDescrip": "Div Component",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/Buttons/ThemeSwitchButton"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>Switches the theme between dark and light.\n<table cellpadding=\"7\">\n<tr><td>setDarkToolTip</td><td>Dark Tool Tip.</td></tr>\n<tr><td>setLightToolTip</td><td>Light Tool Tip.</td></tr>\n<tr><td>theme</td><td><code>theme.overrides.ThemeSwitchButton.root</code></td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "Flex Row Layout",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "marginTop": "10px",
+                                "display": "flex",
+                                "flexDirection": "row"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "^SwitchLightDark",
+                                "module": "material_ui/button/ThemeSwitchButton",
+                                "attributes": {
+                                    "setDarkToolTip": "Set dark background.",
+                                    "setLightToolTip": "Set light background.",
+                                    "style": {
+                                        "color": "#909090",
+                                        "marginLeft": "30px"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

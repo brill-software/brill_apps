@@ -1,0 +1,104 @@
+{
+    "pageDescrip": "Data Table",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/table/DataTable"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>The DataTable component is based on <a href=\"https://github.com/gregnb/mui-datatables\" target=\"_blank\">mui-datatables</a>. It supports server side paging and can handle millions of rows. Only the data currently on view is downloaded to the browser. There are many features like drag and drop, re-ordering of columns, export to CSV and various search options. \n<table cellpadding=\"7\">\n<tr><td>title</td><td>Table title.</td></tr>\n<tr><td>size</td><td>Table size (<b>small</b>, <b>medium</b> or <b>large</b>).</td></tr>\n<tr><td>padding</td><td>The padding or <b>none</b>.</td></tr>\n<tr><td>subscribeToTopic</td><td>The JavaScript to access the database.</td></tr>\n<tr><td>columns</td><td>List of the column names and types.</td></tr>\n<tr><td>options</td><td>Table options.</td></tr>\n<tr><td>newRoute</td><td>Route for a page to create a new row.</td></tr>\n<tr><td>editRoute</td><td>Route for a page to edit a row.</td></tr>\n<tr><td>duplicateRoute</td><td>Route for a page to duplicate a row.</td></tr>\n<tr><td>deleteRoute</td><td>Route for a page to confirm deletion of a row.</td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "^Table1",
+                        "module": "material_ui/table/DataTable",
+                        "attributes": {
+                            "title": "Employees",
+                            "size": "small",
+                            "padding": "none",
+                            "subscribeToTopic": "/Database/employee/readPage.js",
+                            "columns": [
+                                {
+                                    "name": "employee_id",
+                                    "label": "Employee Id",
+                                    "options": {
+                                        "filter": true,
+                                        "filterType": "textField"
+                                    }
+                                },
+                                {
+                                    "name": "first_name",
+                                    "label": "First Name",
+                                    "options": {
+                                        "filter": true,
+                                        "filterType": "textField"
+                                    }
+                                },
+                                {
+                                    "name": "last_name",
+                                    "label": "Last Name",
+                                    "options": {
+                                        "filter": true,
+                                        "filterType": "textField"
+                                    }
+                                },
+                                {
+                                    "name": "department",
+                                    "label": "Department",
+                                    "options": {
+                                        "filter": true,
+                                        "filterType": "textField"
+                                    }
+                                }
+                            ],
+                            "options": {
+                                "serverSide": true,
+                                "rowsPerPage": 15,
+                                "selectableRowsOnClick": true,
+                                "selectableRows": "multiple",
+                                "selectableRowsHideCheckboxes": false,
+                                "filter": true,
+                                "search": true,
+                                "print": true,
+                                "download": true,
+                                "viewColumns": true,
+                                "resizableColumns": true,
+                                "customToolbar": null,
+                                "draggableColumns": {
+                                    "enabled": true
+                                },
+                                "responsive": "vertical",
+                                "count": 45
+                            },
+                            "newRoute": "",
+                            "editRoute": "",
+                            "duplicateRoute": "",
+                            "deleteRoute": ""
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

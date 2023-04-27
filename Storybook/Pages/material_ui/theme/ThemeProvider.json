@@ -1,0 +1,56 @@
+{
+    "pageDescrip": "Theme Provider",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/theme/ThemeProvider"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>\nThe Theme Provider component applies a <a href=\"https://v4.mui.com/styles/advanced/\" target=\"_blank\">Material UI Theme</a> to its child components.\n<table cellpadding=\"7\">\n<tr><td>themeTopic</td><td>Theme topic.</td></tr>\n<tr><td>themeTopicDark [optional]</td><td>Dark theme topic.</td></tr>\n<tr><td>children</td><td>The theme will be applied to the child components.</td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "ThemeProvider",
+                        "module": "material_ui/theme/ThemeProvider",
+                        "attributes": {
+                            "themeTopic": "/Themes/storybook_demo_theme.json"
+                        },
+                        "children": [
+                            {
+                                "id": "Text",
+                                "module": "material_ui/text/Text",
+                                "attributes": {
+                                    "text": "The red text color is provided by the theme /Themes/storybook_demo_theme.json The background is provided by a style attribute.",
+                                    "style": {
+                                        "background": "lightgrey"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

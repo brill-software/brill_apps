@@ -1,0 +1,74 @@
+{
+    "pageDescrip": "Image in Xhtml",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "html/A"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>\nWraps a set of child components with a HTML <code>&lt;a&gt;</code> hyperlink tag.\n<table cellpadding=\"7\">\n<tr><td>href</td><td>The URL of the new page.</td></tr>\n<tr><td>target</td><td>Use <code>_blank</code> for a new browser tab.</td></tr>\n</table>\n</p>\n<p>For links within an app, use the <code>material_ui/button/LinkButton</code> component.</p>"
+                        }
+                    },
+                    {
+                        "id": "Hyperlink using an image",
+                        "module": "html/A",
+                        "attributes": {
+                            "href": "http://www.google.com",
+                            "target": "_blank"
+                        },
+                        "children": [
+                            {
+                                "id": "Image",
+                                "module": "html/Img",
+                                "attributes": {
+                                    "subscribeToTopic": "/Images/google-image.jpg",
+                                    "style": {
+                                        "width": "100px"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Hyperlink using text",
+                        "module": "html/A",
+                        "attributes": {
+                            "href": "http://www.google.com",
+                            "target": "_blank"
+                        },
+                        "children": [
+                            {
+                                "id": "Text",
+                                "module": "material_ui/text/Text",
+                                "attributes": {
+                                    "text": "Google"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

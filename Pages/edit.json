@@ -1,0 +1,1164 @@
+{
+    "$schema": "schema://brill.software/page_schema.json",
+    "pageDescrip": "CMS Page Editor - be careful editing the CMS using the CMS! Changes take immediate effect.",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "themeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/brill_cms_theme_light.json",
+                    "themeTopicDark": "/Themes/brill_cms_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "panels",
+                        "module": "cms/ResizablePanels",
+                        "attributes": {
+                            "topPanelHeight": 41,
+                            "leftPanelWidth": 400
+                        },
+                        "children": [
+                            {
+                                "id": "embedHeader",
+                                "module": "material_ui/layout/EmbeddedPage",
+                                "attributes": {
+                                    "subscribeToTopic": "json:/brill_cms/Pages/header.json"
+                                }
+                            },
+                            {
+                                "id": "repoChanges",
+                                "module": "html/Div",
+                                "attributes": {},
+                                "children": [
+                                    {
+                                        "id": "Workspace",
+                                        "module": "cms/WorkspaceAndBranch",
+                                        "attributes": {
+                                            "subscribeToTopic": "git:state:/",
+                                            "publishToTopic": "cms.treeItem",
+                                            "style": {
+                                                "padding": "10px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "repoChanges",
+                                        "module": "cms/TreeViewChanges",
+                                        "attributes": {
+                                            "id": "CmsRepoChanges",
+                                            "subscribeToTopic": "git:status:/",
+                                            "publishToTopic": "cms.treeItem",
+                                            "selectedNodeId": "",
+                                            "subscribeToSelectFileTopic": "treeView.selectFile",
+                                            "defaultExpanded": [
+                                                "git:status:/",
+                                                "git:status:/Staged",
+                                                "git:status:/Changed"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "id": "treeView",
+                                        "module": "cms/TreeViewFiles",
+                                        "attributes": {
+                                            "id": "CmsTreeView",
+                                            "subscribeToTopic": "file:/",
+                                            "publishToTopic": "cms.treeItem",
+                                            "selectedNodeId": "",
+                                            "subscribeToSelectFileTopic": "treeView.selectFile",
+                                            "defaultExpanded": [
+                                                "file:/"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "id": "statusBar",
+                                        "module": "cms/StatusBar",
+                                        "attributes": {
+                                            "subscribeToTopic": "statusBar.message"
+                                        }
+                                    },
+                                    {
+                                        "id": "commitDialog",
+                                        "module": "material_ui/dialog/SingleFieldDialog",
+                                        "attributes": {
+                                            "title": "Commit and Push Staged or Changed files",
+                                            "prompt": "Please provide a comment to describe the changes.",
+                                            "fieldLabel": "Commit Message",
+                                            "buttonLabel": "Commit",
+                                            "subscribeToTopic": "commit.dialog.open",
+                                            "publishToTopic": "git:commit:/"
+                                        }
+                                    },
+                                    {
+                                        "id": "stashDialog",
+                                        "module": "material_ui/dialog/SingleFieldDialog",
+                                        "attributes": {
+                                            "title": "Stash Staged or Changed files",
+                                            "prompt": "Stashes the changes so that you can work on something else, and then come back later and re-apply the changes.",
+                                            "fieldLabel": "Stash Name",
+                                            "buttonLabel": "Stash",
+                                            "subscribeToTopic": "stash.dialog.open",
+                                            "publishToTopic": "git:stash:/"
+                                        }
+                                    },
+                                    {
+                                        "id": "renameDialog",
+                                        "module": "cms/RenameDialog",
+                                        "attributes": {
+                                            "title": "Rename / Move File",
+                                            "prompt": "Please enter the new file name:",
+                                            "fieldLabel": "New File Name",
+                                            "buttonLabel": "Rename / Move",
+                                            "subscribeToTopic": "rename.dialog.open",
+                                            "publishToTopic": "git:mv:/{path}"
+                                        }
+                                    },
+                                    {
+                                        "id": "newFileDialog",
+                                        "module": "cms/NewFileDialog",
+                                        "attributes": {
+                                            "title": "New File",
+                                            "prompt": "Please enter the new file name:",
+                                            "fieldLabel": "New File Name",
+                                            "buttonLabel": "Create",
+                                            "subscribeToTopic": "newFile.dialog.open",
+                                            "publishToTopic": "git:new:/{path}"
+                                        }
+                                    },
+                                    {
+                                        "id": "newFolderDialog",
+                                        "module": "cms/NewFolderDialog",
+                                        "attributes": {
+                                            "title": "New Folder",
+                                            "prompt": "Please enter the new folder name:",
+                                            "fieldLabel": "New Folder Name",
+                                            "buttonLabel": "Create",
+                                            "subscribeToTopic": "newFolder.dialog.open",
+                                            "publishToTopic": "git:new:/{path}"
+                                        }
+                                    },
+                                    {
+                                        "id": "uploadFileDialog",
+                                        "module": "material_ui/dialog/UploadFileDialog",
+                                        "attributes": {
+                                            "title": "Upload Files",
+                                            "buttonLabel": "Upload",
+                                            "subscribeToTopic": "uploadFile.dialog.open",
+                                            "prompt4": "Existing files in the workspace will be overwritten by any uploaded files with the same name.",
+                                            "noOverwrite": false
+                                        }
+                                    },
+                                    {
+                                        "id": "WorkspaceDialog",
+                                        "module": "material_ui/dialog/Dialog",
+                                        "attributes": {
+                                            "subscribeToTopic": "setWorkspace.dialog.open"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Dialog Title",
+                                                "module": "material_ui/dialog/DialogTitle",
+                                                "attributes": {
+                                                    "text": "Set Workspace"
+                                                }
+                                            },
+                                            {
+                                                "id": "alertBox",
+                                                "module": "material_ui/alert/Alert",
+                                                "attributes": {
+                                                    "subscribeToTopic": "app:errors:",
+                                                    "clearOnChangeToTopic": "app:any:",
+                                                    "elevation": 12,
+                                                    "style": {
+                                                        "cursor": "move",
+                                                        "margin": "10px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Dialog Content",
+                                                "module": "material_ui/dialog/DialogContent",
+                                                "attributes": {
+                                                    "dividers": true
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "Form",
+                                                        "module": "material_ui/input/Form",
+                                                        "attributes": {
+                                                            "style": {
+                                                                "width": "450px"
+                                                            }
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "id": "Flex Column Layout",
+                                                                "module": "html/Div",
+                                                                "attributes": {
+                                                                    "style": {
+                                                                        "display": "flex",
+                                                                        "flexDirection": "column"
+                                                                    }
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "id": "Dialog Title",
+                                                                        "module": "material_ui/dialog/DialogContentText",
+                                                                        "attributes": {
+                                                                            "text": "You might want to save any unsaved changes first."
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "id": "Radio",
+                                                                        "module": "material_ui/input/RadioGroup",
+                                                                        "attributes": {
+                                                                            "color": "primary",
+                                                                            "subscribeToTopic": "config:/workspace",
+                                                                            "buttonsTopic": "javascript:/brill_cms/Scripts/workspaceButtons.js",
+                                                                            "publishToTopic": "home.form1#workspace",
+                                                                            "validationRules": [
+                                                                                {
+                                                                                    "code": "return value.length === 0",
+                                                                                    "errorMsg": "Please select a workspace. "
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "Dialog Actions",
+                                                "module": "material_ui/dialog/DialogActions",
+                                                "attributes": {},
+                                                "children": [
+                                                    {
+                                                        "id": "Submit",
+                                                        "module": "material_ui/button/SubmitButton",
+                                                        "attributes": {
+                                                            "title": "Set Workspace",
+                                                            "variant": "contained",
+                                                            "route": "/brill_cms/editor",
+                                                            "color": "primary",
+                                                            "subscribeToTopic": "home.form1",
+                                                            "requestTopic": "git:workspace:/"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "SwitchBranchDialog",
+                                        "module": "material_ui/dialog/Dialog",
+                                        "attributes": {
+                                            "subscribeToTopic": "switchBranch.dialog.open"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Dialog Title",
+                                                "module": "material_ui/dialog/DialogTitle",
+                                                "attributes": {
+                                                    "text": "Switch Branch"
+                                                }
+                                            },
+                                            {
+                                                "id": "alertBox",
+                                                "module": "material_ui/alert/Alert",
+                                                "attributes": {
+                                                    "subscribeToTopic": "app:errors:",
+                                                    "clearOnChangeToTopic": "app:any:",
+                                                    "elevation": 12,
+                                                    "style": {
+                                                        "cursor": "move",
+                                                        "margin": "10px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Dialog Content",
+                                                "module": "material_ui/dialog/DialogContent",
+                                                "attributes": {
+                                                    "dividers": true
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "Dialog Content Text",
+                                                        "module": "material_ui/dialog/DialogContentText",
+                                                        "attributes": {
+                                                            "text": "The workspace branches are:"
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "Form",
+                                                        "module": "material_ui/input/Form",
+                                                        "attributes": {
+                                                            "style": {
+                                                                "width": "350px",
+                                                                "marginTop": "20px"
+                                                            }
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "id": "Flex Column Layout",
+                                                                "module": "html/Div",
+                                                                "attributes": {
+                                                                    "style": {
+                                                                        "display": "flex",
+                                                                        "flexDirection": "column"
+                                                                    }
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "id": "Radio",
+                                                                        "module": "material_ui/input/RadioGroup",
+                                                                        "attributes": {
+                                                                            "color": "primary",
+                                                                            "subscribeToTopic": "git:branch:/",
+                                                                            "buttonsTopic": "git:branches:/",
+                                                                            "publishToTopic": "switchbranch.form#newBranch",
+                                                                            "style": {
+                                                                                "width": "300px"
+                                                                            },
+                                                                            "validationRules": [
+                                                                                {
+                                                                                    "code": "return value.length === 0",
+                                                                                    "errorMsg": "Please select a branch. "
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "Dialog Actions",
+                                                "module": "material_ui/dialog/DialogActions",
+                                                "attributes": {},
+                                                "children": [
+                                                    {
+                                                        "id": "Submit",
+                                                        "module": "material_ui/button/SubmitButton",
+                                                        "attributes": {
+                                                            "title": "Switch Branch",
+                                                            "variant": "contained",
+                                                            "route": "/brill_cms/editor",
+                                                            "color": "primary",
+                                                            "subscribeToTopic": "switchbranch.form",
+                                                            "requestTopic": "git:switchbranch:/"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "NewBranchDialog",
+                                        "module": "material_ui/dialog/Dialog",
+                                        "attributes": {
+                                            "subscribeToTopic": "newBranch.dialog.open"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "New Branch",
+                                                "module": "material_ui/dialog/DialogTitle",
+                                                "attributes": {
+                                                    "text": "New Branch"
+                                                }
+                                            },
+                                            {
+                                                "id": "alertBox",
+                                                "module": "material_ui/alert/Alert",
+                                                "attributes": {
+                                                    "subscribeToTopic": "app:errors:",
+                                                    "clearOnChangeToTopic": "app:any:",
+                                                    "elevation": 12,
+                                                    "style": {
+                                                        "cursor": "move",
+                                                        "margin": "10px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Dialog Content",
+                                                "module": "material_ui/dialog/DialogContent",
+                                                "attributes": {
+                                                    "dividers": true
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "Dialog Content Text",
+                                                        "module": "material_ui/dialog/DialogContentText",
+                                                        "attributes": {
+                                                            "text": "Select an existing branch to create the new branch off of."
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "Form",
+                                                        "module": "material_ui/input/Form",
+                                                        "attributes": {
+                                                            "style": {
+                                                                "width": "380px",
+                                                                "marginTop": "20px"
+                                                            }
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "id": "Flex Column Layout",
+                                                                "module": "html/Div",
+                                                                "attributes": {
+                                                                    "style": {
+                                                                        "display": "flex",
+                                                                        "flexDirection": "column"
+                                                                    }
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "id": "Radio",
+                                                                        "module": "material_ui/input/RadioGroup",
+                                                                        "attributes": {
+                                                                            "color": "primary",
+                                                                            "subscribeToTopic": "git:branch:/",
+                                                                            "buttonsTopic": "git:branches:/",
+                                                                            "publishToTopic": "newBranch.form#existingBranch",
+                                                                            "style": {
+                                                                                "width": "300px"
+                                                                            },
+                                                                            "validationRules": [
+                                                                                {
+                                                                                    "code": "return value.length === 0",
+                                                                                    "errorMsg": "Please select a branch. "
+                                                                                },
+                                                                                {
+                                                                                    "code": "return value.length === 'XXXmaster'",
+                                                                                    "errorMsg": "Creating a branch off of master is not allowed. "
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "id": "Dialog Content Text",
+                                                                        "module": "material_ui/dialog/DialogContentText",
+                                                                        "attributes": {
+                                                                            "text": "Enter the new branch name. Include your name. e.g. chris_fix_quote_form ",
+                                                                            "style": {
+                                                                                "paddingTop": "20px"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "id": "New Branch Field",
+                                                                        "module": "material_ui/input/TextField",
+                                                                        "attributes": {
+                                                                            "publishToTopic": "newBranch.form#newBranch",
+                                                                            "label": "New Branch Name",
+                                                                            "variant": "outlined",
+                                                                            "style": {
+                                                                                "margin": "10px"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "Dialog Actions",
+                                                "module": "material_ui/dialog/DialogActions",
+                                                "attributes": {},
+                                                "children": [
+                                                    {
+                                                        "id": "Submit",
+                                                        "module": "material_ui/button/SubmitButton",
+                                                        "attributes": {
+                                                            "title": "New Branch",
+                                                            "variant": "contained",
+                                                            "color": "primary",
+                                                            "subscribeToTopic": "newBranch.form",
+                                                            "requestTopic": "git:newbranch:/",
+                                                            "route": "/brill_cms/editor"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "Merge Branch Dialog",
+                                        "module": "material_ui/dialog/Dialog",
+                                        "attributes": {
+                                            "subscribeToTopic": "mergeBranch.dialog.open"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Merge Branch",
+                                                "module": "material_ui/dialog/DialogTitle",
+                                                "attributes": {
+                                                    "text": "Merge Branch"
+                                                }
+                                            },
+                                            {
+                                                "id": "alertBox",
+                                                "module": "material_ui/alert/Alert",
+                                                "attributes": {
+                                                    "subscribeToTopic": "app:errors:",
+                                                    "clearOnChangeToTopic": "app:any:",
+                                                    "elevation": 12,
+                                                    "style": {
+                                                        "cursor": "move",
+                                                        "margin": "10px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Dialog Content",
+                                                "module": "material_ui/dialog/DialogContent",
+                                                "attributes": {
+                                                    "dividers": true
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "Dialog Content Text",
+                                                        "module": "material_ui/dialog/DialogContentText",
+                                                        "attributes": {
+                                                            "text": "Select a branch to merge into the current branch."
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "Form",
+                                                        "module": "material_ui/input/Form",
+                                                        "attributes": {
+                                                            "style": {
+                                                                "width": "380px",
+                                                                "marginTop": "20px"
+                                                            }
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "id": "Flex Column Layout",
+                                                                "module": "html/Div",
+                                                                "attributes": {
+                                                                    "style": {
+                                                                        "display": "flex",
+                                                                        "flexDirection": "column"
+                                                                    }
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "id": "Radio",
+                                                                        "module": "material_ui/input/RadioGroup",
+                                                                        "attributes": {
+                                                                            "color": "primary",
+                                                                            "subscribeToTopic": "git:branch:/",
+                                                                            "buttonsTopic": "git:branches:/excludeCurrentBranch",
+                                                                            "publishToTopic": "mergeBranch.form#branch",
+                                                                            "style": {
+                                                                                "width": "300px"
+                                                                            },
+                                                                            "validationRules": [
+                                                                                {
+                                                                                    "code": "return value.length === 0",
+                                                                                    "errorMsg": "Please select a branch. "
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "Dialog Actions",
+                                                "module": "material_ui/dialog/DialogActions",
+                                                "attributes": {},
+                                                "children": [
+                                                    {
+                                                        "id": "Submit",
+                                                        "module": "material_ui/button/SubmitButton",
+                                                        "attributes": {
+                                                            "title": "Merge Branch",
+                                                            "variant": "contained",
+                                                            "color": "primary",
+                                                            "subscribeToTopic": "mergeBranch.form",
+                                                            "requestTopic": "git:mergebranch:/",
+                                                            "route": "/brill_cms/editor"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "Checkout Branch",
+                                        "module": "material_ui/dialog/Dialog",
+                                        "attributes": {
+                                            "subscribeToTopic": "checkoutBranch.dialog.open"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Dialog Title",
+                                                "module": "material_ui/dialog/DialogTitle",
+                                                "attributes": {
+                                                    "text": "Checkout Branch"
+                                                }
+                                            },
+                                            {
+                                                "id": "alertBox",
+                                                "module": "material_ui/alert/Alert",
+                                                "attributes": {
+                                                    "subscribeToTopic": "app:errors:",
+                                                    "clearOnChangeToTopic": "app:any:",
+                                                    "elevation": 12,
+                                                    "style": {
+                                                        "cursor": "move",
+                                                        "margin": "10px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Dialog Content",
+                                                "module": "material_ui/dialog/DialogContent",
+                                                "attributes": {
+                                                    "dividers": true
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "Dialog Content Text",
+                                                        "module": "material_ui/dialog/DialogContentText",
+                                                        "attributes": {
+                                                            "text": "Select a branch to checkout or pull from the repository:"
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "Form",
+                                                        "module": "material_ui/input/Form",
+                                                        "attributes": {
+                                                            "style": {
+                                                                "width": "350px",
+                                                                "marginTop": "20px"
+                                                            }
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "id": "Flex Column Layout",
+                                                                "module": "html/Div",
+                                                                "attributes": {
+                                                                    "style": {
+                                                                        "display": "flex",
+                                                                        "flexDirection": "column"
+                                                                    }
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "id": "Radio",
+                                                                        "module": "material_ui/input/RadioGroup",
+                                                                        "attributes": {
+                                                                            "color": "primary",
+                                                                            "buttonsTopic": "git:branches:/all",
+                                                                            "publishToTopic": "checkoutbranch.form#branch",
+                                                                            "style": {
+                                                                                "width": "300px"
+                                                                            },
+                                                                            "validationRules": [
+                                                                                {
+                                                                                    "code": "return value.length === 0",
+                                                                                    "errorMsg": "Please select a branch. "
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "Dialog Actions",
+                                                "module": "material_ui/dialog/DialogActions",
+                                                "attributes": {},
+                                                "children": [
+                                                    {
+                                                        "id": "Submit",
+                                                        "module": "material_ui/button/SubmitButton",
+                                                        "attributes": {
+                                                            "title": "Checkout Branch",
+                                                            "variant": "contained",
+                                                            "route": "/brill_cms/editor",
+                                                            "color": "primary",
+                                                            "subscribeToTopic": "checkoutbranch.form",
+                                                            "requestTopic": "git:checkoutbranch:/"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "Delete Branch",
+                                        "module": "material_ui/dialog/Dialog",
+                                        "attributes": {
+                                            "subscribeToTopic": "deleteBranch.dialog.open"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "alertBox",
+                                                "module": "material_ui/alert/Alert",
+                                                "attributes": {
+                                                    "subscribeToTopic": "app:errors:",
+                                                    "clearOnChangeToTopic": "app:any:",
+                                                    "elevation": 12,
+                                                    "style": {
+                                                        "cursor": "move",
+                                                        "margin": "10px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Dialog Title",
+                                                "module": "material_ui/dialog/DialogTitle",
+                                                "attributes": {
+                                                    "text": "Delete Branch"
+                                                }
+                                            },
+                                            {
+                                                "id": "Dialog Content",
+                                                "module": "material_ui/dialog/DialogContent",
+                                                "attributes": {
+                                                    "dividers": true
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "Dialog Content Text",
+                                                        "module": "material_ui/dialog/DialogContentText",
+                                                        "attributes": {
+                                                            "text": "Select the branch to delete from the <b>Workspace</b>:"
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "Form",
+                                                        "module": "material_ui/input/Form",
+                                                        "attributes": {
+                                                            "style": {
+                                                                "width": "350px",
+                                                                "marginTop": "20px"
+                                                            }
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "id": "Flex Column Layout",
+                                                                "module": "html/Div",
+                                                                "attributes": {
+                                                                    "style": {
+                                                                        "display": "flex",
+                                                                        "flexDirection": "column"
+                                                                    }
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "id": "Radio",
+                                                                        "module": "material_ui/input/RadioGroup",
+                                                                        "attributes": {
+                                                                            "buttonsTopic": "git:branches:/",
+                                                                            "publishToTopic": "deletebranch.form#branch",
+                                                                            "color": "primary",
+                                                                            "style": {
+                                                                                "width": "300px"
+                                                                            },
+                                                                            "validationRules": [
+                                                                                {
+                                                                                    "code": "return value.length === 0",
+                                                                                    "errorMsg": "Please select a branch to delete. "
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "id": "Dialog Content Text",
+                                                                        "module": "material_ui/dialog/DialogContentText",
+                                                                        "attributes": {
+                                                                            "text": "Check the checkbox to also delete the branch from the <b>Repository</b>:",
+                                                                            "style": {
+                                                                                "marginTop": "20px",
+                                                                                "width": "400px"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "id": "Checkbox",
+                                                                        "module": "material_ui/input/Checkbox",
+                                                                        "attributes": {
+                                                                            "publishToTopic": "deletebranch.form#deleteFromRepo",
+                                                                            "label": "Delete from the Repository",
+                                                                            "color": "primary",
+                                                                            "checked": true
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "Dialog Actions",
+                                                "module": "material_ui/dialog/DialogActions",
+                                                "attributes": {},
+                                                "children": [
+                                                    {
+                                                        "id": "Checkbox",
+                                                        "module": "material_ui/input/Checkbox",
+                                                        "attributes": {
+                                                            "publishToTopic": "deletebranch.form#forceDelete",
+                                                            "label": "Force Delete",
+                                                            "color": "secondary",
+                                                            "variant": "h1",
+                                                            "style": {
+                                                                "transform": "scale(0.7)"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "Submit",
+                                                        "module": "material_ui/button/SubmitButton",
+                                                        "attributes": {
+                                                            "title": "Delete Branch",
+                                                            "variant": "contained",
+                                                            "route": "/brill_cms/editor",
+                                                            "color": "primary",
+                                                            "subscribeToTopic": "deletebranch.form",
+                                                            "requestTopic": "git:deletebranch:/"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "Commit Log",
+                                        "module": "material_ui/dialog/Dialog",
+                                        "attributes": {
+                                            "subscribeToTopic": "logBranch.dialog.open",
+                                            "fullWidth": true,
+                                            "maxWidth": "xl"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "alertBox",
+                                                "module": "material_ui/alert/Alert",
+                                                "attributes": {
+                                                    "subscribeToTopic": "app:errors:",
+                                                    "clearOnChangeToTopic": "app:any:",
+                                                    "elevation": 12,
+                                                    "style": {
+                                                        "cursor": "move",
+                                                        "margin": "10px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Dialog Title",
+                                                "module": "material_ui/dialog/DialogTitle",
+                                                "attributes": {
+                                                    "text": "Commit Log"
+                                                }
+                                            },
+                                            {
+                                                "id": "Dialog Content",
+                                                "module": "material_ui/dialog/DialogContent",
+                                                "attributes": {
+                                                    "dividers": true
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "^Table1",
+                                                        "module": "material_ui/table/DataTable",
+                                                        "attributes": {
+                                                            "size": "small",
+                                                            "style": {
+                                                                "margin": "30px"
+                                                            },
+                                                            "padding": "10px",
+                                                            "rowsPerPage": 20,
+                                                            "subscribeToTopic": "git:commits:/${logBranch.dialog.fileName}",
+                                                            "columns": [
+                                                                {
+                                                                    "name": "commit",
+                                                                    "label": "Commit"
+                                                                },
+                                                                {
+                                                                    "name": "message",
+                                                                    "label": "Message"
+                                                                },
+                                                                {
+                                                                    "name": "author",
+                                                                    "label": "Author"
+                                                                },
+                                                                {
+                                                                    "name": "date",
+                                                                    "label": "Date"
+                                                                }
+                                                            ],
+                                                            "options": {
+                                                                "serverSide": false,
+                                                                "rowsPerPage": 15,
+                                                                "filter": true,
+                                                                "search": true,
+                                                                "print": true,
+                                                                "download": true,
+                                                                "viewColumns": true,
+                                                                "resizableColumns": true,
+                                                                "draggableColumns": {
+                                                                    "enabled": true
+                                                                },
+                                                                "responsive": "vertical",
+                                                                "selectableRows": "none"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "Dialog Content Text",
+                                                        "module": "material_ui/dialog/DialogContentText",
+                                                        "attributes": {
+                                                            "text": ""
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "Dialog Actions",
+                                                "module": "material_ui/dialog/DialogActions",
+                                                "attributes": {},
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "Rebase from Repository-1",
+                                        "module": "material_ui/dialog/Dialog",
+                                        "attributes": {
+                                            "subscribeToTopic": "rebaseBranch.dialog.open",
+                                            "maxWidth": "xl"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "alertBox",
+                                                "module": "material_ui/alert/Alert",
+                                                "attributes": {
+                                                    "subscribeToTopic": "app:errors:",
+                                                    "clearOnChangeToTopic": "app:any:",
+                                                    "elevation": 12,
+                                                    "style": {
+                                                        "cursor": "move",
+                                                        "margin": "10px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Dialog Title",
+                                                "module": "material_ui/dialog/DialogTitle",
+                                                "attributes": {
+                                                    "text": "Rebase"
+                                                }
+                                            },
+                                            {
+                                                "id": "Dialog Content",
+                                                "module": "material_ui/dialog/DialogContent",
+                                                "attributes": {
+                                                    "dividers": true
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "Dialog Content Text",
+                                                        "module": "material_ui/dialog/DialogContentText",
+                                                        "attributes": {
+                                                            "text": "Incorporates changes from the repository that are not in the workspace current branch."
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "Dialog Content Text",
+                                                        "module": "material_ui/dialog/DialogContentText",
+                                                        "attributes": {
+                                                            "text": "The following changes are in repository develop branch but not in the workspace current branch."
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "^Table1",
+                                                        "module": "material_ui/table/Table",
+                                                        "attributes": {
+                                                            "size": "small",
+                                                            "style": {
+                                                                "margin": "30px"
+                                                            },
+                                                            "padding": "10px",
+                                                            "maxRows": 20,
+                                                            "subscribeToTopic": "git:log:/rebase",
+                                                            "columns": [
+                                                                {
+                                                                    "name": "author",
+                                                                    "label": "Author"
+                                                                },
+                                                                {
+                                                                    "name": "message",
+                                                                    "label": "Message"
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "Dialog Content Text",
+                                                        "module": "material_ui/dialog/DialogContentText",
+                                                        "attributes": {
+                                                            "text": "Click on the Rebase button to merge the develop branch changes into the current branch."
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "Dialog Actions",
+                                                "module": "material_ui/dialog/DialogActions",
+                                                "attributes": {},
+                                                "children": [
+                                                    {
+                                                        "id": "Rebase from Repository",
+                                                        "module": "material_ui/button/SubmitButton",
+                                                        "attributes": {
+                                                            "title": "Rebase",
+                                                            "variant": "contained",
+                                                            "route": "/brill_cms/editor",
+                                                            "color": "primary",
+                                                            "subscribeToTopic": "rebasebranch.form",
+                                                            "requestTopic": "git:rebase:/"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "Pull from Repository",
+                                        "module": "material_ui/dialog/Dialog",
+                                        "attributes": {
+                                            "subscribeToTopic": "pullBranch.dialog.open",
+                                            "maxWidth": "xl"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "alertBox",
+                                                "module": "material_ui/alert/Alert",
+                                                "attributes": {
+                                                    "subscribeToTopic": "app:errors:",
+                                                    "clearOnChangeToTopic": "app:any:",
+                                                    "elevation": 12,
+                                                    "style": {
+                                                        "cursor": "move",
+                                                        "margin": "10px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Dialog Title",
+                                                "module": "material_ui/dialog/DialogTitle",
+                                                "attributes": {
+                                                    "text": "Pull"
+                                                }
+                                            },
+                                            {
+                                                "id": "Dialog Content",
+                                                "module": "material_ui/dialog/DialogContent",
+                                                "attributes": {
+                                                    "dividers": true
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "Dialog Content Text",
+                                                        "module": "material_ui/dialog/DialogContentText",
+                                                        "attributes": {
+                                                            "text": "Incorporates changes from the repository that are not in the workspace current branch."
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "Dialog Content Text",
+                                                        "module": "material_ui/dialog/DialogContentText",
+                                                        "attributes": {
+                                                            "text": "The following changes are in the repository but not in the workspace current branch."
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "^Table1",
+                                                        "module": "material_ui/table/Table",
+                                                        "attributes": {
+                                                            "size": "small",
+                                                            "style": {
+                                                                "margin": "30px"
+                                                            },
+                                                            "padding": "10px",
+                                                            "maxRows": 20,
+                                                            "subscribeToTopic": "git:log:/pull",
+                                                            "columns": [
+                                                                {
+                                                                    "name": "author",
+                                                                    "label": "Author"
+                                                                },
+                                                                {
+                                                                    "name": "message",
+                                                                    "label": "Message"
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "Dialog Content Text",
+                                                        "module": "material_ui/dialog/DialogContentText",
+                                                        "attributes": {
+                                                            "text": "Click on the Pull Changes button to merge the repository changes into the current branch."
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "Dialog Actions",
+                                                "module": "material_ui/dialog/DialogActions",
+                                                "attributes": {},
+                                                "children": [
+                                                    {
+                                                        "id": "Pull from Repository",
+                                                        "module": "material_ui/button/SubmitButton",
+                                                        "attributes": {
+                                                            "title": "Pull",
+                                                            "variant": "contained",
+                                                            "route": "/brill_cms/editor",
+                                                            "color": "primary",
+                                                            "subscribeToTopic": "pullbranch.form",
+                                                            "requestTopic": "git:pull:/"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

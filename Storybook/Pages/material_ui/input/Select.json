@@ -1,0 +1,294 @@
+{
+    "pageDescrip": "Form",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/input/Select"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<h3>Select</h3>\n<p>Allows an item or multiple items to be selected from a menu of items. A Select component should be enclosed within a form.\n<table cellpadding=\"7\">\n<tr><td>label</td><td>The Select label text.</td></tr>\n<tr><td>variant</td><td><code>outlined</code>, <code>standard</code> or <code>filled</code>.</td></tr>\n<tr><td>multiple [optional]</td><td>Set to <code>true</code> to allow multiple menu items to be selected.</td></tr>\n<tr><td>menuItemsTopic</td><td>The topic that provides the menu item values and text. e.g. <code>/Database/menuItems.sql</code> . See below for the format of the JSON.</td></tr>\n<tr><td>subscribeToTopic [optional]</td><td>Provides the initial value or a list of comma separated values.</td></tr>\n<tr><td>publishToTopic</td><td>The topic to publish the selected value or values to. e.g. addressForm#country</td></tr>\n</table></p>\n"
+                        }
+                    },
+                    {
+                        "id": "Form",
+                        "module": "material_ui/input/Form",
+                        "attributes": {
+                            "style": {
+                                "width": "350px"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Flex Column Layout",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "padding": "10px",
+                                        "width": "700px",
+                                        "display": "flex",
+                                        "flexDirection": "column"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "Flex Row Layout-1",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "row",
+                                                "flexWrap": "wrap",
+                                                "padding": "10px"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Select",
+                                                "module": "material_ui/input/Select",
+                                                "attributes": {
+                                                    "menuItemsTopic": "/Resources/countryMenuItems.json",
+                                                    "publishToTopic": "storybook.selectDemo",
+                                                    "label": "Country",
+                                                    "variant": "outlined",
+                                                    "style": {
+                                                        "width": "200px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "YesNoSelect",
+                                                "module": "material_ui/input/Select",
+                                                "attributes": {
+                                                    "menuItemsTopic": "/Resources/yesNoMenuItems.json",
+                                                    "publishToTopic": "storybook.yesNoSelect",
+                                                    "label": "Yes or No",
+                                                    "variant": "filled",
+                                                    "style": {
+                                                        "width": "120px",
+                                                        "marginLeft": "20px"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "Flex Row Layout",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "row",
+                                                "flexWrap": "wrap",
+                                                "padding": "10px"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Text",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "style": {
+                                                        "fontSize": "20px",
+                                                        "paddingRight": "10px"
+                                                    },
+                                                    "text": "Selected value: "
+                                                }
+                                            },
+                                            {
+                                                "id": "Value",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "subscribeToTopic": "storybook.selectDemo",
+                                                    "style": {
+                                                        "fontSize": "20px",
+                                                        "fontWeight": 900,
+                                                        "color": "green"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "MultiSelect",
+                                        "module": "material_ui/input/Select",
+                                        "attributes": {
+                                            "multiple": true,
+                                            "menuItemsTopic": "/Resources/countryMenuItems.json",
+                                            "publishToTopic": "storybook.selectDemo2",
+                                            "label": "Countries (multi-select)",
+                                            "variant": "outlined",
+                                            "style": {
+                                                "marginTop": "30px",
+                                                "marginLeft": "10px",
+                                                "width": "600px",
+                                                "paddingBottom": "10px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "Flex Row Layout-2",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "row",
+                                                "flexWrap": "wrap",
+                                                "padding": "10px"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Text",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "style": {
+                                                        "fontSize": "20px",
+                                                        "paddingRight": "10px"
+                                                    },
+                                                    "text": "Selected value(s): "
+                                                }
+                                            },
+                                            {
+                                                "id": "Value",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "subscribeToTopic": "storybook.selectDemo2",
+                                                    "style": {
+                                                        "fontSize": "20px",
+                                                        "fontWeight": 900,
+                                                        "color": "green"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "Permissions",
+                                        "module": "material_ui/input/Select",
+                                        "attributes": {
+                                            "multiple": true,
+                                            "label": "Permissions (multi-select)",
+                                            "variant": "standard",
+                                            "menuItemsTopic": "/Database/getPermissionMenuItems.sql",
+                                            "publishToTopic": "storybook.permissionsDemo",
+                                            "validationRules": [],
+                                            "style": {
+                                                "width": "600px",
+                                                "marginTop": "30px",
+                                                "marginLeft": "10px",
+                                                "paddingBottom": "10px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "Flex Row Layout-3",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "row",
+                                                "flexWrap": "wrap",
+                                                "padding": "10px"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Text",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "style": {
+                                                        "fontSize": "20px",
+                                                        "paddingRight": "10px"
+                                                    },
+                                                    "text": "Selected value(s): "
+                                                }
+                                            },
+                                            {
+                                                "id": "Value",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "subscribeToTopic": "storybook.permissionsDemo",
+                                                    "style": {
+                                                        "fontSize": "20px",
+                                                        "fontWeight": 900,
+                                                        "color": "green"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Text",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "style": {
+                                "fontSize": "20px",
+                                "paddingTop": "15px",
+                                "paddingBottom": "15px"
+                            },
+                            "text": "<p>/Resources/countryMenuItems.json</p>"
+                        }
+                    },
+                    {
+                        "id": "Editor Container",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "height": "400px",
+                                "width": "400px"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "^Text Editor",
+                                "module": "material_ui/editor/TextEditor",
+                                "attributes": {
+                                    "id": "textEditor1",
+                                    "options": {
+                                        "lineNumbers": "off",
+                                        "glyphMargin": false,
+                                        "folding": false,
+                                        "lineDecorationsWidth": 0,
+                                        "lineNumbersMinChars": 0,
+                                        "roundedSelection": true,
+                                        "scrollBeyondLastLine": false,
+                                        "fontWeight": 600,
+                                        "readOnly": true
+                                    },
+                                    "fileName": "employee_data.json",
+                                    "subscribeToTopic": "/Resources/countryMenuItems.json",
+                                    "publishTextChangedTopic": "storybook.TextEditor.textChanged"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

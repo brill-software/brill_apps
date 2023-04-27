@@ -1,0 +1,111 @@
+<h1>Brill CMS</h1>
+<p>An application is composed of pages, with each page composed of components. The components make use of various resources which are also part of the application. The pages and resources are encoded in JSON or XHTML. The Brill CMS supports editing pages and resources that comprise an application.</p>
+<p>Pages can be edited using the WYSIWYG Page Editor or using the JSON Text Editor. Most of the time the WYSIWYG Page Editor will suffice. A developer might sometimes want to drill down to view the underlying JSON and this where the JSON Text Editor is useful. Normally business users will only use the WYSIWYG Page Editor. Changes can be checked using the Preview Mode.</p>
+<p>To use the CMS, a user needs to login. The user is presented with a list of applications that they own or have permission to &nbsp;access. The user can also create a new application or copy an existing application.</p>
+<p>Once an application is selected for editing, there&rsquo;s a tree on the left hand side with the pages, files and directory structure. The user can select a page or file to edit. With pages, there are number of different edit modes. Files are edited using a text editor with syntax colour highlighting. The CMS supports both a dark theme and light theme.</p>
+<p>This is a screenshot of the Brill CMS:</p>
+<figure><img src="/Images/cms_screenshot.png"/></figure>
+<h2>Material UI Components</h2>
+<p>Most of the Brill UI components are based on Material-UI components. Material-UI is an open source framework that implements Google&rsquo;s Material Design and is very popular.</p>
+<p>Custom components can be developed using other frameworks such as Semantic-UI. Care is required when mixing components from different frameworks and is not generally a good idea. If your not fixed on a particular framework, stick with Material-UI and components that are compatible with Material-UI.</p>
+<h2>Component Library</h2>
+<p>The Component Library contains components that can be dragged and dropped onto the page. The Component Library can be customised to add or remove particular components. This is useful to provide users with the components that match the organisations style guide and hide other components that don't match the style guide. Custom developed components can be added to the Component Library and the defaults for various attributes set.</p>
+<h2>Media Library</h2>
+<p>The library is shared across applications and holds images, themes, templates and other resources that are useful. Images and themes can be copied from the library into an application. Library items can be removed so that just the items that match the organisations style guide are displayed.</p>
+<h2>Page Templates</h2>
+<p>A set of template pages are provided to support quick page creation. Additional templates can be added. Pages can include common sections for items like headers and footers.</p>
+<h2>Permissions</h2>
+<p>A users has to be granted access to edit an application by the application owner. The application owner is the user that originally created the application. Ownership can be transferred to another user and also shared.</p>
+<p>An application owner has full read-write access to the application and can publish a new version of the application. An application owner can grant access to other users. The levels that can be granted are:</p>
+<blockquote>Publish rights</blockquote>
+<blockquote>Full read/write access</blockquote>
+<blockquote>Read only access</blockquote>
+<h2>Themes</h2>
+<p>A Theme allows a consistent set of colours, fonts and styling to be applied across an application. Normally a Theme will be developed that matches the organisations style guide for colours, fonts and layout. This can then be applied across all the organisations applications.</p>
+<p>Most of the Brill Components are based on Material UI components. There&rsquo;s a default Material UI Theme which is documented at:</p>
+<p><a href="https://material-ui.com/customization/default-theme/">https://material-ui.com/customization/default-theme</a>/</p>
+<p>The MUI Theme has been extended to support some additional fields. The <code>override</code> section can be used to override Brill Components, as well as MUI Components.</p>
+<p>This is an example of a Theme file.</p>
+<pre>{
+    "palette": {
+        "primary": {
+            "main": "#1124b8",
+            "contrastText": "#b0b0b0"
+        }
+    },
+    "typography": {
+        "h1": {
+            "font": "sans-serif",
+            "fontSize": "1.5rem",
+            "@media (min-width:700px)": {
+                "fontSize": "2rem"
+            },
+            "fontWeight": 600,
+            "color": "#172b40"
+        }
+    },
+    "overrides": {
+        "MenuButton": {
+            "root": {
+                "color": "white"
+            },
+            "button": {
+                "padding": "8px 8px 4px 8px"
+            },
+            "bar": {
+                "width": "100%",
+                "height": "5px", 
+                "background": "red"
+            }
+        },
+    }
+  }</pre>
+<p>The example set the primary colour for use by MUI Components. The &lt;h1&gt; styling is specified for both large screens and small screens. The styling for the MenuButton components is specified.</p>
+<p>Best practice is to use themes for styling. You can however set the style of an individual component using the <code>style</code> attribute. This is useful where a component requires a different style from that specified in the theme.</p>
+<h2>Git repository</h2>
+<p>All application files are held in a <em>git</em> repository. Best practice is to use a MASTER branch, which is the Production branch and a DEVELOP branch. Changes are made and tested on the DEVELOP branch and when ready, merged into the MASTER branch. Changes are not normally made on the MASTER branch. The history of all files can be viewed. When changes are committed, the user is prompted to enter a description of the change. The description is saved in <em>git</em>.</p>
+<h2>Key features</h2>
+<h3>Editor Support</h3>
+<ul>
+  <li>Resizable panes split vertically or horizontally.</li>
+  <li>Multiple tabs per pane.</li>
+  <li>Drag and Drop of tabs between panes and re-oder of tabs within a pane.</li>
+  <li>Light and Dark themes.</li>
+  <li>Editors based on file type.</li>
+  <li>Quick switching between WYSIWYG, Text and Difference editors.</li>
+  <li>Each editor type has its own custom toolbar.</li>
+</ul>
+<h3>Page Editor</h3>
+<ul>
+  <li>WYSIWYG editor.</li>
+  <li>Drag and Drop of components.</li>
+  <li>Drag and Drop between pages.</li>
+  <li>Copy / Cut / Paste of components.</li>
+  <li>Editing of component id, type and attributes.</li>
+  <li>Switch outline boxes on or off.</li>
+  <li>Selected component highlighted when switching JSON text mode.</li>
+  <li>Page Preview</li>
+</ul>
+<h3>Text Editor</h3>
+<ul>
+  <li>Based on the Microsoft Visual Studio Code Text Editor.</li>
+  <li>Supports JSON, XHTML, SQL and JavaScript syntax highlighting.</li>
+  <li>Validates JSON before saving it.</li>
+</ul>
+<h3>Difference Editor</h3>
+<ul>
+  <li>Based on the Microsoft Visual Studio Code Difference Editor.</li>
+</ul>
+<h3>XHTML Editor</h3>
+<ul>
+  <li>XHTML WYSIWYG editor.</li>
+  <li>Supports most HTML tags.</li>
+  <li>Cursor position kept when switching to/from the Text Editor.</li>
+  <li>Page Preview</li>
+</ul>
+<h3>Git Integration</h3>
+<ul>
+  <li>Displays all changed files</li>
+  <li>Allows staging of specific changes or commit of all changes.</li>
+  <li>Commit and push</li>
+</ul>

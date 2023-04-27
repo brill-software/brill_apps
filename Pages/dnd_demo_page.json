@@ -1,0 +1,310 @@
+{
+    "pageDescrip": "Test page",
+    "rootComponent": {
+        "id": "themeProviderDnd",
+        "module": "material_ui/theme/ThemeProvider",
+        "attributes": {
+            "themeTopic": "/Themes/brill_software_theme.json"
+        },
+        "children": [
+            {
+                "id": "ErrorBoundaryDnd",
+                "module": "react/ErrorBoundary",
+                "attributes": {},
+                "children": [
+                    {
+                        "id": "h1",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h1",
+                            "subscribeToTopic": "/Resources/pageTitle.json"
+                        }
+                    },
+                    {
+                        "id": "body2",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "body2",
+                            "text": "This is some body two text."
+                        }
+                    },
+                    {
+                        "id": "AccountBox",
+                        "module": "material_ui/icon/FixedSizeIcon",
+                        "attributes": {
+                            "nameOrTopic": "AccountBox"
+                        }
+                    },
+                    {
+                        "id": "AccountBox-1",
+                        "module": "material_ui/icon/FixedSizeIcon",
+                        "attributes": {
+                            "nameOrTopic": "AccountBox"
+                        }
+                    },
+                    {
+                        "id": "h3-1",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "body1",
+                            "text": "This is some body one text. DEDFAAXVBC"
+                        }
+                    },
+                    {
+                        "id": "Fixed Size Material UI Icon-2",
+                        "module": "material_ui/icon/FixedSizeIcon",
+                        "attributes": {
+                            "nameOrTopic": "Add"
+                        }
+                    },
+                    {
+                        "id": "h3",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "Heading Three"
+                        }
+                    },
+                    {
+                        "id": "Fixed Size Material UI Icon-1",
+                        "module": "material_ui/icon/FixedSizeIcon",
+                        "attributes": {
+                            "nameOrTopic": "Add"
+                        }
+                    },
+                    {
+                        "id": "Fixed Size Material UI Icon-4",
+                        "module": "material_ui/icon/FixedSizeIcon",
+                        "attributes": {
+                            "nameOrTopic": "Add"
+                        }
+                    },
+                    {
+                        "id": "subtitle2",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "subtitle2",
+                            "gutterBottom": true,
+                            "text": "Subtitle Two"
+                        }
+                    },
+                    {
+                        "id": "h3",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "Heading Three"
+                        }
+                    },
+                    {
+                        "id": "subtitle1",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "subtitle1",
+                            "gutterBottom": true,
+                            "text": "Subtitle <b>One</b>"
+                        }
+                    },
+                    {
+                        "id": "body1",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "body1",
+                            "text": "This is some body one text."
+                        }
+                    },
+                    {
+                        "id": "h3-9",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "Heading Three"
+                        }
+                    },
+                    {
+                        "id": "subtitle1",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "subtitle1",
+                            "gutterBottom": true,
+                            "text": "Subtitle <b>One</b>"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "gridItem3",
+                "module": "html/Div",
+                "attributes": {
+                    "style": {
+                        "display": "flex",
+                        "direction": "wrap"
+                    }
+                },
+                "children": [
+                    {
+                        "id": "paper2",
+                        "module": "html/Div",
+                        "attributes": {
+                            "elevation": 3,
+                            "style": {
+                                "height": "160px",
+                                "width": "300px",
+                                "background": "#f0e6f0"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "subtitle1withEl",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "subtitle1",
+                                    "gutterBottom": true,
+                                    "text": "Subtitle 1 text"
+                                }
+                            },
+                            {
+                                "id": "h2",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "h2",
+                                    "gutterBottom": true,
+                                    "text": "Heading Two"
+                                }
+                            },
+                            {
+                                "id": "h6_red",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "h6",
+                                    "gutterBottom": true,
+                                    "text": "Heading Six Red",
+                                    "style": {
+                                        "color": "red"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "subtitle2",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "subtitle2",
+                                    "gutterBottom": true,
+                                    "text": "Subtitle Two"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "paper4",
+                        "module": "html/Div",
+                        "attributes": {
+                            "elevation": 3,
+                            "style": {
+                                "height": "160px",
+                                "width": "500px",
+                                "background": "#90e6f0"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "subtitle5",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "subtitle1",
+                                    "gutterBottom": true,
+                                    "text": "Text 1"
+                                }
+                            },
+                            {
+                                "id": "subtitle6",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "subtitle1",
+                                    "gutterBottom": true,
+                                    "text": "Text 2"
+                                }
+                            },
+                            {
+                                "id": "subtitle1withEl2",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "subtitle1",
+                                    "gutterBottom": true,
+                                    "text": "More subtitle 1 text"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "gridItem4",
+                "module": "material_ui/layout/Grid",
+                "attributes": {
+                    "item": true,
+                    "lg": 4
+                },
+                "children": [
+                    {
+                        "id": "paper6",
+                        "module": "material_ui/layout/Paper",
+                        "attributes": {
+                            "elevation": 3,
+                            "style": {
+                                "height": "160px",
+                                "background": "#a0b6a0"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "subtitle8",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "subtitle1",
+                                    "gutterBottom": true,
+                                    "text": "More text"
+                                }
+                            },
+                            {
+                                "id": "subtitle9",
+                                "module": "material_ui/text/Typography",
+                                "attributes": {
+                                    "variant": "subtitle1",
+                                    "gutterBottom": true,
+                                    "text": "Subtitle text"
+                                }
+                            },
+                            {
+                                "id": "usernameField",
+                                "module": "material_ui/input/TextField",
+                                "attributes": {
+                                    "label": "Username",
+                                    "variant": "outlined",
+                                    "publishToTopic": "loginForm.username",
+                                    "validationRules": [
+                                        {
+                                            "code": "return value.length === 0",
+                                            "errorMsg": "Please enter your username."
+                                        },
+                                        {
+                                            "code": "return value.length > 40",
+                                            "errorMsg": "Username is too long."
+                                        },
+                                        {
+                                            "code": "console.log('Calling notJustOneAt'); return hasMoreThanOneAt(value)",
+                                            "errorMsg": "Email address must contain only one @ character."
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

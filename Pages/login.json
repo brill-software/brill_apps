@@ -1,0 +1,170 @@
+{
+    "pageDescrip": "CMS Login page",
+    "rootComponent": {
+        "id": "errorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "themeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/login_theme.json"
+                },
+                "children": [
+                    {
+                        "id": "outer_div",
+                        "module": "html/Div",
+                        "attributes": {
+                            "bgImageTopic": "/Images/cranes.png",
+                            "style": {
+                                "backgroundSize": "cover",
+                                "minHeight": "100vh",
+                                "position": "relative"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "center_div",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "column",
+                                        "boxShadow": "5px 10px 18px",
+                                        "background": "white",
+                                        "borderRadius": "30px",
+                                        "opacity": "0.9",
+                                        "padding": "20px",
+                                        "position": "absolute",
+                                        "width": "400px",
+                                        "height": "320px",
+                                        "top": "50%",
+                                        "left": "50%",
+                                        "margin": "-160px 0 0 -200px"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "alertBox",
+                                        "module": "material_ui/alert/Alert",
+                                        "attributes": {
+                                            "subscribeToTopic": "app:errors:",
+                                            "clearOnChangeToTopic": "app:any:",
+                                            "elevation": 12,
+                                            "style": {
+                                                "cursor": "move"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "Flex Row Layout",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "row",
+                                                "flexWrap": "wrap"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "loginHeader",
+                                                "module": "material_ui/text/Typography",
+                                                "attributes": {
+                                                    "variant": "h4",
+                                                    "gutterBottom": true,
+                                                    "text": "Brill CMS"
+                                                }
+                                            },
+                                            {
+                                                "id": "BrillSoftwareButton",
+                                                "module": "material_ui/button/LinkButton",
+                                                "attributes": {
+                                                    "startIcon": "Home",
+                                                    "title": "Brill Software",
+                                                    "route": "/brill_software/home",
+                                                    "style": {
+                                                        "height": "18px",
+                                                        "marginTop": "5px",
+                                                        "marginLeft": "100px",
+                                                        "color": "#498ada",
+                                                        "background": "#e0e0e0",
+                                                        "borderRadius": "9px",
+                                                        "textTransform": "none",
+                                                        "fontSize": "16px"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "usernameField",
+                                        "module": "material_ui/input/TextField",
+                                        "attributes": {
+                                            "label": "Username",
+                                            "variant": "outlined",
+                                            "publishToTopic": "loginForm.username",
+                                            "style": {
+                                                "margin": "10px"
+                                            },
+                                            "validationRules": [
+                                                {
+                                                    "code": "return value.length === 0",
+                                                    "errorMsg": "Please enter your username."
+                                                },
+                                                {
+                                                    "code": "return value.length > 40",
+                                                    "errorMsg": "Username is too long."
+                                                },
+                                                {
+                                                    "code": "console.log('Calling notJustOneAt'); return hasMoreThanOneAt(value)",
+                                                    "errorMsg": "Email address must contain only one @ character."
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "id": "passwordField",
+                                        "module": "material_ui/input/PasswordField",
+                                        "attributes": {
+                                            "id": "PasswordField",
+                                            "label": "Password",
+                                            "variant": "outlined",
+                                            "publishToTopic": "loginForm.password",
+                                            "validationRules": [
+                                                {
+                                                    "code": "return value.length === 0",
+                                                    "errorMsg": "Please enter your password."
+                                                }
+                                            ],
+                                            "style": {
+                                                "margin": "10px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "loginButton",
+                                        "module": "material_ui/button/LoginButton",
+                                        "attributes": {
+                                            "subscribeToTopic": "loginForm",
+                                            "style": {
+                                                "margin": "20px 10px 10px 10px"
+                                            },
+                                            "requestTopic": "auth:/${appName}/authenticate",
+                                            "title": "Login",
+                                            "variant": "contained",
+                                            "color": "primary",
+                                            "successRoute": "/${appName}/home",
+                                            "changePasswordRoute": "/${appName}/changePassword"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
