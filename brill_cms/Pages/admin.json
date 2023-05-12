@@ -114,16 +114,6 @@
                                                 "filter": true,
                                                 "filterType": "textField"
                                             }
-                                        },
-                                        {
-                                            "name": "Action",
-                                            "options": {
-                                                "print": false,
-                                                "download": false,
-                                                "filter": false,
-                                                "sort": false,
-                                                "empty": true
-                                            }
                                         }
                                     ],
                                     "options": {
