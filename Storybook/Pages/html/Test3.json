@@ -79,9 +79,9 @@
                         "margin": "10px",
                         "width": "180px",
                         "height": "40px",
-                        "background": "lightblue"
+                        "background": "green"
                     },
-                    "text": "Tracking test 1"
+                    "text": "Simple test change for Git"
                 }
             },
             {
