@@ -1,7 +1,5 @@
 # brill_apps
 
-Change on upstream changes branch.
-
 Applications files for use with the Brill CMS.
 
 global - contains the site.json file which specifies the default applicaiton.
@@ -15,28 +13,8 @@ Create a fork of brill_apps to hold the base apps plus your own apps called say 
 
 ### Making changes to the brill_cms and Storybook apps
 
-To make changes to any of the base apps (brill_cms and the Storybook) first create a new branch off of develop in your 
-brill_apps_fork repository called upstream_changes.
-
-Make the change in the branch.
-
-
-#### Find the commit Id to cherry pick
-
-Look at the log (Right click on the Workspace folder and select Commit Log).
-Copy the Commit Id of the change. e.g. 80cf5d0
-
-**OR**
-
-Get a command line window and change directory to the workspace directory.
-
-```
-%cd Projects/brill_workspace/<username>
-%git log
-
-commit 80cf5d0e15e24528e84e984b4dba37e11cdb0bd3 (HEAD -> upstream_changes, origin/upstream_changes)
-    brill_apps README update.
-```
+To make changes to any of the base apps (brill_cms and the Storybook) first create a new branch off of develop brill_apps
+called upstream_develop.
 
 #### Add a second remote called upstream
 
@@ -55,43 +33,22 @@ If upstream doesn't exist, add it.
 % git add remote upstream git@bitbucket.org:brill-software/brill_apps.git
 ```
 
-You can call the remote something else other than upstream.
-
-#### Create a new branch off of upstream/develop
-
-See if the branch upstream_dev already exists and switch to it.
+#### Checkout the upstream_changes branch
 
 ```
-% git branch
-*  develop
-  master
-  upstream_changes
-% git checkout upstream_changes
+git checkout -b upstream_changes upstream/upstream_changes
 ```
 
-If the branch upstream_changes doesn't exist, create it.
+Not that the local bracnh name must be the same as the branch name on the remote.
 
-```
-% create branch upstream_dev upstream/develop
-Branch 'upstream_dev' set up to track remote branch 'develop' from 'upstream'.
-```
+#### Commit the changes
 
-#### Cherry pick changes into branch
+Make the change in the branch upstream_changes.
 
-```
-git cherry-pick <commit id>
-```
+Commit the changes. They will be pushed to the remote called **upstream**.
 
-DONT'USE CHERRYPICK
+#### Merge the changes into the develop branch of remote <b>origin</b>.
 
-#### Push change to upstream/develop
+Switch to the develop branch and merge in branch upstream_changes.
 
-```
-git push upstream upstream_dev:develop
-```
-
-```
-git checkout -b upstream_develop upstream/develop
-Branch 'upstream_develop' set up to track remote branch 'develop' from 'upstream'.
-Switched to a new branch 'upstream_develop'
-```
+If there are merge conflicts, first close and re-open the files that are conflicted.
