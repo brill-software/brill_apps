@@ -6,15 +6,8 @@ brill_cms - the Brill CMS Applications.
 MediaLirbary - a space for keeping images etc.
 Storybook - examples of various components.
 
-Create a fork of brill_web_apps to hold your own web apps.
+## Forking the Repository
 
-<<<<<<< HEAD
-Merge changes into brill_web_apps by creating the changes on a branch and submitting a merge request on the branch.
-
-git fetch -v
-
-git remote add upstream <upsteam repo>
-=======
 Create a fork of brill_apps to hold the base apps plus your own apps called say brill_apps_fork.
 
 ### Making changes to the brill_cms and Storybook apps
@@ -86,9 +79,16 @@ Branch 'upstream_dev' set up to track remote branch 'develop' from 'upstream'.
 git cherry-pick <commit id>
 ```
 
+DONT'USE CHERRYPICK
+
 #### Push change to upstream/develop
 
 ```
 git push upstream upstream_dev:develop
 ```
->>>>>>> 11a486a... Added pushd escrip  to README
+
+```
+git checkout -b upstream_develop upstream/develop
+Branch 'upstream_develop' set up to track remote branch 'develop' from 'upstream'.
+Switched to a new branch 'upstream_develop'
+```
