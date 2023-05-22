@@ -69,9 +69,9 @@
                                                 "module": "html/Img",
                                                 "attributes": {
                                                     "style": {
-                                                        "width": "400px"
+                                                        "width": "300px"
                                                     },
-                                                    "subscribeToTopic": "/Images/card1.png"
+                                                    "subscribeToTopic": "/Images/card1-b.jpg"
                                                 }
                                             }
                                         ]
@@ -97,9 +97,9 @@
                                                 "module": "html/Img",
                                                 "attributes": {
                                                     "style": {
-                                                        "width": "400px"
+                                                        "width": "300px"
                                                     },
-                                                    "subscribeToTopic": "/Images/card2.png"
+                                                    "subscribeToTopic": "/Images/card2-b.jpg"
                                                 }
                                             }
                                         ]
@@ -125,9 +125,9 @@
                                                 "module": "html/Img",
                                                 "attributes": {
                                                     "style": {
-                                                        "width": "400px"
+                                                        "width": "300px"
                                                     },
-                                                    "subscribeToTopic": "/Images/card3.png"
+                                                    "subscribeToTopic": "/Images/card3-b.jpg"
                                                 }
                                             }
                                         ]
