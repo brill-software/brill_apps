@@ -310,10 +310,75 @@
                         ]
                     },
                     {
-                        "id": "Background Image",
+                        "id": "Background Image - topic",
                         "module": "html/Div",
                         "attributes": {
                             "bgImageTopic": "/Images/background.jpg",
+                            "style": {
+                                "position": "relative",
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "backgroundSize": "cover",
+                                "height": "80px"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Shadow",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "background": "red",
+                                        "boxShadow": "5px 10px 18px"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "Rounded",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "background": "yellow",
+                                        "borderRadius": "10px"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "Opacity",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "background": "blue",
+                                        "opacity": "0.3"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "Topic",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "subscribeToTopic": "username",
+                                    "style": {
+                                        "font": "sans-serif"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Background Image - local URL",
+                        "module": "html/Div",
+                        "attributes": {
+                            "backgroundImage": "/brill_cms/cranes.png",
                             "style": {
                                 "position": "relative",
                                 "display": "flex",

@@ -30,7 +30,7 @@
                         }
                     },
                     {
-                        "id": "Image - external image",
+                        "id": "Image - external URL",
                         "module": "html/Img",
                         "attributes": {
                             "style": {
@@ -41,7 +41,18 @@
                         }
                     },
                     {
-                        "id": "Image - gif",
+                        "id": "Image - local URL",
+                        "module": "html/Img",
+                        "attributes": {
+                            "style": {
+                                "width": "400px"
+                            },
+                            "src": "/brill_cms/cranes.png",
+                            "alt": "Norway"
+                        }
+                    },
+                    {
+                        "id": "Image - topic (gif)",
                         "module": "html/Img",
                         "attributes": {
                             "subscribeToTopic": "/Images/sample.gif",
@@ -51,7 +62,7 @@
                         }
                     },
                     {
-                        "id": "Image - apng",
+                        "id": "Image - topic (apng)",
                         "module": "html/Img",
                         "attributes": {
                             "subscribeToTopic": "/Images/elephant.apng",
@@ -61,7 +72,7 @@
                         }
                     },
                     {
-                        "id": "Image - bmp",
+                        "id": "Image - topic (bmp)",
                         "module": "html/Img",
                         "attributes": {
                             "subscribeToTopic": "/Images/fieldAtNight.bmp",
@@ -71,7 +82,7 @@
                         }
                     },
                     {
-                        "id": "Image - jpg",
+                        "id": "Image - topic (jpg)",
                         "module": "html/Img",
                         "attributes": {
                             "subscribeToTopic": "/Images/kayaking.jpg",
@@ -83,7 +94,7 @@
                 ]
             },
             {
-                "id": "Image - png",
+                "id": "Image - topic (png)",
                 "module": "html/Img",
                 "attributes": {
                     "style": {
