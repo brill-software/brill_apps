@@ -1,0 +1,481 @@
+{
+    "pageDescrip": "Div Component",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider - takes time to load",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/icon/FixedSizeIcon.json"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>Displays either a Material UI icon or an icon from an SVG file.</p>\n<p>\n<table cellpadding=\"7\">\n<tr><td>nameOrTopic</td><td>The Material-UI Icon name or the topic of an SVG file containing a 24x24 icon.</td></tr>\n</table>\n</p>\n<p>There is only a limited set of Material-UI icons that are loaded. The full set takes over 6MB. The loaded icons are specified in the Client code file <code>IconUtils.ts</code>. Should you require a new Material-UI icon that's not currently loaded, you have two choices. You can either add the icon to  <code>IconUtils.ts</code> or create an SVG file in the applications <code>/Icons</code> directory and have the FixedSizeIcon component subscribe to the SVG file. \n</p>\n<p>You can create your own custom icons and are not limited just to Material-UI icons. The DB Search icon below is a custom icon created using an SVG file. The red Save icon was created by copying the SVG data from the corresponding Material-UI icon.\n</p>\n\n\n"
+                        }
+                    },
+                    {
+                        "id": "SVG Icons",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "DB Search",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "/Icons/fixed/database-search.svg",
+                                    "style": {
+                                        "fill": "brown"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "Save",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "/Icons/fixed/SaveTwoTone.svg",
+                                    "style": {
+                                        "fill": "red"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Supported MUI Icons",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "flexWrap": "wrap"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "ArrowDownward",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "ArrowDownward"
+                                }
+                            },
+                            {
+                                "id": "ArrowUpward",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "ArrowUpward"
+                                }
+                            },
+                            {
+                                "id": "Brightness4",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "Brightness4"
+                                }
+                            },
+                            {
+                                "id": "Brightness7",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "Brightness7"
+                                }
+                            },
+                            {
+                                "id": "ChevronRight",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "ChevronRight"
+                                }
+                            },
+                            {
+                                "id": "Close",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "Close"
+                                }
+                            },
+                            {
+                                "id": "Code",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "Code"
+                                }
+                            },
+                            {
+                                "id": "Edit",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "Edit"
+                                }
+                            },
+                            {
+                                "id": "ExpandMore",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "ExpandMore"
+                                }
+                            },
+                            {
+                                "id": "FindReplace",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "FindReplace"
+                                }
+                            },
+                            {
+                                "id": "FormatBold",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "FormatBold"
+                                }
+                            },
+                            {
+                                "id": "FormatItalic",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "FormatItalic"
+                                }
+                            },
+                            {
+                                "id": "FormatListBulleted",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "FormatListBulleted"
+                                }
+                            },
+                            {
+                                "id": "FormatListNumbered",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "FormatListNumbered"
+                                }
+                            },
+                            {
+                                "id": "FormatUnderlined",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "FormatUnderlined"
+                                }
+                            },
+                            {
+                                "id": "Home",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "Home"
+                                }
+                            },
+                            {
+                                "id": "Redo",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "Redo"
+                                }
+                            },
+                            {
+                                "id": "Restore",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "Restore"
+                                }
+                            },
+                            {
+                                "id": "SettingsBackupRestore",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "SettingsBackupRestore"
+                                }
+                            },
+                            {
+                                "id": "Search",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "Search"
+                                }
+                            },
+                            {
+                                "id": "StrikethroughS",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "StrikethroughS"
+                                }
+                            },
+                            {
+                                "id": "Undo",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "Undo"
+                                }
+                            },
+                            {
+                                "id": "Wallpaper",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "Wallpaper"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Supported Two Tone MUI Icons",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "flexWrap": "wrap"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Add",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "AddTwoTone"
+                                }
+                            },
+                            {
+                                "id": "BusinessCenter-1",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "BusinessCenterTwoTone"
+                                }
+                            },
+                            {
+                                "id": "CheckCircle",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "CheckCircleTwoTone"
+                                }
+                            },
+                            {
+                                "id": "Delete",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "DeleteTwoTone"
+                                }
+                            },
+                            {
+                                "id": "Description",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "DescriptionTwoTone"
+                                }
+                            },
+                            {
+                                "id": "Folder",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "FolderTwoTone"
+                                }
+                            },
+                            {
+                                "id": "FolderOpen",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "FolderOpenTwoTone"
+                                }
+                            },
+                            {
+                                "id": "FolderSpecial",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "FolderSpecialTwoTone"
+                                }
+                            },
+                            {
+                                "id": "FormatPaint",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "FormatPaintTwoTone"
+                                }
+                            },
+                            {
+                                "id": "GridOff",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "GridOffTwoTone"
+                                }
+                            },
+                            {
+                                "id": "GridOn",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "GridOnTwoTone"
+                                }
+                            },
+                            {
+                                "id": "HorizontalSplit",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "HorizontalSplitTwoTone"
+                                }
+                            },
+                            {
+                                "id": "InsertDriveFile",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "InsertDriveFileTwoTone"
+                                }
+                            },
+                            {
+                                "id": "InsertPhoto",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "InsertPhotoTwoTone"
+                                }
+                            },
+                            {
+                                "id": "Image",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "ImageTwoTone"
+                                }
+                            },
+                            {
+                                "id": "ListAlt",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "ListAltTwoTone"
+                                }
+                            },
+                            {
+                                "id": "Pages",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "PagesTwoTone"
+                                }
+                            },
+                            {
+                                "id": "Remove",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "RemoveTwoTone"
+                                }
+                            },
+                            {
+                                "id": "RemoveCircle-1",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "RemoveCircleTwoTone"
+                                }
+                            },
+                            {
+                                "id": "Refresh",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "RefreshTwoTone"
+                                }
+                            },
+                            {
+                                "id": "Save",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "SaveTwoTone"
+                                }
+                            },
+                            {
+                                "id": "Subject",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "SubjectTwoTone"
+                                }
+                            },
+                            {
+                                "id": "Style",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "StyleTwoTone"
+                                }
+                            },
+                            {
+                                "id": "VerticalSplit",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "VerticalSplitTwoTone"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Icon Styling",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Small",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "Home",
+                                    "fontSize": "small"
+                                }
+                            },
+                            {
+                                "id": "Medium",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "Home"
+                                }
+                            },
+                            {
+                                "id": "Large",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "Home",
+                                    "fontSize": "large"
+                                }
+                            },
+                            {
+                                "id": "50px Color",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "Home",
+                                    "style": {
+                                        "color": "purple",
+                                        "fontSize": "50px"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "75px Color",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "Home",
+                                    "style": {
+                                        "color": "green",
+                                        "fontSize": "75px"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

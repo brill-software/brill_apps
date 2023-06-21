@@ -72,19 +72,6 @@
                 ]
             },
             {
-                "id": "Item-4",
-                "module": "html/Div",
-                "attributes": {
-                    "style": {
-                        "margin": "10px",
-                        "width": "180px",
-                        "height": "40px",
-                        "background": "lightpink"
-                    },
-                    "text": "Test 6. For Source Forge.  *************"
-                }
-            },
-            {
                 "id": "Item-5",
                 "module": "html/Div",
                 "attributes": {
@@ -95,6 +82,19 @@
                         "background": "lightgreen"
                     },
                     "text": "**** Second change on Source Forge ******"
+                }
+            },
+            {
+                "id": "Item-4",
+                "module": "html/Div",
+                "attributes": {
+                    "style": {
+                        "margin": "10px",
+                        "width": "180px",
+                        "height": "40px",
+                        "background": "lightpink"
+                    },
+                    "text": "Test 6. For Source Forge.  *************"
                 }
             },
             {

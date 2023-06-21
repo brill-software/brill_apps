@@ -27,7 +27,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>iconName</td><td>The Material-UI Icon Name</td></tr>\n<tr><td>tooltip</td><td>The tooltip.</td></tr>\n<tr><td>publishToTopic</td><td>The topic to publish to when the user clicks on the icon.</td></tr>\n<tr><td>action</td><td>A string or object that is published to the publishToTopic.</td></tr>\n<tr><td>route [optional]</td><td>Location to take user when they click on the icon. e.g. /${appName}/home</td></tr>\n<tr><td>theme</td><td><code>theme.overrides.IconButton.root</code></td></tr>\n</table>\n</p>"
+                            "text": "<p>Creates a button from a Material-UI icon or an SVG icon.</p>\n<p>\n<table cellpadding=\"7\">\n<tr><td>iconName</td><td>The Material-UI Icon Name or the topic for an SVG icon.</td></tr>\n<tr><td>tooltip</td><td>The tooltip.</td></tr>\n<tr><td>publishToTopic</td><td>The topic to publish to when the user clicks on the icon.</td></tr>\n<tr><td>action</td><td>A string or object that is published to the publishToTopic.</td></tr>\n<tr><td>route [optional]</td><td>Location to take user when they click on the icon. e.g. /${appName}/home</td></tr>\n<tr><td>theme</td><td><code>theme.overrides.IconButton.root</code></td></tr>\n</table>\n</p>"
                         }
                     },
                     {
@@ -44,50 +44,20 @@
                                 "id": "^Add",
                                 "module": "material_ui/button/IconButton",
                                 "attributes": {
-                                    "iconName": "Add",
+                                    "iconName": "AddTwoTone",
                                     "tooltip": "Add",
                                     "publishToTopic": "comLib.IconButton.response",
                                     "action": "Add icon."
                                 }
                             },
                             {
-                                "id": "^Brush",
-                                "module": "material_ui/button/IconButton",
-                                "attributes": {
-                                    "iconName": "Brush",
-                                    "tooltip": "Brush",
-                                    "publishToTopic": "comLib.IconButton.response",
-                                    "action": "Brush icon."
-                                }
-                            },
-                            {
-                                "id": "^Call",
-                                "module": "material_ui/button/IconButton",
-                                "attributes": {
-                                    "iconName": "Call",
-                                    "tooltip": "Call",
-                                    "publishToTopic": "comLib.IconButton.response",
-                                    "action": "Call icon."
-                                }
-                            },
-                            {
                                 "id": "^Delete",
                                 "module": "material_ui/button/IconButton",
                                 "attributes": {
-                                    "iconName": "Delete",
+                                    "iconName": "DeleteTwoTone",
                                     "tooltip": "Delete",
                                     "publishToTopic": "comLib.IconButton.response",
                                     "action": "Delete icon."
-                                }
-                            },
-                            {
-                                "id": "^Email",
-                                "module": "material_ui/button/IconButton",
-                                "attributes": {
-                                    "iconName": "Email",
-                                    "tooltip": "Email",
-                                    "publishToTopic": "comLib.IconButton.response",
-                                    "action": "Emal icon."
                                 }
                             },
                             {
@@ -113,6 +83,19 @@
                                     "action": "Home icon.",
                                     "style": {
                                         "color": "red"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "^Save (SVG Icon)",
+                                "module": "material_ui/button/IconButton",
+                                "attributes": {
+                                    "iconName": "/Icons/fixed/SaveTwoTone.svg",
+                                    "tooltip": "Save",
+                                    "publishToTopic": "comLib.IconButton.response",
+                                    "action": "Save icon.",
+                                    "style": {
+                                        "fill": "brown"
                                     }
                                 }
                             }
@@ -150,7 +133,10 @@
                         "module": "material_ui/text/Typography",
                         "attributes": {
                             "variant": "body1",
-                            "subscribeToTopic": "comLib.IconButton.response"
+                            "subscribeToTopic": "comLib.IconButton.response",
+                            "style": {
+                                "padding": "20px"
+                            }
                         }
                     }
                 ]

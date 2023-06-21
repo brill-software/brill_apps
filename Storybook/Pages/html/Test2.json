@@ -6,34 +6,6 @@
         "attributes": {},
         "children": [
             {
-                "id": "ListAlt",
-                "module": "material_ui/icon/FixedSizeIcon",
-                "attributes": {
-                    "nameOrTopic": "ListAlt"
-                }
-            },
-            {
-                "id": "Brightness2",
-                "module": "material_ui/icon/FixedSizeIcon",
-                "attributes": {
-                    "nameOrTopic": "Brightness2TwoTone"
-                }
-            },
-            {
-                "id": "MoodBad-1",
-                "module": "material_ui/icon/FixedSizeIcon",
-                "attributes": {
-                    "nameOrTopic": "MoodBadTwoTone"
-                }
-            },
-            {
-                "id": "Looks3",
-                "module": "material_ui/icon/FixedSizeIcon",
-                "attributes": {
-                    "nameOrTopic": "Looks3"
-                }
-            },
-            {
                 "id": "Home-1",
                 "module": "material_ui/button/IconButton",
                 "attributes": {
@@ -42,7 +14,7 @@
                     "publishToTopic": "comLib.IconButton.response",
                     "action": "Home icon.",
                     "style": {
-                        "color": "grey"
+                        "color": "green"
                     }
                 }
             },
@@ -71,6 +43,41 @@
                 ]
             },
             {
+                "id": "SGV Icons",
+                "module": "html/Div",
+                "attributes": {
+                    "style": {
+                        "display": "flex",
+                        "flexDirection": "row"
+                    }
+                },
+                "children": [
+                    {
+                        "id": "DB Search",
+                        "module": "material_ui/icon/FixedSizeIcon",
+                        "attributes": {
+                            "nameOrTopic": "/Icons/fixed/database-search.svg",
+                            "style": {
+                                "fill": "green"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "username",
+                "module": "material_ui/text/Typography",
+                "attributes": {
+                    "text": "abc",
+                    "variant": "body1",
+                    "style": {
+                        "color": "black",
+                        "marginRight": "40px"
+                    },
+                    "subscribeToTopic": "app:username"
+                }
+            },
+            {
                 "id": "Item-4",
                 "module": "html/Div",
                 "attributes": {
@@ -78,9 +85,9 @@
                         "margin": "10px",
                         "width": "180px",
                         "height": "40px",
-                        "background": "lightpink"
+                        "background": "lightblue"
                     },
-                    "text": "Merge Test 4 for Chris"
+                    "text": "Test of Pull fail."
                 }
             },
             {
@@ -96,6 +103,19 @@
                     "text": "Hi there Olive change PPPPPPPPPPP"
                 },
                 "children": []
+            },
+            {
+                "id": "Item-5",
+                "module": "html/Div",
+                "attributes": {
+                    "style": {
+                        "margin": "10px",
+                        "width": "180px",
+                        "height": "40px",
+                        "background": "lightyellow"
+                    },
+                    "text": "New tracking change test."
+                }
             },
             {
                 "id": "Item-2",
@@ -121,19 +141,6 @@
                         "background": "lightgrey"
                     },
                     "text": "Change made on develop. Change on chris_track."
-                }
-            },
-            {
-                "id": "Item-5",
-                "module": "html/Div",
-                "attributes": {
-                    "style": {
-                        "margin": "10px",
-                        "width": "180px",
-                        "height": "40px",
-                        "background": "lightyellow"
-                    },
-                    "text": "New tracking change test."
                 }
             }
         ]

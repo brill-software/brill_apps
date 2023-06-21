@@ -79,9 +79,9 @@
                         "margin": "10px",
                         "width": "180px",
                         "height": "40px",
-                        "background": "green"
+                        "background": "yellow"
                     },
-                    "text": "Simple test change for Git"
+                    "text": "Rebase test."
                 }
             },
             {

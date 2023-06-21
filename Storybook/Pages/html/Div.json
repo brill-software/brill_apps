@@ -27,7 +27,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>text [optional]</td><td>Initial text.</td></tr>\n<tr><td>subscribeToTopic [optional]</td><td>Topic to subscribe to for the text.</td></tr>\n<tr><td>bgImageTopic [optional]</td><td>Specifies the topic for an image to be used for the background.</td></tr>\n</table>\n</p>"
+                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>text [optional]</td><td>Initial text.</td></tr>\n<tr><td>subscribeToTopic [optional]</td><td>Topic to subscribe to for the text.</td></tr>\n<tr><td>bgImageTopic [optional]</td><td>Specifies the topic for an image to be used for the background.</td></tr>\n<tr><td>backgroundImage [optional]</td><td>Specifies the path of a static image on the server to be use for the background.</td></tr>\n</table>\n</p>"
                         }
                     },
                     {

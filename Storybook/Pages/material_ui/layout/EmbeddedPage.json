@@ -39,7 +39,7 @@
                                 "id": "Attributes",
                                 "module": "material_ui/text/Xhtml",
                                 "attributes": {
-                                    "text": "<p>Embeds a page into the current page.\n<table cellpadding=\"7\">\n<tr><td>subscribeToTopic</td><td>The topic for the page to embed.</td></tr>\n<tr><td>delay [optional]</td><td>Delay in ms before subscribing to the topic. A value of 100 is recommended for footers, to make the page display smoothly.</td></tr>\n</table>\n</p>"
+                                    "text": "<p>Embeds a page into the current page.\n<table cellpadding=\"7\">\n<tr><td>subscribeToTopic</td><td>The topic for the page to embed.</td></tr>\n</table>\n</p>"
                                 }
                             },
                             {
