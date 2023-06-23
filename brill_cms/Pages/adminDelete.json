@@ -191,6 +191,20 @@
                                                 "margin": "10px"
                                             }
                                         }
+                                    },
+                                    {
+                                        "id": "workspace",
+                                        "module": "material_ui/input/TextField",
+                                        "attributes": {
+                                            "disabled": true,
+                                            "label": "Workspace",
+                                            "variant": "outlined",
+                                            "subscribeToTopic": "users.tableRow#workspace",
+                                            "publishToTopic": "users.editForm#workspace",
+                                            "style": {
+                                                "margin": "10px"
+                                            }
+                                        }
                                     }
                                 ]
                             },

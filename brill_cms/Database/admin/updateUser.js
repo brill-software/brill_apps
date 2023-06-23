@@ -43,13 +43,14 @@ function processUpdate(content, db) {
     var query
     if (contentObj.resetPassword)
     {
-        query = "update brill_cms_user set name = :name, email = :email, changePassword = :changePassword, permissions = :permissions, password = :password where user_id = :user_id";
+        query = "update brill_cms_user set name = :name, email = :email, workspace = :workspace, changePassword = :changePassword, permissions = :permissions, password = :password where user_id = :user_id";
     } else {
-        query = "update brill_cms_user set name = :name, email = :email, changePassword = :changePassword, permissions = :permissions where user_id = :user_id";
+        query = "update brill_cms_user set name = :name, email = :email, workspace = :workspace, changePassword = :changePassword, permissions = :permissions where user_id = :user_id";
     }
     queryParameters["user_id"] = contentObj.user_id;
     queryParameters["name"] = contentObj.name;
     queryParameters["email"] = contentObj.email;
+     queryParameters["workspace"] = contentObj.workspace;
     queryParameters["changePassword"] = contentObj.changePassword;
     queryParameters["permissions"] = contentObj.permissions;
     if (contentObj.resetPassword) {
@@ -59,7 +60,7 @@ function processUpdate(content, db) {
     var rowCount = db.executeNamedParamsUpdate(query, JSON.stringify(queryParameters));
 
     var result = {count: rowCount, republishTopic: "javascript:/brill_cms/Database/admin/readUsers.js"};
-    print("Finished executing JavaScript");
+    print("Finished executing updateUser.js");
     return JSON.stringify(result);
 }
 

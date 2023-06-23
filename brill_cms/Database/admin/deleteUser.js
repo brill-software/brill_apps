@@ -34,7 +34,7 @@ function processDelete(content, db) {
     var rowCount = db.executeNamedParamsUpdate(query, JSON.stringify(queryParameters));
     
     var result = {count: rowCount, republishTopic: "javascript:/brill_cms/Database/admin/readUsers.js"};
-    print("Finished executing JavaScript");
+    print("Finished executing deleteUser.js");
     return JSON.stringify(result);
 }
 

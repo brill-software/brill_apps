@@ -191,6 +191,26 @@
                                                 }
                                             },
                                             {
+                                                "id": "workspace",
+                                                "module": "material_ui/input/TextField",
+                                                "attributes": {
+                                                    "label": "Workspace",
+                                                    "variant": "outlined",
+                                                    "subscribeToTopic": "users.tableRow#workspace",
+                                                    "publishToTopic": "users.editForm#workspace",
+                                                    "style": {
+                                                        "margin": "10px",
+                                                        "width": "280px"
+                                                    },
+                                                    "validationRules": [
+                                                        {
+                                                            "code": "return value.length > 45",
+                                                            "errorMsg": "Workspace name is too long."
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
                                                 "id": "ChangePasswordSelect",
                                                 "module": "material_ui/input/Select",
                                                 "attributes": {

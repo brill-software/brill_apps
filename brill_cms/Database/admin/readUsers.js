@@ -27,7 +27,7 @@ function processRequest(filter, db) {
     var filterObj = JSON.parse(filter);
     print("******* filterObj = " + JSON.stringify(filterObj));
     
-    var query = "select user_id, username, name, email, case when length(password) > 30 then '******' else password end password, permissions, changePassword from brill_cms_user where deleted != 'Y'";
+    var query = "select user_id, username, name, email, workspace, case when length(password) > 30 then '******' else password end password, permissions, changePassword from brill_cms_user where deleted != 'Y'";
 
     var whereAdded = false;
     var whereClause = "";
@@ -80,7 +80,7 @@ function processRequest(filter, db) {
     var data = JSON.parse(dataJson);
 
     var result = {data: data, count: count};
-    print("Finished executing JavaScript");
+    print("Finished executing readUsers.js");
     return JSON.stringify(result);
 }
 

@@ -45,12 +45,13 @@ function processInsert(content, db) {
         return JSON.stringify({error: {title: "Password Mismatch", detail: "The password and confirmation password don't match. Please correct."}});
     }
     // Insert the new user.
-    var query = "insert brill_cms_user (username, name, email, password, changePassword, permissions, deleted) values (:username, :name, :email, :password, :changePassword, :permissions, 'N')";
+    var query = "insert brill_cms_user (username, name, email, workspace, password, changePassword, permissions, deleted) values (:username, :name, :email, :workspace, :password, :changePassword, :permissions, 'N')";
     var queryParameters = {};
     queryParameters["user_id"] = contentObj.user_id;
     queryParameters["username"] = contentObj.username.toLowerCase();
     queryParameters["name"] = contentObj.name;
     queryParameters["email"] = contentObj.email;
+    queryParameters["workspace"] = contentObj.email;
     queryParameters["password"] = db.hashPassword(contentObj.username,contentObj.password);
     queryParameters["changePassword"] = contentObj.changePassword;
     queryParameters["permissions"] = contentObj.permissions;
@@ -61,7 +62,7 @@ function processInsert(content, db) {
 
     print("Query executed.");  
     var result = {count: rowCount, republishTopic: "javascript:/brill_cms/Database/admin/readUsers.js"};
-    print("Finished executing JavaScript");
+    print("Finished executing newUser.js");
     return JSON.stringify(result);
 }
 

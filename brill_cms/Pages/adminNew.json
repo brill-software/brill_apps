@@ -164,6 +164,25 @@
                                         }
                                     },
                                     {
+                                        "id": "workspace",
+                                        "module": "material_ui/input/TextField",
+                                        "attributes": {
+                                            "label": "Workspace",
+                                            "variant": "outlined",
+                                            "autoComplete": "nope",
+                                            "publishToTopic": "users.newForm#workspace",
+                                            "style": {
+                                                "margin": "10px"
+                                            },
+                                            "validationRules": [
+                                                {
+                                                    "code": "return value.length > 45",
+                                                    "errorMsg": "Workspace name is too long."
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
                                         "id": "descrip",
                                         "module": "material_ui/text/Typography",
                                         "attributes": {

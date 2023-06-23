@@ -100,6 +100,14 @@
                                             }
                                         },
                                         {
+                                            "name": "workspace",
+                                            "label": "Workspace",
+                                            "options": {
+                                                "filter": true,
+                                                "filterType": "textField"
+                                            }
+                                        },
+                                        {
                                             "name": "permissions",
                                             "label": "Permissions",
                                             "options": {

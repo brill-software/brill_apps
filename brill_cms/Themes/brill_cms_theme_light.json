@@ -218,9 +218,9 @@
                 {
                     "type": "leaf",
                     "matches": ".*Database.*(.sql|.js)$",
-                    "iconName": "json:/brill_cms/Icons/fixed/database-search.json",
+                    "iconName": "file:/brill_cms/Icons/fixed/database-search.svg",
                     "style": {
-                        "color": "#3eb0d4"
+                        "fill": "#3eb0d4"
                     }
                 },
                 {

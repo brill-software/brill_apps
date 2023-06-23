@@ -33,6 +33,98 @@
                                 }
                             },
                             {
+                                "id": "Flex Column Layout-1",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "column"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "Row-1",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "marginTop": "10px",
+                                                "display": "flex",
+                                                "flexDirection": "row"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Item-2",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "text": "Repository: ",
+                                                    "style": {
+                                                        "marginRight": "10px",
+                                                        "marginBottom": "10px",
+                                                        "fontSize": "20px",
+                                                        "fontFamily": "Arial, sans-serif",
+                                                        "color": "#808080"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Item-1",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "subscribeToTopic": "git:uri:/",
+                                                    "style": {
+                                                        "marginBottom": "10px",
+                                                        "fontSize": "20px",
+                                                        "fontFamily": "Arial, sans-serif",
+                                                        "color": "#808080"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "Row-2",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "marginTop": "10px",
+                                                "display": "flex",
+                                                "flexDirection": "row"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Item-2",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "text": "Current Branch: ",
+                                                    "style": {
+                                                        "marginRight": "10px",
+                                                        "marginBottom": "25px",
+                                                        "fontSize": "20px",
+                                                        "fontFamily": "Arial, sans-serif",
+                                                        "color": "#808080"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Item-1",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "subscribeToTopic": "git:branch:/",
+                                                    "style": {
+                                                        "marginBottom": "25px",
+                                                        "fontSize": "20px",
+                                                        "fontFamily": "Arial, sans-serif",
+                                                        "color": "#808080"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
                                 "id": "Flex Row Layout",
                                 "module": "html/Div",
                                 "attributes": {
@@ -313,54 +405,6 @@
                                 "attributes": {
                                     "text": "<p>Click on the Workspace folder to re-display this page.</p>"
                                 }
-                            },
-                            {
-                                "id": "Flex Column Layout",
-                                "module": "html/Div",
-                                "attributes": {
-                                    "style": {
-                                        "display": "flex",
-                                        "flexDirection": "column"
-                                    }
-                                },
-                                "children": [
-                                    {
-                                        "id": "Row-1",
-                                        "module": "html/Div",
-                                        "attributes": {
-                                            "style": {
-                                                "marginTop": "10px",
-                                                "display": "flex",
-                                                "flexDirection": "row"
-                                            }
-                                        },
-                                        "children": [
-                                            {
-                                                "id": "Item-2",
-                                                "module": "html/Div",
-                                                "attributes": {
-                                                    "text": "Repository: ",
-                                                    "style": {
-                                                        "marginRight": "10px",
-                                                        "fontSize": "15px",
-                                                        "fontFamily": "Arial, sans-serif"
-                                                    }
-                                                }
-                                            },
-                                            {
-                                                "id": "Item-1",
-                                                "module": "html/Div",
-                                                "attributes": {
-                                                    "subscribeToTopic": "config:/repository",
-                                                    "style": {
-                                                        "fontSize": "15px",
-                                                        "fontFamily": "Arial, sans-serif"
-                                                    }
-                                                }
-                                            }
-                                        ]
-                                    }
-                                ]
                             }
                         ]
                     }

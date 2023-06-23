@@ -16,7 +16,7 @@
                         "id": "outer_div",
                         "module": "html/Div",
                         "attributes": {
-                            "bgImageTopic": "/Images/cranes.png",
+                            "backgroundImage": "/brill_cms/cranes.png",
                             "style": {
                                 "backgroundSize": "cover",
                                 "minHeight": "100vh",
