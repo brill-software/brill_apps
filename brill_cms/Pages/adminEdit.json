@@ -11,7 +11,7 @@
                 "attributes": {
                     "style": {
                         "boxShadow": "5px 10px 18px",
-                        "width": "700px"
+                        "width": "1000px"
                     }
                 },
                 "children": [
@@ -224,26 +224,26 @@
                                                         "width": "220px"
                                                     }
                                                 }
-                                            },
-                                            {
-                                                "id": "permissionsField",
-                                                "module": "material_ui/input/CheckboxGroup",
-                                                "attributes": {
-                                                    "color": "primary",
-                                                    "multiple": true,
-                                                    "label": "Permissions",
-                                                    "variant": "outlined",
-                                                    "checkboxesTopic": "/Database/getPermissions.sql",
-                                                    "subscribeToTopic": "users.tableRow#permissions",
-                                                    "publishToTopic": "users.editForm#permissions",
-                                                    "validationRules": [],
-                                                    "style": {
-                                                        "margin": "10px",
-                                                        "width": "420px"
-                                                    }
-                                                }
                                             }
                                         ]
+                                    },
+                                    {
+                                        "id": "permissionsField",
+                                        "module": "material_ui/input/CheckboxGroup",
+                                        "attributes": {
+                                            "color": "primary",
+                                            "multiple": true,
+                                            "label": "Permissions",
+                                            "variant": "outlined",
+                                            "checkboxesTopic": "/Database/getPermissions.sql",
+                                            "subscribeToTopic": "users.tableRow#permissions",
+                                            "publishToTopic": "users.editForm#permissions",
+                                            "validationRules": [],
+                                            "style": {
+                                                "margin": "10px",
+                                                "width": "280px"
+                                            }
+                                        }
                                     },
                                     {
                                         "id": "padding-1",
@@ -264,7 +264,6 @@
                                                 "id": "passwordChangeCheckbox",
                                                 "module": "material_ui/input/CheckboxGroup",
                                                 "attributes": {
-                                                    "label": "Tick to change password",
                                                     "variant": "outlined",
                                                     "checkboxesTopic": "/Resources/resetPwdCheckbox.json",
                                                     "publishToTopic": "users.editForm#resetPassword",
