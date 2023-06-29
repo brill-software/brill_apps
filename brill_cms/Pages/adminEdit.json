@@ -1,5 +1,6 @@
 {
-    "pageDescrip": "CMS Login page",
+    "pageDescrip": "CMS Edit User",
+    "permission": "cms_admin",
     "rootComponent": {
         "id": "errorBoundary",
         "module": "react/ErrorBoundary",
@@ -194,7 +195,7 @@
                                                 "id": "workspace",
                                                 "module": "material_ui/input/TextField",
                                                 "attributes": {
-                                                    "label": "Workspace",
+                                                    "label": "Workspace set on Login",
                                                     "variant": "outlined",
                                                     "subscribeToTopic": "users.tableRow#workspace",
                                                     "publishToTopic": "users.editForm#workspace",

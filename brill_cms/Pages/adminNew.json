@@ -1,5 +1,6 @@
 {
-    "pageDescrip": "CMS Login page",
+    "pageDescrip": "CMS New User",
+    "permission": "cms_admin",
     "rootComponent": {
         "id": "errorBoundary",
         "module": "react/ErrorBoundary",
