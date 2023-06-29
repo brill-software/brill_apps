@@ -1,4 +1,5 @@
 [
     {"value": "Y", "label": "Yes"},
-    {"value": "N", "label": "No"}
+    {"value": "N", "label": "No"},
+    {"value": "X", "label": "Disable Changes"}
 ]
