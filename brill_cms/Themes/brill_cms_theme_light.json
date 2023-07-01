@@ -572,6 +572,10 @@
                         {
                             "name": "SQL",
                             "editor": "TextEditor"
+                        },
+                        {
+                            "name": "DIFF",
+                            "editor": "DiffEditor"
                         }
                     ]
                 },
