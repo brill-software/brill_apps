@@ -43,9 +43,9 @@ function processUpdate(content, db) {
     var query
     if (contentObj.resetPassword)
     {
-        query = "update brill_cms_user set name = :name, email = :email, workspace = :workspace, changePassword = :changePassword, permissions = :permissions, password = :password where user_id = :user_id";
+        query = "update brill_cms_user set name = :name, email = :email, workspace = :workspace, changePassword = :changePassword, permissions = :permissions, hidden_apps = :hidden_apps, password = :password where user_id = :user_id";
     } else {
-        query = "update brill_cms_user set name = :name, email = :email, workspace = :workspace, changePassword = :changePassword, permissions = :permissions where user_id = :user_id";
+        query = "update brill_cms_user set name = :name, email = :email, workspace = :workspace, changePassword = :changePassword, permissions = :permissions, hidden_apps = :hidden_apps where user_id = :user_id";
     }
     queryParameters["user_id"] = contentObj.user_id;
     queryParameters["name"] = contentObj.name;
@@ -53,6 +53,7 @@ function processUpdate(content, db) {
      queryParameters["workspace"] = contentObj.workspace;
     queryParameters["changePassword"] = contentObj.changePassword;
     queryParameters["permissions"] = contentObj.permissions;
+    queryParameters["hidden_apps"] = contentObj.hidden_apps;
     if (contentObj.resetPassword) {
         queryParameters["password"] = db.hashPassword(contentObj.username,contentObj.password);
     }

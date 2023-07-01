@@ -12,7 +12,7 @@
                 "attributes": {
                     "style": {
                         "boxShadow": "5px 10px 18px",
-                        "width": "1000px"
+                        "width": "1140px"
                     }
                 },
                 "children": [
@@ -236,13 +236,31 @@
                                             "multiple": true,
                                             "label": "Permissions",
                                             "variant": "outlined",
-                                            "checkboxesTopic": "/Database/getPermissions.sql",
+                                            "checkboxesTopic": "/Database/admin/getPermissions.sql",
                                             "subscribeToTopic": "users.tableRow#permissions",
                                             "publishToTopic": "users.editForm#permissions",
                                             "validationRules": [],
                                             "style": {
                                                 "margin": "10px",
-                                                "width": "280px"
+                                                "width": "220px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "hiddenApps",
+                                        "module": "material_ui/input/CheckboxGroup",
+                                        "attributes": {
+                                            "color": "primary",
+                                            "multiple": true,
+                                            "label": "Hidden Apps",
+                                            "variant": "outlined",
+                                            "checkboxesTopic": "query:/brill_cms/Database/admin/getApps.sql",
+                                            "subscribeToTopic": "users.tableRow#hidden_apps",
+                                            "publishToTopic": "users.editForm#hidden_apps",
+                                            "validationRules": [],
+                                            "style": {
+                                                "margin": "10px",
+                                                "width": "180px"
                                             }
                                         }
                                     },

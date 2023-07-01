@@ -12,7 +12,7 @@
                 "attributes": {
                     "style": {
                         "boxShadow": "5px 10px 18px",
-                        "width": "460px"
+                        "width": "800px"
                     }
                 },
                 "children": [
@@ -83,169 +83,185 @@
                                 ]
                             },
                             {
-                                "id": "padding",
+                                "id": "Flex Row Layout-1",
                                 "module": "html/Div",
                                 "attributes": {
                                     "style": {
-                                        "padding": "10px"
+                                        "display": "flex",
+                                        "flexDirection": "row",
+                                        "flexWrap": "wrap"
                                     }
                                 },
                                 "children": [
                                     {
-                                        "id": "usernameField",
-                                        "module": "material_ui/input/TextField",
+                                        "id": "padding",
+                                        "module": "html/Div",
                                         "attributes": {
-                                            "label": "Username",
-                                            "variant": "outlined",
-                                            "publishToTopic": "users.newForm#username",
-                                            "inputProps": {
-                                                "style": {
-                                                    "textTransform": "lowercase"
-                                                }
-                                            },
                                             "style": {
-                                                "margin": "10px"
-                                            },
-                                            "validationRules": [
-                                                {
-                                                    "code": "return value.length === 0",
-                                                    "errorMsg": "Please enter the new username."
-                                                },
-                                                {
-                                                    "code": "return value.length > 40",
-                                                    "errorMsg": "Username is too long."
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "id": "name",
-                                        "module": "material_ui/input/TextField",
-                                        "attributes": {
-                                            "label": "Name",
-                                            "variant": "outlined",
-                                            "autoComplete": "nope",
-                                            "publishToTopic": "users.newForm#name",
-                                            "style": {
-                                                "margin": "10px"
-                                            },
-                                            "validationRules": [
-                                                {
-                                                    "code": "return value.length === 0",
-                                                    "errorMsg": "Please enter the name of the new user. "
-                                                },
-                                                {
-                                                    "code": "return value.length > 40",
-                                                    "errorMsg": "Name is too long."
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "id": "email",
-                                        "module": "material_ui/input/TextField",
-                                        "attributes": {
-                                            "label": "Email",
-                                            "variant": "outlined",
-                                            "autoComplete": "nope",
-                                            "publishToTopic": "users.newForm#email",
-                                            "style": {
-                                                "margin": "10px"
-                                            },
-                                            "validationRules": [
-                                                {
-                                                    "code": "return value.length === 0",
-                                                    "errorMsg": "Please enter the email address of the new user. "
-                                                },
-                                                {
-                                                    "code": "return value.length > 45",
-                                                    "errorMsg": "Email address is too long."
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "id": "workspace",
-                                        "module": "material_ui/input/TextField",
-                                        "attributes": {
-                                            "label": "Workspace",
-                                            "variant": "outlined",
-                                            "autoComplete": "nope",
-                                            "publishToTopic": "users.newForm#workspace",
-                                            "style": {
-                                                "margin": "10px"
-                                            },
-                                            "validationRules": [
-                                                {
-                                                    "code": "return value.length > 45",
-                                                    "errorMsg": "Workspace name is too long."
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "id": "descrip",
-                                        "module": "material_ui/text/Typography",
-                                        "attributes": {
-                                            "variant": "body1",
-                                            "style": {
-                                                "margin": "10px",
-                                                "fontSize": "14px"
-                                            },
-                                            "text": "Please use a strong password that's at least 8 characters long and difficult to guess."
-                                        }
-                                    },
-                                    {
-                                        "id": "newPasswordField",
-                                        "module": "material_ui/input/PasswordField",
-                                        "attributes": {
-                                            "label": "Password",
-                                            "variant": "outlined",
-                                            "autoComplete": "new-password",
-                                            "publishToTopic": "users.newForm#password",
-                                            "style": {
-                                                "margin": "10px"
-                                            },
-                                            "validationRules": [
-                                                {
-                                                    "code": "return value.length === 0",
-                                                    "errorMsg": "Please enter a strong password for the user. "
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "id": "passwordConfirm",
-                                        "module": "material_ui/input/PasswordField",
-                                        "attributes": {
-                                            "label": "Repeat Password",
-                                            "variant": "outlined",
-                                            "publishToTopic": "users.newForm#passwordConfirm",
-                                            "style": {
-                                                "margin": "10px"
-                                            },
-                                            "validationRules": [
-                                                {
-                                                    "code": "return value.length === 0",
-                                                    "errorMsg": "Please enter the new password a second time. "
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "id": "changePassword",
-                                        "module": "material_ui/input/Select",
-                                        "attributes": {
-                                            "id": "ChangePasswordField",
-                                            "label": "Force Change Password",
-                                            "variant": "outlined",
-                                            "menuItemsTopic": "/Resources/yesNoMenuItems.json",
-                                            "publishToTopic": "users.newForm#changePassword",
-                                            "style": {
-                                                "margin": "10px",
-                                                "width": "250px"
+                                                "padding": "10px",
+                                                "width": "320px"
                                             }
-                                        }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "usernameField",
+                                                "module": "material_ui/input/TextField",
+                                                "attributes": {
+                                                    "label": "Username",
+                                                    "variant": "outlined",
+                                                    "publishToTopic": "users.newForm#username",
+                                                    "inputProps": {
+                                                        "style": {
+                                                            "textTransform": "lowercase"
+                                                        }
+                                                    },
+                                                    "style": {
+                                                        "margin": "10px"
+                                                    },
+                                                    "validationRules": [
+                                                        {
+                                                            "code": "return value.length === 0",
+                                                            "errorMsg": "Please enter the new username."
+                                                        },
+                                                        {
+                                                            "code": "return value.length > 40",
+                                                            "errorMsg": "Username is too long."
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "id": "name",
+                                                "module": "material_ui/input/TextField",
+                                                "attributes": {
+                                                    "label": "Name",
+                                                    "variant": "outlined",
+                                                    "autoComplete": "nope",
+                                                    "publishToTopic": "users.newForm#name",
+                                                    "style": {
+                                                        "margin": "10px"
+                                                    },
+                                                    "validationRules": [
+                                                        {
+                                                            "code": "return value.length === 0",
+                                                            "errorMsg": "Please enter the name of the new user. "
+                                                        },
+                                                        {
+                                                            "code": "return value.length > 40",
+                                                            "errorMsg": "Name is too long."
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "id": "email",
+                                                "module": "material_ui/input/TextField",
+                                                "attributes": {
+                                                    "label": "Email",
+                                                    "variant": "outlined",
+                                                    "autoComplete": "nope",
+                                                    "publishToTopic": "users.newForm#email",
+                                                    "style": {
+                                                        "margin": "10px",
+                                                        "width": "280px"
+                                                    },
+                                                    "validationRules": [
+                                                        {
+                                                            "code": "return value.length === 0",
+                                                            "errorMsg": "Please enter the email address of the new user. "
+                                                        },
+                                                        {
+                                                            "code": "return value.length > 45",
+                                                            "errorMsg": "Email address is too long."
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "id": "workspace",
+                                                "module": "material_ui/input/TextField",
+                                                "attributes": {
+                                                    "label": "Workspace",
+                                                    "variant": "outlined",
+                                                    "autoComplete": "nope",
+                                                    "publishToTopic": "users.newForm#workspace",
+                                                    "style": {
+                                                        "margin": "10px",
+                                                        "width": "280px"
+                                                    },
+                                                    "validationRules": [
+                                                        {
+                                                            "code": "return value.length > 45",
+                                                            "errorMsg": "Workspace name is too long."
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "id": "descrip",
+                                                "module": "material_ui/text/Typography",
+                                                "attributes": {
+                                                    "variant": "body1",
+                                                    "style": {
+                                                        "margin": "10px",
+                                                        "fontSize": "14px"
+                                                    },
+                                                    "text": "Please use a strong password that's at least 8 characters long and difficult to guess."
+                                                }
+                                            },
+                                            {
+                                                "id": "newPasswordField",
+                                                "module": "material_ui/input/PasswordField",
+                                                "attributes": {
+                                                    "label": "Password",
+                                                    "variant": "outlined",
+                                                    "autoComplete": "new-password",
+                                                    "publishToTopic": "users.newForm#password",
+                                                    "style": {
+                                                        "margin": "10px"
+                                                    },
+                                                    "validationRules": [
+                                                        {
+                                                            "code": "return value.length === 0",
+                                                            "errorMsg": "Please enter a strong password for the user. "
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "id": "passwordConfirm",
+                                                "module": "material_ui/input/PasswordField",
+                                                "attributes": {
+                                                    "label": "Repeat Password",
+                                                    "variant": "outlined",
+                                                    "publishToTopic": "users.newForm#passwordConfirm",
+                                                    "style": {
+                                                        "margin": "10px"
+                                                    },
+                                                    "validationRules": [
+                                                        {
+                                                            "code": "return value.length === 0",
+                                                            "errorMsg": "Please enter the new password a second time. "
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "id": "ChangePasswordSelect",
+                                                "module": "material_ui/input/Select",
+                                                "attributes": {
+                                                    "menuItemsTopic": "/Resources/yesNoMenuItems.json",
+                                                    "subscribeToTopic": "users.tableRow#changePassword",
+                                                    "publishToTopic": "users.editForm#changePassword",
+                                                    "label": "Force Change Password",
+                                                    "variant": "outlined",
+                                                    "style": {
+                                                        "margin": "10px",
+                                                        "width": "220px"
+                                                    }
+                                                }
+                                            }
+                                        ]
                                     },
                                     {
                                         "id": "permissionsField",
@@ -255,12 +271,30 @@
                                             "multiple": true,
                                             "label": "Permissions",
                                             "variant": "outlined",
-                                            "checkboxesTopic": "/Database/getPermissions.sql",
+                                            "checkboxesTopic": "/Database/admin/getPermissions.sql",
                                             "publishToTopic": "users.newForm#permissions",
                                             "validationRules": [],
                                             "style": {
                                                 "margin": "10px",
-                                                "width": "420px"
+                                                "width": "220px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "hiddenApps",
+                                        "module": "material_ui/input/CheckboxGroup",
+                                        "attributes": {
+                                            "color": "primary",
+                                            "multiple": true,
+                                            "label": "Hidden Apps",
+                                            "variant": "outlined",
+                                            "checkboxesTopic": "query:/brill_cms/Database/admin/getApps.sql",
+                                            "subscribeToTopic": "json:/brill_cms/Resources/appsDefault.json",
+                                            "publishToTopic": "users.newForm#hidden_apps",
+                                            "validationRules": [],
+                                            "style": {
+                                                "margin": "10px",
+                                                "width": "180px"
                                             }
                                         }
                                     }

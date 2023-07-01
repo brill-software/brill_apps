@@ -111,6 +111,15 @@
                                             "name": "permissions",
                                             "label": "Permissions",
                                             "options": {
+                                                "display": false,
+                                                "filter": true,
+                                                "filterType": "textField"
+                                            }
+                                        },
+                                        {
+                                            "name": "hidden_apps",
+                                            "label": "Hidden Apps",
+                                            "options": {
                                                 "filter": true,
                                                 "filterType": "textField"
                                             }
@@ -119,6 +128,7 @@
                                             "name": "changePassword",
                                             "label": "Change Password",
                                             "options": {
+                                                "display": false,
                                                 "filter": true,
                                                 "filterType": "textField"
                                             }
