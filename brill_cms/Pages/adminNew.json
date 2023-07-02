@@ -252,7 +252,7 @@
                                                 "attributes": {
                                                     "menuItemsTopic": "/Resources/yesNoMenuItems.json",
                                                     "subscribeToTopic": "users.tableRow#changePassword",
-                                                    "publishToTopic": "users.editForm#changePassword",
+                                                    "publishToTopic": "users.newForm#changePassword",
                                                     "label": "Force Change Password",
                                                     "variant": "outlined",
                                                     "style": {
