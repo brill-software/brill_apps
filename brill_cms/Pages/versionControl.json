@@ -273,78 +273,47 @@
                                 }
                             },
                             {
-                                "id": "ToMergeRebseOrPull",
-                                "module": "material_ui/table/DataTable",
+                                "id": "MergePullOrRebase",
+                                "module": "material_ui/table/Table",
                                 "attributes": {
-                                    "title": "Commits",
                                     "size": "small",
-                                    "padding": "none",
+                                    "initialState": "{\n    \"pagination\": {\n      \"paginationModel\": { \"page\": 0, \"pageSize\": 5 },\n    }\n  }\n ",
+                                    "pageSizeOptions": [
+                                        5,
+                                        10
+                                    ],
+                                    "style": {
+                                        "margin": "30px"
+                                    },
+                                    "padding": "10px",
+                                    "maxRows": 20,
                                     "subscribeToTopic": "git:log:/",
                                     "columns": [
                                         {
                                             "name": "commit",
-                                            "label": "Commit",
-                                            "options": {
-                                                "filter": true,
-                                                "filterType": "textField"
-                                            }
+                                            "label": "Commit"
                                         },
                                         {
                                             "name": "awaiting",
-                                            "label": "Awaiting",
-                                            "options": {
-                                                "filter": true,
-                                                "filterType": "textField"
-                                            }
+                                            "label": "Awaiting"
                                         },
                                         {
                                             "name": "branch",
-                                            "label": "Branch",
-                                            "options": {
-                                                "filter": true,
-                                                "filterType": "textField"
-                                            }
+                                            "label": "Branch"
                                         },
                                         {
                                             "name": "message",
-                                            "label": "Message",
-                                            "options": {
-                                                "filter": true,
-                                                "filterType": "textField"
-                                            }
+                                            "label": "Message"
                                         },
                                         {
                                             "name": "author",
-                                            "label": "Author",
-                                            "options": {
-                                                "filter": true,
-                                                "filterType": "textField"
-                                            }
+                                            "label": "Author"
                                         },
                                         {
                                             "name": "date",
-                                            "label": "Date",
-                                            "options": {
-                                                "filter": true,
-                                                "filterType": "textField"
-                                            }
+                                            "label": "Date"
                                         }
-                                    ],
-                                    "options": {
-                                        "serverSide": false,
-                                        "rowsPerPage": 100,
-                                        "filter": true,
-                                        "search": true,
-                                        "print": true,
-                                        "download": true,
-                                        "viewColumns": true,
-                                        "resizableColumns": true,
-                                        "draggableColumns": {
-                                            "enabled": true
-                                        },
-                                        "responsive": "vertical",
-                                        "selectableRows": "none"
-                                    }
+                                    ]
                                 }
                             },
                             {
