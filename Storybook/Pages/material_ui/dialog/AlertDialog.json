@@ -44,7 +44,7 @@
                         "module": "material_ui/button/IconButton",
                         "attributes": {
                             "tooltip": "Open Alert Dialog",
-                            "iconName": "PlayCircleFilledTwoTone",
+                            "iconName": "PlayCircleTwoTone",
                             "publishToTopic": "storybook.alertDialog.open",
                             "action": "This is an Alert Dialog. Please click the OK button to close."
                         }
