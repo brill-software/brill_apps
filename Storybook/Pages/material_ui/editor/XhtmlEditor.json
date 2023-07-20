@@ -44,7 +44,7 @@
                                 "id": "^Undo",
                                 "module": "material_ui/button/IconButton",
                                 "attributes": {
-                                    "iconName": "UndoTwoTone",
+                                    "iconName": "Undo",
                                     "tooltip": "Undo",
                                     "publishToTopic": "storybook.XhtmlEditor.action",
                                     "action": {
@@ -56,7 +56,7 @@
                                 "id": "^Redo",
                                 "module": "material_ui/button/IconButton",
                                 "attributes": {
-                                    "iconName": "RedoTwoTone",
+                                    "iconName": "Redo",
                                     "tooltip": "Redo",
                                     "publishToTopic": "storybook.XhtmlEditor.action",
                                     "action": {
@@ -68,7 +68,7 @@
                                 "id": "^Revert",
                                 "module": "material_ui/button/IconButton",
                                 "attributes": {
-                                    "iconName": "RestoreTwoTone",
+                                    "iconName": "Restore",
                                     "tooltip": "Revert",
                                     "publishToTopic": "storybook.XhtmlEditor.action",
                                     "action": {
@@ -92,7 +92,7 @@
                                 "id": "^Bold",
                                 "module": "material_ui/button/IconButton",
                                 "attributes": {
-                                    "iconName": "FormatBoldTwoTone",
+                                    "iconName": "FormatBold",
                                     "tooltip": "Format",
                                     "publishToTopic": "storybook.XhtmlEditor.action",
                                     "action": {
@@ -104,7 +104,7 @@
                                 "id": "^Italic",
                                 "module": "material_ui/button/IconButton",
                                 "attributes": {
-                                    "iconName": "FormatItalicTwoTone",
+                                    "iconName": "FormatItalic",
                                     "tooltip": "Italic",
                                     "publishToTopic": "storybook.XhtmlEditor.action",
                                     "action": {
@@ -116,7 +116,7 @@
                                 "id": "^Underline",
                                 "module": "material_ui/button/IconButton",
                                 "attributes": {
-                                    "iconName": "FormatUnderlinedTwoTone",
+                                    "iconName": "FormatUnderlined",
                                     "tooltip": "Underline",
                                     "publishToTopic": "storybook.XhtmlEditor.action",
                                     "action": {
@@ -128,7 +128,7 @@
                                 "id": "^Strike",
                                 "module": "material_ui/button/IconButton",
                                 "attributes": {
-                                    "iconName": "StrikethroughSTwoTone",
+                                    "iconName": "StrikethroughS",
                                     "tooltip": "Strikethrough",
                                     "publishToTopic": "storybook.XhtmlEditor.action",
                                     "action": {
@@ -140,7 +140,7 @@
                                 "id": "^Unordered List",
                                 "module": "material_ui/button/IconButton",
                                 "attributes": {
-                                    "iconName": "FormatListBulletedTwoTone",
+                                    "iconName": "FormatListBulleted",
                                     "tooltip": "Unordered List",
                                     "publishToTopic": "storybook.XhtmlEditor.action",
                                     "action": {
@@ -152,7 +152,7 @@
                                 "id": "^Ordered List",
                                 "module": "material_ui/button/IconButton",
                                 "attributes": {
-                                    "iconName": "FormatListNumberedTwoTone",
+                                    "iconName": "FormatListNumbered",
                                     "tooltip": "Ordered List",
                                     "publishToTopic": "storybook.XhtmlEditor.action",
                                     "action": {

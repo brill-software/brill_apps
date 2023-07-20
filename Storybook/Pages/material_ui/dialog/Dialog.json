@@ -127,7 +127,7 @@
                         "module": "material_ui/button/IconButton",
                         "attributes": {
                             "tooltip": "Open Confirm Dialog",
-                            "iconName": "PlayCircleFilledTwoTone",
+                            "iconName": "PlayCircleTwoTone",
                             "publishToTopic": "storybook.dialog.open"
                         }
                     },

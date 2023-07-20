@@ -44,7 +44,7 @@
                                 "id": "^Undo",
                                 "module": "material_ui/button/IconButton",
                                 "attributes": {
-                                    "iconName": "UndoTwoTone",
+                                    "iconName": "Undo",
                                     "tooltip": "Undo",
                                     "publishToTopic": "storybook.TextEditor.action",
                                     "action": "undo"
@@ -54,7 +54,7 @@
                                 "id": "^Redo",
                                 "module": "material_ui/button/IconButton",
                                 "attributes": {
-                                    "iconName": "RedoTwoTone",
+                                    "iconName": "Redo",
                                     "tooltip": "Redo",
                                     "publishToTopic": "storybook.TextEditor.action",
                                     "action": "redo"
@@ -64,7 +64,7 @@
                                 "id": "^Revert",
                                 "module": "material_ui/button/IconButton",
                                 "attributes": {
-                                    "iconName": "RestoreTwoTone",
+                                    "iconName": "Restore",
                                     "tooltip": "Revert",
                                     "publishToTopic": "storybook.TextEditor.action",
                                     "action": "revert"
@@ -84,7 +84,7 @@
                                 "id": "^Find",
                                 "module": "material_ui/button/IconButton",
                                 "attributes": {
-                                    "iconName": "SearchTwoTone",
+                                    "iconName": "Search",
                                     "tooltip": "Find",
                                     "publishToTopic": "storybook.TextEditor.action",
                                     "action": "actions.find"
@@ -94,7 +94,7 @@
                                 "id": "^FindReplace",
                                 "module": "material_ui/button/IconButton",
                                 "attributes": {
-                                    "iconName": "FindReplaceTwoTone",
+                                    "iconName": "FindReplace",
                                     "tooltip": "Find Replace",
                                     "publishToTopic": "storybook.TextEditor.action",
                                     "action": "editor.action.startFindReplaceAction"
