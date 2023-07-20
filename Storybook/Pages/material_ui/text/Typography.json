@@ -28,7 +28,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>The Typograph component is based on the <a href=\"https://v4.mui.com/components/typography/\" target=\"_blank\">Material UI Typography</a> component.\n<table cellpadding=\"7\">\n<tr><td>variant</td><td>h1, h2, h3, h4, h5, h6, body1, body2</td></tr>\n<tr><td>text</td><td>Initial text.</td></tr>\n<tr><td>subscribeToTopic</td><td>The topic to subscribe to for the text.</td></tr>\n<tr><td>gutterBottom</td><td>When true, places extra space below the text.</td></tr>\n</table>\n</p>"
+                            "text": "<p>The Typograph component is based on the <a href=\"https://mui.com/material-ui/react-typography/\" target=\"_blank\">Material UI Typography</a> component.\n<table cellpadding=\"7\">\n<tr><td>variant</td><td>h1, h2, h3, h4, h5, h6, body1, body2</td></tr>\n<tr><td>text</td><td>Initial text.</td></tr>\n<tr><td>subscribeToTopic</td><td>The topic to subscribe to for the text.</td></tr>\n<tr><td>gutterBottom</td><td>When true, places extra space below the text.</td></tr>\n</table>\n</p>"
                         }
                     },
                     {

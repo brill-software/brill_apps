@@ -27,7 +27,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>Paper component, based on the <a href=\"https://v4.mui.com/components/paper/\" target=\"_blank\">Material-UI Paper</a> component.\n<table cellpadding=\"7\">\n<tr><td>variant</td><td>Either <b>outlined</b> or <b>elevation</b>.</td></tr>\n<tr><td>elevation</td><td>Shadow depth. A value between 0 and 24.</td></tr>\n<tr><td>square</td><td>If <b>true</b>, rounded corners are disabled.</td></tr>\n</table>\n</p>"
+                            "text": "<p>Paper component, based on the <a href=\"https://mui.com/material-ui/react-paper/\" target=\"_blank\">Material-UI Paper</a> component.\n<table cellpadding=\"7\">\n<tr><td>variant</td><td>Either <b>outlined</b> or <b>elevation</b>.</td></tr>\n<tr><td>elevation</td><td>Shadow depth. A value between 0 and 24.</td></tr>\n<tr><td>square</td><td>If <b>true</b>, rounded corners are disabled.</td></tr>\n</table>\n</p>"
                         }
                     },
                     {

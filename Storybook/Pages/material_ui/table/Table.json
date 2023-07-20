@@ -27,7 +27,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>The Table component is based on <a href=\"https://v4.mui.com/components/tables/\" target=\"_blank\">Material UI Table</a> component. The component displays a simple read only table. For a table component that supports paging and sorting, use the DataTable component.\n<table cellpadding=\"7\">\n\n<tr><td>size [optional]</td><td><code>small</code> or <code>medium</code>.</td></tr>\n<tr><td>subscribeToTopic</td><td>The JavaScript to access the database.</td></tr>\n<tr><td>columns</td><td>List of the column names and labels.</td></tr>\n<tr><td>maxRows [optional]</td><td>Limits the size of the table to the specified number of rows.</td></tr>\n</table>\n</p>"
+                            "text": "<p>The Table component is based on <a href=\"https://mui.com/material-ui/react-table/\" target=\"_blank\">Material UI Table</a> component. The component displays a simple read only table. For a table component that supports paging and sorting, use the DataTable component.\n<table cellpadding=\"7\">\n\n<tr><td>size [optional]</td><td><code>small</code> or <code>medium</code>.</td></tr>\n<tr><td>subscribeToTopic</td><td>The JavaScript to access the database.</td></tr>\n<tr><td>columns</td><td>List of the column names and labels.</td></tr>\n<tr><td>maxRows [optional]</td><td>Limits the size of the table to the specified number of rows.</td></tr>\n</table>\n</p>"
                         }
                     },
                     {

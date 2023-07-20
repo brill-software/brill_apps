@@ -27,7 +27,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>\nAlert Component. Based on the <a href=\"https://v4.mui.com/components/alert/\" target=\"_blank\">Material-UI Alert</a> component.\n<table cellpadding=\"7\">\n<tr><td>subscribeToTopic</td><td>Topic to subscribe to for an ErrorMsg (object containing fields of \"severity\", \"title\" and \"detail\".)</td></tr>\n<tr><td>clearOnChangeToTopic</td><td>Used to clear the alert. Can be set to <code>app:any:</code> so that the alert is cleared when the user performs an action that results in a publish.</td></tr>\n</table>\n</p>"
+                            "text": "<p>\nAlert Component. Based on the <a href=\"https://mui.com/material-ui/react-alert/\" target=\"_blank\">Material-UI Alert</a> component.\n<table cellpadding=\"7\">\n<tr><td>subscribeToTopic</td><td>Topic to subscribe to for an ErrorMsg (object containing fields of \"severity\", \"title\" and \"detail\".)</td></tr>\n<tr><td>clearOnChangeToTopic</td><td>Used to clear the alert. Can be set to <code>app:any:</code> so that the alert is cleared when the user performs an action that results in a publish.</td></tr>\n</table>\n</p>"
                         }
                     },
                     {
