@@ -45,7 +45,7 @@
                                 "id": "^ThrowErrorButton",
                                 "module": "react/TestThrowErrorButton",
                                 "attributes": {
-                                    "startIcon": "ReportProblemTwoTone",
+                                    "startIcon": "PlayCircleTwoTone",
                                     "title": "Click to Throw  an Error",
                                     "style": {
                                         "margin": "10px",
