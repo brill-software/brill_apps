@@ -55,7 +55,7 @@
                                 "attributes": {
                                     "variant": "body1",
                                     "gutterBottom": true,
-                                    "text": "The page content. The Spacer div expands to push the footer to the bottom of the page when there's not enough content to fill the page. The PageDiv sets the miniHeight to the screen height (100vh)."
+                                    "text": "<p><b>The page content.</b></p><p>The embedded page will pick up the theme from the page it's embedded in. When editing the embedded page within the CMS, the theme will be that of the CMS, unless you put a theme provider within the embedded page.\n</p><p>The Spacer div expands to push the footer to the bottom of the page when there's not enough content to fill the page.</p><p>The PageDiv sets the miniHeight to the screen height (100vh).</p><p>To view the spacer in action, use the preview mode and scroll down to see the footer.</p>"
                                 }
                             },
                             {
