@@ -36,6 +36,23 @@
                         "attributes": {
                             "subscribeToTopic": "/Icons/custom/people.svg"
                         }
+                    },
+                    {
+                        "id": "Notes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>The Gold SVG Icon was obtained from https://reactsvgicons.com.\n</p>"
+                        }
+                    },
+                    {
+                        "id": "Gold SVG Icon",
+                        "module": "material_ui/icon/CustomIcon",
+                        "attributes": {
+                            "subscribeToTopic": "/Icons/custom/Gold.svg",
+                            "style": {
+                                "color": "gold"
+                            }
+                        }
                     }
                 ]
             }
