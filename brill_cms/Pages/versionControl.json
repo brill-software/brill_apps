@@ -43,6 +43,46 @@
                                 },
                                 "children": [
                                     {
+                                        "id": "Row-3",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "marginTop": "10px",
+                                                "display": "flex",
+                                                "flexDirection": "row"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Item-2",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "text": "Workspace: ",
+                                                    "style": {
+                                                        "marginRight": "10px",
+                                                        "marginBottom": "10px",
+                                                        "fontSize": "20px",
+                                                        "fontFamily": "Arial, sans-serif",
+                                                        "color": "#808080"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Item-1",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "subscribeToTopic": "git:current_ws:/",
+                                                    "style": {
+                                                        "marginBottom": "10px",
+                                                        "fontSize": "20px",
+                                                        "fontFamily": "Arial, sans-serif",
+                                                        "color": "#808080"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
                                         "id": "Row-1",
                                         "module": "html/Div",
                                         "attributes": {
@@ -269,7 +309,7 @@
                                 "id": "Dialog Title-2",
                                 "module": "material_ui/dialog/DialogContentText",
                                 "attributes": {
-                                    "text": "<p>Recent commits:</p>"
+                                    "text": "<p>Awaiting Merge, Rebase or Pull:</p>"
                                 }
                             },
                             {
