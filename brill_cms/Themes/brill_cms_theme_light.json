@@ -551,6 +551,10 @@
                         {
                             "name": "TEXT",
                             "editor": "TextEditor"
+                        },
+                        {
+                            "name": "DIFF",
+                            "editor": "DiffEditor"
                         }
                     ]
                 },
