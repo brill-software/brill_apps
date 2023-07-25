@@ -10,6 +10,9 @@
                 "id": "ThemeProvider",
                 "module": "material_ui/theme/ThemeProvider",
                 "attributes": {
+                    "style": {
+                        "minHeight": "100vh"
+                    },
                     "themeTopic": "/Themes/storybook_theme_light.json",
                     "themeTopicDark": "/Themes/storybook_theme_dark.json"
                 },
@@ -120,8 +123,8 @@
                                     "action": "Close icon.",
                                     "style": {
                                         "position": "absolute",
-                                        "top": "5px",
-                                        "left": "50px",
+                                        "top": "-12px",
+                                        "left": "112px",
                                         "color": "grey"
                                     }
                                 }
@@ -135,7 +138,8 @@
                             "variant": "body1",
                             "subscribeToTopic": "comLib.IconButton.response",
                             "style": {
-                                "padding": "20px"
+                                "paddingTop": "50px",
+                                "paddingLeft": "20px"
                             }
                         }
                     }
