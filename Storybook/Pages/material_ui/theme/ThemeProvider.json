@@ -11,7 +11,10 @@
                 "module": "material_ui/theme/ThemeProvider",
                 "attributes": {
                     "themeTopic": "/Themes/storybook_theme_light.json",
-                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json",
+                    "style": {
+                        "minHeight": "100vh"
+                    }
                 },
                 "children": [
                     {
@@ -31,7 +34,7 @@
                         }
                     },
                     {
-                        "id": "ThemeProvider",
+                        "id": "ThemeProvider-1",
                         "module": "material_ui/theme/ThemeProvider",
                         "attributes": {
                             "themeTopic": "/Themes/storybook_demo_theme.json"
@@ -48,6 +51,56 @@
                                 }
                             }
                         ]
+                    },
+                    {
+                        "id": "Text",
+                        "module": "material_ui/text/Text",
+                        "attributes": {
+                            "text": "Click on the play icon to open a Theme Styled Alert."
+                        }
+                    },
+                    {
+                        "id": "ThemeProvider-2",
+                        "module": "material_ui/theme/ThemeProvider",
+                        "attributes": {
+                            "themeTopic": "/Themes/storybook_alert_theme.json"
+                        },
+                        "children": [
+                            {
+                                "id": "^Alert",
+                                "module": "material_ui/alert/Alert",
+                                "attributes": {
+                                    "title": "Alert Dialog",
+                                    "prompt": "Alert dialog prompt",
+                                    "subscribeToTopic": "storybook.theme.alert.open",
+                                    "clearOnChangeToTopic": "storybook.theme.alert.close"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "^Open Themed Alert",
+                        "module": "material_ui/button/IconButton",
+                        "attributes": {
+                            "tooltip": "Open Themed Alert",
+                            "iconName": "PlayCircleTwoTone",
+                            "publishToTopic": "storybook.theme.alert.open",
+                            "action": {
+                                "severity": "error",
+                                "title": "Theme Styled Alert",
+                                "detail": "This is an alert message styled using a Theme Provider."
+                            }
+                        }
+                    },
+                    {
+                        "id": "Text-1",
+                        "module": "material_ui/text/Text",
+                        "attributes": {
+                            "text": "The page takes up the whole screen height (viewport) because the top level Theme Provider has a style attribute with {\"minHeight\": \"100vh\"}.",
+                            "style": {
+                                "marginTop": "60px"
+                            }
+                        }
                     }
                 ]
             }
