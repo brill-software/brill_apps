@@ -79,6 +79,34 @@
                                                         "color": "#808080"
                                                     }
                                                 }
+                                            },
+                                            {
+                                                "id": "Item-3",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "text": "Branch:  ",
+                                                    "style": {
+                                                        "marginLeft": "50px",
+                                                        "marginBottom": "10px",
+                                                        "fontSize": "20px",
+                                                        "fontFamily": "Arial, sans-serif",
+                                                        "color": "#808080"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Item-4",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "subscribeToTopic": "git:branch:/",
+                                                    "style": {
+                                                        "marginLeft": "10px",
+                                                        "marginBottom": "10px",
+                                                        "fontSize": "20px",
+                                                        "fontFamily": "Arial, sans-serif",
+                                                        "color": "#808080"
+                                                    }
+                                                }
                                             }
                                         ]
                                     },
@@ -132,35 +160,7 @@
                                                 "flexDirection": "row"
                                             }
                                         },
-                                        "children": [
-                                            {
-                                                "id": "Item-2",
-                                                "module": "html/Div",
-                                                "attributes": {
-                                                    "text": "Current Branch: ",
-                                                    "style": {
-                                                        "marginRight": "10px",
-                                                        "marginBottom": "25px",
-                                                        "fontSize": "20px",
-                                                        "fontFamily": "Arial, sans-serif",
-                                                        "color": "#808080"
-                                                    }
-                                                }
-                                            },
-                                            {
-                                                "id": "Item-1",
-                                                "module": "html/Div",
-                                                "attributes": {
-                                                    "subscribeToTopic": "git:branch:/",
-                                                    "style": {
-                                                        "marginBottom": "25px",
-                                                        "fontSize": "20px",
-                                                        "fontFamily": "Arial, sans-serif",
-                                                        "color": "#808080"
-                                                    }
-                                                }
-                                            }
-                                        ]
+                                        "children": []
                                     }
                                 ]
                             },
