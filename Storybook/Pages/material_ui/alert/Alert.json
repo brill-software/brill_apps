@@ -11,7 +11,10 @@
                 "module": "material_ui/theme/ThemeProvider",
                 "attributes": {
                     "themeTopic": "/Themes/storybook_theme_light.json",
-                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json",
+                    "style": {
+                        "minHeight": "100vh"
+                    }
                 },
                 "children": [
                     {
@@ -27,17 +30,95 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>\nAlert Component. Based on the <a href=\"https://mui.com/material-ui/react-alert/\" target=\"_blank\">Material-UI Alert</a> component.\n<table cellpadding=\"7\">\n<tr><td>subscribeToTopic</td><td>Topic to subscribe to for an ErrorMsg (object containing fields of \"severity\", \"title\" and \"detail\".)</td></tr>\n<tr><td>clearOnChangeToTopic</td><td>Used to clear the alert. Can be set to <code>app:any:</code> so that the alert is cleared when the user performs an action that results in a publish.</td></tr>\n</table>\n</p>"
+                            "text": "<p>\nAlert Component. Based on the <a href=\"https://mui.com/material-ui/react-alert/\" target=\"_blank\">Material-UI Alert</a> component. Alerts are draggable and can be moved.\n<table cellpadding=\"7\">\n<tr><td>subscribeToTopic</td><td>Topic to subscribe to for an ErrorMsg (object containing fields of \"severity\", \"title\" and \"detail\".)</td></tr>\n<tr><td>clearOnChangeToTopic</td><td>Used to clear the alert. Can be set to <code>app:any:</code> so that the alert is cleared when the user performs an action that results in a publish.</td></tr>\n<tr><td>theme</td><td><code>theme.components.Alert.styleOverrides.root, .title</code> </td></tr>\n</table>\n</p>\n"
                         }
                     },
                     {
-                        "id": "^Alert",
-                        "module": "material_ui/alert/Alert",
+                        "id": "Flex Row Layout-4",
+                        "module": "html/Div",
                         "attributes": {
-                            "title": "Alert Dialog",
-                            "prompt": "Alert dialog prompt",
-                            "subscribeToTopic": "storybook.alert.open",
-                            "clearOnChangeToTopic": "storybook.alert.close"
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "flexWrap": "wrap"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Item-1",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "width": "400px",
+                                        "height": "100px"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "^Alert",
+                                        "module": "material_ui/alert/Alert",
+                                        "attributes": {
+                                            "title": "Alert Dialog",
+                                            "prompt": "Alert dialog prompt",
+                                            "subscribeToTopic": "storybook.alert.open",
+                                            "clearOnChangeToTopic": "storybook.alert.close"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Item-2",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "width": "400px",
+                                        "height": "100px"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "^Alert-outlined",
+                                        "module": "material_ui/alert/Alert",
+                                        "attributes": {
+                                            "variant": "outlined",
+                                            "title": "Alert Dialog",
+                                            "prompt": "Alert dialog prompt",
+                                            "subscribeToTopic": "storybook.alert.open",
+                                            "clearOnChangeToTopic": "storybook.alert.close"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Item-3",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "width": "400px",
+                                        "height": "100px"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "^Alert-Filled",
+                                        "module": "material_ui/alert/Alert",
+                                        "attributes": {
+                                            "variant": "filled",
+                                            "title": "Alert Dialog",
+                                            "prompt": "Alert dialog prompt",
+                                            "subscribeToTopic": "storybook.alert.open",
+                                            "clearOnChangeToTopic": "storybook.alert.close"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Text",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>Click on an Icon to display an Alert.</p>\n"
                         }
                     },
                     {
@@ -45,7 +126,6 @@
                         "module": "html/Div",
                         "attributes": {
                             "style": {
-                                "marginTop": "55px",
                                 "display": "flex",
                                 "flexDirection": "row"
                             }
