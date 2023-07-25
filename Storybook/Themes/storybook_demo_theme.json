@@ -27,12 +27,5 @@
                 }
             }
         }
-    },
-    "overrides": {
-        "Text": {
-            "root": {
-                "color": "red"
-            }
-        }
     }
 }

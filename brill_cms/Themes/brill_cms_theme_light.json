@@ -677,43 +677,5 @@
                 }
             }
         }
-    },
-    "overrides": {
-        "MenuButton": {
-            "root": {
-                "color": "white"
-            },
-            "button": {
-                "padding": "8px 8px 4px 8px"
-            },
-            "bar": {
-                "width": "100%",
-                "height": "5px",
-                "background": "red"
-            }
-        },
-        "Xhtml": {
-            "root": {
-                "paddingTop": "20px",
-                "paddingLeft": "5px",
-                "paddingRight": "5px",
-                "@media (min-width:700px)": {
-                    "paddingLeft": "12px",
-                    "paddingRight": "5px"
-                },
-                "paddingBottom": "50px"
-            },
-            "parserError": {
-                "background": "#FFDAE9",
-                "padding": "20px"
-            }
-        },
-        "MUIDataTableHeadCell": {
-            "fixedHeader": {
-                "backgroundColor": "#2c9ec2",
-                "color": "#ddd",
-                "fontWeight": 800
-            }
-        }
     }
 }
