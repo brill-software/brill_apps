@@ -355,7 +355,7 @@
                 },
                 {
                     "subType": "gitChangedDeleted",
-                    "buttonList" : [
+                    "buttonList": [
                         {
                             "iconName": "AddTwoTone",
                             "publishToTopic": "git:rm:/{path}",
@@ -385,7 +385,7 @@
                 },
                 {
                     "subType": "gitStagedDeleted",
-                    "buttonList" : [
+                    "buttonList": [
                         {
                             "iconName": "RemoveTwoTone",
                             "publishToTopic": "git:unstage:/{path}",
@@ -522,6 +522,106 @@
             ]
         }
     },
+    "components": {
+        "MuiPaper": {
+            "styleOverrides": {
+                "root": {
+                    "backgroundColor": "#1e1e1e"
+                }
+            }
+        },
+        "MenuButton": {
+            "styleOverrides": {
+                "root": {
+                    "color": "white"
+                },
+                "button": {
+                    "padding": "8px 8px 4px 8px"
+                },
+                "bar": {
+                    "width": "100%",
+                    "height": "5px",
+                    "background": "red"
+                }
+            }
+        },
+        "Xhtml": {
+            "styleOverrides": {
+                "root": {
+                    "paddingLeft": "5px",
+                    "paddingRight": "5px",
+                    "@media (min-width:700px)": {
+                        "paddingLeft": "12px",
+                        "paddingRight": "5px"
+                    }
+                },
+                "parserError": {
+                    "background": "#FFDAE9",
+                    "padding": "20px"
+                }
+            }
+        },
+        "MUIDataTableHeadCell": {
+            "styleOverrides": {
+                "fixedHeader": {
+                    "backgroundColor": "#1e692e",
+                    "color": "#ddd",
+                    "fontWeight": 800
+                }
+            }
+        },
+        "MUIDataTableSelectCell": {
+            "styleOverrides": {
+                "headerCell": {
+                    "backgroundColor": "#1e692e",
+                    "paddingLeft": "16px"
+                }
+            }
+        },
+        "TabName": {
+            "styleOverrides": {
+                "tabActive": {
+                    "background": "#a0a0a0"
+                },
+                "tabActiveX": {
+                    "background": "#a0a0a0"
+                },
+                "tabInActive": {
+                    "background": "#606060"
+                },
+                "tabInActiveX": {
+                    "background": "#606060"
+                }
+            }
+        },
+        "TabBarPane": {
+            "styleOverrides": {
+                "tabsRoot": {
+                    "background": "#404040"
+                },
+                "modesRoot": {
+                    "background": "#a0a0a0"
+                }
+            }
+        },
+        "ResizablePanels": {
+            "styleOverrides": {
+                "splitIconDiv": {
+                    "backgroundColor": "#404040"
+                }
+            }
+        },
+        "StylesDropdown": {
+            "styleOverrides": {
+                "root": {
+                    "background": "#a0a0a0"
+                },
+                "select": {
+                    "background": "#a0a0a0"
+                }
+            }
+        }
+    },
     "overrides": {
         "MuiPaper": {
             "root": {
@@ -578,15 +678,15 @@
             "tabInActive": {
                 "background": "#606060"
             },
-             "tabInActiveX": {
+            "tabInActiveX": {
                 "background": "#606060"
-             }
+            }
         },
         "TabBarPane": {
             "tabsRoot": {
                 "background": "#404040"
             },
-             "modesRoot": {
+            "modesRoot": {
                 "background": "#a0a0a0"
             }
         },
@@ -599,7 +699,7 @@
             "root": {
                 "background": "#a0a0a0"
             },
-             "select": {
+            "select": {
                 "background": "#a0a0a0"
             }
         }

@@ -1,0 +1,21 @@
+{
+    "components": {
+        "Alert": {
+            "styleOverrides": {
+                "root": {
+                    "padding": "20px",
+                    "color": "brown",
+                    "background": "#f0e0e0",
+                    "borderRadius": "20px",
+                    "boxShadow": "5px 10px 18px",
+                    "opacity": "0.95"
+                },
+                "title": {
+                    "fontSize": "1.1rem",
+                    "fontWeight": 700,
+                    "color": "red"
+                }
+            }
+        }
+    }
+}
