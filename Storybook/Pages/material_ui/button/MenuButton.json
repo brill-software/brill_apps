@@ -27,7 +27,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>title</td><td>Button label.</td></tr>\n<tr><td>route [optional]</td><td>Route for when a form is submitted.</td></tr>\n<tr><td>theme</td><td><code>theme.overrides.MenuButton.root, .button, .bar</code></td></tr>\n</table>\n</p>"
+                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>title</td><td>Button label.</td></tr>\n<tr><td>route [optional]</td><td>Route for when a form is submitted.</td></tr>\n<tr><td>theme</td><td><code>theme.components.MenuButton.styleOverrides.root, .button, .bar</code></td></tr>\n</table>\n</p>"
                         }
                     },
                     {

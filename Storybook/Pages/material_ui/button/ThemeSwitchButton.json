@@ -27,7 +27,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>Switches the theme between dark and light.\n<table cellpadding=\"7\">\n<tr><td>setDarkToolTip</td><td>Dark Tool Tip.</td></tr>\n<tr><td>setLightToolTip</td><td>Light Tool Tip.</td></tr>\n<tr><td>theme</td><td><code>theme.overrides.ThemeSwitchButton.root</code></td></tr>\n</table>\n</p>"
+                            "text": "<p>Switches the theme between dark and light.\n<table cellpadding=\"7\">\n<tr><td>setDarkToolTip</td><td>Dark Tool Tip.</td></tr>\n<tr><td>setLightToolTip</td><td>Light Tool Tip.</td></tr>\n<tr><td>theme</td><td><code>theme.components.ThemeSwitchButton.styleOverrides.root</code></td></tr>\n</table>\n</p>"
                         }
                     },
                     {

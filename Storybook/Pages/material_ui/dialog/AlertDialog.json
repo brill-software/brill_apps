@@ -27,7 +27,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>title</td><td>Dialog title.</td></tr>\n<tr><td>prompt</td><td>Default dialog prompt.</td></tr>\n<tr><td>subscribeToTopic</td><td>When a string is published to the topic the alert will be opened. Publishing of anything other than a string will result in the display of the dialog with the default prompt.</td></tr>\n<tr><td>publishToTopic</td><td>When the user clicks on the Close button the string OK will be published to the topic.</td></tr>\n<tr><td>theme</td><td><code>theme.overrides.AlertDialog.root, .closeButton</code></td></tr>\n</table>\n</p>"
+                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>title</td><td>Dialog title.</td></tr>\n<tr><td>prompt</td><td>Default dialog prompt.</td></tr>\n<tr><td>subscribeToTopic</td><td>When a string is published to the topic the alert will be opened. Publishing of anything other than a string will result in the display of the dialog with the default prompt.</td></tr>\n<tr><td>publishToTopic</td><td>When the user clicks on the Close button the string OK will be published to the topic.</td></tr>\n<tr><td>theme</td><td><code>theme.components.AlertDialog.styleOverrides .root, .closeButton</code></td></tr>\n</table>\n</p>"
                         }
                     },
                     {

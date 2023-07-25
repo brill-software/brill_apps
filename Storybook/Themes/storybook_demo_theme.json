@@ -6,6 +6,26 @@
                     "color": "red"
                 }
             }
+        },
+        "CancelButton": {
+            "styleOverrides": {
+                "root": {
+                    "margin": "20px",
+                    "color": "#ffffff",
+                    "backgroundColor": "#0063cc",
+                    "textTransform": "capitalize",
+                    "&:hover": {
+                        "backgroundColor": "#0089e9"
+                    },
+                    "&:active": {
+                        "backgroundColor": "#aa89e9"
+                    },
+                    "&:focus": {
+                        "backgroundColor": "#11dde9",
+                        "boxShadow": "0 0 0 0.2rem rgba(0,123,355,0.5)"
+                    }
+                }
+            }
         }
     },
     "overrides": {

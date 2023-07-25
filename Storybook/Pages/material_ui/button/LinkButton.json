@@ -27,7 +27,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>A button, based on the Material UI Button, that routes the user to another page.\n<table cellpadding=\"7\">\n<tr><td>startIcon [optional]</td><td>Icon to place before the title. e.g. Home</td></tr>\n<tr><td>title</td><td>The title text of the Link Button.</td></tr>\n<tr><td>endIcon [optional]</td><td>Icon to place after the title.</td></tr>\n<tr><td>route</td><td>The route to take when the button is clicked. e.g. /my_app/home</td></tr>\n<tr><td>theme</td><td><code>theme.overrides.LinkButton.root</code></td></tr>\n</table>\n</p>"
+                            "text": "<p>A button, based on the Material UI Button, that routes the user to another page.\n<table cellpadding=\"7\">\n<tr><td>startIcon [optional]</td><td>Icon to place before the title. e.g. Home</td></tr>\n<tr><td>title</td><td>The title text of the Link Button.</td></tr>\n<tr><td>endIcon [optional]</td><td>Icon to place after the title.</td></tr>\n<tr><td>route</td><td>The route to take when the button is clicked. e.g. /my_app/home</td></tr>\n<tr><td>theme</td><td><code>theme.components.LinkButton.styleOverrides.root</code></td></tr>\n</table>\n</p>"
                         }
                     },
                     {

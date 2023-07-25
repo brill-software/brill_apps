@@ -27,7 +27,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>children</td><td>The component must have two child components. The first for the face, the second for the back.</td></tr>\n<tr><td>theme</td><td><code>theme.overrides.FlippableCard.card, .cardInner, .cardFront, .cardBack, .isFlipped</code></td></tr>\n</table>\n</p>"
+                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>children</td><td>The component must have two child components. The first for the face, the second for the back.</td></tr>\n<tr><td>theme</td><td><code>theme.components.FlippableCard.styleOverrides .card, .cardInner, .cardFront, .cardBack, .isFlipped</code></td></tr>\n</table>\n</p>"
                         }
                     },
                     {

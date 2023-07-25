@@ -27,7 +27,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>title</td><td>Dialog title.</td></tr>\n<tr><td>prompt</td><td>Dialog prompt.</td></tr>\n<tr><td>fieldLabel</td><td>Field label.</td></tr>\n<tr><td>buttonLabel</td><td>Button label.</td></tr>\n<tr><td>subscribeToTopic</td><td>When a string is published to the topic the dialog will be opened. Publishing of true will result in display of the dialog with default prompt. A value of false with close the alert dialog.</td></tr>\n<tr><td>publishToTopic</td><td>The topic to publish the topic field value to.</td></tr>\n<tr><td>theme</td><td><code>theme.overrides.SingleFieldDialog .root, .closeButton</code></td></tr>\n</table>\n</p>"
+                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>title</td><td>Dialog title.</td></tr>\n<tr><td>prompt</td><td>Dialog prompt.</td></tr>\n<tr><td>fieldLabel</td><td>Field label.</td></tr>\n<tr><td>buttonLabel</td><td>Button label.</td></tr>\n<tr><td>subscribeToTopic</td><td>When a string is published to the topic the dialog will be opened. Publishing of true will result in display of the dialog with default prompt. A value of false with close the alert dialog.</td></tr>\n<tr><td>publishToTopic</td><td>The topic to publish the topic field value to.</td></tr>\n<tr><td>theme</td><td><code>theme.components.SingleFieldDialog.overrideStyles .root, .closeButton</code></td></tr>\n</table>\n</p>"
                         }
                     },
                     {

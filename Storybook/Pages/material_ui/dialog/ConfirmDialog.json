@@ -27,7 +27,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>title</td><td>Dialog title.</td></tr>\n<tr><td>prompt</td><td>Default prompt.</td></tr>\n<tr><td>subscribeToTopic</td><td>When a string is published to the topic the alert dialog will be opened. Publishing of true will result in display of the alert dialog with default prompt. A value of false with close the alert dialog.</td></tr>\n<tr><td>publishToTopic</td><td>\"Yes\", \"No\" or \"Close\" will be published to the topic.</td></tr>\n<tr><td>theme</td><td><code>theme.overrides.ConfirmDialog .root, .closeButton</code></td></tr>\n</table>\n</p>"
+                            "text": "<p>\n<table cellpadding=\"7\">\n<tr><td>title</td><td>Dialog title.</td></tr>\n<tr><td>prompt</td><td>Default prompt.</td></tr>\n<tr><td>subscribeToTopic</td><td>When a string is published to the topic the alert dialog will be opened. Publishing of true will result in display of the alert dialog with default prompt. A value of false with close the alert dialog.</td></tr>\n<tr><td>publishToTopic</td><td>\"Yes\", \"No\" or \"Close\" will be published to the topic.</td></tr>\n<tr><td>theme</td><td><code>theme.components.ConfirmDialog.styleOverrides .root, .closeButton</code></td></tr>\n</table>\n</p>"
                         }
                     },
                     {
