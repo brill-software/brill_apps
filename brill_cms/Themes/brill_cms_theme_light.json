@@ -546,11 +546,28 @@
                     ]
                 },
                 {
-                    "matches": "(.txt|.gitignore|.md)$",
+                    "matches": "(.txt|.gitignore)$",
                     "mode": [
                         {
                             "name": "TEXT",
                             "editor": "TextEditor"
+                        },
+                        {
+                            "name": "DIFF",
+                            "editor": "DiffEditor"
+                        }
+                    ]
+                },
+                {
+                    "matches": "(.md)$",
+                    "mode": [
+                        {
+                            "name": "EDIT",
+                            "editor": "TextEditor"
+                        },
+                        {
+                            "name": "VIEW",
+                            "editor": "MarkdownViewer"
                         },
                         {
                             "name": "DIFF",
