@@ -550,7 +550,7 @@
                     "matches": "(.txt|.gitignore)$",
                     "mode": [
                         {
-                            "name": "TEXT",
+                            "name": "EDIT",
                             "editor": "TextEditor"
                         },
                         {
