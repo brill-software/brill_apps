@@ -511,10 +511,6 @@
                     "matches": ".*Themes.*(.json)$",
                     "mode": [
                         {
-                            "name": "THEME",
-                            "editor": "TextEditor"
-                        },
-                        {
                             "name": "JSON",
                             "editor": "TextEditor"
                         },
@@ -563,12 +559,12 @@
                     "matches": "(.md)$",
                     "mode": [
                         {
-                            "name": "EDIT",
-                            "editor": "TextEditor"
-                        },
-                        {
                             "name": "VIEW",
                             "editor": "MarkdownViewer"
+                        },
+                        {
+                            "name": "EDIT",
+                            "editor": "TextEditor"
                         },
                         {
                             "name": "DIFF",

@@ -1,4 +1,4 @@
-{
+{              
     "palette": {
         "type": "light",
         "mode": "light",
@@ -6,7 +6,7 @@
             "main": "#3f51b5",
             "contrastText": "#b0b0b0"
         },
-        "secondary": {
+        "secondary": { 
             "main": "#ef4fa6"
         },
         "contrastThreshold": 3,
@@ -510,10 +510,6 @@
                     "matches": ".*Themes.*(.json)$",
                     "mode": [
                         {
-                            "name": "THEME",
-                            "editor": "TextEditor"
-                        },
-                        {
                             "name": "JSON",
                             "editor": "TextEditor"
                         },
@@ -560,14 +556,14 @@
                 },
                 {
                     "matches": "(.md)$",
-                    "mode": [
-                        {
-                            "name": "EDIT",
-                            "editor": "TextEditor"
-                        },
+                    "mode": [    
                         {
                             "name": "VIEW",
                             "editor": "MarkdownViewer"
+                        },
+                        {
+                            "name": "EDIT",
+                            "editor": "TextEditor"
                         },
                         {
                             "name": "DIFF",

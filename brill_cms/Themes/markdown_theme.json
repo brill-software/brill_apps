@@ -4,21 +4,22 @@
             "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
             "fontSize": "1.4rem",
             "color": "#202060",
+            "paddingTop": "1.8rem",
             "marginBottom": "1.8rem",
             "@media (min-width:700px)": {
                 "fontSize": "1.8rem"
             },
             "fontWeight": 700,
-            "borderBottom": "1px solid #202060",
+            "borderBottom": "1px solid #aaa",
             "paddingBottom": "3px"
         },
         "h2": {
             "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Noto Sans\", \"Ubuntu\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;",
-            "fontSize": "1.2rem",
+            "fontSize": "3.1rem",
             "color": "#202060",
             "marginTop": "1.8rem",
             "@media (min-width:700px)": {
-                "fontSize": "1.4rem"
+                "fontSize": "1.3rem"
             },
             "fontWeight": 600,
             "fontColor": "green"
@@ -38,6 +39,7 @@
             "fontSize": "0.9rem",
             "color": "#202060",
             "marginTop": "1.2rem",
+            "marginBottom": "0.4rem",
             "textDecoration": "underline",
             "@media (min-width:700px)": {
                 "fontSize": "1.15rem"
@@ -150,7 +152,8 @@
         "MarkdownViewer": {
             "styleOverrides": {
                 "root": {
-                    "margin": "30px 30px 30px 70px"
+                    "margin": "0px 30px 30px 70px",
+                    "paddingBottom": "50px"
                 }
             }
         }
