@@ -127,7 +127,7 @@
                                                                 "attributes": {
                                                                     "title": "Set workspace",
                                                                     "variant": "contained",
-                                                                    "route": "/${appName}/edit",
+                                                                    "route": "/${appName}/editor",
                                                                     "color": "primary",
                                                                     "subscribeToTopic": "home.form1",
                                                                     "requestTopic": "git:workspace:/",

@@ -33,7 +33,11 @@
                             {
                                 "id": "repoChanges",
                                 "module": "html/Div",
-                                "attributes": {},
+                                "attributes": {
+                                    "style": {
+                                        "overflowX": "hidden"
+                                    }
+                                },
                                 "children": [
                                     {
                                         "id": "Workspace",
