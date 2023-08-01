@@ -1,26 +1,59 @@
 # brill_apps 
 
-Applications files for use with the Brill CMS.
+## Summary
+
+The **brill_apps** repository contains Web Apps that were created using the Brill CMS.
+
+Directories:
 
 - global - contains the site.json file which specifies the default applicaiton.
-- brill_cms - the Brill CMS Applications.
-- MediaLirbary - a space for keeping images etc.
+- brill_cms - the Brill CMS Application.
+- MediaLibrary - a place for keeping images etc.
 - Storybook - examples of various components.
 
-See the [Brill Software Developer Guide](https://www.brill.software/brill_software/developers_guide "Developers Guide") for more details..
+An application typically has the folllowing sub-directories:
+
+- Pages
+- Database
+- Icons
+- Images
+- Resources
+- Scripts
+- Themes
+
+See the [Brill Software Developer Guide](https://www.brill.software/brill_software/developers_guide "Developers Guide") for more details.
+
+## Configuration
+
+The repository is automatically cloned by the Brill Server when it starts up. The location of the repository
+is configured in the Brill Server `application.yml` file.
 
 ## Forking the Repository
 
-Create a fork of brill_apps to hold the base apps plus your own apps, called say brill_apps_fork.
+Rather than clone the **brill_apps** repository, you might want to fork the repository, so that you can add your own applications.
 
-### Making changes to the brill_cms and Storybook apps
+## Licenses
 
-To make changes to any of the base apps (brill_cms and Storybook) first create a new branch on the brill_apps
-repository in your workspace.
+The Brill Software Apps (including the Brill CMS) are distributed under the Brill Software Apps license. By
+default, apps that you develop are your copyright with all rights reserved. You might want to add your own 
+license file for your apps.
+
+# Making changes to the brill_cms and Storybook apps
+
+==Skip this section if you are only going to be making changes to your own apps.==
+
+This section assumes you have *write access* to the **brill_apps** repository, that you've 
+forked the **brill_apps** repository and that you have command line access to the Brill Server 
+**workspace** directory.
+
+The process involves creating a branch in your private workspace that is connected to the upstream
+repository, rather than the forked repository. Updates are made on the upstream branch and then merged
+into the the develop branch on the forked repository.
 
 #### Add new remote called upstream
 
-Get a command line prompt and change directory to to your private workspace directory:
+Use a command line prompt and change directory to to your private workspace directory:
+
 ```
 % cd /Projects/brill_workspace/<Brill CMS username>
 ```
@@ -63,6 +96,26 @@ Commit the changes. They will be pushed to the remote **upstream**.
 
 #### Merge the changes into the develop branch of remote <b>origin</b>.
 
-Switch to the develop branch and merge in branch **upstream_changes**.
+Switch to the **develop** branch and merge in branch **upstream_changes**. Resolve any
+merge conflicts.
 
-If there are merge conflicts, first close and re-open the files that are conflicted.
+#### Merge the changes on the **upstream_changes** branch into the **brill_apps** repository
+
+When finished, merge the changes on the **upstream_changes** branch into the **brill_apps**
+repository. You can do this from the command line as follows:
+
+```
+% cd
+% git clone git@bitbucket.org:brill-software/brill_apps.git brill_apps_temp
+% cd brill_apps_temp
+% git fetch
+% git branch
+// Check available branches
+% git checkout upstream_branch
+// Check changes are there
+% git checkout develop
+% git merge upstream_changes
+% git push
+% cd ..
+% rm -rf brill_apps_temp
+```
