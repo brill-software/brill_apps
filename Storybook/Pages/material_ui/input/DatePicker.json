@@ -1,0 +1,365 @@
+{
+    "pageDescrip": "Form",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/input/DatePicker"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<h3>Date Picker</h3>\n<p>\nThe Date Picker component is  based on the <a href=\"https://mui.com/x/react-date-pickers/date-time-picker/\" target=\"_blank\">Material-UI Date Picker</a> component. \n</p>\n<p>\n<table cellpadding=\"7\">\n<tr><td>label</td><td>Field label.</td></tr>\n<tr><td>variant</td><td>\"outlined\".</td></tr>\n<tr><td>locale [optional]</td><td><code>en</code>, <code>en-gb</code>, <code>de</code>, <code>fr</code> or <code>es</code>.</td></tr>\n<tr><td>format [optional]</td><td>Date format. e.g. YYYY-MM-DD</td></tr>\n<tr><td>subscribeToTopic [optional] </td><td>Provides the initial date as a string in YYYY-MM-DD format.</td></tr>\n<tr><td>publishToTopic</td><td>The topic to publish the date to, as a string in YYYY-MM-DD format.</td></tr>\n</table></p>\n"
+                        }
+                    },
+                    {
+                        "id": "Form",
+                        "module": "material_ui/input/Form",
+                        "attributes": {
+                            "style": {
+                                "width": "1350px",
+                                "margin": "10px"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Flex Row Layout",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "row"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "Flex Column Layout-1",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "column",
+                                                "margin": "10px"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Text",
+                                                "module": "material_ui/text/Xhtml",
+                                                "attributes": {
+                                                    "style": {
+                                                        "fontSize": "20px",
+                                                        "paddingTop": "10px",
+                                                        "paddingBottom": "5px"
+                                                    },
+                                                    "text": "<p>Format <code>YYYY-MM-DD</code></p>"
+                                                }
+                                            },
+                                            {
+                                                "id": "Date Picker",
+                                                "module": "material_ui/input/DatePicker",
+                                                "attributes": {
+                                                    "format": "YYYY-MM-DD",
+                                                    "publishToTopic": "storybook.datePicker#date1",
+                                                    "label": "Date",
+                                                    "variant": "outlined",
+                                                    "style": {
+                                                        "margin": "10px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Flex Row Layout",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "style": {
+                                                        "display": "flex",
+                                                        "flexDirection": "row",
+                                                        "flexWrap": "wrap",
+                                                        "paddingTop": "15px",
+                                                        "paddingBottom": "15px"
+                                                    }
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "Text",
+                                                        "module": "html/Div",
+                                                        "attributes": {
+                                                            "style": {
+                                                                "fontSize": "20px",
+                                                                "paddingRight": "10px"
+                                                            },
+                                                            "text": "Selected date: "
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "Value",
+                                                        "module": "html/Div",
+                                                        "attributes": {
+                                                            "subscribeToTopic": "storybook.datePicker#date1",
+                                                            "style": {
+                                                                "fontSize": "20px",
+                                                                "fontWeight": 900,
+                                                                "color": "green"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "Flex Column Layout-2",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "column",
+                                                "margin": "10px"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Text",
+                                                "module": "material_ui/text/Xhtml",
+                                                "attributes": {
+                                                    "style": {
+                                                        "fontSize": "20px",
+                                                        "paddingTop": "10px",
+                                                        "paddingBottom": "5px"
+                                                    },
+                                                    "text": "<p>Locale <code>en</code> (US date)</p>"
+                                                }
+                                            },
+                                            {
+                                                "id": "Date Picker",
+                                                "module": "material_ui/input/DatePicker",
+                                                "attributes": {
+                                                    "locale": "en",
+                                                    "publishToTopic": "storybook.datePicker#date2",
+                                                    "label": "Date",
+                                                    "variant": "outlined",
+                                                    "style": {
+                                                        "margin": "10px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Flex Row Layout",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "style": {
+                                                        "display": "flex",
+                                                        "flexDirection": "row",
+                                                        "flexWrap": "wrap",
+                                                        "paddingTop": "15px",
+                                                        "paddingBottom": "15px"
+                                                    }
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "Text",
+                                                        "module": "html/Div",
+                                                        "attributes": {
+                                                            "style": {
+                                                                "fontSize": "20px",
+                                                                "paddingRight": "10px"
+                                                            },
+                                                            "text": "Selected date: "
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "Value",
+                                                        "module": "html/Div",
+                                                        "attributes": {
+                                                            "subscribeToTopic": "storybook.datePicker#date2",
+                                                            "style": {
+                                                                "fontSize": "20px",
+                                                                "fontWeight": 900,
+                                                                "color": "blue"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "Flex Column Layout-3",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "column",
+                                                "margin": "10px"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Text-3",
+                                                "module": "material_ui/text/Xhtml",
+                                                "attributes": {
+                                                    "style": {
+                                                        "fontSize": "20px",
+                                                        "paddingTop": "10px",
+                                                        "paddingBottom": "5px"
+                                                    },
+                                                    "text": "<p>Locale <code>en-gb</code> (GB date)</p>"
+                                                }
+                                            },
+                                            {
+                                                "id": "Date Picker-3",
+                                                "module": "material_ui/input/DatePicker",
+                                                "attributes": {
+                                                    "locale": "en-gb",
+                                                    "publishToTopic": "storybook.datePicker#date3",
+                                                    "label": "Date",
+                                                    "variant": "outlined",
+                                                    "style": {
+                                                        "margin": "10px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Flex Row Layout-3",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "style": {
+                                                        "display": "flex",
+                                                        "flexDirection": "row",
+                                                        "flexWrap": "wrap",
+                                                        "paddingTop": "15px",
+                                                        "paddingBottom": "15px"
+                                                    }
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "Text",
+                                                        "module": "html/Div",
+                                                        "attributes": {
+                                                            "style": {
+                                                                "fontSize": "20px",
+                                                                "paddingRight": "10px"
+                                                            },
+                                                            "text": "Selected date: "
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "Value",
+                                                        "module": "html/Div",
+                                                        "attributes": {
+                                                            "subscribeToTopic": "storybook.datePicker#date3",
+                                                            "style": {
+                                                                "fontSize": "20px",
+                                                                "fontWeight": 900,
+                                                                "color": "orange"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "Flex Column Layout-4",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "column",
+                                                "margin": "10px"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Text",
+                                                "module": "material_ui/text/Xhtml",
+                                                "attributes": {
+                                                    "style": {
+                                                        "fontSize": "20px",
+                                                        "paddingTop": "10px",
+                                                        "paddingBottom": "5px"
+                                                    },
+                                                    "text": "<p>Locale <code>es</code> (Spanish date)</p>"
+                                                }
+                                            },
+                                            {
+                                                "id": "Date Picker",
+                                                "module": "material_ui/input/DatePicker",
+                                                "attributes": {
+                                                    "locale": "es",
+                                                    "publishToTopic": "storybook.datePicker#date4",
+                                                    "label": "Date",
+                                                    "variant": "outlined",
+                                                    "style": {
+                                                        "margin": "10px"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Flex Row Layout",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "style": {
+                                                        "display": "flex",
+                                                        "flexDirection": "row",
+                                                        "flexWrap": "wrap",
+                                                        "paddingTop": "15px",
+                                                        "paddingBottom": "15px"
+                                                    }
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "Text",
+                                                        "module": "html/Div",
+                                                        "attributes": {
+                                                            "style": {
+                                                                "fontSize": "20px",
+                                                                "paddingRight": "10px"
+                                                            },
+                                                            "text": "Selected date: "
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "Value",
+                                                        "module": "html/Div",
+                                                        "attributes": {
+                                                            "subscribeToTopic": "storybook.datePicker#date4",
+                                                            "style": {
+                                                                "fontSize": "20px",
+                                                                "fontWeight": 900,
+                                                                "color": "cyan"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
