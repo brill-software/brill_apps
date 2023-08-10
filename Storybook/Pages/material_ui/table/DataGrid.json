@@ -20,19 +20,19 @@
                         "attributes": {
                             "variant": "h3",
                             "gutterBottom": true,
-                            "text": "material_ui/table/Table"
+                            "text": "material_ui/table/DataGrid"
                         }
                     },
                     {
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>The Table component is based on <a href=\"https://mui.com/material-ui/react-table/\" target=\"_blank\">Material UI Table</a> component. The component displays a simple read only table. For a table component that supports paging and sorting, use the DataTable component.\n<table cellpadding=\"7\">\n\n<tr><td>size [optional]</td><td><code>small</code> or <code>medium</code>.</td></tr>\n<tr><td>subscribeToTopic</td><td>The JavaScript to access the database.</td></tr>\n<tr><td>columns</td><td>List of the column names and labels.</td></tr>\n<tr><td>maxRows [optional]</td><td>Limits the size of the table to the specified number of rows.</td></tr>\n</table>\n</p>"
+                            "text": "<p>The Data Grid component is based on the <a href=\"https://mui.com/x/react-data-grid/\" target=\"_blank\">MUI v6 Data Grid</a> component. \n<table cellpadding=\"7\">\n<tr><td>rowHeight [optional]</td><td>Sets the row height in pixels.</td></tr>\n<tr><td>subscribeToTopic</td><td>The topic to subscribe to for the data. e.g. an SQL query or JavaScript topic.</td></tr>\n<tr><td>columns</td><td>List of the column fields, header labels and widths.</td></tr>\n<tr><td>maxRows [optional]</td><td>Limits the size of the table to the specified number of rows. The default is 1000.</td></tr>\n</table>\n</p>"
                         }
                     },
                     {
                         "id": "^Table1",
-                        "module": "material_ui/table/Table",
+                        "module": "material_ui/table/DataGrid",
                         "attributes": {
                             "size": "small",
                             "style": {
@@ -40,6 +40,7 @@
                             },
                             "padding": "10px",
                             "maxRows": 20,
+                            "rowHeight": 30,
                             "initialState": {
                                 "pagination": {
                                     "paginationModel": {
@@ -57,22 +58,28 @@
                             "subscribeToTopic": "/Database/employee/readPage.js",
                             "columns": [
                                 {
-                                    "name": "employee_id",
-                                    "label": "Employee Id"
+                                    "field": "employee_id",
+                                    "headerName": "Employee Id",
+                                    "flex": 1,
+                                    "width": 120
                                 },
                                 {
-                                    "name": "first_name",
-                                    "label": "First Name"
+                                    "field": "first_name",
+                                    "headerName": "First Name",
+                                    "flex": 1
                                 },
                                 {
-                                    "name": "last_name",
-                                    "label": "Last Name"
+                                    "field": "last_name",
+                                    "headerName": "Last Name",
+                                    "flex": 1
                                 },
                                 {
-                                    "name": "department",
-                                    "label": "Department"
+                                    "field": "department",
+                                    "headerName": "Department",
+                                    "flex": 1.5
                                 }
-                            ]
+                            ],
+                            "hideFooterSelectedRowCount": true
                         }
                     }
                 ]
