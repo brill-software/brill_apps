@@ -10,8 +10,7 @@
                 "id": "ThemeProvider",
                 "module": "material_ui/theme/ThemeProvider",
                 "attributes": {
-                    "themeTopic": "/Themes/storybook_theme_light.json",
-                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                    "themeTopic": "/Themes/storybook_theme_light.json"
                 },
                 "children": [
                     {
@@ -71,7 +70,7 @@
                                         "margin": "10px",
                                         "width": "40px",
                                         "height": "40px",
-                                        "background": "red"
+                                        "background": "#B91C1C"
                                     }
                                 }
                             },
@@ -83,7 +82,7 @@
                                         "margin": "10px",
                                         "width": "40px",
                                         "height": "40px",
-                                        "background": "green"
+                                        "background": "#047857"
                                     }
                                 }
                             },
@@ -95,7 +94,7 @@
                                         "margin": "10px",
                                         "width": "40px",
                                         "height": "40px",
-                                        "background": "blue"
+                                        "background": "#1D4ED8"
                                     }
                                 }
                             }
@@ -121,7 +120,7 @@
                                         "margin": "10px",
                                         "width": "40px",
                                         "height": "40px",
-                                        "background": "red"
+                                        "background": "#B91C1C"
                                     }
                                 }
                             },
@@ -133,7 +132,7 @@
                                         "margin": "10px",
                                         "width": "40px",
                                         "height": "40px",
-                                        "background": "green"
+                                        "background": "#047857"
                                     }
                                 }
                             },
@@ -145,7 +144,7 @@
                                         "margin": "10px",
                                         "width": "40px",
                                         "height": "40px",
-                                        "background": "blue"
+                                        "background": "#1D4ED8"
                                     }
                                 }
                             }
@@ -169,7 +168,7 @@
                                         "margin": "10px",
                                         "width": "40px",
                                         "height": "40px",
-                                        "background": "red"
+                                        "background": "#B91C1C"
                                     }
                                 }
                             },
@@ -181,7 +180,7 @@
                                         "margin": "10px",
                                         "width": "40px",
                                         "height": "40px",
-                                        "background": "green"
+                                        "background": "#047857"
                                     }
                                 }
                             },
@@ -193,7 +192,7 @@
                                         "margin": "10px",
                                         "width": "40px",
                                         "height": "40px",
-                                        "background": "blue"
+                                        "background": "#1D4ED8"
                                     }
                                 }
                             }
@@ -227,7 +226,7 @@
                                                 "margin": "10px",
                                                 "width": "40px",
                                                 "height": "40px",
-                                                "background": "red"
+                                                "background": "#B91C1C"
                                             }
                                         }
                                     },
@@ -239,7 +238,7 @@
                                                 "margin": "10px",
                                                 "width": "40px",
                                                 "height": "40px",
-                                                "background": "green"
+                                                "background": "#047857"
                                             }
                                         }
                                     },
@@ -247,12 +246,11 @@
                                         "id": "Item-3",
                                         "module": "html/Div",
                                         "attributes": {
-                                            "text": "C",
                                             "style": {
                                                 "margin": "10px",
                                                 "width": "40px",
                                                 "height": "40px",
-                                                "background": "blue"
+                                                "background": "#1D4ED8"
                                             }
                                         }
                                     }
@@ -276,7 +274,7 @@
                                                 "margin": "10px",
                                                 "width": "40px",
                                                 "height": "40px",
-                                                "background": "red"
+                                                "background": "#B91C1C"
                                             }
                                         }
                                     },
@@ -288,7 +286,7 @@
                                                 "margin": "10px",
                                                 "width": "40px",
                                                 "height": "40px",
-                                                "background": "green"
+                                                "background": "#047857"
                                             }
                                         }
                                     },
@@ -296,12 +294,11 @@
                                         "id": "Item-3",
                                         "module": "html/Div",
                                         "attributes": {
-                                            "text": "C",
                                             "style": {
                                                 "margin": "10px",
                                                 "width": "40px",
                                                 "height": "40px",
-                                                "background": "blue"
+                                                "background": "#1D4ED8"
                                             }
                                         }
                                     }
@@ -331,7 +328,7 @@
                                         "margin": "10px",
                                         "width": "40px",
                                         "height": "40px",
-                                        "background": "red",
+                                        "background": "#B91C1C",
                                         "boxShadow": "5px 10px 18px"
                                     }
                                 }
@@ -357,7 +354,7 @@
                                         "margin": "10px",
                                         "width": "40px",
                                         "height": "40px",
-                                        "background": "blue",
+                                        "background": "#1D4ED8",
                                         "opacity": "0.3"
                                     }
                                 }
@@ -396,7 +393,7 @@
                                         "margin": "10px",
                                         "width": "40px",
                                         "height": "40px",
-                                        "background": "red",
+                                        "background": "#B91C1C",
                                         "boxShadow": "5px 10px 18px"
                                     }
                                 }
@@ -422,7 +419,7 @@
                                         "margin": "10px",
                                         "width": "40px",
                                         "height": "40px",
-                                        "background": "blue",
+                                        "background": "#1D4ED8",
                                         "opacity": "0.3"
                                     }
                                 }
@@ -454,16 +451,329 @@
                                 "attributes": {
                                     "style": {
                                         "position": "absolute",
-                                        "top": "-5px",
+                                        "top": "-25px",
                                         "left": "100px",
                                         "margin": "10px",
                                         "width": "400px",
-                                        "height": "40px",
-                                        "background": "lightblue",
+                                        "height": "50px",
+                                        "background": "#EFF6FF",
                                         "padding": "3px"
                                     },
                                     "text": "With absolute positioning, the parent div must have \"position\": \"relative\" and the child \"position\": \"absolute\"."
                                 }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "HeadingLarge-1",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "paddingTop": "2.5rem",
+                                "marginBottom": "0.75rem",
+                                "fontSize": "2.25rem",
+                                "lineHeight": "2.5rem",
+                                "fontWeight": 900,
+                                "color": "#212837"
+                            },
+                            "text": "This is a large heading using a Div."
+                        },
+                        "children": []
+                    },
+                    {
+                        "id": "HeadingMedium",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "paddingTop": "2rem",
+                                "marginBottom": "0.75rem",
+                                "fontSize": "1.875rem",
+                                "lineHeight": "2.25rem",
+                                "fontWeight": 900,
+                                "color": "#212837"
+                            },
+                            "text": "This is a medium heading using a Div."
+                        },
+                        "children": []
+                    },
+                    {
+                        "id": "HeadingSmall",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "paddingTop": "2rem",
+                                "marginBottom": "0.75rem",
+                                "fontSize": "1.5rem",
+                                "lineHeight": "2rem",
+                                "fontWeight": 900,
+                                "color": "#212837"
+                            },
+                            "text": "This is a small heading using a Div."
+                        },
+                        "children": [
+                            {
+                                "id": "Quote",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "paddingTop": "0.25rem",
+                                        "paddingBottom": "0.25rem",
+                                        "paddingLeft": "1.5rem",
+                                        "marginTop": "2rem",
+                                        "marginBottom": "2rem",
+                                        "borderLeftStyle": "solid",
+                                        "borderLeftWidth": "4px",
+                                        "borderColor": "#EC4899",
+                                        "fontSize": "1.5rem",
+                                        "lineHeight": "2rem"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "Text",
+                                        "module": "html/P",
+                                        "attributes": {
+                                            "style": {
+                                                "fontSize": "1.5rem",
+                                                "lineHeight": "2rem",
+                                                "fontStyle": "italic",
+                                                "color": "#6B7280"
+                                            },
+                                            "text": "Once a new technology rolls over you, if you're not part of the steamroller, you're part of the road."
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Flex Row Layout-1",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "flexWrap": "wrap",
+                                "padding": "10px"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "D-1",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "display": "inline-flex",
+                                        "paddingTop": "0.25rem",
+                                        "paddingBottom": "0.25rem",
+                                        "paddingLeft": "0.5rem",
+                                        "paddingRight": "0.5rem",
+                                        "alignItems": "center",
+                                        "borderStyle": "solid",
+                                        "borderWidth": "1px",
+                                        "borderRadius": "0.375rem",
+                                        "boxShadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+                                        "--tw-ring-inset": "inset",
+                                        "fontSize": "0.75rem",
+                                        "lineHeight": "1rem",
+                                        "fontWeight": 500,
+                                        "color": "#4B5563",
+                                        "backgroundColor": "#F9FAFB"
+                                    },
+                                    "text": "Gray Section"
+                                },
+                                "children": []
+                            },
+                            {
+                                "id": "D-2",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "display": "inline-flex",
+                                        "paddingTop": "0.25rem",
+                                        "paddingBottom": "0.25rem",
+                                        "paddingLeft": "0.5rem",
+                                        "paddingRight": "0.5rem",
+                                        "alignItems": "center",
+                                        "borderStyle": "solid",
+                                        "borderWidth": "1px",
+                                        "borderRadius": "0.375rem",
+                                        "boxShadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+                                        "--tw-ring-inset": "inset",
+                                        "fontSize": "0.75rem",
+                                        "lineHeight": "1rem",
+                                        "fontWeight": 500,
+                                        "color": "#B91C1C",
+                                        "backgroundColor": "#FEF2F2"
+                                    },
+                                    "text": "Red Section"
+                                },
+                                "children": []
+                            },
+                            {
+                                "id": "D-3",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "display": "inline-flex",
+                                        "paddingTop": "0.25rem",
+                                        "paddingBottom": "0.25rem",
+                                        "paddingLeft": "0.5rem",
+                                        "paddingRight": "0.5rem",
+                                        "alignItems": "center",
+                                        "borderStyle": "solid",
+                                        "borderWidth": "1px",
+                                        "borderRadius": "0.375rem",
+                                        "boxShadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+                                        "--tw-ring-inset": "inset",
+                                        "fontSize": "0.75rem",
+                                        "lineHeight": "1rem",
+                                        "fontWeight": 500,
+                                        "color": "#92400E",
+                                        "backgroundColor": "#FFFBEB"
+                                    },
+                                    "text": "Yellow Section"
+                                },
+                                "children": []
+                            },
+                            {
+                                "id": "D-4",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "display": "inline-flex",
+                                        "paddingTop": "0.25rem",
+                                        "paddingBottom": "0.25rem",
+                                        "paddingLeft": "0.5rem",
+                                        "paddingRight": "0.5rem",
+                                        "alignItems": "center",
+                                        "borderStyle": "solid",
+                                        "borderWidth": "1px",
+                                        "borderRadius": "0.375rem",
+                                        "boxShadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+                                        "--tw-ring-inset": "inset",
+                                        "fontSize": "0.75rem",
+                                        "lineHeight": "1rem",
+                                        "fontWeight": 500,
+                                        "color": "#047857",
+                                        "backgroundColor": "#ECFDF5"
+                                    },
+                                    "text": "Green Section"
+                                },
+                                "children": []
+                            },
+                            {
+                                "id": "D-5",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "display": "inline-flex",
+                                        "paddingTop": "0.25rem",
+                                        "paddingBottom": "0.25rem",
+                                        "paddingLeft": "0.5rem",
+                                        "paddingRight": "0.5rem",
+                                        "alignItems": "center",
+                                        "borderStyle": "solid",
+                                        "borderWidth": "1px",
+                                        "borderRadius": "0.375rem",
+                                        "boxShadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+                                        "--tw-ring-inset": "inset",
+                                        "fontSize": "0.75rem",
+                                        "lineHeight": "1rem",
+                                        "fontWeight": 500,
+                                        "color": "#1D4ED8",
+                                        "backgroundColor": "#EFF6FF"
+                                    },
+                                    "text": "Blue Section"
+                                },
+                                "children": []
+                            },
+                            {
+                                "id": "D-6",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "display": "inline-flex",
+                                        "paddingTop": "0.25rem",
+                                        "paddingBottom": "0.25rem",
+                                        "paddingLeft": "0.5rem",
+                                        "paddingRight": "0.5rem",
+                                        "alignItems": "center",
+                                        "borderStyle": "solid",
+                                        "borderWidth": "1px",
+                                        "borderRadius": "0.375rem",
+                                        "boxShadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+                                        "--tw-ring-inset": "inset",
+                                        "fontSize": "0.75rem",
+                                        "lineHeight": "1rem",
+                                        "fontWeight": 500,
+                                        "color": "#4338CA",
+                                        "backgroundColor": "#EEF2FF"
+                                    },
+                                    "text": "Indigo Section"
+                                },
+                                "children": []
+                            },
+                            {
+                                "id": "D-7",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "display": "inline-flex",
+                                        "paddingTop": "0.25rem",
+                                        "paddingBottom": "0.25rem",
+                                        "paddingLeft": "0.5rem",
+                                        "paddingRight": "0.5rem",
+                                        "alignItems": "center",
+                                        "borderStyle": "solid",
+                                        "borderWidth": "1px",
+                                        "borderRadius": "0.375rem",
+                                        "boxShadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+                                        "--tw-ring-inset": "inset",
+                                        "fontSize": "0.75rem",
+                                        "lineHeight": "1rem",
+                                        "fontWeight": 500,
+                                        "color": "#6D28D9",
+                                        "backgroundColor": "#F5F3FF"
+                                    },
+                                    "text": "Purple Section"
+                                },
+                                "children": []
+                            },
+                            {
+                                "id": "D-8",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "display": "inline-flex",
+                                        "paddingTop": "0.25rem",
+                                        "paddingBottom": "0.25rem",
+                                        "paddingLeft": "0.5rem",
+                                        "paddingRight": "0.5rem",
+                                        "alignItems": "center",
+                                        "borderStyle": "solid",
+                                        "borderWidth": "1px",
+                                        "borderRadius": "0.375rem",
+                                        "boxShadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+                                        "--tw-ring-inset": "inset",
+                                        "fontSize": "0.75rem",
+                                        "lineHeight": "1rem",
+                                        "fontWeight": 500,
+                                        "color": "#BE185D",
+                                        "backgroundColor": "#FDF2F8"
+                                    },
+                                    "text": "Pink Section"
+                                },
+                                "children": []
                             }
                         ]
                     }

@@ -41,7 +41,7 @@
                                 "id": "Dialog Title",
                                 "module": "material_ui/dialog/DialogTitle",
                                 "attributes": {
-                                    "children": "Set Workspace"
+                                    "text": "Dialog Title"
                                 }
                             },
                             {
@@ -55,7 +55,7 @@
                                         "id": "Dialog Content Text",
                                         "module": "material_ui/dialog/DialogContentText",
                                         "attributes": {
-                                            "children": "The button is disabled and doesn't actually set the workspace."
+                                            "text": "The button doesn't do anything."
                                         }
                                     },
                                     {
@@ -111,7 +111,7 @@
                                         "id": "Submit",
                                         "module": "material_ui/button/SubmitButton",
                                         "attributes": {
-                                            "title": "Set Workspace",
+                                            "title": "Button",
                                             "variant": "contained",
                                             "route": "/brill_cms/editor",
                                             "color": "primary",
@@ -128,7 +128,8 @@
                         "attributes": {
                             "tooltip": "Open Confirm Dialog",
                             "iconName": "PlayCircleTwoTone",
-                            "publishToTopic": "storybook.dialog.open"
+                            "publishToTopic": "storybook.dialog.open",
+                            "action": "open"
                         }
                     },
                     {

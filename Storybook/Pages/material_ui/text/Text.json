@@ -81,16 +81,6 @@
                                 "filter_list": []
                             }
                         }
-                    },
-                    {
-                        "id": "Text Error",
-                        "module": "material_ui/text/Text",
-                        "attributes": {
-                            "subscribeToTopic": "generate_error:/xxx",
-                            "style": {
-                                "color": "red"
-                            }
-                        }
                     }
                 ]
             }
