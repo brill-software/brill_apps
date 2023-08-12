@@ -19,7 +19,7 @@
                         "attributes": {
                             "style": {
                                 "minHeight": "100vh",
-                                "background": "lightblue",
+                                "background": "#FDF2F8",
                                 "padding": "20px"
                             }
                         },
@@ -37,7 +37,7 @@
                                 "id": "Description",
                                 "module": "material_ui/text/Xhtml",
                                 "attributes": {
-                                    "text": "<p>\nIt's useful to have a top level div just below the theme provider. This can be used to set the minimum page height to the screen height (100vh), so that the page extends to the bottom of the screen when there's not enough content to reach the bottom. A background color can be set and some padding added.\n</p>\n<p>The PageDiv component of this page has the style attribute set to:\n<code>\n{\n \"minHeight\": \"100vh\",\n \"background\": \"lightblue\",\n \"padding\": \"20px\"\n}\n</code>\n</p>\n<p>An alternative is to add the style attribute to the Theme Provider. This saves having to insert a top level Div into existing pages.</p>"
+                                    "text": "<p>\nIt's useful to have a top level div just below the Theme Provider. This can be used to set the minimum page height to the screen height (100vh), so that the page extends to the bottom of the screen when there's not enough content to reach the bottom. A background color can be set and some padding added.\n</p>\n<p>The PageDiv component of this page has the style attribute set to:\n<code>\n{\n \"minHeight\": \"100vh\",\n \"background\": \"lightblue\",\n \"padding\": \"20px\"\n}\n</code>\n</p>\n<p>An alternative is to add a style attribute to the Theme Provider. This saves having to insert a top level Div into existing pages.</p>"
                                 }
                             }
                         ]
