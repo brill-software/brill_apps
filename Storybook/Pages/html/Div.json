@@ -510,40 +510,39 @@
                             },
                             "text": "This is a small heading using a Div."
                         },
+                        "children": []
+                    },
+                    {
+                        "id": "Quote",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "paddingTop": "0.25rem",
+                                "paddingBottom": "0.25rem",
+                                "paddingLeft": "1.5rem",
+                                "marginTop": "2rem",
+                                "marginBottom": "2rem",
+                                "borderLeftStyle": "solid",
+                                "borderLeftWidth": "4px",
+                                "borderColor": "#EC4899",
+                                "fontSize": "1.5rem",
+                                "lineHeight": "2rem"
+                            }
+                        },
                         "children": [
                             {
-                                "id": "Quote",
-                                "module": "html/Div",
+                                "id": "Text",
+                                "module": "html/P",
                                 "attributes": {
                                     "style": {
-                                        "paddingTop": "0.25rem",
-                                        "paddingBottom": "0.25rem",
-                                        "paddingLeft": "1.5rem",
-                                        "marginTop": "2rem",
-                                        "marginBottom": "2rem",
-                                        "borderLeftStyle": "solid",
-                                        "borderLeftWidth": "4px",
-                                        "borderColor": "#EC4899",
                                         "fontSize": "1.5rem",
-                                        "lineHeight": "2rem"
-                                    }
+                                        "lineHeight": "2rem",
+                                        "fontStyle": "italic",
+                                        "color": "#6B7280"
+                                    },
+                                    "text": "Once a new technology rolls over you, if you're not part of the steamroller, you're part of the road."
                                 },
-                                "children": [
-                                    {
-                                        "id": "Text",
-                                        "module": "html/P",
-                                        "attributes": {
-                                            "style": {
-                                                "fontSize": "1.5rem",
-                                                "lineHeight": "2rem",
-                                                "fontStyle": "italic",
-                                                "color": "#6B7280"
-                                            },
-                                            "text": "Once a new technology rolls over you, if you're not part of the steamroller, you're part of the road."
-                                        },
-                                        "children": []
-                                    }
-                                ]
+                                "children": []
                             }
                         ]
                     },
