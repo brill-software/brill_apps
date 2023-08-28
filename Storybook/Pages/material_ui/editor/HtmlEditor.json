@@ -1,0 +1,134 @@
+{
+    "pageDescrip": "Text Editor",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/editor/HtmlEditor"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>Html editor, based on the <a href=\"https://quilljs.com/\" target=\"_blank\">React Quill Editor</a>.\n<table cellpadding=\"7\">\n<tr><td>id</td><td>Unique id.</td></tr>\n<tr><td>fileName</td><td>File Name</td></tr>\n<tr><td>subscribeToTopic</td><td>The topic for the file to be edited.</td></tr>\n<tr><td>subscribeToActionTopic</td><td>The topic to get editor actions from as a result of the user clicking editor action buttons.</td></tr>\n<tr><td>publishToTopic</td><td>The topic to save the text to. This is normally the same as the subscribeToTopic.</td></tr>\n<tr><td>publishCurrentStyleTo</td><td>The topic to publish the current style to.</td></tr>\n<tr><td>publishTextChangedTopic</td><td>Topic to publish a boolean indicating if the text has changed.</td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "Flex Row Layout",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "^Undo",
+                                "module": "material_ui/button/IconButton",
+                                "attributes": {
+                                    "iconName": "Undo",
+                                    "tooltip": "Undo",
+                                    "publishToTopic": "storybook.HtmlEditor.action",
+                                    "action": {
+                                        "command": "undo"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "^Redo",
+                                "module": "material_ui/button/IconButton",
+                                "attributes": {
+                                    "iconName": "Redo",
+                                    "tooltip": "Redo",
+                                    "publishToTopic": "storybook.HtmlEditor.action",
+                                    "action": {
+                                        "command": "redo"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "^Revert",
+                                "module": "material_ui/button/IconButton",
+                                "attributes": {
+                                    "iconName": "Restore",
+                                    "tooltip": "Revert",
+                                    "publishToTopic": "storybook.HtmlEditor.action",
+                                    "action": {
+                                        "command": "revert"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "^Save",
+                                "module": "material_ui/button/IconButton",
+                                "attributes": {
+                                    "iconName": "SaveTwoTone",
+                                    "tooltip": "Save",
+                                    "publishToTopic": "storybook.HtmlEditor.action",
+                                    "action": {
+                                        "command": "save"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "Text Changed",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "subscribeToTopic": "storybook.HtmlEditor.textChanged",
+                                    "style": {
+                                        "paddingLeft": "10px",
+                                        "color": "#498ada",
+                                        "fontSize": "20px",
+                                        "height": "29px"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Editor Container",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "height": "400px",
+                                "width": "100%"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "^Html Editor",
+                                "module": "material_ui/editor/HtmlEditor",
+                                "attributes": {
+                                    "id": "xhtmlEditor1",
+                                    "fileName": "editor_help.xhtml",
+                                    "subscribeToTopic": "/Resources/editor_help.xhtml",
+                                    "subscribeToActionTopic": "storybook.HtmlEditor.action",
+                                    "publishToTopic": "/Resources/editor_help.html",
+                                    "publishTextChangedTopic": "storybook.HtmlEditor.textChanged"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
