@@ -35,7 +35,7 @@
                         "module": "material_ui/layout/Box",
                         "attributes": {
                             "sx": {
-                                "bgcolor": "primary.main"
+                                "bgcolor": "secondary.main"
                             }
                         },
                         "children": [
@@ -45,7 +45,7 @@
                                 "attributes": {
                                     "variant": "subtitle1",
                                     "gutterBottom": true,
-                                    "text": "This the box content",
+                                    "text": "This is the box content",
                                     "style": {
                                         "padding": "20px"
                                     }

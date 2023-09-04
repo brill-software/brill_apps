@@ -290,7 +290,7 @@
                 },
                 {
                     "type": "leaf",
-                    "matches": ".*Resources.*(.json|.jsonc|.xml|.xhtml)$",
+                    "matches": ".*Resources.*(.json|.jsonc|.xml|.xhtml|.html)$",
                     "iconName": "DescriptionTwoTone",
                     "style": {
                         "color": "#d472ab"
@@ -624,7 +624,7 @@
                     ]
                 },
                 {
-                    "matches": "(.xhtml)$",
+                    "matches": "(.xhtml|.html)$",
                     "mode": [
                         {
                             "name": "EDIT",
