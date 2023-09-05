@@ -13,18 +13,18 @@
 <p>You will normally work in you own private workspace. This is like having your own pond to fish in. You won't to get your line tangled with others when fishing in your own private pond.</p>
 <p>There are other shared workspaces. The <strong>production</strong> workspace is used by the Production system, the <strong>development</strong> workspace is for developers and the <strong>test</strong> workspace is for the test team.</p>
 <h3>Workflow</h3>
-<p>The workflow for making a change might at first appear complex, but after you've done it a couple of times, it becomes second nature.</p>
+<p>The workflow for making a change might at first appear complex, but after you've done it a couple of times, it becomes second nature.&nbsp;</p>
 <ul>
-  <li>Set the workspace to your own private workspace.</li>
-  <li>Checkout the <strong>develop</strong> branch to your workspace.</li>
-  <li>Create a new branch off of <strong>develop</strong> for your changes.</li>
-  <li>Make the changes and commit them to your branch.</li>
-  <li>Test the changes in your workspace.</li>
-  <li>Switch to the <strong>develop</strong> branch and merge in your branch.</li>
-  <li>Delete your branch, if it's no longer required.</li>
-  <li>Get someone else to test changes on the <strong>develop</strong> branch.</li>
-  <li>To release, checkout the <strong>master</strong> branch and merge in the <strong>develop</strong> branch.</li>
-  <li>On the Production system, pull the changes from the repository <strong>master</strong> branch into the <strong>production</strong> workspace.</li>
+<li>Set the workspace to your own private workspace.&nbsp;</li>
+<li>Checkout the <strong>develop</strong> branch to your workspace.&nbsp;</li>
+<li>Create a new branch off of <strong>develop</strong> for your changes.&nbsp;</li>
+<li>Make the changes and commit them to your branch.&nbsp;</li>
+<li>Test the changes in your workspace.&nbsp;</li>
+<li>Switch to the <strong>develop</strong> branch and merge in your branch.&nbsp;</li>
+<li>Delete your branch, if it's no longer required.&nbsp;</li>
+<li>Get someone else to test changes on the <strong>develop</strong> branch.&nbsp;</li>
+<li>To release, checkout the <strong>master</strong> branch and merge in the <strong>develop</strong> branch.&nbsp;</li>
+<li>On the Production system, pull the changes from the repository <strong>master</strong> branch into the <strong>production</strong> workspace.</li>
 </ul>
 <p>The basic rules are fish in your own private pond and implement changes on your own branch, not on the <strong>master</strong> or <strong>develop</strong> branch<strong>.</strong></p>
 <p>Test your changes before merging them into <strong>develop</strong>. You can delete your branch once you've merged it in.</p>
@@ -66,9 +66,7 @@
 <h2>Text Editor</h2>
 <p>The Text Editor is used for editing text, JSON, XHTML, Sql and JavaScript files. The Text Editor makes use of the same text editor as is used by Microsoft VS Code and therefore supports most of the key sequences and features you're probably already familiar with. Pressing <strong>F1</strong> will display a list of the commands and corresponding key sequences. You can search the list of commands and also execute a command by clicking on it.</p>
 <p>Depending on the file type, the editor does syntax highlighting and validation. You can specify a schema to validate JSON files. To validate pages, add the following:</p>
-<pre>{
-    "$schema": "schema://brill.software/page_schema.json",
-...</pre>
+<pre>{<br/>    "$schema": "schema://brill.software/page_schema.json",<br/>...</pre>
 <p>This will highlight any JSON that doesn't conform to the schema. Pressing Ctrl Space will activate IntelliSense to make suggestions as to the valid values that can be entered at the current cursor position. The Text Editor supports auto complete, suggesting values based on the schema.</p>
 <h2>Tips</h2>
 <h3>CMS</h3>
@@ -80,7 +78,7 @@
 <p>You can drag and drop tabs to reorder them and also drag and drop tabs from one pane to another. When a file is modified, the file name is set to orange.</p>
 <h3>Page Editor</h3>
 <h4>Use Copy/Paste, as well as Drag and Drop</h4>
-<p>Drag and drop within a page effectively does a cut and paste, with the paste occuring <u>after</u> the drop zone target component. There can be multiple components under the drop zone, in which case the Page Editor does it's best to determine what it thinks is the target, but it's not always correct. In which case, do a Ctrl Z or Cmd Z on a Mac, to undo the move. Select the component and do a Ctrl C or Cmd C to copy. Select the target and do a Ctrl V or Cmd V to paste the item. For more options, instead of doing a Ctrl/Cmd V, right click on the target component and select one of <code>Paste Before</code>, <code>Paste Over</code>, <code>Paste Into</code> or <code>Paste After</code>.</p>
+<p>Drag and drop within a page effectively does a cut and paste, with the paste occuring after the drop zone target component. There can be multiple components under the drop zone, in which case the Page Editor does it's best to determine what it thinks is the target, but it's not always correct. In which case, do a Ctrl Z or Cmd Z on a Mac, to undo the move. Select the component and do a Ctrl C or Cmd C to copy. Select the target and do a Ctrl V or Cmd V to paste the item. For more options, instead of doing a Ctrl/Cmd V, right click on the target component and select one of <code>Paste Before</code>, <code>Paste Over</code>, <code>Paste Into</code> or <code>Paste After</code>.</p>
 <p>Drag and drop between pages is a copy and paste, rather than cut and paste. The component isn't removed from the initial page. Again it can be useful to use one of right click paste options, rather than drag and drop.</p>
 <h4>Enabling components to be active</h4>
 <p>By default, components displayed in the Page Editor have a mask applied that prevents mouse clicks getting through to the component. This is so that if you clicked on a button, it doesn't activate the button and take you to a new page. You can enable mouse clicks by adding a caret ("^") character to the start of the component Id. There are several examples in the Storybook, such as for alerts, that allow the alert boxes to be viewed in the Page Editor.</p>
