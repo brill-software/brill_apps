@@ -1,0 +1,137 @@
+{
+    "pageDescrip": "Div Component",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "ChatGPT Example"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>\nCommunicates with ChatGPT\n<table cellpadding=\"7\">\n<tr><td>startIcon [optional]</td><td>Icon to place before the label.</td></tr>\n<tr><td>title</td><td>Button label.</td></tr>\n<tr><td>endIcon [optional]</td><td>Icon to place after the label.</td></tr>\n<tr><td>requestTopic</td><td>JavaScript topic to submit the form values to as a request. The response contains the result object indicating success or otherwise.</td></tr>\n<tr><td>publishToTopic [optional]</td><td>The topic to publish the <b>action</b> to on successful form completion.</td></tr>\n<tr><td>action [optional]</td><td>A value to publish on successful completion of the form.</td></tr>\n<tr><td>route [optional]</td><td>Route for when a form is submitted or <b>back</b> to go back a page.</td></tr>\n<tr><td>theme</td><td><code>theme.components.SubmitButton.styleOverrides.root</code></td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "Grid Layout",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "column"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Row-1",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "row"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "Xhtml - chat response",
+                                        "module": "material_ui/text/Xhtml",
+                                        "attributes": {
+                                            "subscribeToTopic": "/Resources/content.xhtml"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Row-2",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "row"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "Form",
+                                        "module": "material_ui/input/Form",
+                                        "attributes": {
+                                            "style": {
+                                                "width": "350px"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Flex Column Layout",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "style": {
+                                                        "display": "flex",
+                                                        "flexDirection": "row",
+                                                        "minWidth": "900px"
+                                                    }
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "Message Field",
+                                                        "module": "material_ui/input/TextField",
+                                                        "attributes": {
+                                                            "publishToTopic": "storybook.chat#message",
+                                                            "label": "Send a message",
+                                                            "variant": "outlined",
+                                                            "validationRules": [
+                                                                {
+                                                                    "code": "return value.length === 0",
+                                                                    "errorMsg": "Please enter a message in the field."
+                                                                }
+                                                            ],
+                                                            "style": {
+                                                                "margin": "10px",
+                                                                "width": "700px"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "Submit",
+                                                        "module": "material_ui/button/SubmitButton",
+                                                        "attributes": {
+                                                            "title": "Submit",
+                                                            "variant": "contained",
+                                                            "color": "primary",
+                                                            "subscribeToTopic": "storybook.chat#message",
+                                                            "publishToTopic": "chat:/",
+                                                            "style": {
+                                                                "margin": "10px 10px 10px 10px"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
