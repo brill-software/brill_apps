@@ -1,0 +1,115 @@
+{
+    "pageDescrip": "Div Component",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "Chatbot Example"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>\nSubmits a message to a Chatbot such as ChatGPT. The Chatbot configuration is held on the Server. The Chatbot will reply. The conversation history is maintained and submitted each time so that the user can make reference to previous parts of the conversation. The user can clear the conversation by entering \"clear\".\n<table cellpadding=\"7\">\n<tr><td>startIcon [optional]</td><td>Icon to place before the label.</td></tr>\n<tr><td>title</td><td>Button label.</td></tr>\n<tr><td>endIcon [optional]</td><td>Icon to place after the label.</td></tr>\n<tr><td>requestTopic</td><td>The Chatbot topic (e.g. chatbot:/ ). The response contains the results.</td></tr>\n<tr><td>publishToTopic [optional]</td><td>The topic to publish the message to on successful form completion.</td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "ThemeProvider-Markdown",
+                        "module": "material_ui/theme/ThemeProvider",
+                        "attributes": {
+                            "themeTopic": "json:/brill_cms/Themes/markdown_theme.json"
+                        },
+                        "children": [
+                            {
+                                "id": "MarkdownViewer - chat conversation",
+                                "module": "material_ui/editor/MarkdownViewer",
+                                "attributes": {
+                                    "subscribeToTopic": "storybook.chatbot.conversation",
+                                    "style": {
+                                        "width": "90%"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Form",
+                        "module": "material_ui/input/Form",
+                        "attributes": {
+                            "style": {
+                                "width": "350px"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Flex Row Layout",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "row",
+                                        "minWidth": "900px"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "Message Field",
+                                        "module": "material_ui/input/TextField",
+                                        "attributes": {
+                                            "subscribeToTopic": "storybook.chatbot.initial_message",
+                                            "publishToTopic": "storybook.chatbot#message",
+                                            "label": "Send a message (Enter 'Clear' to clear the Chat)",
+                                            "variant": "outlined",
+                                            "validationRules": [
+                                                {
+                                                    "code": "return value.length === 0",
+                                                    "errorMsg": "Please enter a message in the field."
+                                                }
+                                            ],
+                                            "style": {
+                                                "margin": "10px 10px 30px 70px",
+                                                "width": "700px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "Chatbot Button",
+                                        "module": "material_ui/button/ChatbotButton",
+                                        "attributes": {
+                                            "title": "Submit",
+                                            "variant": "contained",
+                                            "color": "primary",
+                                            "subscribeToTopic": "storybook.chatbot",
+                                            "requestTopic": "chatbot:/",
+                                            "publishToTopic": "storybook.chatbot.conversation",
+                                            "style": {
+                                                "margin": "20px 10px 10px 10px"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

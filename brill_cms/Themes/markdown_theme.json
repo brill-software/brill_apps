@@ -153,6 +153,7 @@
             "styleOverrides": {
                 "root": {
                     "margin": "0px 30px 30px 70px",
+                    "paddingRight": "50px",
                     "paddingBottom": "50px"
                 }
             }
