@@ -27,7 +27,19 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>\nSubmits a message to a Chatbot such as ChatGPT. The Chatbot configuration is held on the Server. The conversation history is maintained and submitted each time so that the user can make reference to previous parts of the conversation. The user can clear the conversation by entering \"clear\".\n<table cellpadding=\"7\">\n<tr><td>startIcon [optional]</td><td>Icon to place before the label.</td></tr>\n<tr><td>title</td><td>Button label.</td></tr>\n<tr><td>endIcon [optional]</td><td>Icon to place after the label.</td></tr>\n<tr><td>requestTopic</td><td>The Chatbot topic (e.g. chatbot:/ ). The response contains the results.</td></tr>\n<tr><td>publishToTopic [optional]</td><td>The topic to publish the messages to on getting a response.</td></tr>\n</table>\n</p>"
+                            "text": "<p>\nSubmits a message to a Chatbot such as ChatGPT. The Chatbot configuration is held on the Server. The conversation history is maintained and submitted each time so that the user can make reference to previous parts of the conversation. The user can clear the conversation by entering \"clear\". The response is in Markdown format and can be displayed using a MarkdownViewer component. An Alert component should also be included on the page to display any error messages.\n<table cellpadding=\"7\">\n<tr><td>startIcon [optional]</td><td>Icon to place before the label.</td></tr>\n<tr><td>title</td><td>Button label.</td></tr>\n<tr><td>endIcon [optional]</td><td>Icon to place after the label.</td></tr>\n<tr><td>requestTopic</td><td>The Chatbot topic (e.g. chatbot:/ ). The response contains the results.</td></tr>\n<tr><td>publishToTopic [optional]</td><td>The topic to publish the messages to.</td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "alertBox",
+                        "module": "material_ui/alert/Alert",
+                        "attributes": {
+                            "subscribeToTopic": "app:errors:",
+                            "clearOnChangeToTopic": "app:any:",
+                            "elevation": 12,
+                            "style": {
+                                "cursor": "move"
+                            }
                         }
                     },
                     {
