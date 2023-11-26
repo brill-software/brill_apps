@@ -27,115 +27,250 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>A button, based on the Material UI Button, that routes the user to another page.\n<table cellpadding=\"7\">\n<tr><td>startIcon [optional]</td><td>Icon to place before the title. e.g. Home</td></tr>\n<tr><td>title</td><td>The title text of the Link Button.</td></tr>\n<tr><td>endIcon [optional]</td><td>Icon to place after the title.</td></tr>\n<tr><td>route</td><td>The route to take when the button is clicked. e.g. /my_app/home</td></tr>\n<tr><td>theme</td><td><code>theme.components.LinkButton.styleOverrides.root</code></td></tr>\n</table>\n</p>"
+                            "text": "<p>A button, based on the Material UI Button, that routes the user to another page.\n<table cellpadding=\"7\">\n<tr><td>variant [optional] </td><td>Value of <b>text</b>, <b>outlined</b> or <b>contained.</b></td></tr>\n<tr><td>size [optional]</td><td>Value of <b>small</b>, <b>medium</b> or <b>large.</b></td></tr>\n<tr><td>startIcon [optional]</td><td>Icon to place before the label.</td></tr>\n<tr><td>title</td><td>Button label.</td></tr>\n<tr><td>endIcon [optional]</td><td>Icon to place after the label.</td></tr>\n<tr><td>route</td><td>The route to take when the button is clicked. e.g. /my_app/home</td></tr>\n<tr><td>theme</td><td><code>theme.components.LinkButton.styleOverrides.root</code></td></tr>\n</table>\n</p>"
                         }
                     },
                     {
-                        "id": "Flex Row Layout",
+                        "id": "Grid Layout",
                         "module": "html/Div",
                         "attributes": {
                             "style": {
                                 "display": "flex",
-                                "flexDirection": "row",
-                                "flexWrap": "wrap",
-                                "height": "50px"
+                                "flexDirection": "column"
                             }
                         },
                         "children": [
                             {
-                                "id": "HomeButton",
-                                "module": "material_ui/button/LinkButton",
+                                "id": "Row-1",
+                                "module": "html/Div",
                                 "attributes": {
-                                    "startIcon": "Home",
-                                    "title": "Home",
-                                    "route": "/${appName}/home",
                                     "style": {
-                                        "height": "18px",
-                                        "marginTop": "5px",
-                                        "marginLeft": "30px",
-                                        "color": "#1124B8",
-                                        "background": "#e0e0e0",
-                                        "borderRadius": "9px",
-                                        "textTransform": "none",
-                                        "fontSize": "16px"
+                                        "display": "flex",
+                                        "flexDirection": "row"
                                     }
-                                }
+                                },
+                                "children": [
+                                    {
+                                        "id": "HomeButton-text",
+                                        "module": "material_ui/button/LinkButton",
+                                        "attributes": {
+                                            "variant": "text",
+                                            "color": "primary",
+                                            "startIcon": "Home",
+                                            "title": "Home",
+                                            "route": "/${appName}/home"
+                                        }
+                                    },
+                                    {
+                                        "id": "HomeButton-outlined",
+                                        "module": "material_ui/button/LinkButton",
+                                        "attributes": {
+                                            "variant": "outlined",
+                                            "color": "primary",
+                                            "startIcon": "Home",
+                                            "title": "Home",
+                                            "route": "/${appName}/home",
+                                            "style": {
+                                                "marginLeft": "30px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "HomeButton-contained",
+                                        "module": "material_ui/button/LinkButton",
+                                        "attributes": {
+                                            "variant": "contained",
+                                            "color": "primary",
+                                            "startIcon": "Home",
+                                            "title": "Home",
+                                            "route": "/${appName}/home",
+                                            "style": {
+                                                "marginLeft": "30px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "HomeButton-small",
+                                        "module": "material_ui/button/LinkButton",
+                                        "attributes": {
+                                            "size": "small",
+                                            "variant": "contained",
+                                            "color": "primary",
+                                            "startIcon": "Home",
+                                            "title": "Home",
+                                            "route": "/${appName}/home",
+                                            "style": {
+                                                "marginLeft": "30px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "HomeButton-large",
+                                        "module": "material_ui/button/LinkButton",
+                                        "attributes": {
+                                            "size": "large",
+                                            "variant": "contained",
+                                            "color": "primary",
+                                            "startIcon": "Home",
+                                            "title": "Home",
+                                            "route": "/${appName}/home",
+                                            "style": {
+                                                "marginLeft": "30px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "HomeButton-secondary",
+                                        "module": "material_ui/button/LinkButton",
+                                        "attributes": {
+                                            "variant": "contained",
+                                            "color": "secondary",
+                                            "startIcon": "Home",
+                                            "title": "Home",
+                                            "route": "/${appName}/home",
+                                            "style": {
+                                                "marginLeft": "30px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "HomeButton-color",
+                                        "module": "material_ui/button/LinkButton",
+                                        "attributes": {
+                                            "variant": "contained",
+                                            "color": "secondary",
+                                            "startIcon": "Home",
+                                            "title": "Home",
+                                            "route": "/${appName}/home",
+                                            "style": {
+                                                "marginLeft": "30px",
+                                                "color": "lightgreen"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "HomeButton-background",
+                                        "module": "material_ui/button/LinkButton",
+                                        "attributes": {
+                                            "variant": "contained",
+                                            "color": "secondary",
+                                            "startIcon": "Home",
+                                            "title": "Home",
+                                            "route": "/${appName}/home",
+                                            "style": {
+                                                "marginLeft": "30px",
+                                                "background": "black"
+                                            }
+                                        }
+                                    }
+                                ]
                             },
                             {
-                                "id": "FastRewindButton",
-                                "module": "material_ui/button/LinkButton",
+                                "id": "Row-2",
+                                "module": "html/Div",
                                 "attributes": {
-                                    "startIcon": "FastRewindTwoTone",
-                                    "title": "Fast Rewind",
-                                    "route": "xxxx",
                                     "style": {
-                                        "height": "18px",
-                                        "marginTop": "5px",
-                                        "marginLeft": "30px",
-                                        "color": "#31a4B8",
-                                        "background": "#e0e0e0",
-                                        "borderRadius": "9px",
-                                        "textTransform": "none",
-                                        "fontSize": "16px"
+                                        "display": "flex",
+                                        "flexDirection": "row"
                                     }
-                                }
-                            },
-                            {
-                                "id": "PlayButton",
-                                "module": "material_ui/button/LinkButton",
-                                "attributes": {
-                                    "title": "Play",
-                                    "endIcon": "PlayArrowTwoTone",
-                                    "route": "xxxx",
-                                    "style": {
-                                        "height": "18px",
-                                        "marginTop": "5px",
-                                        "marginLeft": "30px",
-                                        "color": "#7124B8",
-                                        "background": "#e0e0e0",
-                                        "borderRadius": "9px",
-                                        "textTransform": "none",
-                                        "fontSize": "16px"
+                                },
+                                "children": [
+                                    {
+                                        "id": "HomeButton-1",
+                                        "module": "material_ui/button/LinkButton",
+                                        "attributes": {
+                                            "startIcon": "Home",
+                                            "title": "Home",
+                                            "route": "/${appName}/home",
+                                            "style": {
+                                                "height": "18px",
+                                                "marginTop": "5px",
+                                                "marginLeft": "30px",
+                                                "color": "#1124B8",
+                                                "background": "#e0e0e0",
+                                                "borderRadius": "9px",
+                                                "textTransform": "none",
+                                                "fontSize": "16px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "FastRewindButton",
+                                        "module": "material_ui/button/LinkButton",
+                                        "attributes": {
+                                            "startIcon": "FastRewindTwoTone",
+                                            "title": "Fast Rewind",
+                                            "route": "xxxx",
+                                            "style": {
+                                                "height": "18px",
+                                                "marginTop": "5px",
+                                                "marginLeft": "30px",
+                                                "color": "#31a4B8",
+                                                "background": "#e0e0e0",
+                                                "borderRadius": "9px",
+                                                "textTransform": "none",
+                                                "fontSize": "16px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "PlayButton",
+                                        "module": "material_ui/button/LinkButton",
+                                        "attributes": {
+                                            "title": "Play",
+                                            "endIcon": "PlayArrowTwoTone",
+                                            "route": "xxxx",
+                                            "style": {
+                                                "height": "18px",
+                                                "marginTop": "5px",
+                                                "marginLeft": "30px",
+                                                "color": "#7124B8",
+                                                "background": "#e0e0e0",
+                                                "borderRadius": "9px",
+                                                "textTransform": "none",
+                                                "fontSize": "16px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "FastForward",
+                                        "module": "material_ui/button/LinkButton",
+                                        "attributes": {
+                                            "title": "Fast Forward",
+                                            "endIcon": "FastForwardTwoTone",
+                                            "route": "xxxx",
+                                            "style": {
+                                                "height": "18px",
+                                                "marginTop": "5px",
+                                                "marginLeft": "30px",
+                                                "color": "#a124B8",
+                                                "background": "#e0e0e0",
+                                                "borderRadius": "9px",
+                                                "textTransform": "none",
+                                                "fontSize": "16px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "Save",
+                                        "module": "material_ui/button/LinkButton",
+                                        "attributes": {
+                                            "title": "Save",
+                                            "startIcon": "SaveTwoTone",
+                                            "route": "xxxx",
+                                            "style": {
+                                                "height": "18px",
+                                                "marginTop": "5px",
+                                                "marginLeft": "30px",
+                                                "color": "#a1a428",
+                                                "background": "#e0e0e0",
+                                                "borderRadius": "9px",
+                                                "textTransform": "none",
+                                                "fontSize": "16px"
+                                            }
+                                        }
                                     }
-                                }
-                            },
-                            {
-                                "id": "FastForward",
-                                "module": "material_ui/button/LinkButton",
-                                "attributes": {
-                                    "title": "Fast Forward",
-                                    "endIcon": "FastForwardTwoTone",
-                                    "route": "xxxx",
-                                    "style": {
-                                        "height": "18px",
-                                        "marginTop": "5px",
-                                        "marginLeft": "30px",
-                                        "color": "#a124B8",
-                                        "background": "#e0e0e0",
-                                        "borderRadius": "9px",
-                                        "textTransform": "none",
-                                        "fontSize": "16px"
-                                    }
-                                }
-                            },
-                            {
-                                "id": "Save",
-                                "module": "material_ui/button/LinkButton",
-                                "attributes": {
-                                    "title": "Save",
-                                    "startIcon": "SaveTwoTone",
-                                    "route": "xxxx",
-                                    "style": {
-                                        "height": "18px",
-                                        "marginTop": "5px",
-                                        "marginLeft": "30px",
-                                        "color": "#a1a428",
-                                        "background": "#e0e0e0",
-                                        "borderRadius": "9px",
-                                        "textTransform": "none",
-                                        "fontSize": "16px"
-                                    }
-                                }
+                                ]
                             }
                         ]
                     }
