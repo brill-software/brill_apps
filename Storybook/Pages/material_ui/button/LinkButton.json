@@ -58,7 +58,10 @@
                                             "color": "primary",
                                             "startIcon": "Home",
                                             "title": "Home",
-                                            "route": "/${appName}/home"
+                                            "route": "/${appName}/home",
+                                            "style": {
+                                                "marginLeft": "30px"
+                                            }
                                         }
                                     },
                                     {
@@ -162,6 +165,22 @@
                                                 "background": "black"
                                             }
                                         }
+                                    },
+                                    {
+                                        "id": "HomeButton-lc",
+                                        "module": "material_ui/button/LinkButton",
+                                        "attributes": {
+                                            "variant": "contained",
+                                            "color": "secondary",
+                                            "startIcon": "Home",
+                                            "title": "Home",
+                                            "route": "/${appName}/home",
+                                            "style": {
+                                                "marginLeft": "30px",
+                                                "background": "brown",
+                                                "textTransform": "none"
+                                            }
+                                        }
                                     }
                                 ]
                             },
@@ -171,7 +190,9 @@
                                 "attributes": {
                                     "style": {
                                         "display": "flex",
-                                        "flexDirection": "row"
+                                        "flexDirection": "row",
+                                        "marginTop": "20px",
+                                        "marginBottom": "20px"
                                     }
                                 },
                                 "children": [
