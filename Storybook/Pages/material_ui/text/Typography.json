@@ -111,7 +111,8 @@
                             "variant": "h3",
                             "text": "Heading 3",
                             "style": {
-                                "color": "green"
+                                "color": "green",
+                                "textAlign": "center"
                             }
                         }
                     },

@@ -39,6 +39,15 @@
                         }
                     },
                     {
+                        "id": "Vertically Scrollable",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "overflow-y": "auto"
+                            }
+                        }
+                    },
+                    {
                         "id": "Div with HR styling",
                         "module": "html/Div",
                         "attributes": {
@@ -321,6 +330,20 @@
                         },
                         "children": [
                             {
+                                "id": "Border",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "borderStyle": "solid",
+                                        "borderColor": "white",
+                                        "borderWidth": "1px"
+                                    }
+                                }
+                            },
+                            {
                                 "id": "Shadow",
                                 "module": "html/Div",
                                 "attributes": {
@@ -385,6 +408,20 @@
                             }
                         },
                         "children": [
+                            {
+                                "id": "Border",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "borderStyle": "solid",
+                                        "borderColor": "white",
+                                        "borderWidth": "1px"
+                                    }
+                                }
+                            },
                             {
                                 "id": "Shadow",
                                 "module": "html/Div",
