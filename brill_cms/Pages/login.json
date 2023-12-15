@@ -160,6 +160,55 @@
                                         }
                                     }
                                 ]
+                            },
+                            {
+                                "id": "Grid Container-1",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "container": true,
+                                    "direction": "row",
+                                    "spacing": 0,
+                                    "style": {
+                                        "background": "#69baa5"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "MobileOnlyMsg",
+                                        "module": "material_ui/layout/Grid",
+                                        "attributes": {
+                                            "item": true,
+                                            "xs": 12,
+                                            "sm": 0,
+                                            "md": 0,
+                                            "lg": 0,
+                                            "xl": 0,
+                                            "display": {
+                                                "xs": "block",
+                                                "sm": "none",
+                                                "md": "none",
+                                                "lg": "none",
+                                                "xl": "none"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Item",
+                                                "module": "material_ui/text/Typography",
+                                                "attributes": {
+                                                    "variant": "body1",
+                                                    "text": "The CMS requires a tablet or desktop sized screen. Using the CMS on a mobile sized screen is not very practical.",
+                                                    "component": "div",
+                                                    "style": {
+                                                        "textAlign": "center",
+                                                        "padding": "10px",
+                                                        "color": "#303030"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     }
