@@ -1,6 +1,7 @@
 {
     "$schema": "schema://brill.software/page_schema.json",
-    "pageDescrip": "Div Component",
+    "pageDescrip": "Paragraph Component",
+    "permission": "cms_user",
     "rootComponent": {
         "id": "ErrorBoundary",
         "module": "react/ErrorBoundary",

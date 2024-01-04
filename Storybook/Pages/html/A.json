@@ -1,5 +1,6 @@
 {
-    "pageDescrip": "Image in Xhtml",
+    "pageDescrip": "Hyperlinks",
+    "permission": "cms_user",
     "rootComponent": {
         "id": "ErrorBoundary",
         "module": "react/ErrorBoundary",
@@ -26,7 +27,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>\nWraps a set of child components with a HTML <code>&lt;a&gt;</code> hyperlink tag.\n<table cellpadding=\"7\">\n<tr><td>href</td><td>The URL of the new page.</td></tr>\n<tr><td>target</td><td>Use <code>_blank</code> for a new browser tab.</td></tr>\n</table>\n</p>\n<p>For links within an app, use the <code>material_ui/button/LinkButton</code> component.</p>"
+                            "text": "<p>\nWraps a set of child components with a HTML <code>&lt;a&gt;</code> hyperlink tag. For links within applications, use the route attribute. The route attribute doesn't re-load the whole page, whereas href does.\n<table cellpadding=\"7\">\n<tr><td>href [optional]</td><td>The URL of the new page.</td></tr>\n<tr><td>route [optional]</td><td>The route within the app. Uses the Router.</td></tr>\n<tr><td>target [optional]</td><td>Only applicable when the href attribute is specified. Use <code>_blank</code> for a new browser tab.</td></tr>\n</table>\n</p>\n<p>For links within an app, use the <code>material_ui/button/LinkButton</code> component.</p>"
                         }
                     },
                     {
@@ -62,6 +63,26 @@
                                 "module": "material_ui/text/Text",
                                 "attributes": {
                                     "text": "Google"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Hyperlink using route",
+                        "module": "html/A",
+                        "attributes": {
+                            "route": "/brill_cms/home"
+                        },
+                        "children": [
+                            {
+                                "id": "Text",
+                                "module": "material_ui/text/Text",
+                                "attributes": {
+                                    "text": "Brill CMS Home Link",
+                                    "style": {
+                                        "color": "blue"
+                                    }
                                 },
                                 "children": []
                             }

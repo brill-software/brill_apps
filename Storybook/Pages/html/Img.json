@@ -1,5 +1,6 @@
 {
     "pageDescrip": "Image in Xhtml",
+    "permission": "cms_user",
     "rootComponent": {
         "id": "ErrorBoundary",
         "module": "react/ErrorBoundary",
