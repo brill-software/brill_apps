@@ -144,20 +144,48 @@
                                         }
                                     },
                                     {
-                                        "id": "loginButton",
-                                        "module": "material_ui/button/LoginButton",
+                                        "id": "Flex Row Layout-1",
+                                        "module": "html/Div",
                                         "attributes": {
-                                            "subscribeToTopic": "loginForm",
                                             "style": {
-                                                "margin": "20px 10px 10px 10px"
+                                                "display": "flex",
+                                                "flexDirection": "row",
+                                                "flexWrap": "wrap"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "loginButton",
+                                                "module": "material_ui/button/LoginButton",
+                                                "attributes": {
+                                                    "subscribeToTopic": "loginForm",
+                                                    "style": {
+                                                        "margin": "20px 10px 10px 10px",
+                                                        "width": "170px"
+                                                    },
+                                                    "requestTopic": "auth:/${appName}/authenticate",
+                                                    "title": "Login",
+                                                    "variant": "contained",
+                                                    "color": "primary",
+                                                    "successRoute": "/${appName}/home",
+                                                    "changePasswordRoute": "/${appName}/changePassword"
+                                                }
                                             },
-                                            "requestTopic": "auth:/${appName}/authenticate",
-                                            "title": "Login",
-                                            "variant": "contained",
-                                            "color": "primary",
-                                            "successRoute": "/${appName}/home",
-                                            "changePasswordRoute": "/${appName}/changePassword"
-                                        }
+                                            {
+                                                "id": "ChangePwd",
+                                                "module": "material_ui/input/Checkbox",
+                                                "attributes": {
+                                                    "publishToTopic": "loginForm.changePassword",
+                                                    "label": "Change Password",
+                                                    "color": "primary",
+                                                    "style": {
+                                                        "color": "grey",
+                                                        "paddingTop": "20px",
+                                                        "paddingLeft": "40px"
+                                                    }
+                                                }
+                                            }
+                                        ]
                                     }
                                 ]
                             },
