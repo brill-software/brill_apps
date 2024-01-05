@@ -27,7 +27,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>Displays a Tree Index built from the headers of an XHTML document. Normally used in conjunction with the <code>material_ui/text/Xhtml</code> component.\n<table cellpadding=\"7\">\n<tr><td>subscribeToTopic [optional]</td><td>The topic to obtain the xhtml from. Normally a file in <code>/Resources</code> with extension <code>.xhtml</code>.</td></tr>\n<tr><td>text [optional]</td><td>The xhtml, if not subscribing to a topic.</td></tr>\n<tr><td>publishToTopic</td><td>Used to publish the currently selected node for use by the Xhtml component.</td></tr>\n<tr><td>expandLevel [optional]</td><td>Set to 2 to show all h2 headers, 3 for all h3 headers etc.</td></tr>\n</table>\n</p>"
+                            "text": "<p>Displays a Tree Index built from the headers of an XHTML document. Normally used in conjunction with the <code>material_ui/text/Xhtml</code> component.\n<table cellpadding=\"7\">\n<tr><td>subscribeToTopic</td><td>The topic to obtain the xhtml from. Normally a file in <code>/Resources</code> with extension <code>.xhtml</code>.</td></tr>\n\n<tr><td>publishToTopic</td><td>Used to publish the currently selected node for use by the Xhtml component.</td></tr>\n<tr><td>expandLevel [optional]</td><td>Set to 2 to show all h2 headers, 3 for all h3 headers etc.</td></tr>\n</table>\n</p>"
                         }
                     },
                     {
