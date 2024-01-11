@@ -27,13 +27,14 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<h3>Form</h3>\n<p>A form component wraps and groups together a set of text input fields and a submit button. The field data is held in a local app topic. The field topic names need to be composed of a form name followed by a hash and each of the field names. </p>\n"
+                            "text": "<h3>Form</h3>\n<p>A form component wraps and groups together a set of text input fields and a submit button. The field data is held in a local app topic. The field topic names need to be composed of a form name followed by a hash and each of the field names. </p>\n<p>\n<table cellpadding=\"7\">\n<tr><td>publishToTopic</td><td>The form topic. Cleared when the form loads initially.</td></tr>\n</table>\n</p>\n"
                         }
                     },
                     {
                         "id": "Form",
                         "module": "material_ui/input/Form",
                         "attributes": {
+                            "publishToTopic": "storybook.form",
                             "style": {
                                 "width": "350px"
                             }

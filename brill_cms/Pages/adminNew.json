@@ -20,6 +20,7 @@
                         "id": "Form",
                         "module": "material_ui/input/Form",
                         "attributes": {
+                            "publishToTopic": "users.newForm",
                             "noValidate": true,
                             "style": {
                                 "display": "flex",

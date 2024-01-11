@@ -20,6 +20,7 @@
                         "id": "Form",
                         "module": "material_ui/input/Form",
                         "attributes": {
+                            "publishToTopic": "users.editForm",
                             "style": {
                                 "display": "flex",
                                 "flexDirection": "column",
