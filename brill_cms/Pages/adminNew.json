@@ -131,20 +131,43 @@
                                                 }
                                             },
                                             {
-                                                "id": "name",
+                                                "id": "firstName",
                                                 "module": "material_ui/input/TextField",
                                                 "attributes": {
-                                                    "label": "Name",
+                                                    "label": "First Name",
                                                     "variant": "outlined",
                                                     "autoComplete": "nope",
-                                                    "publishToTopic": "users.newForm#name",
+                                                    "publishToTopic": "users.newForm#first_name",
                                                     "style": {
                                                         "margin": "10px"
                                                     },
                                                     "validationRules": [
                                                         {
                                                             "code": "return value.length === 0",
-                                                            "errorMsg": "Please enter the name of the new user. "
+                                                            "errorMsg": "Please enter the first name of the new user. "
+                                                        },
+                                                        {
+                                                            "code": "return value.length > 40",
+                                                            "errorMsg": "Name is too long."
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "id": "lastName",
+                                                "module": "material_ui/input/TextField",
+                                                "attributes": {
+                                                    "label": "Last Name",
+                                                    "variant": "outlined",
+                                                    "autoComplete": "nope",
+                                                    "publishToTopic": "users.newForm#last_name",
+                                                    "style": {
+                                                        "margin": "10px"
+                                                    },
+                                                    "validationRules": [
+                                                        {
+                                                            "code": "return value.length === 0",
+                                                            "errorMsg": "Please enter the last name of the new user. "
                                                         },
                                                         {
                                                             "code": "return value.length > 40",

@@ -84,8 +84,16 @@
                                             }
                                         },
                                         {
-                                            "name": "name",
-                                            "label": "Name",
+                                            "name": "first_name",
+                                            "label": "First Name",
+                                            "options": {
+                                                "filter": true,
+                                                "filterType": "textField"
+                                            }
+                                        },
+                                        {
+                                            "name": "last_name",
+                                            "label": "Last Name",
                                             "options": {
                                                 "filter": true,
                                                 "filterType": "textField"

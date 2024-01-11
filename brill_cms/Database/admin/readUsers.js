@@ -27,7 +27,7 @@ function processRequest(filter, db) {
     var filterObj = JSON.parse(filter);
     print("******* filterObj = " + JSON.stringify(filterObj));
     
-    var query = "select user_id, username, name, email, last_login, workspace, case when length(password) > 30 then '******' else password end password, permissions, hidden_apps, changePassword from brill_cms_user where deleted != 'Y'";
+    var query = "select user_id, username, first_name, last_name, email, last_login, workspace, case when length(password) > 30 then '******' else password end password, permissions, hidden_apps, changePassword from brill_cms_user where deleted != 'Y'";
 
     var whereAdded = false;
     var whereClause = "";
@@ -56,7 +56,7 @@ function processRequest(filter, db) {
         } else {
             whereClause += " and"
         }
-        whereClause += " match (username,name) against ('" + 
+        whereClause += " match (username,first_name) against ('" + 
                     filterObj.search_text + "*' in boolean mode)"
     }
 

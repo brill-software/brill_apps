@@ -166,14 +166,28 @@
                                         }
                                     },
                                     {
-                                        "id": "nameField",
+                                        "id": "firstNameField",
                                         "module": "material_ui/input/TextField",
                                         "attributes": {
                                             "disabled": true,
-                                            "label": "Name",
+                                            "label": "First Name",
                                             "variant": "outlined",
-                                            "subscribeToTopic": "users.tableRow#name",
-                                            "publishToTopic": "users.editForm#name",
+                                            "subscribeToTopic": "users.tableRow#first_name",
+                                            "publishToTopic": "users.editForm#first_name",
+                                            "style": {
+                                                "margin": "10px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "lastNameField",
+                                        "module": "material_ui/input/TextField",
+                                        "attributes": {
+                                            "disabled": true,
+                                            "label": "Last Name",
+                                            "variant": "outlined",
+                                            "subscribeToTopic": "users.tableRow#last_name",
+                                            "publishToTopic": "users.editForm#last_name",
                                             "style": {
                                                 "margin": "10px"
                                             }

@@ -82,6 +82,18 @@
                                 ]
                             },
                             {
+                                "id": "alertBox-1",
+                                "module": "material_ui/alert/Alert",
+                                "attributes": {
+                                    "subscribeToTopic": "app:errors:",
+                                    "clearOnChangeToTopic": "app:any:",
+                                    "elevation": 12,
+                                    "style": {
+                                        "cursor": "move"
+                                    }
+                                }
+                            },
+                            {
                                 "id": "Flex Row Layout-1",
                                 "module": "html/Div",
                                 "attributes": {
@@ -145,20 +157,43 @@
                                                 }
                                             },
                                             {
-                                                "id": "nameField",
+                                                "id": "firstNameField",
                                                 "module": "material_ui/input/TextField",
                                                 "attributes": {
-                                                    "label": "Name",
+                                                    "label": "First Name",
                                                     "variant": "outlined",
-                                                    "subscribeToTopic": "users.tableRow#name",
-                                                    "publishToTopic": "users.editForm#name",
+                                                    "subscribeToTopic": "users.tableRow#first_name",
+                                                    "publishToTopic": "users.editForm#first_name",
                                                     "style": {
                                                         "margin": "10px"
                                                     },
                                                     "validationRules": [
                                                         {
                                                             "code": "return value.length === 0",
-                                                            "errorMsg": "Please enter a name."
+                                                            "errorMsg": "Please enter first name."
+                                                        },
+                                                        {
+                                                            "code": "return value.length > 40",
+                                                            "errorMsg": "Name is too long."
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "id": "lastNameField",
+                                                "module": "material_ui/input/TextField",
+                                                "attributes": {
+                                                    "label": "Last Name",
+                                                    "variant": "outlined",
+                                                    "subscribeToTopic": "users.tableRow#last_name",
+                                                    "publishToTopic": "users.editForm#last_name",
+                                                    "style": {
+                                                        "margin": "10px"
+                                                    },
+                                                    "validationRules": [
+                                                        {
+                                                            "code": "return value.length === 0",
+                                                            "errorMsg": "Please enter last name."
                                                         },
                                                         {
                                                             "code": "return value.length > 40",
@@ -205,7 +240,7 @@
                                                     },
                                                     "validationRules": [
                                                         {
-                                                            "code": "return value.length > 45",
+                                                            "code": "return value != null && value.length > 45",
                                                             "errorMsg": "Workspace name is too long."
                                                         }
                                                     ]
