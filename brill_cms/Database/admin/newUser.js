@@ -45,14 +45,15 @@ function processInsert(content, db) {
         return JSON.stringify({error: {title: "Password Mismatch", detail: "The password and confirmation password don't match. Please correct."}});
     }
     // Insert the new user.
-    var query = "insert brill_cms_user (username, first_name, last_name, email, workspace, password, changePassword, permissions, hidden_apps, deleted) " +
-                    "values (:username, :first_name, :last_name, :email, :workspace, :password, :changePassword, :permissions, :hidden_apps, 'N')";
+    var query = "insert brill_cms_user (username, first_name, last_name, email, repository, workspace, password, changePassword, permissions, hidden_apps, deleted) " +
+                    "values (:username, :first_name, :last_name, :email, :repository, :workspace, :password, :changePassword, :permissions, :hidden_apps, 'N')";
     var queryParameters = {};
     queryParameters["user_id"] = contentObj.user_id;
     queryParameters["username"] = contentObj.username.toLowerCase();
     queryParameters["first_name"] = contentObj.first_name;
     queryParameters["last_name"] = contentObj.last_name;
     queryParameters["email"] = contentObj.email;
+    queryParameters["repository"] = contentObj.repository;
     queryParameters["workspace"] = contentObj.workspace;
     queryParameters["password"] = db.hashPassword(contentObj.username,contentObj.password);
     queryParameters["changePassword"] = contentObj.changePassword;

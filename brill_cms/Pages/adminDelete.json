@@ -209,7 +209,21 @@
                                         }
                                     },
                                     {
-                                        "id": "workspace",
+                                        "id": "repository",
+                                        "module": "material_ui/input/TextField",
+                                        "attributes": {
+                                            "disabled": true,
+                                            "label": "Repository",
+                                            "variant": "outlined",
+                                            "subscribeToTopic": "users.tableRow#repository",
+                                            "publishToTopic": "users.editForm#repository",
+                                            "style": {
+                                                "margin": "10px"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "workspace-1",
                                         "module": "material_ui/input/TextField",
                                         "attributes": {
                                             "disabled": true,

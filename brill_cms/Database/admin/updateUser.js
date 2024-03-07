@@ -5,7 +5,11 @@
  * {
  *      user_id: number
  *      username: string - not used.
- *      name: string
+ *      first_name: string
+ *      last_name: string
+ *      email: string
+ *      repository: string
+ *      workspace: string
  *      changePassowrd: string
  *      permissions: string
  *      resetPassword: "Y" | "N"
@@ -43,14 +47,15 @@ function processUpdate(content, db) {
     var query
     if (contentObj.resetPassword)
     {
-        query = "update brill_cms_user set first_name = :first_name, last_name = :last_name, email = :email, workspace = :workspace, changePassword = :changePassword, permissions = :permissions, hidden_apps = :hidden_apps, password = :password where user_id = :user_id";
+        query = "update brill_cms_user set first_name = :first_name, last_name = :last_name, email = :email, repository = :repository, workspace = :workspace, changePassword = :changePassword, permissions = :permissions, hidden_apps = :hidden_apps, password = :password where user_id = :user_id";
     } else {
-        query = "update brill_cms_user set first_name = :first_name, last_name = :last_name, email = :email, workspace = :workspace, changePassword = :changePassword, permissions = :permissions, hidden_apps = :hidden_apps where user_id = :user_id";
+        query = "update brill_cms_user set first_name = :first_name, last_name = :last_name, email = :email, repository = :repository, workspace = :workspace, changePassword = :changePassword, permissions = :permissions, hidden_apps = :hidden_apps where user_id = :user_id";
     }
     queryParameters["user_id"] = contentObj.user_id;
     queryParameters["first_name"] = contentObj.first_name;
     queryParameters["last_name"] = contentObj.last_name;
     queryParameters["email"] = contentObj.email;
+    queryParameters["repository"] = contentObj.repository;
     queryParameters["workspace"] = contentObj.workspace;
     queryParameters["changePassword"] = contentObj.changePassword;
     queryParameters["permissions"] = contentObj.permissions;

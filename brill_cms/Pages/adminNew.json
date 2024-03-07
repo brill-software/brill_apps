@@ -202,6 +202,26 @@
                                                 }
                                             },
                                             {
+                                                "id": "repository",
+                                                "module": "material_ui/input/TextField",
+                                                "attributes": {
+                                                    "label": "Repository",
+                                                    "variant": "outlined",
+                                                    "subscribeToTopic": "users.newForm#repository",
+                                                    "publishToTopic": "users.newForm#repository",
+                                                    "style": {
+                                                        "margin": "10px",
+                                                        "width": "280px"
+                                                    },
+                                                    "validationRules": [
+                                                        {
+                                                            "code": "return value != null && value.length > 256",
+                                                            "errorMsg": "Repository name is too long."
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
                                                 "id": "workspace",
                                                 "module": "material_ui/input/TextField",
                                                 "attributes": {
