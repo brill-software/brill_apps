@@ -76,6 +76,7 @@ If upstream doesn't exist, add it:
 #### Checkout the upstream_changes branch
 
 ```
+git fetch upstream
 git checkout -b upstream_changes upstream/upstream_changes
 ```
 
