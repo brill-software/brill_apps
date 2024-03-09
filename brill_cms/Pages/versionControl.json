@@ -322,9 +322,6 @@
                                         5,
                                         10
                                     ],
-                                    "style": {
-                                        "margin": "30px"
-                                    },
                                     "padding": "10px",
                                     "maxRows": 20,
                                     "subscribeToTopic": "git:log:/",
