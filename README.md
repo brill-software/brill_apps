@@ -70,7 +70,7 @@ upstream	git@bitbucket.org:brill-software/brill_apps.git (push)
 If upstream doesn't exist, add it:
 
 ```
-% git add remote upstream git@bitbucket.org:brill-software/brill_apps.git
+% git remote add upstream git@bitbucket.org:brill-software/brill_apps.git
 ```
 
 #### Checkout the upstream_changes branch
