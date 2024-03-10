@@ -555,7 +555,7 @@
                     ]
                 },
                 {
-                    "matches": "(.md)$",
+                    "matches": "(.md|.mkd|.mkdn|.mdown|.markdown)$",
                     "mode": [    
                         {
                             "name": "VIEW",
