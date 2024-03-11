@@ -89,9 +89,9 @@
                                     },
                                     {
                                         "id": "commitDialog",
-                                        "module": "material_ui/dialog/SingleFieldDialog",
+                                        "module": "cms/CommitDialog",
                                         "attributes": {
-                                            "title": "Commit and Push Staged or Changed files",
+                                            "title": "Commit Staged or Changed files",
                                             "prompt": "Please provide a comment to describe the changes.",
                                             "fieldLabel": "Commit Message",
                                             "buttonLabel": "Commit",
