@@ -149,18 +149,6 @@
                                                 }
                                             }
                                         ]
-                                    },
-                                    {
-                                        "id": "Row-2",
-                                        "module": "html/Div",
-                                        "attributes": {
-                                            "style": {
-                                                "marginTop": "10px",
-                                                "display": "flex",
-                                                "flexDirection": "row"
-                                            }
-                                        },
-                                        "children": []
                                     }
                                 ]
                             },
