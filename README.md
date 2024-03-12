@@ -1,4 +1,4 @@
-# brill_apps ZZZ
+# brill_apps
 
 ## Summary
 
@@ -111,8 +111,10 @@ repository. You can do this from the command line as follows:
 % cd brill_apps_temp
 % git fetch
 % git branch
+
 // Check available branches
 % git checkout upstream_branch
+
 // Check changes are there
 % git checkout develop
 % git merge upstream_changes
@@ -120,3 +122,31 @@ repository. You can do this from the command line as follows:
 % cd ..
 % rm -rf brill_apps_temp
 ```
+
+# Recovering a deleted branch
+
+The repository tracks and keeps everything. Should a branch be deleted, it can be recoved as follows:
+
+```
+% cd <user workspace>
+
+// Check branch doesn't exist.
+% git branch
+
+// Find the SHA1 for the tip where you want to checkout the branch from.
+% git reflog --no-abbrev
+...
+7a7de1bf8d8ffc5a33a04f4398186372348c9e91 HEAD@{10}: checkout: moving from my_changes to develop
+60f9ab2d562149e34e19c4ca3956710640fc36ae HEAD@{11}: commit: Update field
+3ae88d83a9a6b659f4b00b1ebd05675c0949b89e HEAD@{12}: commit: Remove button
+...
+
+// Checkout branch using SHA1
+ git checkout -b develop 7a7de1bf8d8ffc5a33a04f4398186372348c9e91
+
+ // Push the branch and set the remote tracking branch.
+ % git push --set-upstream origin develop 
+
+// Check the restored branch.
+```
+You can also use the same approach to restore a branch back to a previous commit.
