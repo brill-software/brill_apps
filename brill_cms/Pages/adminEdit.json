@@ -234,7 +234,7 @@
                                                     "label": "Repository (leave blank for default repo)",
                                                     "variant": "outlined",
                                                     "subscribeToTopic": "users.tableRow#repository",
-                                                    "publishToTopic": "users.editForm#respository",
+                                                    "publishToTopic": "users.editForm#repository",
                                                     "style": {
                                                         "margin": "10px",
                                                         "width": "280px"

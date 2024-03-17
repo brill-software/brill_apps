@@ -43,6 +43,7 @@
                                         "id": "Workspace",
                                         "module": "cms/WorkspaceAndBranch",
                                         "attributes": {
+                                            "condition": "return userHasPermission(\"cms_version_control\");",
                                             "subscribeToTopic": "git:state:/",
                                             "publishToTopic": "cms.treeItem",
                                             "style": {
@@ -55,6 +56,7 @@
                                         "module": "cms/TreeViewChanges",
                                         "attributes": {
                                             "id": "CmsRepoChanges",
+                                            "condition": "return userHasPermission(\"cms_version_control\");",
                                             "subscribeToTopic": "git:status:/",
                                             "publishToTopic": "cms.treeItem",
                                             "selectedNodeId": "",

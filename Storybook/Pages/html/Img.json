@@ -27,7 +27,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>\nDisplays an image using the HTML &lt;img&gt; tag. The image is obtained either using a URL or by subscribing to a Topic.\n<table cellpadding=\"7\">\n<tr><td>src [optional]</td><td>The URL for the image. e.g. https://www.w3schools.com/w3css/img_lights.jpg</td></tr>\n<tr><td>subscribeToTopic [optional]</td><td>Topic to subscribe to for the image. Can be a png, gif, apng, jpg, jpeg, or bmp.</td></tr>\n<tr><td>style [optional]</td><td>Used to set the width and height. e.g. {\"width\": \"400px\"}</td></tr>\n</table>\n</p>\n<p>When specifying a URL using the <b>src</b> attribute, the image needs to exist on an external server or in the <code>brill_client/public</code> directory. The web browser uses HTTP/HTTPS to get the image.\n</p>\n<p>When the image is specified using the <b>subscribeToTopic</b> attribute, the image is obtained using WebSockets. Some web browsers (specifically Google Chrome) can be slow when handling very large WebSocket messages. The solution is to place large images in the <code>brill_client/public</code> directory and specify a URL using the <b>src</b> attribute.\n</p>\n"
+                            "text": "<p>\nDisplays an image using the HTML &lt;img&gt; tag. The image is obtained either using a URL or by subscribing to a Topic.\n<table cellpadding=\"7\">\n<tr><td>src [optional]</td><td>The URL for the image. e.g. https://www.w3schools.com/w3css/img_lights.jpg</td></tr>\n<tr><td>subscribeToTopic [optional]</td><td>Topic to subscribe to for the image. Can be a png, gif, apng, jpg, jpeg, or bmp.</td></tr>\n<tr><td>style [optional]</td><td>Used to set the width and height. e.g. {\"width\": \"400px\"}</td></tr>\n</table>\n</p>\n<p>When specifying a URL using the <b>src</b> attribute, the image needs to exist on an external server or in the <code>brill_client/public</code> directory. The web browser uses HTTP/HTTPS to get the image.\n</p>\n<p>When the image is specified using the <b>subscribeToTopic</b> attribute, the image is obtained using WebSockets. Some web browsers (specifically Google Chrome) can be slow when handling very large WebSocket messages. The solution is to place large images in the <code>brill_client/public</code> directory and specify a URL using the <b>src</b> attribute or reduce the size of the image to below 500Kb.\n</p>\n"
                         }
                     },
                     {
@@ -91,18 +91,18 @@
                                 "width": "400px"
                             }
                         }
+                    },
+                    {
+                        "id": "Image - topic (png)",
+                        "module": "html/Img",
+                        "attributes": {
+                            "style": {
+                                "width": "400px"
+                            },
+                            "subscribeToTopic": "/Images/boat.png"
+                        }
                     }
                 ]
-            },
-            {
-                "id": "Image - topic (png)",
-                "module": "html/Img",
-                "attributes": {
-                    "style": {
-                        "width": "400px"
-                    },
-                    "subscribeToTopic": "/Images/boat.png"
-                }
             }
         ]
     }
