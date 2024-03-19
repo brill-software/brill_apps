@@ -1,0 +1,239 @@
+{
+    "pageDescrip": "Version Control Page",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {
+            "key": "errorBoundary"
+        },
+        "children": [
+            {
+                "id": "themeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "key": "themeProvider",
+                    "themeTopic": "/Themes/brill_cms_theme_light.json",
+                    "themeTopicDark": "/Themes/brill_cms_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Padding",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "padding": "20px"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "homePage",
+                                "module": "material_ui/text/Xhtml",
+                                "attributes": {
+                                    "subscribeToTopic": "/Resources/welcome.xhtml"
+                                }
+                            },
+                            {
+                                "id": "Dialog Title-2",
+                                "module": "material_ui/dialog/DialogContentText",
+                                "attributes": {
+                                    "text": "<p>Awaiting Merge, Rebase or Pull:</p>"
+                                }
+                            },
+                            {
+                                "id": "MergePullOrRebase",
+                                "module": "material_ui/table/Table",
+                                "attributes": {
+                                    "size": "small",
+                                    "initialState": "{\n    \"pagination\": {\n      \"paginationModel\": { \"page\": 0, \"pageSize\": 5 },\n    }\n  }\n ",
+                                    "pageSizeOptions": [
+                                        5,
+                                        10
+                                    ],
+                                    "padding": "10px",
+                                    "maxRows": 20,
+                                    "subscribeToTopic": "git:log:/",
+                                    "columns": [
+                                        {
+                                            "name": "commit",
+                                            "label": "Commit"
+                                        },
+                                        {
+                                            "name": "awaiting",
+                                            "label": "Awaiting"
+                                        },
+                                        {
+                                            "name": "branch",
+                                            "label": "Branch"
+                                        },
+                                        {
+                                            "name": "message",
+                                            "label": "Message"
+                                        },
+                                        {
+                                            "name": "author",
+                                            "label": "Author"
+                                        },
+                                        {
+                                            "name": "date",
+                                            "label": "Date"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "id": "Flex Row Layout-1",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "row",
+                                        "flexWrap": "wrap",
+                                        "padding": "20px"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "Rebase from Repository",
+                                        "module": "material_ui/button/SubmitButton",
+                                        "attributes": {
+                                            "style": {
+                                                "width": "120px",
+                                                "marginRight": "40px"
+                                            },
+                                            "title": "Rebase",
+                                            "variant": "contained",
+                                            "route": "/brill_cms/editor",
+                                            "color": "primary",
+                                            "subscribeToTopic": "pullbranch.form",
+                                            "requestTopic": "git:rebase:/"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "Flex Column Layout-2",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "display": "flex",
+                                        "flexDirection": "column"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "Row-3",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "marginTop": "10px",
+                                                "display": "flex",
+                                                "flexDirection": "row"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Item-2",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "text": "Workspace: ",
+                                                    "style": {
+                                                        "marginRight": "10px",
+                                                        "marginBottom": "10px",
+                                                        "fontSize": "20px",
+                                                        "fontFamily": "Arial, sans-serif",
+                                                        "color": "#808080"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Item-1",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "subscribeToTopic": "git:current_ws:/",
+                                                    "style": {
+                                                        "marginBottom": "10px",
+                                                        "fontSize": "20px",
+                                                        "fontFamily": "Arial, sans-serif",
+                                                        "color": "#808080"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Item-3",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "text": "Branch:  ",
+                                                    "style": {
+                                                        "marginLeft": "50px",
+                                                        "marginBottom": "10px",
+                                                        "fontSize": "20px",
+                                                        "fontFamily": "Arial, sans-serif",
+                                                        "color": "#808080"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Item-4",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "subscribeToTopic": "git:branch:/",
+                                                    "style": {
+                                                        "marginLeft": "10px",
+                                                        "marginBottom": "10px",
+                                                        "fontSize": "20px",
+                                                        "fontFamily": "Arial, sans-serif",
+                                                        "color": "#808080"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "Row-1",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "style": {
+                                                "marginTop": "10px",
+                                                "display": "flex",
+                                                "flexDirection": "row"
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "Item-2",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "text": "Repository: ",
+                                                    "style": {
+                                                        "marginRight": "10px",
+                                                        "marginBottom": "10px",
+                                                        "fontSize": "20px",
+                                                        "fontFamily": "Arial, sans-serif",
+                                                        "color": "#808080"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "id": "Item-1",
+                                                "module": "html/Div",
+                                                "attributes": {
+                                                    "subscribeToTopic": "git:uri:/",
+                                                    "style": {
+                                                        "marginBottom": "10px",
+                                                        "fontSize": "20px",
+                                                        "fontFamily": "Arial, sans-serif",
+                                                        "color": "#808080"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
