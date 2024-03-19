@@ -475,7 +475,7 @@
         "TabBarPane": {
             "modeBar": [
                 {
-                    "matches": "view:/brill_cms/Pages/versionControl.json",
+                    "matches": "view:/.*/Pages/.*(.json)$",
                     "mode": [
                         {
                             "name": "VIEW",
@@ -484,7 +484,7 @@
                     ]
                 },
                 {
-                    "matches": ".*Pages.*(.json)$",
+                    "matches": ".*/Pages/.*(.json)$",
                     "mode": [
                         {
                             "name": "EDIT",
@@ -507,7 +507,7 @@
                     ]
                 },
                 {
-                    "matches": ".*Themes.*(.json)$",
+                    "matches": ".*/Themes/.*(.json)$",
                     "mode": [
                         {
                             "name": "JSON",
