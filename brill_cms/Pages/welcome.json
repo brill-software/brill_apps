@@ -107,6 +107,21 @@
                                             "subscribeToTopic": "pullbranch.form",
                                             "requestTopic": "git:rebase:/"
                                         }
+                                    },
+                                    {
+                                        "id": "Pull from Repository-1",
+                                        "module": "material_ui/button/SubmitButton",
+                                        "attributes": {
+                                            "style": {
+                                                "width": "120px"
+                                            },
+                                            "title": "Pull",
+                                            "variant": "contained",
+                                            "route": "/brill_cms/editor",
+                                            "color": "primary",
+                                            "subscribeToTopic": "pullbranch.form",
+                                            "requestTopic": "git:pull:/"
+                                        }
                                     }
                                 ]
                             },
