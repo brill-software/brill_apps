@@ -265,6 +265,14 @@
                     }
                 },
                 {
+                    "type": "leaf",
+                    "matches": ".*(.md|.mkd|.mkdn|.mdown|.markdown)$",
+                    "iconName": "SubjectTwoTone",
+                    "style": {
+                        "color": "#fe9793"
+                    }
+                },
+                {
                     "type": "branch",
                     "matches": "Pages",
                     "iconName": "FolderOpenTwoTone",
@@ -314,18 +322,26 @@
                 },
                 {
                     "type": "branch",
-                    "matches": ".*/[a-z0-9_]+$",
+                    "matches": ".*/MediaLibrary/shared.*",
                     "iconName": "FolderOpenTwoTone",
                     "style": {
-                        "color": "#df4454"
+                        "color": "#8699fe"
                     }
                 },
                 {
                     "type": "branch",
-                    "matches": ".*/MediaLibrary",
+                    "matches": ".*/MediaLibrary.*",
                     "iconName": "FolderOpenTwoTone",
                     "style": {
                         "color": "#e699fe"
+                    }
+                },
+                {
+                    "type": "branch",
+                    "matches": ".*/[a-z0-9_]+$",
+                    "iconName": "FolderOpenTwoTone",
+                    "style": {
+                        "color": "#df4454"
                     }
                 },
                 {
