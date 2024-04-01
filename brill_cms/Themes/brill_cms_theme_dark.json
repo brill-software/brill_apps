@@ -260,7 +260,7 @@
                 },
                 {
                     "type": "leaf",
-                    "matches": ".*Images.*(.png|.apng|.jpg|.jpeg|.gif|.bmp)$",
+                    "matches": ".*(.png|.apng|.jpg|.jpeg|.gif|.bmp)$",
                     "iconName": "ImageTwoTone",
                     "style": {
                         "color": "#feb743"
