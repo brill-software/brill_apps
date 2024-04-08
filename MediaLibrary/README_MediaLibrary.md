@@ -13,7 +13,7 @@ The **shared** folder is accessible to all CMS users, making it an ideal spot fo
 #### Use within your projects:
 Please copy any images that you use within your web application to the web applications **Images** folder. Copy icons to the **Icons** folder.
 #### Organization:
-Please keep files organized in appropriately named folers and add a README to the folders. Delete or archive old versions or use a version naming convention.
+Please keep files organized in appropriately named folders and add a README. Delete or archive old versions or use a version naming convention.
 #### Content Guidelines: 
 Please maintain a professional and respectful media environment. It is strictly prohibited to upload inappropriate content. This includes, but is not limited to, offensive, explicit, or derogatory material.
 #### Copyright Compliance: 
