@@ -1,0 +1,84 @@
+{
+    "pageDescrip": "Div Component",
+    "permission": "cms_user",
+    "rootComponent": {
+        "id": "ErrorBoundary",
+        "module": "react/ErrorBoundary",
+        "attributes": {},
+        "children": [
+            {
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
+                "attributes": {
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                },
+                "children": [
+                    {
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/button/MobileMenu"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>Displays a Menu Icon with a rounded border. When the user clicks on the icon, a popup menu is displayed. Clicking on a menu item results in the user being routed to the appropriate page.\n</p> \n<p>\n<table cellpadding=\"7\">\n<tr><td>menuItems </td><td>The labels and routes. e.g. [{\"label\": \"Home\",\"route\": \"/brill_cms/home\"},{\"label\": \"Help\",\"route\": \"/brill_cms/help\"}]</td></tr>\n<tr><td>theme</td><td><code>theme.components.MobileMenu.styleOverrides .root, .fill</code></td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "Flex Row Layout",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "flexWrap": "wrap"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "ThemeProvider",
+                                "module": "material_ui/theme/ThemeProvider",
+                                "attributes": {
+                                    "themeTopic": "/Themes/mobile_menu_theme.json"
+                                },
+                                "children": [
+                                    {
+                                        "id": "^MobileMenu",
+                                        "module": "material_ui/menu/MobileMenu",
+                                        "attributes": {
+                                            "key": "_mobileMenu",
+                                            "menuItems": [
+                                                {
+                                                    "label": "Home",
+                                                    "route": "/brill_cms/home"
+                                                },
+                                                {
+                                                    "label": "Editor",
+                                                    "route": "/brill_cms/editor"
+                                                },
+                                                {
+                                                    "label": "Admin",
+                                                    "route": "/brill_cms/admin"
+                                                },
+                                                {
+                                                    "label": "Help",
+                                                    "route": "/brill_cms/help"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

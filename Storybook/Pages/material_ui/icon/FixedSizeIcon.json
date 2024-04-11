@@ -233,6 +233,13 @@
                                 "attributes": {
                                     "nameOrTopic": "Wallpaper"
                                 }
+                            },
+                            {
+                                "id": "Menu",
+                                "module": "material_ui/icon/FixedSizeIcon",
+                                "attributes": {
+                                    "nameOrTopic": "Menu"
+                                }
                             }
                         ]
                     },

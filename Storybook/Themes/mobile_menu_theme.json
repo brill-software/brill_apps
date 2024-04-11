@@ -1,0 +1,15 @@
+{
+    "components": {
+        "MobileMenu": {
+            "styleOverrides": {
+                "root": {
+                    "borderColor": "darkgreen",
+                    "background": "lightyellow"
+                },
+                "icon": {
+                    "fill": "green"
+                }
+            }
+        }
+    }
+}
