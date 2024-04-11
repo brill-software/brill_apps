@@ -7,7 +7,7 @@
                     "background": "lightyellow"
                 },
                 "icon": {
-                    "fill": "green"
+                    "color": "red"
                 }
             }
         }
