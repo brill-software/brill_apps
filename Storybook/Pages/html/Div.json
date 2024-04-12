@@ -177,6 +177,56 @@
                         ]
                     },
                     {
+                        "id": "Flex Row Center Aligned",
+                        "module": "html/Div",
+                        "attributes": {
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "flexWrap": "wrap",
+                                "justifyContent": "center"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "Item-1",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "background": "#B91C1C"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "Item-2",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "background": "#047857"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "Item-3",
+                                "module": "html/Div",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "10px",
+                                        "width": "40px",
+                                        "height": "40px",
+                                        "background": "#1D4ED8"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
                         "id": "Flex Column Layout",
                         "module": "html/Div",
                         "attributes": {

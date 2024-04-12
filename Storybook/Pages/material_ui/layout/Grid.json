@@ -642,6 +642,55 @@
                                 ]
                             }
                         ]
+                    },
+                    {
+                        "id": "GridContainer-1",
+                        "module": "material_ui/layout/Grid",
+                        "attributes": {
+                            "container": true,
+                            "direction": "row",
+                            "spacing": 0,
+                            "style": {
+                                "background": "#fff9f9"
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "DesktopOnlyMsg",
+                                "module": "material_ui/layout/Grid",
+                                "attributes": {
+                                    "item": true,
+                                    "xs": 0,
+                                    "sm": 0,
+                                    "md": 12,
+                                    "lg": 12,
+                                    "xl": 12,
+                                    "display": {
+                                        "xs": "none",
+                                        "sm": "none",
+                                        "md": "block",
+                                        "lg": "block",
+                                        "xl": "block"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "Item",
+                                        "module": "material_ui/text/Typography",
+                                        "attributes": {
+                                            "variant": "h3",
+                                            "text": "This message is only displayed on tabled and desktop size screens.",
+                                            "component": "div",
+                                            "style": {
+                                                "textAlign": "center",
+                                                "padding": "10px",
+                                                "background": "#a07090"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             }
