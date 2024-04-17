@@ -224,8 +224,8 @@
                                                 "id": "Item",
                                                 "module": "material_ui/text/Typography",
                                                 "attributes": {
-                                                    "variant": "h5",
-                                                    "text": "Access Limited: Please use a tablet or desktop for optimal performance. Mobile devices only support a very limited set of features.",
+                                                    "variant": "h6",
+                                                    "text": "Access Limited: Please use a desktop machine for optimal performance. Mobile devices only support a limited set of features.",
                                                     "component": "div",
                                                     "style": {
                                                         "textAlign": "center",
