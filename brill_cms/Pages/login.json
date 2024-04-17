@@ -224,7 +224,7 @@
                                                 "id": "Item",
                                                 "module": "material_ui/text/Typography",
                                                 "attributes": {
-                                                    "variant": "body1",
+                                                    "variant": "h5",
                                                     "text": "The CMS requires a tablet or desktop sized screen. Using the CMS on a mobile sized screen is not very practical.",
                                                     "component": "div",
                                                     "style": {
