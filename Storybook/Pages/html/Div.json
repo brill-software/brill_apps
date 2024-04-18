@@ -555,8 +555,8 @@
                                 "attributes": {
                                     "style": {
                                         "position": "absolute",
-                                        "top": "-25px",
-                                        "left": "100px",
+                                        "top": "-150px",
+                                        "left": "400px",
                                         "margin": "10px",
                                         "width": "400px",
                                         "height": "50px",
@@ -583,10 +583,9 @@
                                 "module": "html/Div",
                                 "attributes": {
                                     "style": {
-                                        "margin": "10px",
                                         "width": "300px",
                                         "height": "50px",
-                                        "backgroundImage": "linear-gradient(to right, red , yellow)"
+                                        "backgroundImage": "linear-gradient(to right, #B91C1C , yellow)"
                                     }
                                 }
                             },
@@ -595,7 +594,6 @@
                                 "module": "html/Div",
                                 "attributes": {
                                     "style": {
-                                        "margin": "10px",
                                         "width": "300px",
                                         "height": "50px",
                                         "backgroundImage": "linear-gradient(to bottom right, red, yellow)"
@@ -607,7 +605,6 @@
                                 "module": "html/Div",
                                 "attributes": {
                                     "style": {
-                                        "margin": "10px",
                                         "width": "300px",
                                         "height": "50px",
                                         "backgroundImage": "linear-gradient(to top right, red,orange,yellow,green,blue,indigo,violet)"
