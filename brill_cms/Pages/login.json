@@ -225,7 +225,7 @@
                                                 "module": "material_ui/text/Typography",
                                                 "attributes": {
                                                     "variant": "h6",
-                                                    "text": "Please use a device with a larger screen for optimal performance. Only a limited set of CMS features are supported on a mobile size screen.",
+                                                    "text": "Please use a device with a larger screen for optimal performance. Only a limited set of CMS features are supported on mobile size screens.",
                                                     "component": "div",
                                                     "style": {
                                                         "textAlign": "center",
