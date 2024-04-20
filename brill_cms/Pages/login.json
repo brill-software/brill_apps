@@ -104,6 +104,7 @@
                                         "attributes": {
                                             "label": "Username",
                                             "variant": "outlined",
+                                            "subscribeToTopice": "brill_online.new_user#username",
                                             "publishToTopic": "loginForm.username",
                                             "style": {
                                                 "margin": "10px"
@@ -225,7 +226,7 @@
                                                 "module": "material_ui/text/Typography",
                                                 "attributes": {
                                                     "variant": "h6",
-                                                    "text": "Please use a device with a larger screen for optimal performance. Only a limited set of CMS features are supported on mobile size screens.",
+                                                    "text": "Please use a laptop or desktop machine with a large screen. The CMS isn't designed for use on mobile devices.",
                                                     "component": "div",
                                                     "style": {
                                                         "textAlign": "center",
