@@ -37,11 +37,11 @@
                                         "opacity": "0.9",
                                         "padding": "20px",
                                         "position": "absolute",
-                                        "width": "400px",
+                                        "width": "380px",
                                         "height": "320px",
                                         "top": "50%",
                                         "left": "50%",
-                                        "margin": "-160px 0 0 -200px"
+                                        "margin": "-170px 0 0 -210px"
                                     }
                                 },
                                 "children": [
@@ -87,7 +87,7 @@
                                                     "style": {
                                                         "height": "18px",
                                                         "marginTop": "5px",
-                                                        "marginLeft": "100px",
+                                                        "marginLeft": "80px",
                                                         "color": "#498ada",
                                                         "background": "#e0e0e0",
                                                         "borderRadius": "9px",
@@ -181,7 +181,7 @@
                                                     "style": {
                                                         "color": "grey",
                                                         "paddingTop": "20px",
-                                                        "paddingLeft": "40px"
+                                                        "paddingLeft": "20px"
                                                     }
                                                 }
                                             }
@@ -225,7 +225,7 @@
                                                 "module": "material_ui/text/Typography",
                                                 "attributes": {
                                                     "variant": "h6",
-                                                    "text": "Access Limited: Please use a desktop machine for optimal performance. Mobile devices only support a limited set of features.",
+                                                    "text": "Please use a device with a larger screen for optimal performance. Only a limited set of CMS features are supported on a mobile size screen.",
                                                     "component": "div",
                                                     "style": {
                                                         "textAlign": "center",
