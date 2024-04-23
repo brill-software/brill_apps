@@ -20,7 +20,8 @@
                         "module": "material_ui/layout/ResizablePanels",
                         "attributes": {
                             "p1Height": 42,
-                            "p2Width": 300
+                            "p2Width": 300,
+                            "p2HideOnMobiles": true
                         },
                         "children": [
                             {
