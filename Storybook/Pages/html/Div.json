@@ -11,7 +11,8 @@
                 "id": "ThemeProvider",
                 "module": "material_ui/theme/ThemeProvider",
                 "attributes": {
-                    "themeTopic": "/Themes/storybook_theme_light.json"
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
                 },
                 "children": [
                     {

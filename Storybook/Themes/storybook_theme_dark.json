@@ -1,6 +1,6 @@
 {
     "palette": {
-        "type": "dark",
+        "mode": "dark",
         "primary": {
             "main": "#412498",
             "contrastText": "#b0b0b0"
