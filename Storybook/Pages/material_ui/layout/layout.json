@@ -5,7 +5,7 @@
         "id": "themeProvider-layout",
         "module": "material_ui/theme/ThemeProvider",
         "attributes": {
-            "themeTopic": "/Themes/storybook_theme_light.json"
+            "themeTopic": "json:/brill_cms/Themes/brill_cms_theme_light.json"
         },
         "children": [
             {
