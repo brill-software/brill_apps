@@ -7,34 +7,6 @@
         "attributes": {},
         "children": [
             {
-                "id": "ListAlt",
-                "module": "material_ui/icon/FixedSizeIcon",
-                "attributes": {
-                    "nameOrTopic": "ListAlt"
-                }
-            },
-            {
-                "id": "Brightness2",
-                "module": "material_ui/icon/FixedSizeIcon",
-                "attributes": {
-                    "nameOrTopic": "Brightness2TwoTone"
-                }
-            },
-            {
-                "id": "MoodBad-1",
-                "module": "material_ui/icon/FixedSizeIcon",
-                "attributes": {
-                    "nameOrTopic": "MoodBadTwoTone"
-                }
-            },
-            {
-                "id": "Looks3",
-                "module": "material_ui/icon/FixedSizeIcon",
-                "attributes": {
-                    "nameOrTopic": "Looks3"
-                }
-            },
-            {
                 "id": "Home-1",
                 "module": "material_ui/button/IconButton",
                 "attributes": {

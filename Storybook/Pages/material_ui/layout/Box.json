@@ -1,5 +1,5 @@
 {
-    "pageDescrip": "Text Editor",
+    "pageDescrip": "Boxr",
     "permission": "cms_user",
     "rootComponent": {
         "id": "ErrorBoundary",
@@ -7,11 +7,13 @@
         "attributes": {},
         "children": [
             {
-                "id": "ThemeProvider",
-                "module": "material_ui/theme/ThemeProvider",
+                "id": "PageDiv",
+                "module": "html/Div",
                 "attributes": {
-                    "themeTopic": "/Themes/storybook_theme_light.json",
-                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                    "style": {
+                        "minHeight": "100vh",
+                        "padding": "20px"
+                    }
                 },
                 "children": [
                     {

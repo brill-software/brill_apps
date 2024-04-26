@@ -8,11 +8,13 @@
         "attributes": {},
         "children": [
             {
-                "id": "ThemeProvider",
-                "module": "material_ui/theme/ThemeProvider",
+                "id": "PageDiv",
+                "module": "html/Div",
                 "attributes": {
-                    "themeTopic": "/Themes/storybook_theme_light.json",
-                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                    "style": {
+                        "minHeight": "100vh",
+                        "padding": "20px"
+                    }
                 },
                 "children": [
                     {
@@ -42,7 +44,7 @@
                                 "fontSize": "1.5rem",
                                 "lineHeight": "2rem",
                                 "fontWeight": 900,
-                                "color": "#212837"
+                                "color": "grey"
                             },
                             "text": "You have the cms_developer permission."
                         }
@@ -561,7 +563,7 @@
                                         "margin": "10px",
                                         "width": "400px",
                                         "height": "50px",
-                                        "background": "#EFF6FF",
+                                        "background": "lightblue",
                                         "padding": "3px"
                                     },
                                     "text": "With absolute positioning, the parent div must have \"position\": \"relative\" and the child \"position\": \"absolute\"."
@@ -624,7 +626,7 @@
                                 "fontSize": "2.25rem",
                                 "lineHeight": "2.5rem",
                                 "fontWeight": 900,
-                                "color": "#212837"
+                                "color": "grey"
                             },
                             "text": "This is a large heading using a Div."
                         }
@@ -639,7 +641,7 @@
                                 "fontSize": "1.875rem",
                                 "lineHeight": "2.25rem",
                                 "fontWeight": 900,
-                                "color": "#212837"
+                                "color": "grey"
                             },
                             "text": "This is a medium heading using a Div."
                         }
@@ -654,7 +656,7 @@
                                 "fontSize": "1.5rem",
                                 "lineHeight": "2rem",
                                 "fontWeight": 900,
-                                "color": "#212837"
+                                "color": "grey"
                             },
                             "text": "This is a small heading using a Div."
                         }
@@ -685,7 +687,7 @@
                                         "fontSize": "1.5rem",
                                         "lineHeight": "2rem",
                                         "fontStyle": "italic",
-                                        "color": "#6B7280"
+                                        "color": "grey"
                                     },
                                     "text": "Once a new technology rolls over you, if you're not part of the steamroller, you're part of the road."
                                 }

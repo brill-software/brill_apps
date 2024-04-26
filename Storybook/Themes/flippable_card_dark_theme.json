@@ -1,4 +1,7 @@
 {
+    "palette": {
+        "mode": "dark"
+    },
     "components": {
         "FlippableCard": {
             "styleOverrides": {

@@ -1,0 +1,17 @@
+{
+    "palette": {
+        "mode": "light"
+    },
+    "components": {
+        "FlippableCard": {
+            "styleOverrides": {
+                "cardFront": {
+                    "color": "yellow"
+                },
+                "isFlipped": {
+                    "transform": "rotateX(-180deg)"
+                }
+            }
+        }
+    }
+}

@@ -7,75 +7,66 @@
         "attributes": {},
         "children": [
             {
-                "id": "ThemeProvider",
-                "module": "material_ui/theme/ThemeProvider",
+                "id": "PageDiv",
+                "module": "html/Div",
                 "attributes": {
-                    "themeTopic": "/Themes/storybook_theme_light.json",
-                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                    "style": {
+                        "padding": "20px",
+                        "minHeight": "100vh",
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "background": "lightblue"
+                    }
                 },
                 "children": [
                     {
-                        "id": "PageDiv",
+                        "id": "Module",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "h3",
+                            "gutterBottom": true,
+                            "text": "material_ui/layout/EmbededPage.json"
+                        }
+                    },
+                    {
+                        "id": "Attributes",
+                        "module": "material_ui/text/Xhtml",
+                        "attributes": {
+                            "text": "<p>Embeds a page into the current page.\n<table cellpadding=\"7\">\n<tr><td>subscribeToTopic</td><td>The topic for the page to embed.</td></tr>\n</table>\n</p>"
+                        }
+                    },
+                    {
+                        "id": "EmbeddedHeader",
+                        "module": "material_ui/layout/EmbeddedPage",
+                        "attributes": {
+                            "subscribeToTopic": "/Pages/material_ui/layout/header.json"
+                        }
+                    },
+                    {
+                        "id": "Content",
+                        "module": "material_ui/text/Typography",
+                        "attributes": {
+                            "variant": "body1",
+                            "gutterBottom": true,
+                            "text": "<p><b>The page content.</b></p><p>The embedded page will pick up the theme from the page it's embedded in. When editing the embedded page within the CMS, the theme will be that of the CMS, unless you put a theme provider within the embedded page.\n</p><p>The Spacer div expands to push the footer to the bottom of the page when there's not enough content to fill the page.</p><p>The PageDiv sets the miniHeight to the screen height (100vh).</p><p>To view the spacer in action, use the preview mode and scroll down to see the footer.</p>"
+                        }
+                    },
+                    {
+                        "id": "Spacer",
                         "module": "html/Div",
                         "attributes": {
                             "style": {
-                                "minHeight": "100vh",
-                                "display": "flex",
-                                "flexDirection": "column",
-                                "background": "lightblue"
+                                "flexGrow": 1
                             }
                         },
-                        "children": [
-                            {
-                                "id": "Module",
-                                "module": "material_ui/text/Typography",
-                                "attributes": {
-                                    "variant": "h3",
-                                    "gutterBottom": true,
-                                    "text": "material_ui/layout/EmbededPage.json"
-                                }
-                            },
-                            {
-                                "id": "Attributes",
-                                "module": "material_ui/text/Xhtml",
-                                "attributes": {
-                                    "text": "<p>Embeds a page into the current page.\n<table cellpadding=\"7\">\n<tr><td>subscribeToTopic</td><td>The topic for the page to embed.</td></tr>\n</table>\n</p>"
-                                }
-                            },
-                            {
-                                "id": "EmbeddedHeader",
-                                "module": "material_ui/layout/EmbeddedPage",
-                                "attributes": {
-                                    "subscribeToTopic": "/Pages/material_ui/layout/header.json"
-                                }
-                            },
-                            {
-                                "id": "Content",
-                                "module": "material_ui/text/Typography",
-                                "attributes": {
-                                    "variant": "body1",
-                                    "gutterBottom": true,
-                                    "text": "<p><b>The page content.</b></p><p>The embedded page will pick up the theme from the page it's embedded in. When editing the embedded page within the CMS, the theme will be that of the CMS, unless you put a theme provider within the embedded page.\n</p><p>The Spacer div expands to push the footer to the bottom of the page when there's not enough content to fill the page.</p><p>The PageDiv sets the miniHeight to the screen height (100vh).</p><p>To view the spacer in action, use the preview mode and scroll down to see the footer.</p>"
-                                }
-                            },
-                            {
-                                "id": "Spacer",
-                                "module": "html/Div",
-                                "attributes": {
-                                    "style": {
-                                        "flexGrow": 1
-                                    }
-                                },
-                                "children": []
-                            },
-                            {
-                                "id": "EmbeddedFooter",
-                                "module": "material_ui/layout/EmbeddedPage",
-                                "attributes": {
-                                    "subscribeToTopic": "/Pages/material_ui/layout/footer.json"
-                                }
-                            }
-                        ]
+                        "children": []
+                    },
+                    {
+                        "id": "EmbeddedFooter",
+                        "module": "material_ui/layout/EmbeddedPage",
+                        "attributes": {
+                            "subscribeToTopic": "/Pages/material_ui/layout/footer.json"
+                        }
                     }
                 ]
             }

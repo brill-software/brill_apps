@@ -7,11 +7,16 @@
         "attributes": {},
         "children": [
             {
-                "id": "ThemeProvider",
-                "module": "material_ui/theme/ThemeProvider",
+                 "id": "PageDiv",
+                "module": "html/Div",
                 "attributes": {
-                    "themeTopic": "/Themes/storybook_theme_light.json",
-                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                    "style": {
+                        "padding": "20px",
+                        "minHeight": "100vh",
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "background": "lightblue"
+                    }
                 },
                 "children": [
                     {

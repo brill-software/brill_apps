@@ -7,11 +7,13 @@
         "attributes": {},
         "children": [
             {
-                "id": "ThemeProvider",
-                "module": "material_ui/theme/ThemeProvider",
+                "id": "PageDiv",
+                "module": "html/Div",
                 "attributes": {
-                    "themeTopic": "/Themes/storybook_theme_light.json",
-                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                    "style": {
+                        "minHeight": "100vh",
+                        "padding": "20px"
+                    }
                 },
                 "children": [
                     {
@@ -31,79 +33,80 @@
                         }
                     },
                     {
-                        "id": "ThemeProvider",
-                        "module": "material_ui/theme/ThemeProvider",
+                        "id": "Flex Row Layout",
+                        "module": "html/Div",
                         "attributes": {
-                            "themeTopic": "/Themes/flippable_card_theme.json"
+                            "style": {
+                                "display": "flex",
+                                "flexDirection": "row",
+                                "flexWrap": "wrap"
+                            }
                         },
                         "children": [
                             {
-                                "id": "Flex Row Layout",
-                                "module": "html/Div",
+                                "id": "^Card1",
+                                "module": "html/FlippableCard",
                                 "attributes": {
                                     "style": {
-                                        "display": "flex",
-                                        "flexDirection": "row",
-                                        "flexWrap": "wrap"
+                                        "margin": "20px"
                                     }
                                 },
                                 "children": [
                                     {
-                                        "id": "^Card1",
-                                        "module": "html/FlippableCard",
+                                        "id": "Text",
+                                        "module": "html/Div",
                                         "attributes": {
-                                            "style": {
-                                                "margin": "20px"
-                                            }
-                                        },
-                                        "children": [
-                                            {
-                                                "id": "Text",
-                                                "module": "html/Div",
-                                                "attributes": {
-                                                    "text": "Click to Flip"
-                                                }
-                                            },
-                                            {
-                                                "id": "PlayingCardPng",
-                                                "module": "html/Img",
-                                                "attributes": {
-                                                    "style": {
-                                                        "width": "300px"
-                                                    },
-                                                    "subscribeToTopic": "/Images/card1-b.jpg"
-                                                }
-                                            }
-                                        ]
+                                            "text": "Click to Flip"
+                                        }
                                     },
                                     {
-                                        "id": "^Card2",
-                                        "module": "html/FlippableCard",
+                                        "id": "PlayingCardPng",
+                                        "module": "html/Img",
                                         "attributes": {
                                             "style": {
-                                                "margin": "20px"
-                                            }
-                                        },
-                                        "children": [
-                                            {
-                                                "id": "Text",
-                                                "module": "html/Div",
-                                                "attributes": {
-                                                    "text": "Click to Flip"
-                                                }
+                                                "width": "300px"
                                             },
-                                            {
-                                                "id": "PlayingCardPng",
-                                                "module": "html/Img",
-                                                "attributes": {
-                                                    "style": {
-                                                        "width": "300px"
-                                                    },
-                                                    "subscribeToTopic": "/Images/card2-b.jpg"
-                                                }
-                                            }
-                                        ]
+                                            "subscribeToTopic": "/Images/card1-b.jpg"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "^Card2",
+                                "module": "html/FlippableCard",
+                                "attributes": {
+                                    "style": {
+                                        "margin": "20px"
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "id": "Text",
+                                        "module": "html/Div",
+                                        "attributes": {
+                                            "text": "Click to Flip"
+                                        }
                                     },
+                                    {
+                                        "id": "PlayingCardPng",
+                                        "module": "html/Img",
+                                        "attributes": {
+                                            "style": {
+                                                "width": "300px"
+                                            },
+                                            "subscribeToTopic": "/Images/card2-b.jpg"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "ThemeProvider",
+                                "module": "material_ui/theme/ThemeProvider",
+                                "attributes": {
+                                    "themeTopic": "/Themes/flippable_card_light_theme.json",
+                                    "themeTopicDark": "/Themes/flippable_card_dark_theme.json"
+                                },
+                                "children": [
                                     {
                                         "id": "^Card3",
                                         "module": "html/FlippableCard",

@@ -2,7 +2,7 @@
     "palette": {
         "mode": "dark",
         "primary": {
-            "main": "#412498",
+            "main": "#0073e6",
             "contrastText": "#b0b0b0"
         },
         "secondary": {
@@ -618,6 +618,13 @@
                 },
                 "select": {
                     "background": "#a0a0a0"
+                }
+            }
+        },
+        "DraggableBox": {
+            "styleOverrides": {
+                "selectedComponentBox": {
+                    "border": "1px solid #ffffff"
                 }
             }
         }
