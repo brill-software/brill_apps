@@ -1,5 +1,6 @@
 {
-    "pageDescrip": "Form",
+    "$schema": "schema://brill.software/page_schema.json",
+    "pageDescrip": "Resizable Panels - 3 panels",
     "permission": "cms_user",
     "rootComponent": {
         "id": "ErrorBoundary",
@@ -7,113 +8,105 @@
         "attributes": {},
         "children": [
             {
-                "id": "PageDiv",
+                 "id": "PageDiv",
                 "module": "html/Div",
                 "attributes": {
                     "style": {
-                        "minHeight": "100vh",
-                        "padding": "20px"
+                        "padding": "20px",
+                        "minHeight": "100vh"
                     }
                 },
                 "children": [
                     {
-                        "id": "Module",
-                        "module": "material_ui/text/Typography",
+                        "id": "ResizablePanels",
+                        "module": "material_ui/layout/ResizablePanels3",
                         "attributes": {
-                            "variant": "h3",
-                            "gutterBottom": true,
-                            "text": "material_ui/input/Checkbox"
-                        }
-                    },
-                    {
-                        "id": "Attributes",
-                        "module": "material_ui/text/Xhtml",
-                        "attributes": {
-                            "text": "<h3>Checkbox</h3>\n<p>A single checkbox, based on the \n<a href=\"https://mui.com/material-ui/react-checkbox/\" target=\"_blank\">Material-UI Checkbox</a> component.\n<table cellpadding=\"7\">\n<tr><td>label</td><td>Checkbox label.</td></tr>\n<tr><td>labelPlacement [optional]</td><td><code>top</code>, <code>bottom</code>, <code>start</code> or <code>end</code>.</td></tr>\n<tr><td>checked [optional]</td><td>Set to <code>true</code> to set the checkbox initially checked.</td></tr>\n<tr><td>subscribeToTopic [optional]</td><td>The topic that provides the initial checkbox value.</td></tr>\n<tr><td>publishToTopic</td><td>The topic for where to publish the value. e.g. form#checkbox</td></tr>\n<tr><td>color [optional]</td><td><code>primary</code> or <code>secondary</code>.</td></tr>\n</table></p>\n"
-                        }
-                    },
-                    {
-                        "id": "Form",
-                        "module": "material_ui/input/Form",
-                        "attributes": {
-                            "style": {
-                                "width": "350px"
-                            }
+                            "p1Height": 42,
+                            "p2Width": 300,
+                            "p2HideOnMobiles": true
                         },
                         "children": [
                             {
-                                "id": "Flex Column Layout",
+                                "id": "HeaderBox",
                                 "module": "html/Div",
                                 "attributes": {
                                     "style": {
-                                        "padding": "10px",
-                                        "width": "700px",
+                                        "width": "100%",
+                                        "height": "42px",
+                                        "background": "#c1f4b8",
+                                        "border": "20px",
                                         "display": "flex",
-                                        "flexDirection": "column"
+                                        "flexDirection": "row"
                                     }
                                 },
                                 "children": [
                                     {
-                                        "id": "Flex Row Layout-1",
-                                        "module": "html/Div",
+                                        "id": "Title",
+                                        "module": "material_ui/text/Typography",
                                         "attributes": {
+                                            "variant": "h1",
                                             "style": {
-                                                "display": "flex",
-                                                "flexDirection": "row",
-                                                "flexWrap": "wrap",
-                                                "padding": "10px"
-                                            }
-                                        },
-                                        "children": [
-                                            {
-                                                "id": "Checkbox",
-                                                "module": "material_ui/input/Checkbox",
-                                                "attributes": {
-                                                    "publishToTopic": "storybook.singleCheckboxDemo",
-                                                    "label": "I agree",
-                                                    "color": "primary"
-                                                }
-                                            }
-                                        ]
+                                                "color": "#909090",
+                                                "paddingLeft": "12px",
+                                                "paddingRight": "40px",
+                                                "whiteSpace": "nowrap"
+                                            },
+                                            "text": "Resizable Panels ( 3 panels )"
+                                        }
                                     },
                                     {
-                                        "id": "Flex Row Layout-2",
-                                        "module": "html/Div",
+                                        "id": "FileName",
+                                        "module": "material_ui/text/Typography",
                                         "attributes": {
+                                            "variant": "h3",
                                             "style": {
-                                                "display": "flex",
-                                                "flexDirection": "row",
-                                                "flexWrap": "wrap",
-                                                "padding": "10px"
-                                            }
-                                        },
-                                        "children": [
-                                            {
-                                                "id": "Text",
-                                                "module": "html/Div",
-                                                "attributes": {
-                                                    "style": {
-                                                        "fontSize": "20px",
-                                                        "paddingRight": "10px"
-                                                    },
-                                                    "text": "Selected value: "
-                                                }
+                                                "color": "#60a060",
+                                                "paddingTop": "10px",
+                                                "paddingLeft": "12px",
+                                                "paddingRight": "40px",
+                                                "whiteSpace": "nowrap"
                                             },
-                                            {
-                                                "id": "Value",
-                                                "module": "html/Div",
-                                                "attributes": {
-                                                    "subscribeToTopic": "storybook.singleCheckboxDemo",
-                                                    "style": {
-                                                        "fontSize": "20px",
-                                                        "fontWeight": 900,
-                                                        "color": "green"
-                                                    }
-                                                }
-                                            }
-                                        ]
+                                            "text": "Selected File: ",
+                                            "subscribeToTopic": "storybook.resizablePanels.treeItem"
+                                        }
                                     }
                                 ]
+                            },
+                            {
+                                "id": "^TreeView",
+                                "module": "material_ui/view/TreeView",
+                                "attributes": {
+                                    "defaultExpanded": [
+                                        "file:/Storybook/Pages",
+                                        "file:/Storybook/Pages/html",
+                                        "file:/Storybook/Pages/material_ui"
+                                    ],
+                                    "subscribeToTopic": "/Pages/",
+                                    "publishToTopic": "storybook.resizablePanels.treeItem"
+                                }
+                            },
+                            {
+                                "id": "Text Editor",
+                                "module": "material_ui/editor/TextEditor",
+                                "attributes": {
+                                    "id": "textEditor1",
+                                    "options": {
+                                        "readOnly": true,
+                                        "lineNumbers": "off",
+                                        "glyphMargin": false,
+                                        "folding": false,
+                                        "lineDecorationsWidth": 0,
+                                        "lineNumbersMinChars": 0,
+                                        "roundedSelection": true,
+                                        "scrollBeyondLastLine": false,
+                                        "fontWeight": 600
+                                    },
+                                    "fileName": "employee_data.json",
+                                    "subscribeToTopic": "storybook.resizablePanels.treeItem",
+                                    "subscribeToActionTopic": "storybook.TextEditor.action",
+                                    "publishToTopic": "",
+                                    "schemasTopic": "json:/brill_cms/Resources/page_schemas.json"
+                                }
                             }
                         ]
                     }
