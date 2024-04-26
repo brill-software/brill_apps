@@ -1,9 +1,8 @@
 {
     "palette": {
-        "type": "dark",
         "mode": "dark",
         "primary": {
-            "main": "#412498",
+            "main": "#3377ff",
             "contrastText": "#b0b0b0"
         },
         "secondary": {
@@ -763,6 +762,29 @@
                 "select": {
                     "background": "#a0a0a0"
                 }
+            }
+        },
+        "DraggableBox": {
+            "styleOverrides": {
+                "containerBox": {
+                    "border": "1px dashed #6080ff"
+                },
+                "componentBox": {
+                    "border": "1px dotted #6080ff"
+                },
+                "selectedContainerBox": {
+                    "border": "1px solid #9090ff"
+                },
+                "selectedComponentBox": {
+                    "border": "1px solid #9090ff"
+                }
+            }
+        },
+        "Text": {
+            "styleOverrides": {
+                "root": {
+                    "color": "white"
+                    }
             }
         }
     }
