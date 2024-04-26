@@ -7,11 +7,13 @@
         "attributes": {},
         "children": [
             {
-                "id": "ThemeProvider",
-                "module": "material_ui/theme/ThemeProvider",
+                "id": "PageDiv",
+                "module": "html/Div",
                 "attributes": {
-                    "themeTopic": "/Themes/storybook_theme_light.json",
-                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
+                    "style": {
+                        "padding": "20px",
+                        "minHeight": "100vh"
+                    }
                 },
                 "children": [
                     {
@@ -27,7 +29,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>Displays a Menu Icon with a rounded border. When the user clicks on the icon, a popup menu is displayed. Clicking on a menu item results in the user being routed to the appropriate page.\n</p> \n<p>\n<table cellpadding=\"7\">\n<tr><td>menuItems </td><td>The labels and routes. e.g. [{\"label\": \"Home\",\"route\": \"/brill_cms/home\"},{\"label\": \"Help\",\"route\": \"/brill_cms/help\"}]</td></tr>\n<tr><td>theme</td><td><code>theme.components.MobileMenu.styleOverrides .root, .fill</code></td></tr>\n</table>\n</p>"
+                            "text": "<p>Displays a Menu Icon with a rounded border. When the user clicks on the icon, a popup menu is displayed. Clicking on a menu item results in the user being routed to the appropriate page.\n</p> \n<p>\n<table cellpadding=\"7\">\n<tr><td>menuItems </td><td>The labels and routes. e.g. [{\"label\": \"Home\",\"route\": \"/brill_cms/home\"},{\"label\": \"Help\",\"route\": \"/brill_cms/help\"}]</td></tr>\n<tr><td>theme</td><td><code>theme.components.MobileMenu.styleOverrides .root, .icon</code></td></tr>\n</table>\n</p>"
                         }
                     },
                     {
@@ -42,6 +44,31 @@
                         },
                         "children": [
                             {
+                                "id": "^MobileMenu",
+                                "module": "material_ui/menu/MobileMenu",
+                                "attributes": {
+                                    "key": "_mobileMenu",
+                                    "menuItems": [
+                                        {
+                                            "label": "Home",
+                                            "route": "/brill_cms/home"
+                                        },
+                                        {
+                                            "label": "Editor",
+                                            "route": "/brill_cms/editor"
+                                        },
+                                        {
+                                            "label": "Admin",
+                                            "route": "/brill_cms/admin"
+                                        },
+                                        {
+                                            "label": "Help",
+                                            "route": "/brill_cms/help"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
                                 "id": "ThemeProvider",
                                 "module": "material_ui/theme/ThemeProvider",
                                 "attributes": {
@@ -53,6 +80,9 @@
                                         "module": "material_ui/menu/MobileMenu",
                                         "attributes": {
                                             "key": "_mobileMenu",
+                                            "style": {
+                                                "marginLeft": "20px"
+                                            },
                                             "menuItems": [
                                                 {
                                                     "label": "Home",
