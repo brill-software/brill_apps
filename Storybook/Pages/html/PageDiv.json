@@ -6,14 +6,15 @@
         "attributes": {},
         "children": [
             {
-                "id": "PageDiv",
-                "module": "html/Div",
+                "id": "ThemeProvider",
+                "module": "material_ui/theme/ThemeProvider",
                 "attributes": {
                     "style": {
                         "minHeight": "100vh",
-                        "background": "lightblue",
                         "padding": "20px"
-                    }
+                    },
+                    "themeTopic": "/Themes/storybook_theme_light.json",
+                    "themeTopicDark": "/Themes/storybook_theme_dark.json"
                 },
                 "children": [
                     {
