@@ -9,7 +9,10 @@
             "main": "#ef4fa6"
         },
         "contrastThreshold": 3,
-        "tonalOffset": 0.2
+        "tonalOffset": 0.2,
+        "action": {
+            "active": "#add8e6"
+        }
     },
     "typography": {
         "body": {

@@ -7,7 +7,7 @@
         "attributes": {},
         "children": [
             {
-               "id": "ThemeProvider",
+                "id": "ThemeProvider",
                 "module": "material_ui/theme/ThemeProvider",
                 "attributes": {
                     "style": {
@@ -31,7 +31,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>\nThe Theme Provider component applies a <a href=\"https://mui.com/material-ui/customization/theming/\" target=\"_blank\">Material UI Theme</a> to its child components.\n<table cellpadding=\"7\">\n<tr><td>themeTopic</td><td>Theme topic.</td></tr>\n<tr><td>themeTopicDark [optional]</td><td>Dark theme topic.</td></tr>\n<tr><td>children</td><td>The theme will be applied to the child components.</td></tr>\n</table>\n</p>"
+                            "text": "<p>\nThe Theme Provider component applies a <a href=\"https://mui.com/material-ui/customization/theming/\" style=\"color: #3b82ff\" target=\"_blank\">Material UI Theme</a> to its child components.\n<table cellpadding=\"7\">\n<tr><td>themeTopic</td><td>Theme topic.</td></tr>\n<tr><td>themeTopicDark [optional]</td><td>Dark theme topic.</td></tr>\n<tr><td>children</td><td>The theme will be applied to the child components.</td></tr>\n</table>\n</p>"
                         }
                     },
                     {

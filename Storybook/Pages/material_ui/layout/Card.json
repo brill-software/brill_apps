@@ -31,7 +31,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>Card component, based on the <a href=\"https://v4.mui.com/components/cards/\" target=\"_blank\">Material-UI Card</a> component.\n<table cellpadding=\"7\">\n<tr><td>title</td><td>The Card Title</td></tr>\n</table>\n</p>"
+                            "text": "<p>Card component, based on the <a href=\"https://v4.mui.com/components/cards/\" style=\"color: #3b82ff\" target=\"_blank\">Material-UI Card</a> component.\n<table cellpadding=\"7\">\n<tr><td>title</td><td>The Card Title</td></tr>\n</table>\n</p>"
                         }
                     },
                     {

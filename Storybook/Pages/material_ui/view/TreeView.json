@@ -31,7 +31,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>\nThe Tree View component is based on the <a href=\"https://mui.com/material-ui/react-tree-view/\" target=\"_blank\">Material UI Tree View</a> component.\n<table cellpadding=\"7\">\n<tr><td>defaultExpanded</td><td>Array of node ids to expand on initial display of the Tree View.</td></tr>\n<tr><td>subscribeToTopic</td><td>Topic for the tree data.</td></tr>\n<tr><td>publishToTopic</td><td>Topic to publish the currently selected node id to.</td></tr>\n<tr><td>selectedNodeId</td><td>The initial node to select.</td></tr>\n</table>\n</p>"
+                            "text": "<p>\nThe Tree View component is based on the <a href=\"https://mui.com/material-ui/react-tree-view/\" style=\"color: #3b82ff\" target=\"_blank\">Material UI Tree View</a> component.\n<table cellpadding=\"7\">\n<tr><td>defaultExpanded</td><td>Array of node ids to expand on initial display of the Tree View.</td></tr>\n<tr><td>subscribeToTopic</td><td>Topic for the tree data.</td></tr>\n<tr><td>publishToTopic</td><td>Topic to publish the currently selected node id to.</td></tr>\n<tr><td>selectedNodeId</td><td>The initial node to select.</td></tr>\n</table>\n</p>"
                         }
                     },
                     {

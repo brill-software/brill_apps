@@ -50,7 +50,8 @@
                         "id": "ThemeProvider-Markdown",
                         "module": "material_ui/theme/ThemeProvider",
                         "attributes": {
-                            "themeTopic": "json:/brill_cms/Themes/markdown_theme.json"
+                            "themeTopic": "json:/brill_cms/Themes/markdown_theme_light.json",
+                            "themeTopicDark": "json:/brill_cms/Themes/markdown_theme_dark.json"
                         },
                         "children": [
                             {

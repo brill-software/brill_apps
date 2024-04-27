@@ -31,7 +31,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>The Data Grid component is based on the <a href=\"https://mui.com/x/react-data-grid/\" target=\"_blank\">MUI v6 Data Grid</a> component. \n<table cellpadding=\"7\">\n<tr><td>rowHeight [optional]</td><td>Sets the row height in pixels.</td></tr>\n<tr><td>subscribeToTopic</td><td>The topic to subscribe to for the data. e.g. an SQL query or JavaScript topic.</td></tr>\n<tr><td>columns</td><td>List of the column fields, header labels and widths.</td></tr>\n<tr><td>maxRows [optional]</td><td>Limits the size of the table to the specified number of rows. The default is 1000.</td></tr>\n</table>\n</p>"
+                            "text": "<p>The Data Grid component is based on the <a href=\"https://mui.com/x/react-data-grid/\" style=\"color: #3b82ff\" target=\"_blank\">MUI v6 Data Grid</a> component. \n<table cellpadding=\"7\">\n<tr><td>rowHeight [optional]</td><td>Sets the row height in pixels.</td></tr>\n<tr><td>subscribeToTopic</td><td>The topic to subscribe to for the data. e.g. an SQL query or JavaScript topic.</td></tr>\n<tr><td>columns</td><td>List of the column fields, header labels and widths.</td></tr>\n<tr><td>maxRows [optional]</td><td>Limits the size of the table to the specified number of rows. The default is 1000.</td></tr>\n</table>\n</p>"
                         }
                     },
                     {

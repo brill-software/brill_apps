@@ -7,7 +7,7 @@
         "attributes": {},
         "children": [
             {
-               "id": "ThemeProvider",
+                "id": "ThemeProvider",
                 "module": "material_ui/theme/ThemeProvider",
                 "attributes": {
                     "style": {
@@ -31,7 +31,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<h3>Radio Group</h3>\n<p>Allows one item to be selected from a group. A Radio Group component should be enclosed within a form. Based on the \n<a href=\"https://mui.com/material-ui/react-radio-button/\" target=\"_blank\">Material-UI Radio Buttons Group</a> component.\n<table cellpadding=\"7\">\n<tr><td>label</td><td>The Radio Group label text.</td></tr>\n<tr><td>color</td><td><code>primary</code> or <code>secondary</code>.</td></tr>\n<tr><td>buttonsTopic</td><td>The topic that provides the radio button values and labels. e.g. <code>/Database/radioButtons.sql</code> . See below for the format of the JSON.</td></tr>\n<tr><td>labelPlacement</td><td><code>top</code>, <code>bottom</code>, <code>start</code> or <code>end</code>. The default is <code>end</code>.</td></tr>\n<tr><td>subscribeToTopic [optional]</td><td>Provides the initial value.</td></tr>\n<tr><td>publishToTopic</td><td>The topic to publish the selected radio button value. e.g. form#radioButton</td></tr>\n</table></p>\n"
+                            "text": "<h3>Radio Group</h3>\n<p>Allows one item to be selected from a group. A Radio Group component should be enclosed within a form. Based on the \n<a href=\"https://mui.com/material-ui/react-radio-button/\" style=\"color: #3b82ff\" target=\"_blank\">Material-UI Radio Buttons Group</a> component.\n<table cellpadding=\"7\">\n<tr><td>label</td><td>The Radio Group label text.</td></tr>\n<tr><td>color</td><td><code>primary</code> or <code>secondary</code>.</td></tr>\n<tr><td>buttonsTopic</td><td>The topic that provides the radio button values and labels. e.g. <code>/Database/radioButtons.sql</code> . See below for the format of the JSON.</td></tr>\n<tr><td>labelPlacement</td><td><code>top</code>, <code>bottom</code>, <code>start</code> or <code>end</code>. The default is <code>end</code>.</td></tr>\n<tr><td>subscribeToTopic [optional]</td><td>Provides the initial value.</td></tr>\n<tr><td>publishToTopic</td><td>The topic to publish the selected radio button value. e.g. form#radioButton</td></tr>\n</table></p>\n"
                         }
                     },
                     {

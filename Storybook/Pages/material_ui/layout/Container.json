@@ -7,7 +7,7 @@
         "attributes": {},
         "children": [
             {
-               "id": "ThemeProvider",
+                "id": "ThemeProvider",
                 "module": "material_ui/theme/ThemeProvider",
                 "attributes": {
                     "style": {
@@ -31,7 +31,7 @@
                         "id": "Attributes",
                         "module": "material_ui/text/Xhtml",
                         "attributes": {
-                            "text": "<p>A Material-UI Container. Centers the conent and expands are contracts based on the screen width. Based on the <a href=\"https://mui.com/material-ui/react-container/\" target=\"_blank\">Material-UI Container</a> component</p>"
+                            "text": "<p>A Material-UI Container. Centers the conent and expands are contracts based on the screen width. Based on the <a href=\"https://mui.com/material-ui/react-container/\" style=\"color: #3b82ff\" target=\"_blank\">Material-UI Container</a> component</p>"
                         }
                     },
                     {
