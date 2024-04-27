@@ -11,7 +11,10 @@
                 "id": "themeProvider",
                 "module": "material_ui/theme/ThemeProvider",
                 "attributes": {
-                    "key": "themeProvider",
+                    "key": "ThemeProvider",
+                    "style": {
+                        "minHeight": "100vh"
+                    },
                     "themeTopic": "/Themes/brill_cms_theme_light.json",
                     "themeTopicDark": "/Themes/brill_cms_theme_dark.json"
                 },

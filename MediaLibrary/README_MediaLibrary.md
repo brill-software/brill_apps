@@ -21,3 +21,6 @@ It is crucial to respect intellectual property rights. Ensure that you have the 
 ## Support and Questions
 For assistance with the Media Library or if you have any questions about acceptable use, please don't hesitate to reach out to the support team.
 
+---
+
+README written by ChatGPT 4.

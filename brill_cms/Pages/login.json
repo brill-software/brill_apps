@@ -6,7 +6,7 @@
         "attributes": {},
         "children": [
             {
-                "id": "themeProvider",
+                "id": "ThemeProvider",
                 "module": "material_ui/theme/ThemeProvider",
                 "attributes": {
                     "themeTopic": "/Themes/login_theme.json"
