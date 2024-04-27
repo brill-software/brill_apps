@@ -21,7 +21,7 @@ An application typically has the folllowing sub-directories:
 - Scripts
 - Themes
 
-See the [Brill Software Developer Guide](https://www.brill.software/brill_software/developers_guide "Developers Guide") for more details.
+See the [Brill Software Developer Guide](https://www.brill.software/brill_software/documentation/developers_guide "Developers Guide") for more details.
 
 ## Configuration
 

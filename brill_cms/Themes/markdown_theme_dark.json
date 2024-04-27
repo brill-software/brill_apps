@@ -1,6 +1,9 @@
 {
     "palette": {
-        "mode": "dark"
+        "mode": "dark",
+        "action": {
+            "active": "lightblue"
+        }
     },
     "typography": {
         "h1": {

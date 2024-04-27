@@ -1,15 +1,9 @@
 {
     "palette": {
         "mode": "light",
-        "primary": {
-            "main": "#3377ff",
-            "contrastText": "#b0b0b0"
-        },
-        "secondary": {
-            "main": "#ef4fa6"
-        },
-        "contrastThreshold": 3,
-        "tonalOffset": 0.2
+        "action": {
+            "active": "blue"
+        }
     },
     "typography": {
         "h1": {
